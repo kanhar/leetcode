@@ -1,5 +1,5 @@
 '''
-Serialize and de-serialize a generic N-ary Search Tree
+Serialize and de-transform a generic N-ary Search Tree
 
 Ref: https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/
 '''

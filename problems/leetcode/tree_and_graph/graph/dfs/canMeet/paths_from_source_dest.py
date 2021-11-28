@@ -1,12 +1,12 @@
 '''
-Given the edges of a directed graph, and two nodes source and destination of this graph, determine whether or not all paths starting from source eventually end at destination, that is:
+Given the edges of a directed graph, and two nodes source and destination of this graph,
+determine whether or not all paths starting from source eventually end at destination,
+that is: At least one path exists from the source node to the destination node
 
-At least one path exists from the source node to the destination node
-If a path exists from the source node to a node with no outgoing edges, then that node is equal to destination.
+If a path exists from the source node to a node with no outgoing edges, then that node is
+equal to destination.
 The number of possible paths from source to destination is a finite number.
 Return true if and only if all roads from source lead to destination.
-
-Ref: https://leetcode.com/problems/all-paths-from-source-lead-to-destination/
 
     0
    /    \
@@ -14,6 +14,8 @@ Ref: https://leetcode.com/problems/all-paths-from-source-lead-to-destination/
   1          2
 Source - Destination: 0--> 2
 Not all paths go from 0 to 2. And must assert no cycles ( Ex: Path from 2 back to 2 or 0 )
+
+Ref: https://leetcode.com/problems/all-paths-from-source-lead-to-destination/
 '''
 
 class Solution:

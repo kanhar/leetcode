@@ -13,6 +13,8 @@ double findMedian() - Return the median of all elements so far.
 
 Ref: https://leetcode.com/problems/find-median-from-data-stream/
 '''
+import typing
+
 
 class AVLTree(object):
     def __init__(self, val):
@@ -164,7 +166,7 @@ Output: 5
 Example 2:
 '''
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
+    def findKthLargest(self, nums: typing.List[int], k: int) -> int:
         m = MedianFinder()
         [m.addNum(x) for x in nums]
         return m.tree.searchK(m.tree, len(nums)-k+1)

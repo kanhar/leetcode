@@ -18,6 +18,8 @@ Return true, because t has the same structure and node values with a subtree of 
 
 Ref: https://leetcode.com/problems/subtree-of-another-tree/
 '''
+import collections
+
 class Solution(object):
     def isSubtree(self, s, t):
         def check(a, b):

@@ -1,5 +1,5 @@
 '''
-Serialize and de-serialize any generic Binary Tree
+Serialize and de-transform any generic Binary Tree
 
 Ref: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
 '''
@@ -39,4 +39,3 @@ class Codec:
 
         arr = data.split(',')
         return solve(arr)
-

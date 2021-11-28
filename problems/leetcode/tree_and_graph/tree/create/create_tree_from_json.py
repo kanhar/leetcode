@@ -1,15 +1,47 @@
+'''
+Convert
+    [['E', 'C'],['E', 'P'],['C', 'R'], ['P', 'J']]
+to:
+    {
+      "E": {
+        "C": {
+          "R": {}
+        },
+        "P": {
+          "J": {}
+        }
+      }
+    }
+
+
+Ref: https://leetcode.com/discuss/interview-question/416929/googlephone-screenconstruct-tree-from-given-edges
+'''
+
 import collections
 import json
 
-def createTree(edges):
-    t = collections.defaultdict(dict)
+data=[['E', 'C'],['E', 'P'],['C', 'R'], ['P', 'J']]
 
-    for parent, child in edges:
-        t[parent][child] = t[child]
-    parents, children = zip(*edges)
-    roots = set(parents).difference(children)
+# The idea being, do a BFS to ensure that parent does not exist, before adding.
+def solve(edges):
+    trie = collections.defaultdict(dict)
 
-    return {x: t[x] for x in roots}
+    for a, b in edges:
+        insert = False
+        q = [trie]
+        while q:
+            curr = q.pop(0)
+            if a in curr:
+                curr[a][b] = {}
+                insert = True
+                break
+            else:
+                for c in curr.values():
+                    q.append(c)
 
-data=[['E1', 'C1'],['E1', 'P1'],['C1', 'R1'], ['K1', 'J1']]
-print(json.dumps(createTree(data), indent=1))
+        if insert == False:
+            trie[a][b] = {}
+    return trie
+
+print(json.dumps(solve(data), indent=2))
+

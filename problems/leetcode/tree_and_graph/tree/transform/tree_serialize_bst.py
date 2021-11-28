@@ -1,5 +1,5 @@
 '''
-Serialize and de-serialize a generic Binary Search Tree
+Serialize and de-transform a generic Binary Search Tree
 
 Ref: https://leetcode.com/problems/serialize-and-deserialize-bst/
 '''

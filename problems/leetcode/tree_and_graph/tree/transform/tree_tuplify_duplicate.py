@@ -12,7 +12,7 @@ Example 1:
     4   2   4
        /
       4
-The following are two duplicate subtrees:
+The following are the two duplicate subtrees:
 
       2
      /
@@ -24,6 +24,7 @@ Therefore, you need to return above trees' root in the form of a list.
 
 Ref: https://leetcode.com/problems/find-duplicate-subtrees/
 '''
+import collections
 
 class Solution:
     def findDuplicateSubtrees(self, root: TreeNode) -> List[TreeNode]:

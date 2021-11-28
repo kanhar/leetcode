@@ -1,13 +1,9 @@
 '''
-Given preorder and inorder traversal of a tree, construct the binary tree.
+Given preorder and inorder traversal of a tree, construct the binary tree. No duplicates.
 
-Note:
-You may assume that duplicates do not exist in the tree.
-
-For example, given
-
-preorder = [3,9,20,15,7]
+For example, given:
 inorder = [9,3,15,20,7]
+preorder = [3,9,20,15,7]
 Return the following binary tree:
 
     3
@@ -15,7 +11,6 @@ Return the following binary tree:
   9  20
     /  \
    15   7
-
 Ref: #https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 '''
 
@@ -24,6 +19,9 @@ class Solution:
         def solve(ino, pre):
             if ino and pre:
                 i = ino.index(pre.pop(0))
+                #Order here is important, l before r.
+                # Because we are reading from front of postorder array, Left, Root, Right
+                # Hence Left needs to be done first.
                 l = solve(ino[:i], pre )
                 r = solve(ino[i+1:], pre )
                 return TreeNode( ino[i], l, r  )

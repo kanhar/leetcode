@@ -14,7 +14,11 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
    -3   9
    /   /
  -10  5
+
+ ref: https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
 '''
+from typing import List
+
 class Solution:
     def sortedArrayToBST(self, arr: List[int], start = 0, end = None) -> TreeNode:
         if end is None:

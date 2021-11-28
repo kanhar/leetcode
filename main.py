@@ -132,7 +132,7 @@ def GetMax(arr):
 
 print(GetMax([2, 1, 8, 3, 8, 7, 8]))
 
-# Only a pre-post order traversal can serialize a tree. Not an inorder. Guess why?
+# Only a pre-post order traversal can transform a tree. Not an inorder. Guess why?
 # low + (high - low) / 2 -> Version 2. Always better
 
 # Reverse array

@@ -1,6 +1,6 @@
 '''
-Given a binary tree, you need to compute the length of the diameter of the tree.
-The diameter of a binary tree is the length of the longest path between any two nodes in a tree.
+Given a binary tree, you need to compute the length of the bottomUp of the tree.
+The bottomUp of a binary tree is the length of the longest path between any two nodes in a tree.
 This path may or may not pass through the root.
 
 Example:
@@ -76,7 +76,7 @@ class Solution(object):
         return self.max
 
 '''
-Given an undirected tree, return its diameter: the number of edges in a longest path in that tree.
+Given an undirected tree, return its bottomUp: the number of edges in a longest path in that tree.
 
 The tree is given as an array of edges where edges[i] = [u, v] is a bidirectional edge between nodes u and v.  Each node has labels in the set {0, 1, ..., edges.length}.
 

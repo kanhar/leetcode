@@ -38,4 +38,3 @@ class Solution:
             if canMeet(a, b):
                 return False
         return True
-                    

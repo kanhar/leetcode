@@ -14,20 +14,22 @@ Initially, all next pointers are set to NULL.
 Ref: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
 '''
 
+
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         q = [root]
-        qtmp = []
+        qChildren = []
+
         while q:
             curr = q.pop(0)
-            if curr is None:
-                continue
-            if q:                curr.next = q[0]
-            if curr.left:        qtmp.append(curr.left)
-            if curr.right:       qtmp.append(curr.right)
+            if curr:
+                if q:
+                    curr.next = q[0]
 
-            if not q and qtmp:
-                q = qtmp
-                qtmp = []
+                qChildren.append(curr.left)
+                qChildren.append(curr.right)
+
+                if not q and qChildren:
+                    q, qChildren = qChildren, q
 
         return root

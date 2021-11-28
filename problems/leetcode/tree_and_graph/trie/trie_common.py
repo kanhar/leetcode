@@ -3,7 +3,7 @@ Implement a trie with insert, search, and startsWith methods.
 
 Example:
 
-Trie trie = new Trie();
+trie trie = new trie();
 
 trie.insert("apple");
 trie.search("apple");   // returns true

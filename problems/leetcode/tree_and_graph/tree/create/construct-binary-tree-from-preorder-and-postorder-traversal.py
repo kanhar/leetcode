@@ -1,14 +1,25 @@
 '''
-Return any binary tree that matches the given preorder and postorder traversals.
+Given two integer arrays, preorder and postorder where preorder is the preorder traversal of a binary
+tree of distinct values and postorder is the postorder traversal of the same tree.
 
-Values in the traversals pre and post are distinct positive integers.
+If there exist multiple answers, you can return any of them.
 
-Ref: #https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+preorder = [3,9,20,15,7]
+postorder = [9,15,7,20,3]
+Return the following binary tree:
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+Ref: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
 '''
 
 class Solution(object):
     def constructFromPrePost(self, pre, post):
-        if not pre:
+        if len(pre) == 0:
             return None
 
         root = TreeNode(pre[0])

@@ -13,6 +13,7 @@ Output: "the cat was rat by the bat"
 
 Ref: https://leetcode.com/problems/replace-words/
 '''
+import collections
 
 def createTrie(words):
     def _createTrie(): return collections.defaultdict(_createTrie)
