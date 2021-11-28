@@ -1,3 +1,10 @@
-# Leetcode
+# A kinesthetic view into Computer Science
 
-This is a collection of problems for computer science interviews. Please use at your discretion.
+A curated walk-through for Computer Science interviews targeted towards kinesthetic learners.
+
+# Supervised Learning
+
+## Section A
+
+## Section B
+
