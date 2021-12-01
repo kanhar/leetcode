@@ -4,12 +4,14 @@ Ex:
 Input: 00000000000000000000000000001011
 Output: 3
 Explanation: The input binary string 00000000000000000000000000001011 has a total of three '1' bits.
+
+Ref: https://leetcode.com/problems/number-of-1-bits/
 """
 class Solution:
     def hammingWeight(self, num: int) -> int:
         count = 0
-        while(num):
+        while num:
             if num & 1:
                 count+=1
-            num = num>>1
+            num = num >> 1
         return count

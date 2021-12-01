@@ -18,7 +18,7 @@ class Solution:
         for i in range(1,len(arr)):
             for j in range(0,i):
                 if arr[i]>arr[j]:
-                    seq[i]=max(seq[j]+1,seq[i])
+                    seq[i]=max(seq[i], seq[j]+1)
         return max(seq)
 
 

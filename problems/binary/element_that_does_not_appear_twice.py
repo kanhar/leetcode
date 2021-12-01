@@ -9,9 +9,14 @@ Example 1:
 
 Input: [2,2,1]
 Output: 1
+
+Ref: https://leetcode.com/problems/single-number/
 """
 
 import collections
+import functools
+import typing
+
 class Solution:
     # Given a non-empty sort of integers, every element appears twice except for one. Find that single one
     def singleNumber3(self, nums: List[int]) -> int:
@@ -24,9 +29,8 @@ class Solution:
     def singleNumber4(self, nums):
         return 2 * sum(set(nums)) - sum(nums)
 
-    # Xor. Xor a number by itself returns 0. A xor A = 0.
-    def singleNumber(self, nums):
-        a = 0
-        for i in nums:
-            a ^= i
-        return a
+    # Xor.
+    # Xor a number by itself returns 0. A xor A = 0.
+    # Xor a number by 0, returns itself. A xor 0 = A
+    def singleNumber(self, nums: typing.List[int]) -> int:
+        return functools.reduce(lambda x, y: x ^ y, nums)
