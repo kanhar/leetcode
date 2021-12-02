@@ -164,6 +164,8 @@ Example 1:
 Input: [3,2,1,5,6,4] and k = 2
 Output: 5
 Example 2:
+
+Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
 """
 class Solution:
     def findKthLargest(self, nums: typing.List[int], k: int) -> int:

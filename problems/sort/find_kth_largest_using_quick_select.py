@@ -9,7 +9,13 @@ Example 2:
 
 Input: [3,2,3,1,2,4,5,5,6] and k = 4
 Output: 4
+Note:
+You may assume k is always valid, 1 ≤ k ≤ sort's length.
+
+Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
+Ref: Interview: Find Array Median
 """
+import heapq
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
@@ -30,21 +36,10 @@ class Solution:
                 return findnsmallset(bigger,n-len(smaller)-len(equal))
 
         def median(arr):
-            m = int(len(arr)/2)
+            m = len(arr)//2
             if len(arr)%2==1: #even
                 return findnsmallset(arr,m)
             else:
                 return int((findnsmallset(arr,m) + findnsmallset(arr,m-1))/2)
-
         return( findnsmallset(nums,len(nums)-k)  )
 
-    def findKthLargestHeap(self, nums, k):
-        import queue
-        heap = queue.PriorityQueue()
-        for n in nums:
-            heap.put(n)
-
-        for i in range(0,k):
-            heap.get()
-
-        return (heap.get() )
