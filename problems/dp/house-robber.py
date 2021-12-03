@@ -13,14 +13,41 @@ Input: [1,2,3,1]
 Output: 4
 Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
 Total amount you can rob = 1 + 3 = 4.
+
+Ref: https://leetcode.com/problems/house-robber/
 """
+import collections
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        h = collections.defaultdict(int)
+        if len(nums) == 0:
+            return 0
+        elif len(nums) == 1:
+            return nums[0]
+        elif len(nums) == 2:
+            return max(nums[0], nums[1])
+
+        h[0] = nums[0]
+        h[1] = max(nums[0], nums[1])
+        for i in range(1, len(nums)):
+            h[i] = max(nums[i] + h[i - 2], h[i - 1])
+
+        return max(h.values())
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
         def solve(nums, i):
-            if i is None:
-                i = len(nums)-1
+            if i < 0:
+                return 0
+            else:
+                return max(nums[i] + solve(nums, i - 2), solve(nums, i - 1))
 
+        return solve(nums, len(nums) - 1)
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        def solve(nums, i):
             if i < 0:
                 return 0
             elif i in memo:
@@ -32,18 +59,3 @@ class Solution:
         memo = {}
         return solve(nums, len(nums)-1)
 
-    def robDP(self, nums: List[int]) -> int:
-        if nums == []:
-            return 0
-
-        arr = [0]*len(nums)
-
-        for i in range(len(nums)):
-            if i==0:
-                arr[i] = nums[0]
-            elif i==1:
-                arr[i] = max(nums[0], nums[1])
-            else:
-                arr[i] = max( arr[i-2]+nums[i], arr[i-1] )
-
-        return max(arr)
