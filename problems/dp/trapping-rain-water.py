@@ -1,5 +1,6 @@
 """
-Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+Given n non-negative integers representing an elevation map where the width of each bar is 1,
+compute how much water it is able to trap after raining.
 """
 class Solution:
     #Very nicely explained here: https://www.youtube.com/watch?v=HmBbcDiJapY

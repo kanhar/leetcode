@@ -1,5 +1,6 @@
 """
-Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+Find the kth largest element in an unsorted sort. Note that it is the kth largest element in
+the sorted order, not the kth distinct element.
 
 Example 1:
 
@@ -41,5 +42,5 @@ class Solution:
                 return findnsmallset(arr,m)
             else:
                 return int((findnsmallset(arr,m) + findnsmallset(arr,m-1))/2)
-        return( findnsmallset(nums,len(nums)-k)  )
+        return findnsmallset(nums,len(nums)-k)
 
