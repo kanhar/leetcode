@@ -1,6 +1,6 @@
 # A kinesthetic view into Computer Science
 
-A curated walk-through for Computer Science interviews targeted towards kinesthetic learners.
+A curated walk-through for Computer Science interviews targeted towards [kinesthetic learners](https://en.wikipedia.org/wiki/Kinesthetic_learning)
 
 ## Arrays
 
