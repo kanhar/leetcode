@@ -172,3 +172,9 @@ class Solution:
         m = MedianFinder()
         [m.addNum(x) for x in nums]
         return m.tree.searchK(m.tree, len(nums)-k+1)
+
+"""
+
+Do also:
+Ref: https://leetcode.com/problems/find-median-from-data-stream/
+"""

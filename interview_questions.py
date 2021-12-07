@@ -150,3 +150,59 @@ Get Maximum breadth
 
 Ref: https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/
 """
+
+
+"""
+Merge K Sorted Arrays
+Ref: https://leetcode.com/discuss/interview-question/617596/facebook-onsite-merge-k-sorted-arrays
+"""
+
+import heapq
+def solve(arr):
+    h = []
+    for i in range(0, len(arr)):
+        heapq.heappush(h, (arr[i][0], i, 0))
+
+    res = []
+    while h:
+        val, arrayNum, arrayIndex = heapq.heappop(h)
+        res.append(val)
+
+        if arrayIndex +1 < len(arr[arrayNum]):
+            heapq.heappush(h, (arr[arrayNum][arrayIndex+1], arrayNum, arrayIndex+1))
+
+    return res
+
+arr = [ [ 1,2,3 ], [4,5,6], [0,1,2]]
+print(solve(arr))
+
+"""
+Ref: Interview: Find Median O(log(n)) time.
+"""
+import heapq
+
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        def findnsmallset(arr, n):
+            if len(arr)==1:
+                return arr[0]
+            if len(arr)==0:
+                return -1
+            P = arr[int(len(arr)/2)]
+            smaller = [x for x in arr if x < P]
+            bigger = [x for x in arr if x > P]
+            equal = [x for x in arr if x == P]
+            if n < len(smaller):
+                return findnsmallset(smaller,n)
+            elif len(smaller) <= n < len(smaller)+len(equal):
+                return P
+            else:
+                return findnsmallset(bigger,n-len(smaller)-len(equal))
+
+        def median(arr):
+            m = len(arr)//2
+            if len(arr)%2==1: #even
+                return findnsmallset(arr,m)
+            else:
+                return int((findnsmallset(arr,m) + findnsmallset(arr,m-1))/2)
+        return findnsmallset(nums,len(nums)-k)
