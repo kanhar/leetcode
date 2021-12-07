@@ -15,6 +15,8 @@ Example 2:
 
 Input: "()[]{}"
 Output: true
+
+Ref: https://leetcode.com/problems/valid-parentheses/
 """
 class Solution(object):
     def isValid(self, s):

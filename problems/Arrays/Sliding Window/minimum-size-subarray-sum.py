@@ -10,22 +10,23 @@ Explanation: the subarray [4,3] has the minimal length under the problem constra
 
 Ref: https://leetcode.com/problems/minimum-size-subarray-sum/
 
-TLE ( but simple )
 """
-
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         left = 0
-        minres = float('inf')
+        minLength = float('inf')
         currSum = 0
-        for i in range(len(nums)):
+        for i in range(0, len(nums)):
             currSum += nums[i]
+
             while currSum >= target:
-                minres = min(minres, i + 1 - left)  # or Get full array via nums[left:i + 1]
+                if currSum >= target:
+                    minLength = min(minLength, i - left + 1)
+
                 currSum -= nums[left]
                 left += 1
 
-        if minres == float('inf'):
+        if minLength == float('inf'):
             return 0
         else:
-            return minres
+            return minLength

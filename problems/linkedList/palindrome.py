@@ -17,6 +17,7 @@ class Solution:
             if B is None:
                 return True
             else:
+                # Tail up recursion
                 if not solve(B.next) or self.A.val != B.val:
                     return False
                 else:

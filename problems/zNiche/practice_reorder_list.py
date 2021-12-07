@@ -11,6 +11,8 @@ Solution:
 1. Get Mid point
 2. Reverse List from mid to end
 3. Merge two (sorted arrays) of some sort (pun)
+
+https://leetcode.com/problems/reorder-list/
 """
 class Solution:
     def reorderList(self, head: ListNode) -> None:

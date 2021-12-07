@@ -16,10 +16,10 @@ class Solution:
         for i in range(0,n):
             cur = cur.next
 
-        if not cur:
+        if not cur:             # Ex: [1,2], n=2.
             return head.next
 
-        while cur.next: #Tricky. You want to be one behind for deletion.
+        while cur.next:         # Tricky. You want to be one behind for deletion.
             cur = cur.next
             lag = lag.next
 

@@ -1,6 +1,5 @@
 """
-Given an integer sort nums, find the contiguous subarray (containing at least one number)
-which has the largest sum and return its sum.
+Given an integer sort nums, find the contiguous subarray which has the largest sum and return its sum.
 
 Example:
 

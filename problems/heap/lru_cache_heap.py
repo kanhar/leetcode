@@ -19,7 +19,7 @@ import heapq
 
 class LRUCache:
     def __init__(self, capacity):
-        self.dic = collections.OrderedDict()
+        self.dic = {}
         self.capacity = capacity
         self.count = 0
         self.heap = []
@@ -32,11 +32,12 @@ class LRUCache:
             self.updateHeap(key)
             return self.dic[key]
 
+    # Lower number implies older cache entry
     def getOrdering(self):
         self.counter += 1
         return self.counter
 
-    def updateHeap(self, key):
+    def updateHeap(self, key, val):
         for i in range(len(self.heap)):
             if self.heap[i][1] == key:
                 self.heap[i] = self.getOrdering(), key

@@ -22,14 +22,10 @@ rotate the input matrix in-place such that it becomes:
   [8,5,2],
   [9,6,3]
 ]
+
+Ref: https://leetcode.com/problems/rotate-image/
+Ref: https://leetcode.com/problems/rotate-image/discuss/18884/Seven-Short-Solutions-(1-to-7-lines)
 """
-
-class Solution:
-    # @param matrix, a list of lists of integers
-    # @return a list of lists of integers
-    def rotate(self, A):
-        A[:]= zip(*A[::-1])
-
 class Solution:
     def rotate(self, A):
         A.reverse()
