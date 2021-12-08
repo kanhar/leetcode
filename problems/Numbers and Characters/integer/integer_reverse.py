@@ -5,6 +5,8 @@ Example 1:
 
 Input: 123
 Output: 321
+
+Ref: https://leetcode.com/problems/reverse-integer/solution/
 """
 class Solution:
     def reverse(self, x: int) -> int:
@@ -18,7 +20,8 @@ class Solution:
             res = res * 10 + d
             num = int(num /10 )
 
-        if res > 2**31 - 1 or res < -2**31: return 0 #Cannot do this check earlier. Think why.
+        if res > 2**31 - 1 or res < -2**31:
+            return 0 #Cannot do this check earlier. Think why.
 
         return sign * res
 

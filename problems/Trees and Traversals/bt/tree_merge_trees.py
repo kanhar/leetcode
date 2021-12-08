@@ -22,6 +22,7 @@ Merged tree:
 
 	 Ref: https://leetcode.com/problems/merge-two-binary-trees/
 """
+
 class Solution:
     def mergeTrees(self, a: TreeNode, b: TreeNode) -> TreeNode:
         if a is None and b is None:
@@ -31,4 +32,4 @@ class Solution:
         elif b is None:
             return a
         if a is not None and b is not None:
-            return TreeNode(a.val+b.val, self.mergeTrees(a.left,b.left), self.mergeTrees(a.right,b.right))
+            return TreeNode(a.val + b.val, self.mergeTrees(a.left, b.left), self.mergeTrees(a.right, b.right))

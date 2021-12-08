@@ -4,6 +4,8 @@ Example 1:
 
 Input: 00000010100101000001111010011100
 Output: 00111001011110000010100101000000
+
+Ref: https://leetcode.com/problems/reverse-bits/
 """
 class Solution:
     def reverseBits(self, n):

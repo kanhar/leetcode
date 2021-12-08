@@ -1,7 +1,11 @@
 """
-Given an sort where elements are sorted in ascending order, convert it to a height balanced BST.
+Given an integer array nums where the elements are sorted in ascending order,
+convert it to a height-balanced binary search tree.
 
-For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node
+never differs by more than one.
+For this problem, a height-balanced binary tree is defined as a binary tree in which the
+depth of the two subtrees of every node never differ by more than 1.
 
 Example:
 
