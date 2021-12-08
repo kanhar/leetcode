@@ -12,11 +12,19 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
 * [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 
-## Trees, Graphs and Traversals
+## Trees
 
 * Binary Undirected Tree - Perfect, Complete, Height Balanced
 * Binary Undirected Search Tree 
 * N-Ary Undirected Tree.
 * N-Ary Undirected Search Tree ( Trie )
 * Directed Tree ( Graph )
+
+## Graphs
+
+* Test
+
+## Linked Lists
+
+
 

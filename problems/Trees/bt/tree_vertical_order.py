@@ -7,24 +7,3 @@ Return an list of non-empty reports in order of X coordinate.  Every report will
 
 Ref: https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
 """
-
-class Solution:
-    def verticalTraversal(self, root: TreeNode) -> List[List[int]]:
-        mapping = collections.defaultdict(lambda: collections.defaultdict(list))
-        self.dfs(root, 0, 0, mapping)
-
-        res = []
-        for x in sorted(mapping):
-            tmp = []
-            for y in sorted(mapping[x]):
-                tmp += sorted(mapping[x][y])
-            res.append(tmp)
-        return res
-
-    def dfs(self, node, x, y, mapping):
-        if not node:
-            return
-
-        mapping[x][y].append(node.val)
-        self.dfs(node.left, x-1, y+1, mapping)
-        self.dfs(node.right, x+1, y+1, mapping)

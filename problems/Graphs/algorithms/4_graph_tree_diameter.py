@@ -29,3 +29,25 @@ class Solution:
                         maxVal = max(maxVal, matrix[a][b])
 
         return maxVal
+
+
+class Solution:
+    def treeDiameter(self, edges: List[List[int]]) -> int:
+        graph = collections.defaultdict(set)
+        for a, b in edges:
+            graph[a].add(b)
+            graph[b].add(a)
+
+        startingNodes = [u for u, v in graph.items() if len(v) == 1]
+        maxCount = -1
+        for startNode in startingNodes:
+            q = [ (startNode,0)]
+            visited = set()
+            while q:
+                currNode, currCount = q.pop(0)
+                maxCount = max(maxCount, currCount)
+                visited.add(currNode)
+                for neighbor in graph[currNode] - visited:
+                    q.append((neighbor, currCount+1))
+
+        return maxCount
