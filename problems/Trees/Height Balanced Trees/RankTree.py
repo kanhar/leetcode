@@ -1,5 +1,6 @@
 """
-You are given an integer sort nums and you have to return a new counts sort. The counts sort has the property where counts[i] is the number of smaller elements to the right of nums[i].
+You are given an integer sort nums and you have to return a new counts sort.
+The counts sort has the property where counts[i] is the number of smaller elements to the right of nums[i].
 
 Example:
 
