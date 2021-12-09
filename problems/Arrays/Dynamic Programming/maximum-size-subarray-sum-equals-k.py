@@ -12,6 +12,7 @@ Output: 4
 Explanation: The subarray [1, -1, 5, -2] sums to 3 and is the longest.
 
 Ref: https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
+Ref: Contrast with: https://leetcode.com/problems/path-sum-iii/
 """
 import collections
 

@@ -15,19 +15,24 @@ Output: 6
 Ref: https://leetcode.com/problems/binary-tree-maximum-path-sum/
 """
 
-class Solution(object):
-    def maxPathSum(self, root):
-
-        def get_sum(root):
-            if root is None:
+class Solution:
+    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        def solve(node):
+            if not node:
                 return 0
             else:
-                ls = max(get_sum(root.left), 0)
-                rs = max(get_sum(root.right), 0)
+                ls = solve(node.left)
+                rs = solve(node.right)
 
-                self.max = max(self.max, ls + rs + root.val)
-                return max(ls, rs) + root.val
+                ls = max(ls, 0)
+                rs = max(rs, 0)
 
-        self.max = float('-inf')
-        get_sum(root)
-        return self.max
+                self.maxSum = max(self.maxSum, node.val + ls + rs)
+
+                return max(ls, rs) + node.val
+
+        self.maxSum = float('-inf')
+        solve(root)
+        return self.maxSum
+
+

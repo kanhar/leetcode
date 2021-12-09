@@ -27,17 +27,16 @@ Ref: https://leetcode.com/problems/find-duplicate-subtrees/
 import collections
 
 class Solution:
-    def findDuplicateSubtrees(self, root: TreeNode) -> List[TreeNode]:
-        def tuplify(root):
-            if root:
-                tuple = root.val, tuplify(root.left), tuplify(root.right)
-                trees[tuple].append(root)
+    def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> List[Optional[TreeNode]]:
+        def tuplify(node):
+            if node:
+                tuple = (node.val, tuplify(node.left), tuplify(node.right))
+                res[tuple].append(node)
                 return tuple
 
-        trees = collections.defaultdict(list)
+        res = collections.defaultdict(list)
         tuplify(root)
-        res = []
-        for k,v in trees.items():
-            if len(v) > 1:
-                res.append(v[0])
-        return res
+
+        # Minor detail: v[0] cause any one parent node needs to be returned
+        dupes = {k: v[0] for (k, v) in res.items() if len(v) > 1}
+        return dupes.values()

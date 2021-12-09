@@ -14,6 +14,12 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 
 ## Trees
 
+* [Binary Trees](https://leetcode.com/list?selectedList=9dqqweim)
+* Binary Search Trees
+* AVL/RedBlack/Rank/Segment Trees
+* N-ary Trees
+* N-ary Search Trees (Tries)  
+  
 * Binary Undirected Tree - Perfect, Complete, Height Balanced
 * Binary Undirected Search Tree 
 * N-Ary Undirected Tree.

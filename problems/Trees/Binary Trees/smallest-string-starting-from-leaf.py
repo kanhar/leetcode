@@ -7,21 +7,20 @@ Find the lexicographically smallest string that starts at a leaf of this tree an
 
 Ref: https://leetcode.com/problems/smallest-string-starting-from-leaf/
 """
-class Solution:
-    def smallestFromLeaf(self, root: 'TreeNode') -> 'str':
-        def p(arr):
-            return ''.join([chr(x+97) for x in arr])
 
-        def solve(a, accum = []):
-            if a:
-                if a.left is None and a.right is None:
-                    accum = [ a.val ] + accum
-                    res.append(accum)
-                else:
-                    solve(a.left,  [ a.val ] + accum )
-                    solve(a.right, [ a.val ] + accum )
+class Solution:
+    def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
+        def solve(node, accum=[]):
+            if not node:
+                return
+
+            if node and node.left is None and node.right is None:  # i.e. if leaf
+                res.append(''.join([chr(x + 97) for x in reversed(accum + [node.val])]))
+            else:
+                solve(node.left, accum + [node.val])
+                solve(node.right, accum + [node.val])
 
         res = []
         solve(root)
         res = sorted(res)
-        return p(res[0])
+        return res[0]

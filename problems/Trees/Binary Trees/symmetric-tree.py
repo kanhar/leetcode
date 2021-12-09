@@ -26,10 +26,12 @@ class Solution:
         def check(a,b):
             if a is None and b is None:
                 return True
-            if None in [a, b] or a.val != b.val:
+            if a is None or b is None:
                 return False
+            if a.val == b.val and check(a.left,b.right) and check(a.right, b.left):
+                return True
             else:
-                return check(a.left,b.right) and check(a.right, b.left)
+                return False
 
         return check(root,root)
 
