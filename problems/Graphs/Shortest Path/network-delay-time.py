@@ -109,8 +109,7 @@ class Solution:
         # Core Algorithm starts
         g = {x: {x: float('inf') for x in nodes} for x in nodes}
         for u,v,w in times:
-            g[u][u]=0
-            g[v][v]=0
+            g[u][u]=g[v][v]=0
             g[u][v]=w
             
         for i in nodes:

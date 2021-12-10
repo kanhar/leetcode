@@ -15,6 +15,8 @@ Example 3:
 
 Input: ")("
 Output: [""]
+
+Ref: https://leetcode.com/problems/remove-invalid-parentheses/
 """
 def isValidParenthesis(s):
     ctr = 0
@@ -29,8 +31,11 @@ def isValidParenthesis(s):
 
 class Solution:
     #TBD: What is complexity?
-    #This is a BFS surprisingly: The idea is straightforward, with the input string s, we generate all possible states by removing one ( or ),
-    # check if they are valid, if found valid ones on the current level, put them to the final result list and we are done, otherwise, add them to a queue and carry on to the next level.
+    #This is a BFS surprisingly: The idea is straightforward, with the input string s,
+    # we generate all possible states by removing one ( or ),
+    # check if they are valid, if found valid ones on the current level,
+    # put them to the final result list and we are done, otherwise, add them to a queue and
+    # carry on to the next level.
     def removeInvalidParentheses(self, s):
         l = len(s)
         res = set([s])
