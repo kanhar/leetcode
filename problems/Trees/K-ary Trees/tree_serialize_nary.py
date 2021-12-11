@@ -36,3 +36,22 @@ class Codec:
         if data:
             arr = data.split(",")
             return preorder()
+
+class Codec:
+    def serialize(self, root):
+        def tuplify(root):
+            if root:
+                tuple = (root.val, [tuplify(x) for x in root.children])
+                return tuple
+
+        return json.dumps(tuplify(root))
+
+    def deserialize(self, data):
+        def detuplify(arr):
+            if arr:
+                root = Node(arr[0], [])
+                for c in arr[1]:
+                    root.children.append(detuplify(c))
+                return root
+            return None
+        return detuplify(json.loads(data))
