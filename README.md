@@ -21,10 +21,11 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * Traversals
 
 ## Binary, Integers and Strings
-* Binary
-* Integer
-* Regex
-* String
+* [Binary](https://leetcode.com/list?selectedList=90xf0762)
+* [Integer](https://leetcode.com/list?selectedList=90xf7w3c)
+* [Regex](https://leetcode.com/list?selectedList=90xftxlv)
+* [String](https://leetcode.com/list?selectedList=90xfipte)
+
 
 ## Recursion
 * Recursive Problems
@@ -36,10 +37,3 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
 * [K-ary Trees](https://leetcode.com/list?selectedList=9db7pr2r)
 * [K-Ary Search Trees(Tries)](https://leetcode.com/list?selectedList=9db74ov1)
-
-## Numbers
-* Binary
-* Integer
-* Regex
-* String
-

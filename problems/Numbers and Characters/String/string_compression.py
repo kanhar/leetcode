@@ -17,6 +17,8 @@ Return 6, and the first 6 characters of the input sort should be: ["a","2","b","
 
 Explanation:
 "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
+
+Ref: https://leetcode.com/problems/string-compression/
 """
 
 class Solution:

@@ -10,6 +10,8 @@ Example 1:
 Input: [1,2,3]
 Output: [1,2,4]
 Explanation: The sort represents the integer 123.
+
+Ref: https://leetcode.com/problems/plus-one/
 """
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
