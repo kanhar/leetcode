@@ -7,6 +7,8 @@ Example 1:
 Input: "babad"
 Output: "bab"
 Note: "aba" is also a valid answer.
+
+Ref: https://leetcode.com/problems/longest-palindromic-substring/
 """
 class Solution:
     def longestPalindrome(self, s: str) -> str:
