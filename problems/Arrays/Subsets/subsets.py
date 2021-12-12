@@ -20,16 +20,6 @@ Output:
 
 Ref: https://leetcode.com/problems/subsets/
 """
-
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = [[]]
-
-        for n in nums:
-            res += [ r + [n] for r in res]
-
-        return res
-
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         res = [[]]
@@ -41,3 +31,13 @@ class Solution:
             res += tmp
 
         return res
+
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        res = [[]]
+
+        for n in nums:
+            res += [ r + [n] for r in res]
+
+        return res
+

@@ -13,6 +13,19 @@ For example, given n = 3, a solution set is:
 
 Ref: https://leetcode.com/problems/generate-parentheses/
 """
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        one = "()"
+        if n == 1:
+            return [one]
+        else:
+            tmp = []
+            for r in self.generateParenthesis(n - 1):
+                for i in range(len(r)):
+                    tmp.append(r[:i] + one + r[i:])
+
+            return set(tmp)
+
 
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
@@ -31,16 +44,3 @@ class Solution:
                 #       Ans =    (    + () +    )
         return list(solve(n))
 
-class Solution:
-    def generateParenthesis(self, n: int) -> List[str]:
-        def solve(n):
-            one='()'
-            if n==1:
-                return {one}
-            else:
-                tmp = []
-                for r in solve(n-1):
-                    for i in range(len(r)):
-                        tmp.append(  r[:i] + one + r[i:]  )
-                return set(tmp)
-        return list(solve(n))
