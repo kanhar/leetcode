@@ -8,6 +8,7 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 * [Linked Lists](https://leetcode.com/list/?selectedList=9dbla3q1)
 * [Matrices](https://leetcode.com/list/?selectedList=9dunhxke)
+* [Recursion](https://leetcode.com/list?selectedList=90ojkbn2)
 * [Sliding Window](https://leetcode.com/list?selectedList=9di1s4a1)
 * [Sorted Arrays](https://leetcode.com/list?selectedList=9dunj1mv)
 * [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
@@ -25,10 +26,6 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Regex](https://leetcode.com/list?selectedList=90xftxlv)
 * [String](https://leetcode.com/list?selectedList=90xfipte)
 
-
-## Recursion
-* Recursive Problems
-
 ## Trees
 
 * [Binary Trees](https://leetcode.com/list?selectedList=9dqqweim)
@@ -36,11 +33,3 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
 * [K-ary Trees](https://leetcode.com/list?selectedList=9db7pr2r)
 * [K-Ary Search Trees(Tries)](https://leetcode.com/list?selectedList=9db74ov1)
-
-## Ponder
-
-Note: Can you use memoize with DAGs? What are limitations of DAGs.. 
-Djikstra Negative numbers etc. No algorithm neither Dijkstra's nor Bellman-Ford 
-nor Floyd-Warshall work on graphs with negative cycle but the latter two can detect 
-one whereas Dijkstra's cannot because Dijkstra's is greedy whereas others use dynamic programming. 
-Moreover Dijkstra doesn't even work with negative weights. 
