@@ -56,7 +56,7 @@ class Solution:
                     orderingFound = True
                     break
 
-            if orderingFound == False and len(w1) > len(w2):  # Invalid Dict order.
+            if orderingFound is False and len(w1) > len(w2):  # Invalid Dict order.
                 return ""
 
         q = [x for x in indeg if indeg[x] == 0]

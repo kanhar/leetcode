@@ -18,30 +18,34 @@ Explanation: There are a total of 2 courses to take. To take course 1 you should
              course 0. So the correct course order is [0,1] .
 
 Ref: https://leetcode.com/problems/course-schedule-ii/
+
+Time: O(V+E)
+Space: O(V+E)
 """
 import collections
 import typing
 
 class Solution:
-    def findOrder(self, numCourses: int, prerequisites: typing.List[typing.List[int]]) -> List[int]:
-        nodes = [ x for x in range(numCourses)]
-        graph = collections.defaultdict(list)
-        indeg = {x:0 for x in nodes}
+    def findOrder(self, numCourses: int, prereq: typing.List[typing.List[int]]) -> List[int]:
+        nodes = [x for x in range(numCourses)]
+        edges = collections.defaultdict(list)
+        indeg = {x: 0 for x in nodes}
+        for course, dep in prereq:
+            edges[course].append(dep)
+            indeg[dep] += 1
 
-        for pre in prerequisites:
-            a,b = pre[0], pre[1]
-            graph[a].append(b)
-            indeg[b] += 1
-
+        q = [x for x in indeg if indeg[x] == 0]
         res = []
-        q   = [ x for x in indeg if indeg[x]==0]
 
         while q:
             curr = q.pop(0)
             res.append(curr)
-            for neighbor in graph[curr]:
+            for neighbor in edges[curr]:
                 indeg[neighbor] -= 1
                 if indeg[neighbor] == 0:
                     q.append(neighbor)
 
-        return reversed(res) if len(res) == len(nodes) else []
+        if len(res) == len(nodes):
+            return reversed(res)
+        else:
+            return []

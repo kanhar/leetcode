@@ -69,7 +69,7 @@ class Solution:
                     # Core Algorithm Ends
 
         if len(g) != n:
-            return -1
+            return -1   # could indicate a negative weight Cycle
         else:
             return max(g.values())
 
@@ -88,7 +88,11 @@ class Solution:
         g[k] = 0
         for _ in range(n):
             for u, v, w in times:
-                g[v] = min(g[v], g[u]+w )
+                g[v] = min(g[v], g[u] + w)
+
+        # Negative Weight Cycle Detection
+        if g[v] < 0:
+            return -1
 
         # Result
         if max(g.values()) < float('inf'):
@@ -117,6 +121,10 @@ class Solution:
                 for v in nodes:
                     g[u][v] = min(g[u][v], g[u][i] + g[i][v])
         # Core Algorithm ends
+
+        # Negative Weight Cycle Detection
+        if g[u][u] < 0:
+            return -1
 
         # Result
         if max(g[k].values()) == float('inf'):
