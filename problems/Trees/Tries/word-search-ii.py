@@ -18,13 +18,13 @@ Output: ["eat","oath"]
 
 Ref: https://leetcode.com/problems/word-search-ii/
 """
-import collections
-
+from collections import defaultdict
 class Solution:
     def findWords(self, board, words):
 
         def createTrie(words):
-            def _createTrie(): return collections.defaultdict(_createTrie)
+            def _createTrie():
+                return collections.defaultdict(_createTrie)
 
             t = _createTrie()
             for word in words:
@@ -34,28 +34,30 @@ class Solution:
                 root['#']
             return t
 
-        def dfs(r,c, trie, accum = []):
+        def dfs(r, c, trie, visited, accum=[]):
             if '#' in trie:
                 self.res.add(''.join(accum))
 
             if r in range(len(board)) and c in range(len(board[r])) and board[r][c] in trie and not visited[r][c]:
-
                 visited[r][c] = True
-                b = board[r][c]
 
-                dfs(r, c+1, trie[b], accum + [b])
-                dfs(r, c-1, trie[b], accum + [b])
-                dfs(r+1, c, trie[b], accum + [b])
-                dfs(r-1, c, trie[b], accum + [b])
+                b = board[r][c]
+                trie = trie[b]
+                dfs(r, c + 1, trie, visited, accum + [b])
+                dfs(r, c - 1, trie, visited, accum + [b])
+                dfs(r + 1, c, trie, visited, accum + [b])
+                dfs(r - 1, c, trie, visited, accum + [b])
+                
                 visited[r][c] = False
 
         self.res = set()
-        visited = [ [False]*len(board[r]) for r in range(len(board))]
-        trie = createTrie(words)
+        visited = [[False] * len(board[r]) for r in range(len(board))]
+        rootTrie = createTrie(words)
 
         for i in range(len(board)):
             for j in range(len(board[i])):
-                dfs(i, j, trie)
+                dfs(i, j, rootTrie, visited)
 
         return self.res
+
 

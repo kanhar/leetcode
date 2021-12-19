@@ -12,10 +12,10 @@ def createTrie(words):
 
     t = _createTrie()
     for word in words:
-        root = t
+        curr = t
         for w in word:
-            root = root[w]
-        root['#']
+            curr = curr[w]
+        curr['#']
     return t
 
 class Solution:
@@ -23,8 +23,9 @@ class Solution:
         def solve(root, accum = ""):
             curr = root
             if len(curr.values()) == 1 and '#' not in curr:
-                key = next(iter(curr))
-                return solve(curr[key], accum + key)
+                for k,v in curr.items():
+                    return solve(curr[k], accum + k)
             else:
                 return accum
-        return solve(createTrie(strs))
+        t = createTrie(strs)
+        return solve(t)

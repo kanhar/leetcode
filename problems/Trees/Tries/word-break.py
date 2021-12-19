@@ -13,46 +13,34 @@ Explanation: Return true because "leetcode" can be segmented as "leet code".
 
 Ref: https://leetcode.com/problems/word-break/
 """
+import collections
 
-class Solution(object):
-    def wordBreak(self, s, wordDict, accum = []):
-        def solve(arr, accum = []):
-            if len(arr)==0 and len(s) == sum([len(x) for x in accum]):
-                self.res.append(accum)
-                return
-            for i in range(len(arr)+1):
-                curr = arr[:i]
-                if curr in set(wordDict):
-                    solve(arr[i:], accum + [curr])
-        self.res = []
-        solve(s)
-        return len(self.res)!=0
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        def createTrie(wordDict):
+            def _createTrie():
+                return collections.defaultdict(_createTrie)
 
-def createTrie(words):
-    def _createTrie(): return collections.defaultdict(_createTrie)
+            t = _createTrie()
+            for word in wordDict:
+                curr = t
+                for w in word:
+                    curr = curr[w]
+                curr['#']
+            return t
 
-    t = _createTrie()
-    for word in words:
-        root = t
-        for w in word:
-            root = root[w]
-        root['#']
-    return t
-
-class Solution(object):
-    def wordBreak(self, s, wordDict):
-        def search(t,s):
-            root = t
-
-            for i,c in enumerate(s):
-                if c not in t:
-                    return False
-                else:
-                    if '#' in t[c] and search(root, s[i+1:]):
-                        return True
-                    t = t[c]
-
-            return '#' in t
+        def solve(curr, s):
+            if len(s) == 0:
+                return '#' in curr
+            else:
+                for i in range(0, len(s)):
+                    if '#' in curr:
+                        return solve(curr[s[i]], s[i + 1:]) or solve(t[s[i]], s[i + 1:])
+                    else:
+                        if s[i] in curr:
+                            return solve(curr[s[i]], s[i + 1:])
+                        else:
+                            return False
 
         t = createTrie(wordDict)
-        return search(t, s)
+        return solve(t, s)

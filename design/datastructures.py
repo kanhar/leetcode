@@ -5,3 +5,7 @@ print("A Graph is essentially a directed (or undirected) n-ary tree")
 print("What kind of graph can you not memoize with?")
 
 print("Negative Weight Cycles.")
+
+s = [1,2,3,4,5]
+i=2
+print(s[:i], s[i:])

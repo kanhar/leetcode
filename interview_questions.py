@@ -266,3 +266,4 @@ def createLeetTree(arr, index=0):
     parent = TreeNode(arr[index], createLeetTree(arr, left), createLeetTree(arr, right))
 
     return parent
+
