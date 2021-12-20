@@ -267,3 +267,17 @@ def createLeetTree(arr, index=0):
 
     return parent
 
+"""
+Create Hash
+"""
+
+def hash(c):
+    num = ord(c)
+    MAX = 2 ** 63 - 1
+    primes = [31, 43, 47, 51]
+    h = 0
+    for p in primes:
+        h += num ** p
+    h = abs(h) % MAX
+    return h
+

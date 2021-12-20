@@ -49,10 +49,8 @@ class Codec:
         def tuplify(root):
             if root:
                 tuple = root.val, tuplify(root.left), tuplify(root.right)
-                trees[tuple].append(root)
                 return tuple
 
-        trees = collections.defaultdict(list)
         res = tuplify(root)
         return json.dumps(res)
 

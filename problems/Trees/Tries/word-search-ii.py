@@ -47,7 +47,7 @@ class Solution:
                 dfs(r, c - 1, trie, visited, accum + [b])
                 dfs(r + 1, c, trie, visited, accum + [b])
                 dfs(r - 1, c, trie, visited, accum + [b])
-                
+
                 visited[r][c] = False
 
         self.res = set()
