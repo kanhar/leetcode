@@ -11,3 +11,5 @@ print("Familiarity with SHA 256")
 s = [1,2,3,4,5]
 i=2
 print(s[:i], s[i:])
+
+print([1]*2)

@@ -18,7 +18,7 @@ class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
 
         def dfs(grid,r,c):
-            if r not in range(0,len(grid)) or c not in range(0,len(grid[r])) or grid[r][c] in [ '0', 'v']:
+            if r not in range(len(grid)) or c not in range(len(grid[r])) or grid[r][c] in [ '0', 'v']:
                 return
             else:
                 grid[r][c] = 'v' # i.e. visited
