@@ -6,38 +6,30 @@ Notice that the solution set must not contain duplicate triplets.
 
 Ref: https://leetcode.com/problems/3sum/
 """
-
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        def twoSum(arr, target, ignore):
-            left = ignore + 1
+        def twoSum(arr, target):
+            left = 0
             right = len(arr) - 1
+
             res = []
             while left < right:
-                if arr[left] + arr[right] == target:
-                    tmp = [arr[ignore], arr[left], arr[right]]
-                    res = res + [tmp]
+                total = arr[left] + arr[right]
+                if total > target:
+                    right -= 1
+                elif total < target:
                     left += 1
-                    right -= 1
-                elif arr[left] + arr[right] > target:
-                    right -= 1
                 else:
+                    res.append([arr[left], arr[right]])
                     left += 1
-
+                    right -= 1
             return res
 
         nums.sort()
-        res = []
-
+        pairs = []
         for i, n in enumerate(nums):
-            # If Sorted, and first number is > 0, subsequent numbers cannot add to zero.
-            if n > 0:
-                break
-            # Leetcode specific optimizations. Not really relevant in an interview.
-            if i > 0 and nums[i - 1] == nums[i]:
-                continue
+            tmp = twoSum(nums[i + 1:], 0 - n)
+            for t in tmp:
+                pairs.append([n] + t)
 
-            res += twoSum(nums, -n, i)
-
-        # remove duplicates
-        return set([tuple(sorted(x)) for x in res])
+        return set([tuple(sorted(x)) for x in pairs])
