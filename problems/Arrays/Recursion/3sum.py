@@ -27,8 +27,9 @@ class Solution:
 
         nums.sort()
         pairs = []
+        target = 0
         for i, n in enumerate(nums):
-            tmp = twoSum(nums[i + 1:], 0 - n)
+            tmp = twoSum(nums[i + 1:], target - n)
             for t in tmp:
                 pairs.append([n] + t)
 
