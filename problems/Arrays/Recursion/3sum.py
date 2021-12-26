@@ -29,8 +29,7 @@ class Solution:
         pairs = []
         target = 0
         for i, n in enumerate(nums):
-            tmp = twoSum(nums[i + 1:], target - n)
-            for t in tmp:
+            for t in twoSum(nums[i + 1:], target - n):
                 pairs.append([n] + t)
 
         return set([tuple(sorted(x)) for x in pairs])
