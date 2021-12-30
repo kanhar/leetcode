@@ -25,6 +25,7 @@ rotate the input matrix in-place such that it becomes:
 
 Ref: https://leetcode.com/problems/rotate-image/
 Ref: https://leetcode.com/problems/rotate-image/discuss/18884/Seven-Short-Solutions-(1-to-7-lines)
+Ref: https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array
 """
 class Solution:
     def rotate(self, A):
@@ -32,3 +33,14 @@ class Solution:
         for i in range(len(A)):
             for j in range(i):
                 A[i][j], A[j][i] = A[j][i], A[i][j]
+
+class Solution:
+    def rotate(self, A):
+        n = len(A)
+        for i in range(n//2):
+            for j in range(n//2 + n%2):
+                tmp = A[i][j]
+                A[i][j] = A[~j][i]
+                A[~j][i] = A[~i][~j]
+                A[~i][~j] = A[j][~i]
+                A[j][~i] = tmp
