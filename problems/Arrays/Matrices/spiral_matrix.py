@@ -13,6 +13,35 @@ Output: [1,2,3,6,9,8,7,4,5]
 
 Ref: https://leetcode.com/problems/spiral-matrix/
 """
+class Solution:
+    def spiralOrder(self, m: List[List[int]]) -> List[int]:
+        def add(t1):
+            nonlocal r, c
+            r, c = r + t1[0], c + t1[1]
+
+        def sub(t1):
+            nonlocal r, c
+            r, c = r - t1[0], c - t1[1]
+
+        directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        res = []
+        count = 0
+        total = len(m) * len(m[0])
+
+        curr = 0
+        r, c = 0, 0
+        while count < total:
+            res.append(m[r][c])
+            m[r][c] = 'z'
+            count += 1
+            add(directions[curr])
+
+            if r not in range(len(m)) or c not in range(len(m[0])) or m[r][c] == 'z':
+                sub(directions[curr])
+                curr = (curr + 1) % 4
+                add(directions[curr])
+
+        return res
 
 class Solution:
     def spiralOrder(self, m: List[List[int]]) -> List[int]:
