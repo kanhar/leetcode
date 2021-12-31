@@ -11,7 +11,7 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Binary Search](https://leetcode.com/list?selectedList=9dunj1mv)
 * [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
 * [Subsets / Subsequences](https://leetcode.com/list?selectedList=9db0qj9v)  
-
+* [Sorting Algorithms](https://leetcode.com/list/?selectedList=9l72g2es)
 ## Graphs / Recursion
 
 * [Directed Acylic Graphs](https://leetcode.com/list?selectedList=90obk211)
