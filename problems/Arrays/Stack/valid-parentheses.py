@@ -1,5 +1,6 @@
 """
-Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
+determine if the input string is valid.
 
 An input string is valid if:
 
@@ -28,4 +29,5 @@ class Solution(object):
             elif b in d.values():
                 if stk == [] or b != d[stk.pop()]:
                     return False
+
         return len(stk)==0

@@ -15,16 +15,6 @@ Ref: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 """
 
 class Solution:
-    def removeDuplicatesSlow(self, nums: List[int]) -> int:
-        deleted = 0
-        for i in range(0,len(nums)-deleted-1):
-            while nums[i]==nums[i+1] and i < len(nums)-deleted-1:
-                deleted +=1
-                for k in range(i+1, len(nums)-deleted):
-                    nums[k] = nums[k+1]
-
-        return len(nums)-deleted
-
     def removeDuplicates(self, nums):
         if len(nums)==0:
             return 0

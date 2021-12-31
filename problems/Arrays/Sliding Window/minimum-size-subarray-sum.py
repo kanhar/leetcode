@@ -16,7 +16,7 @@ class Solution:
         left = 0
         minLength = float('inf')
         currSum = 0
-        for i in range(0, len(nums)):
+        for i in range(len(nums)):
             currSum += nums[i]
 
             while currSum >= target:

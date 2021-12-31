@@ -14,6 +14,23 @@ Ref: https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-cha
 """
 import collections
 
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        left = 0
+        hsh = collections.defaultdict(int)
+        maxLen = 0
+
+        for i in range(0, len(s)):
+            hsh[s[i]] += 1
+
+            while hsh[s[i]] > 1:
+                hsh[s[left]] -= 1
+                left += 1
+
+            maxLen = max(maxLen, i - left + 1)
+
+        return maxLen
+
 # Length of Longest Substring with all distinct characters.  Ex: "eceba" -> "ceba" (i.e. no repeating characters)
 # Length of Longest Substring with K distinct characters.    Ex: "eceba", k=2 -> "ece"
 class Solution(object):
@@ -37,20 +54,3 @@ class Solution(object):
             res = max(res, r - l + 1)
 
         return res
-
-class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        left = 0
-        hsh = collections.defaultdict(int)
-        maxLen = 0
-
-        for i in range(0, len(s)):
-            hsh[s[i]] += 1
-
-            while hsh[s[i]] > 1:
-                hsh[s[left]] -= 1
-                left += 1
-
-            maxLen = max(maxLen, i - left + 1)
-
-        return maxLen

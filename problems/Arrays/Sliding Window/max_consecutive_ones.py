@@ -13,19 +13,18 @@ Ref: https://leetcode.com/problems/max-consecutive-ones-ii/
 class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
         longest_sequence = 0
-        left, right = 0, 0
-        num_zeroes = 0
 
-        while right < len(nums):   # while our window is in bounds
-            if nums[right] == 0:    # add the right most element into our window
-                num_zeroes += 1
+        left = 0
+        zeroes = 0
+        for i in range(len(nums)):
+            if nums[i] == 0:
+                zeroes += 1
 
-            while num_zeroes == 2:   # if our window is invalid, contract our window
+            while zeroes > 1:
                 if nums[left] == 0:
-                    num_zeroes -= 1
+                    zeroes -= 1
                 left += 1
 
-            longest_sequence = max(longest_sequence, right - left + 1)   # update our longest sequence answer
-            right += 1   # expand our window
+            longest_sequence = max(longest_sequence, i - left + 1)
 
         return longest_sequence

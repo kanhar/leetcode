@@ -18,7 +18,7 @@ import typing
 
 class Solution:
     def find_rotate_index(self, nums, left, right):
-        if nums[left] <= nums[right]:
+        if nums[left] <= nums[right]:  # Edge case, already sorted.
             return 0
 
         while left <= right:
@@ -27,7 +27,7 @@ class Solution:
             if nums[mid+1] < nums[mid]:
                 return mid + 1
             else:
-                if nums[left] > nums[mid]: #Left side is unsorted. This condition cannot be reversed (i.e. zone into where the problem is, not opposite )
+                if nums[left] > nums[mid]:  # Left side is unsorted. This condition cannot be reversed (i.e. zone into where the problem is, not opposite )
                     right = mid - 1
                 else:
                     left = mid + 1

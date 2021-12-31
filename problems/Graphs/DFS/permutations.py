@@ -32,3 +32,4 @@ class Solution(object):
         self.res = set()
         perm(arr)
         return self.res
+

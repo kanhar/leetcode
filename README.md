@@ -10,13 +10,13 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Sliding Window](https://leetcode.com/list?selectedList=9di1s4a1)
 * [Binary Search](https://leetcode.com/list?selectedList=9dunj1mv)
 * [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
-* [Subsets / Subsequences](https://leetcode.com/list?selectedList=9db0qj9v)  
 * [Sorting Algorithms](https://leetcode.com/list/?selectedList=9l72g2es)
 ## Graphs / Recursion
 
+* [BFS](https://leetcode.com/list?selectedList=9lu7fe4c) 
+* [DFS](https://leetcode.com/list?selectedList=90ojkbn2)
 * [Directed Acylic Graphs](https://leetcode.com/list?selectedList=90obk211)
 * [Undirected Graphs](https://leetcode.com/list?selectedList=90oja7h2)
-* [Recursion](https://leetcode.com/list?selectedList=90ojkbn2)
 
 ## Binary, Integers and Strings
 * [Binary](https://leetcode.com/list?selectedList=90xf0762)
