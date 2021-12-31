@@ -8,10 +8,9 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 * [Matrices](https://leetcode.com/list/?selectedList=9dunhxke)
 * [Sliding Window](https://leetcode.com/list?selectedList=9di1s4a1)
-* [Sorted Arrays](https://leetcode.com/list?selectedList=9dunj1mv)
+* [Binary Search](https://leetcode.com/list?selectedList=9dunj1mv)
 * [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
-* [Subsequences](https://leetcode.com/list?selectedList=9di46ijj)
-* [Subsets](https://leetcode.com/list?selectedList=9db0qj9v)  
+* [Subsets / Subsequences](https://leetcode.com/list?selectedList=9db0qj9v)  
 
 ## Graphs / Recursion
 
