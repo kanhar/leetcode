@@ -6,19 +6,18 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 
 * [Dynamic Programming](https://leetcode.com/list?selectedList=9di6va53)
 * [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
-* [Linked Lists](https://leetcode.com/list/?selectedList=9dbla3q1)
 * [Matrices](https://leetcode.com/list/?selectedList=9dunhxke)
-* [Recursion](https://leetcode.com/list?selectedList=90ojkbn2)
 * [Sliding Window](https://leetcode.com/list?selectedList=9di1s4a1)
 * [Sorted Arrays](https://leetcode.com/list?selectedList=9dunj1mv)
 * [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
 * [Subsequences](https://leetcode.com/list?selectedList=9di46ijj)
 * [Subsets](https://leetcode.com/list?selectedList=9db0qj9v)  
 
-## Graphs
+## Graphs / Recursion
 
 * [Directed Acylic Graphs](https://leetcode.com/list?selectedList=90obk211)
 * [Undirected Graphs](https://leetcode.com/list?selectedList=90oja7h2)
+* [Recursion](https://leetcode.com/list?selectedList=90ojkbn2)
 
 ## Binary, Integers and Strings
 * [Binary](https://leetcode.com/list?selectedList=90xf0762)
@@ -27,7 +26,7 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [String](https://leetcode.com/list?selectedList=90xfipte)
 
 ## Trees
-
+* [Linked Lists](https://leetcode.com/list/?selectedList=9dbla3q1)
 * [Binary Trees](https://leetcode.com/list?selectedList=9dqqweim)
 * [Binary Search Trees](https://leetcode.com/list?selectedList=9db7rant)
 * [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
