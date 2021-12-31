@@ -1,15 +1,28 @@
 """
 
+Input: s = "leetcode", wordDict = ["leet","code"]
+Output: true
+
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+
 Ref: https://leetcode.com/problems/word-break/
 """
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        def solve(s, d, memo={}):
+            if len(s) == 0:
+                return True
 
-def getall(s, d):
-    res = []
-    for i in range(1, len(s) + 1):
-        if s[:i] in d:
-            res += [s[:i]] + getall(s[i:], d)
-    return res
+            if s in memo:
+                return memo[s]
 
-d = ["bed", "bat", "bath", "and", "hand", "beyond"]
-s = "bedbathandbeyond";
-print(getall(s, d) == ['bed', 'bat', 'hand', 'beyond', 'bath', 'and', 'beyond'])
+            for i in range(1, len(s) + 1):
+                if s[:i] in d:
+                    if solve(s[i:], d):
+                        memo[s[i:]] = True
+                        return memo[s[i:]]
+
+            memo[s] = False
+            return memo[s]
+
+        return solve(s, wordDict)

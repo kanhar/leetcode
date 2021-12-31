@@ -24,7 +24,6 @@ class Solution:
             for c in mapping[d]:
                 for r in res:
                     tmp.append(r + c)
-
             res = tmp
 
         return res
