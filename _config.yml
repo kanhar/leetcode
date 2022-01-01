@@ -1,8 +1,6 @@
-title: Practical Computing
-description: A curated walk-through for Computer Science interviews targeted
- towards kinesthetic learners). This manual is geared towards experienced
-  software development professionals looking to brush up on their algorithms.
-  It is intentionally minimal.
+title: Practical Leetcoding
+description: A curated field guide for Software Developers looking to quickly ramp up on their algorithms.
+It is intentionally minimal, and geared towards kinesthetic learners.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-minimal

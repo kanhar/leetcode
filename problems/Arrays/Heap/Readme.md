@@ -33,7 +33,7 @@ And voila it now works
 ### Median Sliding
 
 > Design a data structure that allows ingestion of numbers, and can in O(1) time
-> return the median of numbers so ingested. [Leetcode](https://leetcode.com/problems/find-median-from-data-stream/)
+> return the median. [Leetcode](https://leetcode.com/problems/find-median-from-data-stream/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 ```python
