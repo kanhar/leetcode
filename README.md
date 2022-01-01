@@ -2,7 +2,7 @@
 
 A curated walk-through for Computer Science interviews targeted towards [kinesthetic learners](https://en.wikipedia.org/wiki/Kinesthetic_learning)
 
-## Arrays and Lists
+## Arrays, Heaps and Stacks
 
 * [Dynamic Programming](https://leetcode.com/list?selectedList=9di6va53)
 * [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
@@ -11,18 +11,12 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Binary Search](https://leetcode.com/list?selectedList=9dunj1mv)
 * [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
 * [Sorting Algorithms](https://leetcode.com/list/?selectedList=9l72g2es)
+
 ## Graphs / Recursion
 
 * [BFS](https://leetcode.com/list?selectedList=9lu7fe4c) 
 * [DFS](https://leetcode.com/list?selectedList=90ojkbn2)
-* [Directed Acylic Graphs](https://leetcode.com/list?selectedList=90obk211)
-* [Undirected Graphs](https://leetcode.com/list?selectedList=90oja7h2)
-
-## Binary, Integers and Strings
-* [Binary](https://leetcode.com/list?selectedList=90xf0762)
-* [Integer](https://leetcode.com/list?selectedList=90xf7w3c)
-* [Regex](https://leetcode.com/list?selectedList=90xftxlv)
-* [String](https://leetcode.com/list?selectedList=90xfipte)
+* [Graph Algorithms](https://leetcode.com/list?selectedList=90obk211)
 
 ## Trees
 * [Linked Lists](https://leetcode.com/list/?selectedList=9dbla3q1)
@@ -31,3 +25,9 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 * [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
 * [K-ary Trees](https://leetcode.com/list?selectedList=9db7pr2r)
 * [K-Ary Search Trees(Tries)](https://leetcode.com/list?selectedList=9db74ov1)
+
+## Binary, Integers, Regex and Strings
+* [Binary](https://leetcode.com/list?selectedList=90xf0762)
+* [Integer](https://leetcode.com/list?selectedList=90xf7w3c)
+* [Regex](https://leetcode.com/list?selectedList=90xftxlv)
+* [String](https://leetcode.com/list?selectedList=90xfipte)

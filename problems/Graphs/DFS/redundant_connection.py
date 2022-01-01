@@ -18,10 +18,14 @@ The answer edge [u, v] should be in the same format, with u < v.
 Example 1:
 Input: [[1,2], [1,3], [2,3]]
 Output: [2,3]
-Explanation: The given undirected graph will be like this:
+Example: The below:
+              1
+             / \
+            2 - 3
+Can be a tree like so:
   1
  / \
-2 - 3
+2   3
 
 Ref: https://leetcode.com/problems/redundant-connection/
 """
