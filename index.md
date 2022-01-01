@@ -4,7 +4,7 @@ A curated walk-through for Computer Science interviews targeted towards [kinesth
 
 ## Arrays, Heaps and Stacks
 * [Dynamic Programming](https://leetcode.com/list?selectedList=9di6va53)
-* [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
+* [Heaps](problems/Arrays/Heap/Readme.md)
 * [Matrices](https://leetcode.com/list/?selectedList=9dunhxke)
 * [Sliding Window](https://leetcode.com/list?selectedList=9di1s4a1)
 * [Binary Search](https://leetcode.com/list?selectedList=9dunj1mv)
