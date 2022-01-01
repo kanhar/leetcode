@@ -1,11 +1,11 @@
-
-{:toc}
-
 {: .no_toc}
 # Heaps
 This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 
-## Kth Largest Element
+- TOC
+{:toc}
+
+# Kth Largest Element
 
 ```
 Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
@@ -42,7 +42,7 @@ class Solution:
 
 ```
 
-## Median Sliding
+# Median Sliding
 
 ```
 """
