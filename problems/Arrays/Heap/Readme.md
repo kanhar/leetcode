@@ -7,6 +7,18 @@ This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9d
 
 ## Kth Largest Element
 
+{::options parse_block_html="true" /}
+
+<details><summary markdown="span">Let's see some code!</summary>
+```python
+print('Hello World!')
+```
+Of course, it has to be Hello World, right?
+</details>
+<br/>
+
+{::options parse_block_html="false" /}
+
 > Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 >
 > Input: [3,2,1,5,6,4] and k = 2 <BR>
@@ -38,17 +50,6 @@ Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
 
 </details>
 <BR>
-
-<p>
-<details>
-<summary>Click this to collapse/fold.</summary>
-
-These details <em>remain</em> <strong>hidden</strong> until expanded.
-
-<pre><code>1231232</code></pre>
-
-</details>
-</p>
 
 ## Median Sliding
 
