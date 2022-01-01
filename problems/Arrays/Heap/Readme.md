@@ -2,14 +2,13 @@
 # Heaps
 This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 
-- TOC
+1. TOC
 {:toc}
 
 # Kth Largest Element
 
+> Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 ```
-Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
-
 Example 1:
 
 Input: [3,2,1,5,6,4] and k = 2
