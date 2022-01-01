@@ -5,7 +5,7 @@ This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9d
 1. TOC
 {:toc}
 
-# Kth Largest Element
+## Kth Largest Element
 
 > Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 >
@@ -35,11 +35,22 @@ Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
             return tmp
     
     ```
+
 </details>
 <BR>
 
+<p>
+<details>
+<summary>Click this to collapse/fold.</summary>
 
-# Median Sliding
+These details <em>remain</em> <strong>hidden</strong> until expanded.
+
+<pre><code>1231232</code></pre>
+
+</details>
+</p>
+
+## Median Sliding
 
 > Median is the middle value in an ordered integer list.
 If the size of the list is even, there is no middle value.
