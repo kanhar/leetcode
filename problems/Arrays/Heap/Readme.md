@@ -1,3 +1,5 @@
+{::options parse_block_html="true" /}
+
 {: .no_toc}
 # Heaps
 This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
@@ -7,31 +9,17 @@ This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9d
 
 ## Kth Largest Element
 
-{::options parse_block_html="true" /}
-
-<details><summary markdown="span">Let's see some code!</summary>
-```python
-print('Hello World!')
-```
-Of course, it has to be Hello World, right?
-</details>
-<br/>
-
-{::options parse_block_html="false" /}
-
 > Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
->
-> Input: [3,2,1,5,6,4] and k = 2 <BR>
-> Output: 5
+Input: [3,2,1,5,6,4] and k = 2 <BR>. Output: 5
 
 Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
 
-<BR>
-<details>
-  <summary markdown="span">
-    This is the summary text, click me to expand</summary>
+Core Concepts:
+* Navigating through a Heap
+* Bounds processing
 
-    ```python
+<details><summary markdown="span">Let's see some code!</summary>
+```python
     import heapq
     class Solution:
         def findKthLargest(self, nums, k):
@@ -42,30 +30,28 @@ Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
             tmp = None
             while i <= k:
                 tmp = -heapq.heappop(h)
-                i += 1
-    
+                i += 1    
             return tmp
-    
-    ```
-
+```
+And voila it now works
 </details>
-<BR>
+<br/>
+
 
 ## Median Sliding
 
 > Median is the middle value in an ordered integer list.
 If the size of the list is even, there is no middle value.
-So the median is the mean of the two middle value.
-
-> [2,3,4], the median is 3<BR>
-> [2,3], the median is (2 + 3) / 2 = 2.5
-
+So the median is the mean of the two middle value. <BR>
 > Design a data structure that supports the following two operations:
 > void addNum(int num) - Add a integer number from the data stream to the data structure.
 > double findMedian() - Return the median of all elements so far.
+> [2,3,4], the median is 3<BR>
+> [2,3], the median is (2 + 3) / 2 = 2.5
 
 Ref: https://leetcode.com/problems/find-median-from-data-stream/
 
+<details><summary markdown="span">Let's see some code!</summary>
 ```python
 import heapq
 
@@ -87,6 +73,7 @@ class MedianFinder:
             return (-self.maxHeap[0] + self.minHeap[0]) / 2
         else:
             return -self.maxHeap[0]
-
 ```
+</details>
+<br/>
 
