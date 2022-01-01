@@ -14,6 +14,7 @@ This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9d
 
 Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
 
+<BR>
 <details>
   <summary markdown="span">
     This is the summary text, click me to expand</summary>
@@ -35,30 +36,23 @@ Ref: https://leetcode.com/problems/kth-largest-element-in-an-array/
     
     ```
 </details>
-
-
+<BR>
 
 
 # Median Sliding
 
-```
-"""
-Median is the middle value in an ordered integer list.
+> Median is the middle value in an ordered integer list.
 If the size of the list is even, there is no middle value.
 So the median is the mean of the two middle value.
 
-For example,
-[2,3,4], the median is 3
+> [2,3,4], the median is 3<BR>
+> [2,3], the median is (2 + 3) / 2 = 2.5
 
-[2,3], the median is (2 + 3) / 2 = 2.5
-
-Design a data structure that supports the following two operations:
-
-void addNum(int num) - Add a integer number from the data stream to the data structure.
-double findMedian() - Return the median of all elements so far.
+> Design a data structure that supports the following two operations:
+> void addNum(int num) - Add a integer number from the data stream to the data structure.
+> double findMedian() - Return the median of all elements so far.
 
 Ref: https://leetcode.com/problems/find-median-from-data-stream/
-```
 
 ```python
 import heapq
