@@ -7,7 +7,7 @@ This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9d
 1. TOC
 {:toc}
 
-## Kth Largest Element
+### Kth Largest Element
 
 > Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 Input: [3,2,1,5,6,4] and k = 2. Output: 5. [Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
@@ -31,19 +31,11 @@ And voila it now works
 </details>
 <br/>
 
+### Median Sliding
 
-## Median Sliding
-
-> Median is the middle value in an ordered integer list.
-If the size of the list is even, there is no middle value.
-So the median is the mean of the two middle value. <BR>
-> Design a data structure that supports the following two operations:
-> void addNum(int num) - Add a integer number from the data stream to the data structure.
-> double findMedian() - Return the median of all elements so far.
-> [2,3,4], the median is 3<BR>
-> [2,3], the median is (2 + 3) / 2 = 2.5
-
-Ref: https://leetcode.com/problems/find-median-from-data-stream/
+> Design a data structure that supports the following two operations:<BR>
+> * void addNum(int num) - Add a integer number from the data stream to the data structure.
+> * double findMedian() - Return the median of all elements so far. [Leetcode](https://leetcode.com/problems/find-median-from-data-stream/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 ```python
