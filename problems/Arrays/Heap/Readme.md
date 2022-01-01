@@ -9,8 +9,7 @@ This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9d
 
 ### Kth Largest Element
 
-> Find the kth largest element in an unsorted sort. Note that it is the kth largest element in the sorted order, not the kth distinct element.
-Input: [3,2,1,5,6,4] and k = 2. Output: 5. [Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+> Find the kth largest element in an unsorted array. [Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 ```python
@@ -33,9 +32,8 @@ And voila it now works
 
 ### Median Sliding
 
-> Design a data structure that supports the following two operations:<BR>
-> * void addNum(int num) - Add a integer number from the data stream to the data structure.
-> * double findMedian() - Return the median of all elements so far. [Leetcode](https://leetcode.com/problems/find-median-from-data-stream/)
+> Design a data structure that allows ingestion of numbers, and can in O(1) time
+> return the median of numbers so ingested. [Leetcode](https://leetcode.com/problems/find-median-from-data-stream/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 ```python
