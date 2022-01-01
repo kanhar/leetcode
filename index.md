@@ -1,38 +1,33 @@
-## Welcome to GitHub Pages
+# A kinesthetic view into Computer Science
 
-Kanhar Munshi: You can use the [editor on 
-GitHub](https://github.com/kanhar/leetcode/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A curated walk-through for Computer Science interviews targeted towards [kinesthetic learners](https://en.wikipedia.org/wiki/Kinesthetic_learning)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Arrays, Heaps and Stacks
+* [Dynamic Programming](https://leetcode.com/list?selectedList=9di6va53)
+* [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
+* [Matrices](https://leetcode.com/list/?selectedList=9dunhxke)
+* [Sliding Window](https://leetcode.com/list?selectedList=9di1s4a1)
+* [Binary Search](https://leetcode.com/list?selectedList=9dunj1mv)
+* [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
+* [Sorting Algorithms](https://leetcode.com/list/?selectedList=9l72g2es)
 
-### Markdown
+## Graphs / Recursion
+* [BFS](https://leetcode.com/list?selectedList=9lu7fe4c) 
+* [DFS](https://leetcode.com/list?selectedList=90ojkbn2)
+* [Graph Algorithms](https://leetcode.com/list?selectedList=90obk211)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Trees
+* [Binary Trees](https://leetcode.com/list?selectedList=9dqqweim)
+* [Binary Search Trees](https://leetcode.com/list?selectedList=9db7rant)
+* [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
+* [K-ary Trees](https://leetcode.com/list?selectedList=9db7pr2r)
+* [K-Ary Search Trees(Tries)](https://leetcode.com/list?selectedList=9db74ov1)
 
-```markdown
-Syntax highlighted code block
+## Binary, Integers, Regex and Strings
+* [Binary](https://leetcode.com/list?selectedList=90xf0762)
+* [Integer](https://leetcode.com/list?selectedList=90xf7w3c)
+* [Regex](https://leetcode.com/list?selectedList=90xftxlv)
+* [String](https://leetcode.com/list?selectedList=90xfipte)
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kanhar/leetcode/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Linked Lists
+* [Linked Lists](https://leetcode.com/list/?selectedList=9dbla3q1)
