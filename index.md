@@ -1,7 +1,3 @@
-# A kinesthetic view into Computer Science
-
-A curated walk-through for Computer Science interviews targeted towards [kinesthetic learners](https://en.wikipedia.org/wiki/Kinesthetic_learning)
-
 ## Arrays, Heaps and Stacks
 * [Dynamic Programming](https://leetcode.com/list?selectedList=9di6va53)
 * [Heaps](problems/Arrays/Heap/Readme.md)
