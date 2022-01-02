@@ -9,7 +9,7 @@
 
 ## Numbers, Binary, Integers, Regex and Strings
 * [Binary](problems/Numbers/BinaryBits.md)
-* [Integer](problems/Numbers/Integer.md)
+* [Integer](problems/Numbers/Integers.md)
 * [Regex](problems/Numbers/Regex.md)
 * [String](problems/Numbers/String.md)
 
