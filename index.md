@@ -8,10 +8,10 @@
 * [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
 
 ## Numbers, Binary, Integers, Regex and Strings
-* [Binary](https://leetcode.com/list?selectedList=90xf0762)
-* [Integer](https://leetcode.com/list?selectedList=90xf7w3c)
-* [Regex](https://leetcode.com/list?selectedList=90xftxlv)
-* [String](https://leetcode.com/list?selectedList=90xfipte)
+* [Binary](problems/Numbers/BinaryBits.md)
+* [Integer](problems/Numbers/Integer.md)
+* [Regex](problems/Numbers/Regex.md)
+* [String](problems/Numbers/String.md)
 
 ## Graphs / Recursion
 * [BFS](https://leetcode.com/list?selectedList=9lu7fe4c) 
