@@ -5,12 +5,12 @@
 * [String](https://leetcode.com/list?selectedList=90xfipte)
 
 ## Arrays, Heaps and Stacks
-* [Dynamic Programming](DynamicProgramming.md)
+* [Dynamic Programming](problems/Arrays/Dynamic Programming/Readme.md)
 * [Heaps](problems/Arrays/Heap/Readme.md)
-* [Matrices](https://leetcode.com/list/?selectedList=9dunhxke)
-* [Sliding Window](https://leetcode.com/list?selectedList=9di1s4a1)
-* [Binary Search](https://leetcode.com/list?selectedList=9dunj1mv)
-* [Stacks](https://leetcode.com/list/?selectedList=9duv7mlj)
+* [Matrices](problems/Arrays/Matrices/Readme.md)
+* [Sliding Window](problems/Arrays/Sliding Window/Readme.md)
+* [Binary Search](problems/Arrays/Binary Search/Readme.md)
+* [Stacks](problems/Arrays/Stack/Readme.md)
 * [Sorting Algorithms](https://leetcode.com/list/?selectedList=9l72g2es)
 
 ## Graphs / Recursion
