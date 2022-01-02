@@ -7,7 +7,7 @@
 * [Stacks](problems/Arrays/Stacks.md)
 * [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
 
-## Integers, Regex and Strings
+## Integers, Strings and Regex
 * [Binary](problems/Numbers/BinaryBits.md)
 * [Integer](problems/Numbers/Integers.md)
 * [Regex](problems/Numbers/Regex.md)
@@ -20,7 +20,7 @@
 * [DFS](problems/Graphs/Dijkstra.md)
 
 ## Trees
-* [Linked Lists](https://leetcode.com/list/?selectedList=9dbla3q1)
+* [Linked Lists](problems/LinkedLists.md)
 * [Binary Trees](https://leetcode.com/list?selectedList=9dqqweim)
 * [Binary Search Trees](https://leetcode.com/list?selectedList=9db7rant)
 * [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
