@@ -1,4 +1,4 @@
-## Arrays, Heaps and Stacks
+## Arrays, Lists, Heaps and Stacks
 * [Dynamic Programming](problems/Arrays/DynamicProgramming.md)
 * [Heaps](problems/Arrays/Heap.md)
 * [Matrices](problems/Arrays/Matrices.md)
@@ -6,6 +6,7 @@
 * [Binary Search](problems/Arrays/BinarySearch.md)
 * [Stacks](problems/Arrays/Stacks.md)
 * [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
+* [Linked Lists](problems/Arrays/LinkedLists.md)
 
 ## Integers, Strings and Regex
 * [Binary](problems/Numbers/BinaryBits.md)
@@ -20,9 +21,9 @@
 * [DFS](problems/Graphs/Dijkstra.md)
 
 ## Trees
-* [Linked Lists](problems/LinkedLists.md)
+* [K-ary Trees](problems/Trees/KAryTree.md)
+* [Binary Search Trees](problems/Trees/BinarySearchTree.md)
+* [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
 * [Binary Trees](https://leetcode.com/list?selectedList=9dqqweim)
-* [Binary Search Trees](https://leetcode.com/list?selectedList=9db7rant)
 * [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
-* [K-ary Trees](https://leetcode.com/list?selectedList=9db7pr2r)
-* [K-Ary Search Trees(Tries)](https://leetcode.com/list?selectedList=9db74ov1)
+
