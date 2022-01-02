@@ -7,14 +7,14 @@
 * [Stacks](problems/Arrays/Stacks.md)
 * [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
 
-## Numbers, Binary, Integers, Regex and Strings
+## Integers, Regex and Strings
 * [Binary](problems/Numbers/BinaryBits.md)
 * [Integer](problems/Numbers/Integers.md)
 * [Regex](problems/Numbers/Regex.md)
 * [String](problems/Numbers/String.md)
 
 ## Graphs / Recursion
-* [BFS](https://leetcode.com/list?selectedList=9lu7fe4c) 
+* [BFS](problems/Graphs/BFS.md) 
 * [DFS](https://leetcode.com/list?selectedList=90ojkbn2)
 * [Graph Algorithms](https://leetcode.com/list?selectedList=90obk211)
 
