@@ -2,7 +2,7 @@
 
 {: .no_toc}
 # Heaps
-This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
+Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 
 - TOC
 {:toc}
