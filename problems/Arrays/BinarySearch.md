@@ -35,6 +35,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Kth Largest Element in an Array
 
@@ -72,6 +73,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Search a 2d Matrix
 
@@ -117,3 +119,4 @@ class Solution:
 ```
 
 </details>
+<BR>

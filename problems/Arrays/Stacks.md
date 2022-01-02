@@ -40,6 +40,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Valid Parentheses
 
@@ -64,3 +65,4 @@ class Solution(object):
 ```
 
 </details>
+<BR>

@@ -31,6 +31,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Longest Substring without repeating characters
 
@@ -83,6 +84,7 @@ class Solution(object):
 ```
 
 </details>
+<BR>
 
 ### Max Consecutive Ones
 
@@ -112,6 +114,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Minimum Size Subarray Sum
 > Given an array of n positive integers and a positive integer s, find the minimal length of a
@@ -142,7 +145,7 @@ class Solution:
             return minLength
 ```
 </details>
-<br/>
+<BR>
 
 ### Remove duplicates from Sorted array
 
@@ -165,3 +168,4 @@ class Solution:
 ```
 
 </details>
+<BR>

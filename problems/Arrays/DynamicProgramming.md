@@ -106,6 +106,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Maximum Length of a sub-array that sums to k
 > Given an array nums and a target value k, find the maximum length of a subarray that sums to k.
@@ -171,6 +172,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Pascals Triange
 
@@ -192,3 +194,4 @@ class Solution:
 ```
 
 </details>
+<BR>

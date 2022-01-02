@@ -28,7 +28,7 @@ Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 ```
 And voila it now works
 </details>
-<br/>
+<BR>
 
 ### Median Sliding
 
@@ -36,6 +36,7 @@ And voila it now works
 > return the median. [Leetcode](https://leetcode.com/problems/find-median-from-data-stream/)
 
 <details><summary markdown="span">Let's see some code!</summary>
+
 ```python
 import heapq
 
@@ -59,5 +60,5 @@ class MedianFinder:
             return -self.maxHeap[0]
 ```
 </details>
-<br/>
+<BR>
 

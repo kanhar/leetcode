@@ -41,6 +41,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Rotate Matrix
 
@@ -71,6 +72,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Sparse Matrix Multiplication
 
@@ -98,6 +100,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Spiral Matrix
 > Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
@@ -150,3 +153,4 @@ class Solution:
         return solve(m)
 ```
 </details>
+<BR>
