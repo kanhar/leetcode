@@ -1,4 +1,4 @@
-## Binary, Integers, Regex and Strings
+## Numbers, Binary, Integers, Regex and Strings
 * [Binary](https://leetcode.com/list?selectedList=90xf0762)
 * [Integer](https://leetcode.com/list?selectedList=90xf7w3c)
 * [Regex](https://leetcode.com/list?selectedList=90xftxlv)
