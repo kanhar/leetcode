@@ -22,8 +22,10 @@
 
 ## Trees
 * [K-ary Trees](problems/Trees/KAryTree.md)
-* [Binary Search Trees](problems/Trees/BinarySearchTree.md)
 * [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
-* [Binary Trees](https://leetcode.com/list?selectedList=9dqqweim)
-* [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
 
+* [Binary Trees-Binary Search Trees](problems/Trees/BinarySearchTree.md)
+* [Binary Trees-Bottom Up Traversal](problems/Trees/BinaryTree-BottomUpTraversal.md)
+* [Binary Trees-Top Down Traversal](problems/Trees/BinaryTree-BottomUpTraversal.md)
+* [Binary Trees-Tuplify](problems/Trees/BinaryTree-BottomUpTraversal.md)
+* [Binary Trees-Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
