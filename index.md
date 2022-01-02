@@ -15,8 +15,9 @@
 
 ## Graphs / Recursion
 * [BFS](problems/Graphs/BFS.md) 
-* [DFS](https://leetcode.com/list?selectedList=90ojkbn2)
-* [Graph Algorithms](https://leetcode.com/list?selectedList=90obk211)
+* [DFS](problems/Graphs/DFS.md)
+* [Kahns](problems/Graphs/Kahns.md) 
+* [DFS](problems/Graphs/Dijkstra.md)
 
 ## Trees
 * [Linked Lists](https://leetcode.com/list/?selectedList=9dbla3q1)

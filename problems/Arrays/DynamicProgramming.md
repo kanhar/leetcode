@@ -56,6 +56,7 @@ class Solution:
 ```
 
 </details>
+<BR>
 
 ### Longest Increasing Subsequence
 
@@ -81,6 +82,7 @@ class Solution(object):
 ```
 
 </details>
+<BR>
 
 ### Longest Palindromic Substring
 

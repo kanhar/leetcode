@@ -1,6 +1,6 @@
 {: .no_toc}
 # Kahns Algorithm - Topological Sort
-Practise here: [Leetcode](https://leetcode.com/list?selectedList=9lu7fe4c)
+Practise here: [Leetcode](https://leetcode.com/list?selectedList=9l6pf80h)
 
 - TOC
 {:toc}
