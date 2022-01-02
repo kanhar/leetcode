@@ -7,11 +7,12 @@
 * [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
 * [Linked Lists](problems/Arrays/LinkedLists.md)
 * [Dynamic Programming](problems/Arrays/DynamicProgramming.md)
-* [Bloom Filters](problems/Arrays/BloomFilters.md)
 
 ## Misc
-* [Binary](problems/Numbers/BinaryBits.md), [Integers](problems/Numbers/Integers.md) and [Strings](problems/Numbers/String.md)
-* [Regex](problems/Numbers/Regex.md)
+* [Binary](problems/Misc/BinaryBits.md), [Integers](problems/Misc/Integers.md) and [Strings](problems/Misc/String.md)
+* [KMP](problems/Misc/KMP.md)
+* [Bloom Filters](problems/Misc/BloomFilters.md)
+* [Regex](problems/Misc/Regex.md)
 
 ## Graphs 
 * [BFS](problems/Graphs/BFS.md) 
