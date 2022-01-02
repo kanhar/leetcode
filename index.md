@@ -1,17 +1,17 @@
+## Arrays, Heaps and Stacks
+* [Dynamic Programming](problems/Arrays/DynamicProgramming.md)
+* [Heaps](problems/Arrays/Heap.md)
+* [Matrices](problems/Arrays/Matrices.md)
+* [Sliding Window](problems/Arrays/SlidingWindow.md)
+* [Binary Search](problems/Arrays/BinarySearch.md)
+* [Stacks](problems/Arrays/Stacks.md)
+* [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
+
 ## Numbers, Binary, Integers, Regex and Strings
 * [Binary](https://leetcode.com/list?selectedList=90xf0762)
 * [Integer](https://leetcode.com/list?selectedList=90xf7w3c)
 * [Regex](https://leetcode.com/list?selectedList=90xftxlv)
 * [String](https://leetcode.com/list?selectedList=90xfipte)
-
-## Arrays, Heaps and Stacks
-* [Dynamic Programming](problems/Arrays/Dynamic Programming/Readme.md)
-* [Heaps](problems/Arrays/Heap/Readme.md)
-* [Matrices](problems/Arrays/Matrices/Readme.md)
-* [Sliding Window](problems/Arrays/Sliding Window/Readme.md)
-* [Binary Search](problems/Arrays/Binary Search/Readme.md)
-* [Stacks](problems/Arrays/Stack/Readme.md)
-* [Sorting Algorithms](https://leetcode.com/list/?selectedList=9l72g2es)
 
 ## Graphs / Recursion
 * [BFS](https://leetcode.com/list?selectedList=9lu7fe4c) 
