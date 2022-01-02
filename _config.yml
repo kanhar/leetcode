@@ -3,6 +3,6 @@ description: A curated field guide for Software Developers looking to quickly ra
 It is intentionally minimal, and geared towards kinesthetic learners.
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-minimal
+theme: jekyll-theme-time-machine
 kramdown:
   parse_block_html: true
