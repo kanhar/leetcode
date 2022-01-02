@@ -47,8 +47,7 @@ class Solution:
 
 > Rotate Matrix 90 degrees, in place.
 > [Leetcode](https://leetcode.com/problems/rotate-image/)
-> Ref: https://leetcode.com/problems/rotate-image/discuss/18884/Seven-Short-Solutions-(1-to-7-lines)
-> Ref: https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array
+> [See also](https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array)
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -76,7 +75,7 @@ class Solution:
 
 ### Sparse Matrix Multiplication
 
-> Multiple large matrices
+> Multiply large matrices
 > [Leetcode](https://leetcode.com/problems/sparse-matrix-multiplication/)
 <details><summary markdown="span">Let's see some code!</summary>
 
