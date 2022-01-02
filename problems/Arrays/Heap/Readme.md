@@ -4,7 +4,7 @@
 # Heaps
 This is a Heap. Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 
-1. TOC
+- TOC
 {:toc}
 
 ### Kth Largest Element
