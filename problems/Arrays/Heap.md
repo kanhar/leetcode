@@ -62,3 +62,6 @@ class MedianFinder:
 </details>
 <BR>
 
+### Merge K-Sorted Lists
+
+See [LinkedLists.html#merge-k-sorted-lists](https://kanhar.github.io/leetcode/problems/Arrays/LinkedLists.html#merge-k-sorted-lists)

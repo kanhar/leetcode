@@ -18,7 +18,7 @@
 * [BFS](problems/Graphs/BFS.md) 
 * [DFS](problems/Graphs/DFS.md)
 * [Kahns](problems/Graphs/Kahns.md) 
-* [DFS](problems/Graphs/Dijkstra.md)
+* [Shortest Path](problems/Graphs/ShortestPath.md)
 
 ## Trees
 * [K-ary Trees](problems/Trees/KAryTree.md)
