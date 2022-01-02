@@ -20,12 +20,13 @@
 * [Kahns](problems/Graphs/Kahns.md) 
 * [Shortest Path](problems/Graphs/ShortestPath.md)
 
-## Trees
-* [K-ary Trees](problems/Trees/KAryTree.md)
-* [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
-
+## Binary Trees
 * [Binary Trees-Binary Search Trees](problems/Trees/BinarySearchTree.md)
 * [Binary Trees-Bottom Up Traversal](problems/Trees/BinaryTree-BottomUpTraversal.md)
-* [Binary Trees-Top Down Traversal](problems/Trees/BinaryTree-BottomUpTraversal.md)
-* [Binary Trees-Tuplify](problems/Trees/BinaryTree-BottomUpTraversal.md)
+* [Binary Trees-Top Down Traversal](problems/Trees/BinaryTree-TopDownTraversal.md)
+* [Binary Trees-Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Binary Trees-Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
+
+## K-Ary Trees
+* [K-ary Trees](problems/Trees/KAryTree.md)
+* [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
