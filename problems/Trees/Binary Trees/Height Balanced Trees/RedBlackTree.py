@@ -117,7 +117,7 @@ class MedianFinder(object):
 
     def findMedian(self):
         curSize = self.tree.size
-        if curSize %2 == 1:                                            #Or if size and 1 ( thats cool trick )
+        if curSize %2 == 1:
             return self.tree.searchK(self.tree, (curSize + 1) /2 )
         else:
             return self.tree.searchK(self.tree, curSize / 2) / 2.0 + self.tree.searchK(self.tree, curSize / 2 + 1) / 2.0
