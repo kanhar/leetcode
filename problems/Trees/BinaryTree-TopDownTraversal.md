@@ -1,5 +1,5 @@
 {: .no_toc}
-# Binary Tree - Bottom Up Traversal
+# Binary Tree - Top down Traversal
 Practise here: [Leetcode]()
 
 - TOC
