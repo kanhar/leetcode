@@ -25,7 +25,7 @@
 * [Top Down Traversal](problems/Trees/BinaryTree-TopDownTraversal.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
-* [Height Balanced Trees](https://leetcode.com/list?selectedList=9db7m9ms)
+* [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
 * [K-ary Trees](problems/Trees/K-AryTree.md)
 * [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
 * [Ternary Search Trees](problems/Trees/TernarySearchTries.md)  

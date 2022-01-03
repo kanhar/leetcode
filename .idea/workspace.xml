@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f0fbde5-dcb1-4209-b3e6-9b349ea6d77c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/problems/Misc/KMP.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/Arrays/BloomFilters.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Misc/BloomFilters.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/Numbers/BinaryBits.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Misc/BinaryBits.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/Numbers/Integers.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Misc/Integers.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/Numbers/Regex.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Misc/Regex.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/Numbers/String.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Misc/String.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
