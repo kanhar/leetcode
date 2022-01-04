@@ -38,10 +38,9 @@ class Solution:
 </details>
 <BR>
 
-### Tree Diameter
+### [Tree Diameter](https://leetcode.com/problems/diameter-of-binary-tree/)
 
-> Tree Diameter
-> [Leetcode](https://leetcode.com/problems/diameter-of-binary-tree/) <BR>
+> Calculate Tree Diameter
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -52,10 +51,11 @@ class Solution:
             if root is None:
                 return 0
             else:
-                left  = solve(root.left)
-                right = solve(root.right)
-                self.res = max(self.res, left + right)      # Calculates Diameter
-                return max(left, right) + 1                 # Calculates Depth
+                ls = solve(root.left)
+                rs = solve(root.right)
+                
+                self.res = max(self.res, ls + rs)      # Calculates Diameter
+                return max(ls, rs) + 1                 # Calculates Depth
         self.res = 0
         solve(root)
         return self.res
@@ -87,7 +87,7 @@ class Solution:
 
 > Given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value.
 
-> [Leetcode](https://leetcode.com/problems/path-sum-iii/) <BR>
+> [Leetcode](https://leetcode.com/problems/path-sum-iii/). 
 > [See also](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 
 <details><summary markdown="span">Let's see some code!</summary>

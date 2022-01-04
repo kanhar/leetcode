@@ -68,7 +68,7 @@ class Solution:
 <BR>
 
 
-### Merge Sort
+### Radix Sort
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
 > [Leetcode](https://leetcode.com/problems/maximum-gap/)
@@ -142,7 +142,7 @@ class Solution:
 </details>
 <BR>
 
-### Radix Sort
+### Merge Sort
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
 > [Leetcode](https://leetcode.com/problems/maximum-gap/)
