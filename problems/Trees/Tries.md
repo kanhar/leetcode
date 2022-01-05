@@ -7,11 +7,9 @@ These are different from Ternary Search Tries.
 - TOC
 {:toc}
 
-### Longest Common Prefix
+### [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) 
 
 > Write a function to find the longest common prefix string amongst an sort of strings. 
-> [Leetcode](https://leetcode.com/problems/longest-common-prefix/) <BR>
-
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -43,10 +41,9 @@ class Solution:
 </details>
 <BR>
 
-### Word Break
+### [Word Break](https://leetcode.com/problems/word-break/) 
 
 > Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
-> [Leetcode](https://leetcode.com/problems/word-break/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -85,11 +82,9 @@ class Solution:
 </details>
 <BR>
 
-### Word Search
+### [Word Search](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
 
 > Given a 2D board and a list of words from the dictionary, find all words in the board. 
-> [Leetcode](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/) <BR>
-
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python

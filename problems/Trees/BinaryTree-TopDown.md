@@ -5,10 +5,9 @@ Practise here: [Leetcode]()
 - TOC
 {:toc}
 
-### Level Order Traversal
+### [Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
 > Given a binary tree, return the level order traversal of its nodes' values (i.e, from left to right, level by level).
-> [Leetcode](https://leetcode.com/problems/binary-tree-level-order-traversal/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -47,11 +46,10 @@ class Solution:
 </details>
 <BR>
 
-### Flip Equivalent Binary Trees
+### [Flip Equivalent Binary Trees](https://leetcode.com/problems/flip-equivalent-binary-trees/)
 
 > Evaluate if a binary tree X is flip equivalent to a binary tree Y - i.e. if we can make X equal
 to Y after some number of flip operations. 
-> [Leetcode](https://leetcode.com/problems/flip-equivalent-binary-trees/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -71,10 +69,9 @@ class Solution(object):
 </details>
 <BR>
 
-### Invert Binary Trees
+### [Invert Binary Trees](https://leetcode.com/problems/invert-binary-tree/)
 
 > Invert a binary tree.
-> [Leetcode](https://leetcode.com/problems/invert-binary-tree/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -88,12 +85,11 @@ def invertTree(root):
 </details>
 <BR>
 
-### Merge Two Binary Trees
+### [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
 
 > Given two binary trees and imagine that when you put one of them to cover the other, 
 some nodes of the two trees are overlapped while the others are not. The merge rule is that if two nodes overlap, 
 then sum node values up as the new value of the merged node.
-> [Leetcode](https://leetcode.com/problems/merge-two-binary-trees/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -113,11 +109,9 @@ class Solution:
 </details>
 <BR>
 
-### Populating Next Right Pointers in Each Node
+### [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
 
 > Populate each next pointer to point to its next right node. 
-> [Leetcode](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/) <BR>
-
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -148,10 +142,9 @@ class Solution:
 </details>
 <BR>
 
-### Symmetric Trees
+### [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/)
 
 > Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
-> [Leetcode](https://leetcode.com/problems/symmetric-tree/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 

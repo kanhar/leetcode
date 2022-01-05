@@ -5,10 +5,9 @@ Practise here: [Leetcode]()
 - TOC
 {:toc}
 
-### Find Duplicate Subtrees
+### [Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/) 
 
 > Given a binary tree, return the roots of all duplicate subtrees. 
-> [Leetcode](https://leetcode.com/problems/find-duplicate-subtrees/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -32,10 +31,9 @@ class Solution:
 </details>
 <BR>
 
-### Serialize and Deserialize Binary Tree
+### [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 
 > Serialize and de-transform any generic Binary Tree
-> [Leetcode](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -84,12 +82,9 @@ class Codec:
 </details>
 <BR>
 
-### Subtree of Another Tree
+### [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) 
 
-> Given two non-empty binary trees s and t, check whether tree 
-t has exactly the same structure and node values with a subtree of s.
-> [Leetcode](https://leetcode.com/problems/subtree-of-another-tree/) <BR>
-
+> Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s.
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python

@@ -5,12 +5,10 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9db7rant)
 - TOC
 {:toc}
 
-### Convert Sorted Array to BST
+### [Convert Sorted Array to BST](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree)
 
 > Given an integer array nums where the elements are sorted in ascending order,
 convert it to a height-balanced binary search tree.
-> [Leetcode](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) <BR>
-
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -29,11 +27,11 @@ class Solution:
 </details>
 <BR>
 
-### Inorder successor
+### [Inorder successor](https://leetcode.com/problems/inorder-successor-in-bst/)
 
 > Given a binary search tree and a node in it, find the in-order successor of that node in the BST.
 The successor of a node p is the node with the smallest key greater than p.val.
-> [Leetcode](https://leetcode.com/problems/inorder-successor-in-bst/) <BR>
+>  <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -51,11 +49,9 @@ class Solution:
 </details>
 <BR>
 
-### Lowest Common Ancestor
+### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 
 > Given a binary Search tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
-> [Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) <BR>
-
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -73,10 +69,9 @@ class Solution:
 </details>
 <BR>
 
-### Check if BST
+### [Check if BST](https://leetcode.com/problems/validate-binary-search-tree/)
 
 > Given a binary tree, determine if it is a valid binary search tree (BST).
-> [Leetcode](https://leetcode.com/problems/validate-binary-search-tree/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 

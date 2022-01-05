@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f0fbde5-dcb1-4209-b3e6-9b349ea6d77c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/problems/Trees/BinaryTree-Generic.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/Arrays/SortingAlgorithms.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Arrays/SortingAlgorithms.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/Trees/BinaryTree-BottomUpTraversal.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/BinaryTree-BottomUpTraversal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/Trees/BinarySearchTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/BinarySearchTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/Trees/BinaryTree-BottomUpTraversal.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/BinaryTree-BottomUp.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/Trees/BinaryTree-TopDownTraversal.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/BinaryTree-TopDown.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/Trees/BinaryTree-Tuplify.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/BinaryTree-Tuplify.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/Trees/HeightBalancedTrees.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/HeightBalancedTrees.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/Trees/K-AryTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/K-AryTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/Trees/Tries.md" beforeDir="false" afterPath="$PROJECT_DIR$/problems/Trees/Tries.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/zNiche/all-traversals.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,21 +45,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/problems/Misc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/problems/Trees" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Misc" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees\Binary Trees\Height Balanced Trees" />
-      <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees\Binary Trees\Tuplify" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees\Binary Trees\Top Down Traversal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Misc" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Arrays" />
-      <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees\Binary Trees" />
       <recent name="C:\Users\kmunshi\repo\leetcode\problems\Trees\Binary Trees\Tuplify" />
     </key>

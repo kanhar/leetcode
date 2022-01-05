@@ -5,10 +5,9 @@ Practise here: [Leetcode]()
 - TOC
 {:toc}
 
-### Path with Maximum sum
+### [Path with Maximum sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
 > Given a non-empty binary tree, find the maximum path sum
-> [Leetcode](https://leetcode.com/problems/binary-tree-maximum-path-sum/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -83,11 +82,9 @@ class Solution:
 </details>
 <BR>
 
-### Number of Paths having Sum
+### [Number of Paths having Sum](https://leetcode.com/problems/path-sum-iii/)
 
 > Given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value.
-
-> [Leetcode](https://leetcode.com/problems/path-sum-iii/). 
 > [See also](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 
 <details><summary markdown="span">Let's see some code!</summary>
@@ -137,10 +134,9 @@ class Solution:
 </details>
 <BR>
 
-### Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.
+### [Smallest string from Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/)
 
-> Given
-> [Leetcode](https://leetcode.com/problems/smallest-string-starting-from-leaf/) <BR>
+> Smallest String from Leaf
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -164,10 +160,9 @@ class Solution:
 </details>
 <BR>
 
-### Check if tree is Height Balanced
+### [Check if tree is Height Balanced](https://leetcode.com/problems/balanced-binary-tree/) 
 
 > Given a binary tree, determine if it is height-balanced - left and right subtrees of every node differ in height by no more than 1.
-> [Leetcode](https://leetcode.com/problems/balanced-binary-tree/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -212,10 +207,9 @@ class Solution:
 </details>
 <BR>
 
-### Lowest Common Ancestor
+### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
 > Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
-> [Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
