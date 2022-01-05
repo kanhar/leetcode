@@ -125,7 +125,6 @@ class Solution:
                 dfs(i, j, rootTrie, [])
 
         return self.res
-
 ```
 
 </details>

@@ -21,7 +21,7 @@
 * [Shortest Path Algorithm](problems/Graphs/ShortestPath.md)
 
 ## Binary Trees
-* [Bottom Up](problems/Trees/BinaryTree-BottomUp.md) | [Top Down](problems/Trees/BinaryTree-TopDown.md) | [Generic](problems/Trees/BinaryTree-Generic.md)
+* [Bottom Up](problems/Trees/BinaryTree-BottomUp.md), [Top Down](problems/Trees/BinaryTree-TopDown.md), [Generic](problems/Trees/BinaryTree-Generic.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
 * [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
