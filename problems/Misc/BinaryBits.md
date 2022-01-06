@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xf0762)
 - TOC
 {:toc}
   
-### Binary Bit Count
+### [Binary Bit Count](https://leetcode.com/problems/number-of-1-bits/)
 
 > Return the number of '1' bits in an unsigned integer. 
-> [Leetcode](https://leetcode.com/problems/number-of-1-bits/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -27,10 +26,9 @@ class Solution:
 <BR>
 
 
-### Reverse Bits of an integer
+### [Reverse Bits of an integer](https://leetcode.com/problems/reverse-bits/)
 
 > Reverse bits of a given 32 bits unsigned integer.
-> [Leetcode](https://leetcode.com/problems/reverse-bits/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

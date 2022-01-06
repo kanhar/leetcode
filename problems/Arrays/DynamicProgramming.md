@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9di6va53)
 - TOC
 {:toc}
 
-### Robbing Non-Adjacent Houses
+### [Robbing Non-Adjacent Houses](https://leetcode.com/problems/house-robber/)
 
 > Optimize for max robbery amount, should adjacent houses not be robbable. 
-> [Leetcode](https://leetcode.com/problems/house-robber/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -58,10 +57,10 @@ class Solution:
 </details>
 <BR>
 
-### Longest Increasing Subsequence
+### [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 
 > Given an unsorted sort of integers, find the length of the longest increasing subsequence.
-> [Leetcode](https://leetcode.com/problems/longest-increasing-subsequence/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -84,10 +83,9 @@ class Solution(object):
 </details>
 <BR>
 
-### Longest Palindromic Substring
+### [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 > Given a string s, find the longest palindromic substring in s.
-> [Leetcode](https://leetcode.com/problems/longest-palindromic-substring/)
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -110,13 +108,12 @@ class Solution:
 </details>
 <BR>
 
-### Maximum Length of a sub-array that sums to k
+### [Maximum Length of a sub-array that sums to k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 > Given an array nums and a target value k, find the maximum length of a subarray that sums to k.
 If there isn't one, return 0 instead.
 > Key intuition: If total_at_i + total_at_j = k, then sum(i..j) must be k
-> [Leetcode](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 > [Contrast with](https://leetcode.com/problems/path-sum-iii/)
-> 
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -141,10 +138,10 @@ class Solution:
 </details>
 <br/>
 
-### Maximum Sub-array Sum
+### [Maximum Sub-array Sum](https://leetcode.com/problems/maximum-subarray/)
 
 > Given an integer sort nums, find the contiguous subarray which has the largest sum. 
-> [Leetcode](https://leetcode.com/problems/maximum-subarray/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -176,10 +173,9 @@ class Solution:
 </details>
 <BR>
 
-### Pascals Triange
+### [Pascals Triangle](https://leetcode.com/problems/pascals-triangle/)
 
 > Given an integer numRows, return the first numRows of Pascal's triangle.
-> [Leetcode](https://leetcode.com/problems/pascals-triangle/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

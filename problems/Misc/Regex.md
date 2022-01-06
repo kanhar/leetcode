@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xftxlv)
 - TOC
 {:toc}
 
-### Atoi
+### [Implement Atoi](https://leetcode.com/problems/string-to-integer-atoi/)
 
 > Implement atoi: Key idea is keep processing number until valid.
-> [Leetcode](https://leetcode.com/problems/string-to-integer-atoi/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -35,10 +34,9 @@ class Solution:
 </details>
 <BR>
 
-### Decode-String
+### [Decode-String](https://leetcode.com/problems/decode-string/)
 
 > Given an encoded string, return its decoded string.
-> [Leetcode](https://leetcode.com/problems/decode-string/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -65,10 +63,9 @@ class Solution:
 <BR>
 
 
-### Parse valid IP.
+### [Parse valid IP.](https://leetcode.com/problems/validate-ip-address/)
 
 > Parse valid IP, Ipv4 and IPv6.
-> [Leetcode](https://leetcode.com/problems/validate-ip-address/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

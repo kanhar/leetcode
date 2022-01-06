@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9lu7fe4c)
 - TOC
 {:toc}
 
-### Generate Parentheses
+### [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 
 > Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-> [Leetcode](https://leetcode.com/problems/generate-parentheses/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -50,11 +49,10 @@ class Solution:
 </details>
 <BR>
 
-### Letter Combinations of a Phone Number
+### [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
 > Given a string containing digits from 2-9 inclusive, return all possible letter
 combinations that the number could represent.
-> [Leetcode](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -86,17 +84,14 @@ class Solution:
             for d in digits:
                 res = [r + t for t in mapping[d] for r in res]
             return res
-
 ```
-
 </details>
 <BR>
 
 
-### Subsets
+### [Subsets](https://leetcode.com/problems/subsets/)
 
 > Parse valid IP, Ipv4 and IPv6.
-> [Leetcode](https://leetcode.com/problems/subsets/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

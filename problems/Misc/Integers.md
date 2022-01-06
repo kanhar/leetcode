@@ -5,11 +5,10 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xf0762)
 - TOC
 {:toc}
 
-### Divide two integers
+### [Divide two integers](https://leetcode.com/problems/divide-two-integers/)
 
 > Given two integers dividend and divisor, divide two integers without using multiplication,
 division and mod operator.
-> [Leetcode](https://leetcode.com/problems/divide-two-integers/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -44,10 +43,9 @@ class Solution:
 </details>
 <BR>
 
-### Integer add 1
+### [Integer add 1](https://leetcode.com/problems/plus-one/)
 
 > Given a non-empty sort of digits representing a non-negative integer, plus one to the integer.
-> [Leetcode](https://leetcode.com/problems/plus-one/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -79,10 +77,9 @@ class Solution:
 </details>
 <BR>
 
-### Integer Reverse
+### [Integer Reverse](https://leetcode.com/problems/reverse-integer/)
 
 > Given a 32-bit signed integer, reverse digits of an integer.
-> [Leetcode](https://leetcode.com/problems/reverse-integer/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -108,10 +105,9 @@ class Solution:
 </details>
 <BR>
 
-### Power
+### [Implement Power(x,n)](https://leetcode.com/problems/powx-n/)
 
 > Implement pow(x, n), which calculates x raised to the power n./ 
-> [Leetcode](https://leetcode.com/problems/powx-n/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -131,10 +127,9 @@ class Solution:
 </details>
 <BR>
 
-### Sqrt
+### [Implement Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 
 > Implement int sqrt(int x).
-> [Leetcode](https://leetcode.com/problems/sqrtx/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

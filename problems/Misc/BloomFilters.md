@@ -6,10 +6,9 @@ Practise here: [Leetcode]()
 {:toc}
 
 
-### Find Missing Number
+### [Find Missing Number](https://leetcode.com/problems/missing-number/discuss/1637159/python-solution-using-bloom-filters-cheeky-but-ultimately-a-good-learning-exercise) <BR>
 
 > Despite the widespread use of Bloom filters in industry, I find it frustrating that no problem on leetcode requires them - so here i go - sub-optimally forcing the solution to fit the problem, this is the only one I could find where I can "test out" how the Bloom filter strategy would work - what kind of memory it would require, and get a feel for the variables, m, k and e where m is the number of bits in bit array, k is the number of hash functions and e is the false positive error rate.
-> [Leetcode](https://leetcode.com/problems/missing-number/discuss/1637159/python-solution-using-bloom-filters-cheeky-but-ultimately-a-good-learning-exercise) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 

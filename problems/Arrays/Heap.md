@@ -7,9 +7,9 @@ Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 - TOC
 {:toc}
 
-### Kth Largest Element
+### [Kth Largest Element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
-> Find the kth largest element in an unsorted array. [Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+> Find the kth largest element in an unsorted array. 
 
 <details><summary markdown="span">Let's see some code!</summary>
 ```python
@@ -30,10 +30,10 @@ And voila it now works
 </details>
 <BR>
 
-### Median Sliding
+### [Median Sliding](https://leetcode.com/problems/find-median-from-data-stream/)
 
 > Design a data structure that allows ingestion of numbers, and can in O(1) time
-> return the median. [Leetcode](https://leetcode.com/problems/find-median-from-data-stream/)
+> return the median. 
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -62,6 +62,5 @@ class MedianFinder:
 </details>
 <BR>
 
-### Merge K-Sorted Lists
+### [Merge-k-sorted-lists](https://kanhar.github.io/leetcode/problems/Arrays/LinkedLists.html#merge-k-sorted-lists)
 
-See [LinkedLists.html#merge-k-sorted-lists](https://kanhar.github.io/leetcode/problems/Arrays/LinkedLists.html#merge-k-sorted-lists)

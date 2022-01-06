@@ -1,8 +1,8 @@
 # KMP
-### Knuth Morris Pratt Algorithm (KMP)
+### [Knuth Morris Pratt Algorithm (KMP) - String Search](https://leetcode.com/problems/implement-strstr/)
 
 > Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
-> [Leetcode](https://leetcode.com/problems/implement-strstr/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python

@@ -4,10 +4,9 @@
 - TOC
 {:toc}
 
-### Heap Sort
+### [Heap Sort](https://leetcode.com/problems/maximum-gap/)
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
-> [Leetcode](https://leetcode.com/problems/maximum-gap/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -68,10 +67,9 @@ class Solution:
 <BR>
 
 
-### Radix Sort
+### [Radix Sort](https://leetcode.com/problems/maximum-gap/)
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
-> [Leetcode](https://leetcode.com/problems/maximum-gap/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -108,10 +106,9 @@ class Solution:
 </details>
 <BR>
 
-### Quick Sort
+### [Quick Sort](https://leetcode.com/problems/maximum-gap/)
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
-> [Leetcode](https://leetcode.com/problems/maximum-gap/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -142,10 +139,9 @@ class Solution:
 </details>
 <BR>
 
-### Merge Sort
+### [Merge Sort](https://leetcode.com/problems/maximum-gap/)
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
-> [Leetcode](https://leetcode.com/problems/maximum-gap/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

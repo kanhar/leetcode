@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=90obk211)
 - TOC
 {:toc}
 
-### Network Delay Time
+### [Network Delay Time](https://leetcode.com/problems/network-delay-time/)
 
 >There are N network nodes, labelled 1 to N. Find shortest distance from node K to all nodes.
-> [Leetcode](https://leetcode.com/problems/network-delay-time/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -143,9 +142,8 @@ class Solution:
 </details>
 <BR>
 
-### Tree Diameter
+### [Tree Diameter](https://leetcode.com/problems/tree-diameter/)
 > Given an undirected tree, return its bottomUp: the number of edges in a longest path in that tree.
-> [Leetcode](https://leetcode.com/problems/tree-diameter/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

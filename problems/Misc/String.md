@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xfipte)
 - TOC
 {:toc}
 
-### Group Anagrams
+### [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 
 > Given an array of strings, group anagrams together
-> > [Leetcode](https://leetcode.com/problems/group-anagrams/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -38,10 +37,9 @@ class Solution:
 </details>
 <BR>
 
-### Palindrome
+### [Palindrome](https://leetcode.com/problems/valid-palindrome/)
 
-> Suppose
-> [Leetcode](https://leetcode.com/problems/valid-palindrome/)
+> Valid Palindrome
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -52,10 +50,9 @@ class Solution:
 </details>
 <BR>
 
-### String Compression
+### [String Compression](https://leetcode.com/problems/string-compression/)
 
 > Suppose "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
-> [Leetcode](https://leetcode.com/problems/string-compression/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

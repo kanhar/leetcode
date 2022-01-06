@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90ojkbn2)
 - TOC
 {:toc}
 
-### 4sum
+### [4sum](https://leetcode.com/problems/4sum/)
 
 > Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-> [Leetcode](https://leetcode.com/problems/4sum/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -73,10 +72,9 @@ class Solution:
 </details>
 <BR>
 
-### Clone Graph
+### [Clone Graph](https://leetcode.com/problems/clone-graph/)
 
 > Given a reference of a node in a connected undirected graph. Return a deep copy (clone) of the graph.
-> [Leetcode](https://leetcode.com/problems/clone-graph/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -97,10 +95,9 @@ class Solution:
 <BR>
 
 
-### Subsequences that sum to Target
+### [Subsequences that sum to Target](https://leetcode.com/problems/combination-sum/)
 
 > Subsequences of numbers that sum to target
-> [Leetcode](https://leetcode.com/problems/combination-sum/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -146,11 +143,11 @@ class Solution(object):
 
 
 
-### Equation Satisfiabiliy
+### [Equation Satisfiabiliy](https://leetcode.com/problems/satisfiability-of-equality-equations/)
+
 
 > Return true if and only if it is possible to assign integers to variable names so as to satisfy all the given equations
 > ["a==b","b!=a"], Output: False
-> [Leetcode](https://leetcode.com/problems/satisfiability-of-equality-equations/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -188,10 +185,9 @@ class Solution:
 </details>
 <BR>
 
-### Find Islands
+### [Find Islands](https://leetcode.com/problems/number-of-islands/)
 
 > Given a 2d grid map of '1's (land) and '0's (water), count the number of 1s adajcent to each other (islands).
-> [Leetcode](https://leetcode.com/problems/number-of-islands/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -223,10 +219,9 @@ class Solution:
 </details>
 <BR>
 
-### Permutations
+### [Permutations](https://leetcode.com/problems/permutations-ii/)
 
 > Given a collection of distinct integers, return all possible permutations.
-> [Leetcode](https://leetcode.com/problems/permutations-ii/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -250,10 +245,9 @@ class Solution(object):
 </details>
 <BR>
 
-### Redundant Connection
+### [Redundant Connection](https://leetcode.com/problems/redundant-connection/)
 
 > Convert Connected Graph to (Minimum) Undirected Graph with no cycles.
-> [Leetcode](https://leetcode.com/problems/redundant-connection/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -285,11 +279,10 @@ class Solution(object):
 </details>
 <BR>
 
-### Word Break
+### [Word Break](https://leetcode.com/problems/word-break/)
 
 > Input: s = "leetcode", wordDict = ["leet","code"] <BR>
 > Explanation: Return true because "leetcode" can be segmented as "leet code".
-> [Leetcode](https://leetcode.com/problems/word-break/)
 
 > See also Trie solution. Reference Needed
 
@@ -321,12 +314,11 @@ class Solution:
 <BR>
 
 
-### Is Graph Connected?
+### [Is Graph Connected?](https://leetcode.com/problems/all-paths-from-source-lead-to-destination/)
 
 > Given the edges of a directed graph, and two nodes source and destination of this graph,
 determine whether or not all paths starting from source eventually end at destination,
 that is: At least one path exists from the source node to the destination node
-> [Leetcode](https://leetcode.com/problems/all-paths-from-source-lead-to-destination/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

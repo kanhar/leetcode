@@ -5,11 +5,10 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9duv7mlj)
 - TOC
 {:toc}
 
-### Basic Calculator
+### [Basic Calculator](https://leetcode.com/problems/basic-calculator/)
 
 > Input: "(1+(4+5+2)-3)+(6+8)". BR
 > Output: 23
-> [Leetcode](https://leetcode.com/problems/basic-calculator/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -42,11 +41,11 @@ class Solution:
 </details>
 <BR>
 
-### Valid Parentheses
+### [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 
 > Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
 determine if the input string is valid.
-> [Leetcode](https://leetcode.com/problems/valid-parentheses/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python

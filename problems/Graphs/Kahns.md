@@ -5,11 +5,10 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9l6pf80h)
 - TOC
 {:toc}
 
-### Course Dependency
+### [Course Dependency](https://leetcode.com/problems/course-schedule-ii)
 
 >Given the total number of courses and a list of prerequisite pairs, return the ordering of courses
 you should take to finish all courses.
-> [Leetcode](https://leetcode.com/problems/course-schedule-ii) <BR>
 > Time: O(V+E) <BR>
 > Space: O(V+E) <BR>
 
@@ -45,13 +44,12 @@ class Solution:
 </details>
 <BR>
 
-### Dictionary Alien
+### [Alien Dictionary - Evaluate Lexicographical Order](https://leetcode.com/problems/alien-dictionary/)
 > You are given a list of strings words from the alien language's dictionary, where the strings in words
 are sorted lexicographically by the rules of this new language.
 > Return a string of the unique letters in the new alien language sorted in lexicographically increasing
 order by the new language's rules. If there is no solution, return "". If there are multiple solutions,
 return any of them.
-> [Leetcode](https://leetcode.com/problems/alien-dictionary/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -111,10 +109,9 @@ class Solution:
 <BR>
 
 
-### Matrix Longest Increasing Path
+### [Matrix Longest Increasing Path](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
 
 > Given an integer matrix, find the length of the longest increasing path.
-> [Leetcode](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

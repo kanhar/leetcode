@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xf0762)
 - TOC
 {:toc}
 
-### Finding a minimum in a Rotated Sorted Array
+### [Finding a minimum in a Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
 > Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
-> [Leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -37,12 +36,11 @@ class Solution:
 </details>
 <BR>
 
-### Kth Largest Element in an Array
+### [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
 > Find the kth largest element in an unsorted array. Note that it is the kth largest element in
 the sorted order, not the kth distinct element.
-> [Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-> 
+ 
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -76,11 +74,11 @@ class Solution:
 </details>
 <BR>
 
-### Search a 2d Matrix
+### [Search a 2d Matrix](https://leetcode.com/problems/search-a-2d-matrix/)
 
 > Find a value in a matrix where integers in each row are sorted from left to right.
 The first integer of each row is greater than the last integer of the previous row.
-> [Leetcode](https://leetcode.com/problems/search-a-2d-matrix/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python

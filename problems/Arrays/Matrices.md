@@ -5,10 +5,9 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9dunhxke)
 - TOC
 {:toc}
 
-### Diagonal Traverse
+### [Diagonally Traverse Matrix](https://leetcode.com/problems/diagonal-traverse/)
 
-> Traverse Matrix diagonally. 
-> [Leetcode](https://leetcode.com/problems/diagonal-traverse/)
+> Traverse Matrix diagonally.
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -43,10 +42,9 @@ class Solution:
 </details>
 <BR>
 
-### Rotate Matrix
+### [Rotate Matrix](https://leetcode.com/problems/rotate-image/)
 
 > Rotate Matrix 90 degrees, in place.
-> [Leetcode](https://leetcode.com/problems/rotate-image/)
 > [See also](https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array)
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -73,11 +71,11 @@ class Solution:
 </details>
 <BR>
 
-### Sparse Matrix Multiplication
+### [Sparse Matrix Multiplication](https://leetcode.com/problems/sparse-matrix-multiplication/)
 
-> Multiply large matrices
-> [Leetcode](https://leetcode.com/problems/sparse-matrix-multiplication/)
-<details><summary markdown="span">Let's see some code!</summary>
+> Multiply large matrices.
+
+> <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
 class Solution:
@@ -101,9 +99,8 @@ class Solution:
 </details>
 <BR>
 
-### Spiral Matrix
+### [Traverse Matrix in a Spiral](https://leetcode.com/problems/spiral-matrix/)
 > Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
-> [Leetcode](https://leetcode.com/problems/spiral-matrix/)
  
 <details><summary markdown="span">Let's see some code!</summary>
 

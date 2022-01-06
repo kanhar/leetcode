@@ -5,11 +5,10 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9dbla3q1)
 - TOC
 {:toc}
 
-### Deep Copy
+### [Deep Copy](https://leetcode.com/problems/copy-list-with-random-pointer/)
 
 > A linked list is given such that each node contains an additional random pointer which could point to
 any node in the list or null. Return a deep copy of the list.
-> [Leetcode](https://leetcode.com/problems/copy-list-with-random-pointer/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -35,10 +34,9 @@ class Solution:
 </details>
 <BR>
 
-### Detect Cycle
+### [Detect Cycle](https://leetcode.com/problems/linked-list-cycle/)
 
 > Given a linked list, determine if it has a cycle in it.
-> [Leetcode](https://leetcode.com/problems/linked-list-cycle/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -61,10 +59,9 @@ class Solution:
 <BR>
 
 
-### Intersection
+### [Intersection](https://leetcode.com/problems/intersection-of-two-linked-lists/) <BR>
 
 > Write a program to find the node at which the intersection of two singly linked lists begins. Else return null
-> [Leetcode](https://leetcode.com/problems/intersection-of-two-linked-lists/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -87,10 +84,9 @@ class Solution:
 </details>
 <BR>
 
-### Merge K Sorted Lists
+### [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
 
 > Merge k sorted linked lists and return it as one sorted list.
-> [Leetcode](https://leetcode.com/problems/merge-k-sorted-lists/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -119,10 +115,9 @@ class Solution:
 </details>
 <BR>
 
-### Palindrome
+### [Palindrome](https://leetcode.com/problems/palindrome-linked-list/)
 
 > Given a singly linked list, determine if it is a palindrome.
-> [Leetcode](https://leetcode.com/problems/palindrome-linked-list/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -149,10 +144,9 @@ class Solution:
 </details>
 <BR>
 
-### Remove Nth Node from end of list
+### [Remove Nth Node from end of list](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
 > Given a linked list, remove the n-th node from the end of list and return its head.
-> [Leetcode](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -179,10 +173,9 @@ class Solution:
 </details>
 <BR>
 
-### Remove Duplicates
+### [Remove Duplicates](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
 > Given a sorted linked list, delete all duplicates such that each element appear only once.
-> [Leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) <BR>
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -203,11 +196,9 @@ class Solution:
 </details>
 <BR>
 
-### Reverse
+### [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)
 
-> Reverse a singly linked list.
-> [Leetcode](https://leetcode.com/problems/reverse-linked-list) <BR>
-> [See also](https://medium.com/outco/reversing-a-linked-list-easy-as-1-2-3-560fbffe2088)
+> Reverse a singly linked list. [See also](https://medium.com/outco/reversing-a-linked-list-easy-as-1-2-3-560fbffe2088)
 
 <details><summary markdown="span">Let's see some code!</summary>
 

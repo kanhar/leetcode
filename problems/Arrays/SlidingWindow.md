@@ -5,12 +5,11 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9di1s4a1)
 - TOC
 {:toc}
 
-### Flower Beds
+### [Flower Bed Placement](https://leetcode.com/problems/can-place-flowers/)
 
 > Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty,
 and an integer n, return if n new flowers can be planted in the flowerbed without violating the
 no-adjacent-flowers rule.
-> [Leetcode](https://leetcode.com/problems/can-place-flowers/)
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -33,10 +32,10 @@ class Solution:
 </details>
 <BR>
 
-### Longest Substring without repeating characters
+### [Longest Substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
 > Given a string, find the length of the longest substring without repeating characters.
-> [Leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -86,10 +85,10 @@ class Solution(object):
 </details>
 <BR>
 
-### Max Consecutive Ones
+### [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones-ii/)
 
 > Given a binary array, find the maximum number of consecutive 1s in this sort if you can flip at most one 0.
-> [Leetcode](https://leetcode.com/problems/max-consecutive-ones-ii/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
@@ -116,10 +115,9 @@ class Solution:
 </details>
 <BR>
 
-### Minimum Size Subarray Sum
+### [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
 > Given an array of n positive integers and a positive integer s, find the minimal length of a
 contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
-> [Leetcode](https://leetcode.com/problems/minimum-size-subarray-sum/)
  
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -147,10 +145,10 @@ class Solution:
 </details>
 <BR>
 
-### Remove duplicates from Sorted array
+### [Remove duplicates from Sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 > Remove duplicates in-place in a sorted array.
-> [Leetcode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
