@@ -73,21 +73,22 @@ return any of them.
 
 ```python
 class Solution:
-    def alienOrder(self, words: typing.List[str]) -> str:
-        adj = collections.defaultdict(set)
+    def alienOrder(self, words: List[str]) -> str:
+        edges = collections.defaultdict(set)
         indeg = {x: 0 for word in words for x in word}  # Or: { x:0 for x in ''.join(words)}
 
         for w1, w2 in zip(words, words[1:]):
             for a, b in zip(w1, w2):
                 orderingFound = False
                 if a != b:
-                    if b not in adj[a]:
-                        adj[a].add(b)
+                    if b not in edges[a]:
+                        edges[a].add(b)
                         indeg[b] += 1
                     orderingFound = True
                     break
-
-            if orderingFound is False and len(w1) > len(w2):  # Invalid Dict order.
+            
+            # Cycle Detection - Invalid Dict Order, i.e. if w1 > w2 but still no valid ordering found. 
+            if orderingFound is False and len(w1) > len(w2):
                 return ""
 
         q = [x for x in indeg if indeg[x] == 0]
@@ -95,7 +96,7 @@ class Solution:
         while q:
             curr = q.pop()
             res.append(curr)
-            for d in adj[curr]:
+            for d in edges[curr]:
                 indeg[d] -= 1
                 if indeg[d] == 0:
                     q.append(d)
