@@ -14,28 +14,25 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9dunhxke)
 ```python
 class Solution:
     def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
-        m, n = len(matrix), len(matrix and matrix[0])
-
+        m = len(matrix)
+        n = len(matrix[0])
+        start = [(0,i) for i in range(n)] + [(j,n-1) for j in range(1,m)]
+        
         res = []
         count = 0
-
-        # get top row + right col ( rightmost edge is counted twice, hence --> for i in range(n-1))
-        indices = [(0, i) for i in range(n - 1)] + [(j, n - 1) for j in range(m)]
-        while indices:
-            (r, c) = indices.pop(0)
-
+        for r,c in start:
             tmp = []
-            while r < m and c >= 0:
+            while r in range(m) and c in range(n):
                 tmp.append(matrix[r][c])
-                r += 1
-                c -= 1
-
-            if count % 2 == 0:
+                r+=1
+                c-=1
+            
+            if count %2 ==0:
                 tmp.reverse()
-
-            count += 1
-            res += tmp
-
+                
+            count+=1
+            res+= tmp
+        
         return res
 ```
 
@@ -75,7 +72,7 @@ class Solution:
 
 > Multiply large matrices.
 
-> <details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Let's see some code!</summary>
 
 ```python
 class Solution:

@@ -62,5 +62,28 @@ class MedianFinder:
 </details>
 <BR>
 
-### [Merge-k-sorted-lists](https://kanhar.github.io/leetcode/problems/Arrays/LinkedLists.html#merge-k-sorted-lists)
+### Merge k Sorted Arrays
 
+> See also: [Merge-k-sorted-linked-lists](https://kanhar.github.io/leetcode/problems/Arrays/LinkedLists.html#merge-k-sorted-lists)
+
+```python
+def merge_k_way(lists):
+    import heapq
+    heap  = [(l[0],i,0) for i,l in enumerate(lists) if len(l)> 0 ]
+    heapq.heapify(heap)
+
+    res = []
+    while heap:
+        smallest,k,i = heapq.heappop(heap)
+        res.append(smallest)
+        
+        #Add new smallest from list K, at index i
+        if i < len(lists[k])-1: 
+            heapq.heappush(heap,(lists[k][i+1],k,i+1))
+
+    return(res)
+```
+
+```python
+merge_k_way([1,2,3], [4,5,6]) # Returns [1,2,3,4,5,6]
+```
