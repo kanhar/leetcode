@@ -5,40 +5,6 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9dunhxke)
 - TOC
 {:toc}
 
-### [Diagonally Traverse Matrix](https://leetcode.com/problems/diagonal-traverse/)
-
-> Traverse Matrix diagonally.
-
-<details><summary markdown="span">Let's see some code!</summary>
-
-```python
-class Solution:
-    def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
-        m = len(matrix)
-        n = len(matrix[0])
-        start = [(0,i) for i in range(n)] + [(j,n-1) for j in range(1,m)]
-        
-        res = []
-        count = 0
-        for r,c in start:
-            tmp = []
-            while r in range(m) and c in range(n):
-                tmp.append(matrix[r][c])
-                r+=1
-                c-=1
-            
-            if count %2 ==0:
-                tmp.reverse()
-                
-            count+=1
-            res+= tmp
-        
-        return res
-```
-
-</details>
-<BR>
-
 ### [Rotate Matrix](https://leetcode.com/problems/rotate-image/)
 
 > Rotate Matrix 90 degrees, in place.
@@ -70,7 +36,9 @@ class Solution:
 
 ### [Sparse Matrix Multiplication](https://leetcode.com/problems/sparse-matrix-multiplication/)
 
-> Multiply large matrices.
+> Multiply large matrices. 
+> Remember, multiplying an m×n matrix by an n×p matrix, result is an mxp matrix
+> Haven't found an optimization (yet) for sparse matrices
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -145,5 +113,39 @@ class Solution:
 
         return solve(m)
 ```
+</details>
+<BR>
+
+### [Traverse Matrix Diagonally](https://leetcode.com/problems/diagonal-traverse/)
+
+> Traverse Matrix diagonally.
+
+<details><summary markdown="span">Let's see some code!</summary>
+
+```python
+class Solution:
+    def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
+        m = len(matrix)
+        n = len(matrix[0])
+        start = [(0,i) for i in range(n)] + [(j,n-1) for j in range(1,m)]
+        
+        res = []
+        count = 0
+        for r,c in start:
+            tmp = []
+            while r in range(m) and c in range(n):
+                tmp.append(matrix[r][c])
+                r+=1
+                c-=1
+            
+            if count %2 ==0:
+                tmp.reverse()
+                
+            count+=1
+            res+= tmp
+        
+        return res
+```
+
 </details>
 <BR>
