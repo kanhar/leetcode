@@ -75,7 +75,64 @@ class Solution(object):
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
+class Solution:
+    def decodeString(self, s: str) -> str:
 
+        stk = []
+        curr_num = 0
+        curr_str = ''
+
+        for i in s:
+            if i.isdigit():
+                curr_num = curr_num*10 + int(i)
+
+            elif i.isalpha():
+                curr_str += i
+
+            elif i == '[':
+                stk.append((curr_num, curr_str))
+                curr_num = 0
+                curr_str = ''
+
+            elif i == ']':
+                prev_num, prev_str = stk.pop()
+                curr_str = prev_str + prev_num*curr_str
+
+        return curr_str
+```
+
+DFS Approach (implicit Stack)
+
+```python
+class Solution:
+    def decodeString(self, s):
+        def dfs(s):
+            nonlocal i
+            r = []
+
+            while i < len(s): 
+                if s[i] == ']':
+                    i +=1 
+                    return ''.join(r)
+
+                elif s[i] == '[':
+                    i += 1 
+                    sub = dfs(s) 
+                    r.append(sub * n)
+
+                elif s[i].isdigit():
+                    n = 0 
+                    while i < len(s) and s[i].isdigit():
+                        n = n * 10 + int(s[i]) 
+                        i += 1
+
+                else:
+                    r.append(s[i]);
+                    i += 1 
+
+            return ''.join(r)
+        i = 0
+        return dfs(list(s))    
 ```
 
 </details>
