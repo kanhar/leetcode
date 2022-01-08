@@ -78,7 +78,9 @@ class Solution(object):
 ```python
 def invertTree(root):
     if root is not None:
-        return TreeNode(root.val, invertTree(root.right), invertTree(root.left))
+        return TreeNode(root.val, 
+                        invertTree(root.right), 
+                        invertTree(root.left))
 
 ```
 

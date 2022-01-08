@@ -37,7 +37,7 @@ class Solution:
 ### [Decode-String](https://leetcode.com/problems/decode-string/)
 
 > Given an encoded string, return its decoded string.
-
+> [See also](https://kanhar.github.io/leetcode/problems/Arrays/Stacks.html#decode-string)
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python

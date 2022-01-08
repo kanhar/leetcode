@@ -65,3 +65,18 @@ class Solution(object):
 
 </details>
 <BR>
+
+
+### [Decode-String](https://leetcode.com/problems/decode-string/)
+
+> Given an encoded string, return its decoded string.
+> [See also](https://kanhar.github.io/leetcode/problems/Misc/Regex.html#decode-string)
+
+<details><summary markdown="span">Let's see some code!</summary>
+
+```python
+
+```
+
+</details>
+<BR>
