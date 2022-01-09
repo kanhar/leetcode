@@ -150,3 +150,53 @@ class Solution:
 
 </details>
 <BR>
+
+
+### [Quick Select - Nth Smallest / Median / Percentile](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+
+> Original Leetcode Problem: Find the kth largest element in an unsorted array. Note that it is the kth largest element in
+the sorted order, not the kth distinct element.
+> 
+> However we use can this problem to test an alternative solution, leveraging the 
+> [Quickselect algorithm](https://en.wikipedia.org/wiki/Quickselect), which zeroes in on the nth smallest element in log(n) time. 
+
+> The same strategy is also very effective in calculating a Median or a Percentile.
+ 
+<details><summary markdown="span">Let's see some code!</summary>
+
+```python
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        def findnsmallset(arr, n):
+            P = arr[len(arr)//2]
+            
+            smaller = [x for x in arr if x < P]
+            equal = [x for x in arr if x == P]
+            bigger = [x for x in arr if x > P]
+            
+            if n < len(smaller):
+                return findnsmallset(smaller,n)
+            elif n in range(len(smaller), len(smaller)+len(equal)):
+                return P
+            else:
+                return findnsmallset(bigger,n-(len(smaller)+len(equal)))
+          
+        if len(nums)==1:
+            return nums[0]
+        if len(nums)==0:
+            return -1
+        else:
+            return findnsmallset(nums,len(nums)-k)
+```
+
+```python
+        def median(arr):
+            m = len(arr)//2
+            if len(arr)%2==1: 
+                return findnsmallset(arr,m)
+            else:
+                return (findnsmallset(arr,m) + findnsmallset(arr,m-1))//2
+```
+
+</details>
+<BR>

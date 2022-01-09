@@ -40,44 +40,6 @@ class Solution:
 </details>
 <BR>
 
-### [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-
-> Find the kth largest element in an unsorted array. Note that it is the kth largest element in
-the sorted order, not the kth distinct element.
- 
-<details><summary markdown="span">Let's see some code!</summary>
-
-```python
-class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        def findnsmallset(arr, n):
-            if len(arr)==1:
-                return arr[0]
-            if len(arr)==0:
-                return -1
-            P = arr[int(len(arr)/2)]
-            smaller = [x for x in arr if x < P]
-            bigger = [x for x in arr if x > P]
-            equal = [x for x in arr if x == P]
-            if n < len(smaller):
-                return findnsmallset(smaller,n)
-            elif len(smaller) <= n < len(smaller)+len(equal):
-                return P
-            else:
-                return findnsmallset(bigger,n-len(smaller)-len(equal))
-
-        def median(arr):
-            m = len(arr)//2
-            if len(arr)%2==1: #even
-                return findnsmallset(arr,m)
-            else:
-                return int((findnsmallset(arr,m) + findnsmallset(arr,m-1))/2)
-        return findnsmallset(nums,len(nums)-k)
-```
-
-</details>
-<BR>
-
 ### [Search a 2d Matrix](https://leetcode.com/problems/search-a-2d-matrix/)
 
 > Find a value in a matrix where integers in each row are sorted from left to right.
