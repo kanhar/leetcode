@@ -66,9 +66,6 @@ class Solution:
 ```python
 class Solution(object):
     def lengthOfLIS(self, nums):
-        if not nums:
-            return 0
-
         h = collections.defaultdict(lambda: 1)
 
         h[0] = 1

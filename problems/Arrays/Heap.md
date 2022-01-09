@@ -87,3 +87,41 @@ def merge_k_way(lists):
 ```python
 merge_k_way([1,2,3], [4,5,6]) # Returns [1,2,3,4,5,6]
 ```
+
+### K-Messed Sort
+
+> Given an array of integers arr where each element is at most k places away from its sorted position, code an efficient function sortKMessedArray that sorts arr. For instance, for an input array of size 10 and k = 2, an element belonging to index 6 in the sorted array will be located at either index 4, 5, 6, 7 or 8 in the input array.
+
+> Arr = [1, 4, 5, 2, 3, 7, 8, 6, 10, 9], k = 2 
+
+> Out = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+<details><summary markdown="span">Let's see some code!</summary>
+
+```python
+import heapq
+def sort_k_messed_array(arr, k):
+  if k>len(arr):
+    return
+  
+  h = []
+  for i in range(k):
+    heapq.heappush(h, arr[i])
+
+  res = []
+  for i in range(k, len(arr)):
+    heapq.heappush(h, arr[i])
+    res.append(heapq.heappop(h))
+  
+  while h:
+    res.append(heapq.heappop(h))
+    
+  return res
+  
+  # Correctness Check
+  # 1, 4
+  # 1, 4, 5   H = [1]
+  # 4, 5, 2   H = [2]  
+```
+
+</details>
+<BR>
