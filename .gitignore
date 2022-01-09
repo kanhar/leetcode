@@ -239,6 +239,8 @@ node_modules/
 # Typescript v1 declaration files
 typings/
 
+.idea/
+
 # Visual Studio 6 build log
 *.plg
 
