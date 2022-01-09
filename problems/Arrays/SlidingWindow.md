@@ -146,3 +146,61 @@ class Solution:
 
 </details>
 <BR>
+
+
+### Sliding window of K that is partially sorted
+
+> Given an array of integers arr where each element is at most k places away from its sorted position, code an efficient function sortKMessedArray that sorts arr. For instance, for an input array of size 10 and k = 2, an element belonging to index 6 in the sorted array will be located at either index 4, 5, 6, 7 or 8 in the input array.
+
+> Arr = [1, 4, 5, 2, 3, 7, 8, 6, 10, 9], k = 2 
+
+> Out = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+<details><summary markdown="span">Let's see some code!</summary>
+
+Solution using Heaps
+```python
+import heapq
+def sort_k_messed_array(arr, k):
+  if k>len(arr):
+    return
+  
+  h = []
+  for i in range(k):
+    heapq.heappush(h, arr[i])
+
+  res = []
+  for i in range(k, len(arr)):
+    heapq.heappush(h, arr[i])
+    res.append(heapq.heappop(h))
+  
+  while h:
+    res.append(heapq.heappop(h))
+    
+  return res
+  
+  # Correctness Check
+  # 1, 4
+  # 1, 4, 5   H = [1]
+  # 4, 5, 2   H = [2]  
+```
+
+Solution Using Insertion Sort. To be reviewed.
+```python
+def insertionSort(A, size):
+    i, key, j = 0, 0, 0
+    for i in range(size):
+        key = A[i]
+        j = i-1
+
+        # Move elements of A[0..i-1], that are
+        # greater than key, to one position
+        # ahead of their current position.
+        # This loop will run at most k times
+        while j >= 0 and A[j] > key:
+            A[j + 1] = A[j]
+            j = j - 1
+        A[j + 1] = key
+```
+</details>
+<BR>
