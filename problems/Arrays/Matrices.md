@@ -8,9 +8,10 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9dunhxke)
 ### [Rotate Matrix](https://leetcode.com/problems/rotate-image/)
 
 > Rotate Matrix 90 degrees, in place.
-> [See also](https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array)
+
 <details><summary markdown="span">Let's see some code!</summary>
 
+> Solution using Reverse and Transpose. 
 ```python
 class Solution:
     def rotate(self, A):
@@ -18,17 +19,31 @@ class Solution:
         for i in range(len(A)):
             for j in range(i):
                 A[i][j], A[j][i] = A[j][i], A[i][j]
+```
 
+> Solution using a [layered rotation approach](https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array)
+
+```python
 class Solution:
-    def rotate(self, A):
-        n = len(A)
-        for i in range(n//2):
-            for j in range(n//2 + n%2):
-                tmp = A[i][j]
-                A[i][j] = A[~j][i]
-                A[~j][i] = A[~i][~j]
-                A[~i][~j] = A[j][~i]
-                A[j][~i] = tmp
+    def rotate(self, m: List[List[int]]) -> None:
+        n = len(m)
+        layer = n//2
+        inner = n//2+n%2
+        
+        for i in range(layer):
+            for j in range(inner):
+                tmp = m[i][j]
+                
+                # It is instructive to do the first two manually to visualize the indices mutate:
+                # Swap 0,0 with 2,0
+                # Swap 0,1 with 1,0
+                # Or ==> m[0][j] with m[~j][0]
+                # Or ==> m[i][j] with m[~j][i]
+                m[i][j] = m[~j][i]
+                m[~j][i] = m[~i][~j]
+                m[~i][~j] = m[j][~i]
+                m[j][~i] = tmp
+
 ```
 
 </details>
