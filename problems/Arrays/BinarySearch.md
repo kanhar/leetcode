@@ -13,24 +13,28 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xf0762)
 
 ```python
 class Solution:
-    def find_rotate_index(self, nums, left, right):
-        if nums[left] <= nums[right]:  # Edge case, already sorted.
-            return 0
-
-        while left <= right:
-            mid = (left + right) // 2
-
-            if nums[mid+1] < nums[mid]:
-                return mid + 1
+    def findMin(self, nums: List[int]) -> int:
+        def findPivot(arr, left, right):
+            if left > right:
+                return None
+            
+            mid = (left+right)//2
+            
+            if arr[mid+1] < arr[mid]:
+                return mid+1
             else:
-                if nums[left] > nums[mid]:  # Left side is unsorted. This condition cannot be reversed (i.e. zone into where the problem is, not opposite )
-                    right = mid - 1
+                if arr[left] > arr[mid]:
+                    return findPivot(arr, left, mid)
                 else:
-                    left = mid + 1
-
-    def findMin(self, nums: typing.List[int]) -> int:
-        pivot = self.find_rotate_index(nums, 0, len(nums)-1)
-        return nums[pivot]
+                    return findPivot(arr, mid+1, right)
+        
+        if nums[0] < nums[~0]:          # Edge case: Already sorted
+            return nums[0]
+        elif len(nums)==1:
+            return nums[0]
+        else:
+            pivot = findPivot(nums, 0, len(nums)-1)
+            return nums[pivot]
 ```
 
 </details>

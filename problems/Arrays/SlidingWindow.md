@@ -64,13 +64,13 @@ class Solution:
 ### [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones-ii/)
 
 > Given a binary array, find the maximum number of consecutive 1s in this sort if you can flip at most one 0.
-
+> Key Intuition: Look for a sliding window with 1 zero, if 2 zeroes found, remove first zero found
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
 class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
-        longest_sequence = 0
+        maxL = 0
 
         left = 0
         zeroes = 0
@@ -78,14 +78,15 @@ class Solution:
             if nums[i] == 0:
                 zeroes += 1
 
-            while zeroes > 1:
+            # Flipping a zero is equivalent to ignore a zero
+            while zeroes >= 2:
                 if nums[left] == 0:
                     zeroes -= 1
                 left += 1
 
-            longest_sequence = max(longest_sequence, i - left + 1)
+            maxL = max(maxL, i - left + 1)
 
-        return longest_sequence
+        return maxL
 ```
 
 </details>
@@ -135,7 +136,9 @@ class Solution:
         else:
             idx = 1
             for i in range(1, len(nums)):
-                if i != 0 and nums[i] != nums[i-1]: #if equal continue i
+                if nums[i] == nums[i-1]:
+                    continue
+                else:
                     nums[idx] = nums[i]
                     idx +=1
             return idx
