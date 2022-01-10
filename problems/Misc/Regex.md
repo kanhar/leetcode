@@ -96,7 +96,6 @@ class Solution:
 </details>
 <BR>
 
-
 ### [Catastrophic Backtrack](https://en.wikipedia.org/wiki/ReDoS)
 
 > Let's see [what happens](https://www.rexegg.com/regex-explosive-quantifiers.html#example) when we try to match the string AAAC with that pattern ^(A+)*B.
