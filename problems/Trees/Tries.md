@@ -13,19 +13,19 @@ These are different from Ternary Search Tries.
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
-def createTrie(words):
-    def _createTrie(): return collections.defaultdict(_createTrie)
-
-    t = _createTrie()
-    for word in words:
-        curr = t
-        for w in word:
-            curr = curr[w]
-        curr['#']
-    return t
-
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
+        def createTrie(words):
+            def _createTrie(): return collections.defaultdict(_createTrie)
+
+            t = _createTrie()
+            for word in words:
+                curr = t
+                for w in word:
+                    curr = curr[w]
+                curr['#']
+            return t
+        
         def solve(root, accum = ""):
             curr = root
             if len(curr.values()) == 1 and '#' not in curr:
@@ -33,9 +33,9 @@ class Solution:
                     return solve(curr[k], accum + k)
             else:
                 return accum
+            
         t = createTrie(strs)
         return solve(t)
-
 ```
 
 </details>
