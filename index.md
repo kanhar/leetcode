@@ -11,7 +11,7 @@
 
 ## Misc
 * [Binary](problems/Misc/BinaryBits.md), [Integers](problems/Misc/Integers.md) and [Strings](problems/Misc/String.md)
-* [KMP](problems/Misc/KMP.md)
+* [KMP](problems/Misc/KMP.md), [LRU Cache](problems/Misc/LRUCache.md)
 * [Bloom Filters](problems/Misc/BloomFilters.md)
 * [Regex](problems/Misc/Regex.md)
 * [System Design](problems/SystemDesign.md)
