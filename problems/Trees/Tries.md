@@ -9,7 +9,7 @@ These are different from Ternary Search Tries.
 
 ### [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) 
 
-> Write a function to find the longest common prefix string amongst an sort of strings. 
+> Find the longest common prefix in a set of words 
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python

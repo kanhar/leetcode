@@ -1,5 +1,5 @@
 title: Practical Leetcoding
-description: A curated field guide for experienced Software Developers looking to expediently ramp up on their algorithms. It is intentionally sparse, and geared towards <a href="https://en.wikipedia.org/wiki/Kinesthetic_learning">kinesthetic learners</a>.
+description: A curated field guide for experienced Software Developers looking to expediently ramp up on their algorithms. It is intentionally sparse, and geared towards <a href="https://en.wikipedia.org/wiki/Kinesthetic_learning">kinesthetic learners</a>. Each Problem header links to a test bed on Leetcode.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-minimal
