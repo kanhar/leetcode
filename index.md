@@ -20,7 +20,7 @@
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
 * [Shortest Path Algorithm](problems/Graphs/ShortestPath.md)
 
-## Binary Trees
+## Trees
 * [Bottom Up](problems/Trees/BinaryTree-BottomUp.md), [Top Down](problems/Trees/BinaryTree-TopDown.md), [Generic](problems/Trees/BinaryTree-Generic.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
