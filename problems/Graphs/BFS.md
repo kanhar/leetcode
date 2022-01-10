@@ -91,7 +91,8 @@ class Solution:
 
 ### [Subsets](https://leetcode.com/problems/subsets/)
 
-> Parse valid IP, Ipv4 and IPv6.
+>> Inp: [1,2,3]
+>> Out: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 
 <details><summary markdown="span">Let's see some code!</summary>
 

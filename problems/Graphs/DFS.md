@@ -219,7 +219,7 @@ class Solution:
 </details>
 <BR>
 
-### [Permutations](https://leetcode.com/problems/permutations-ii/)
+### [Permutations](https://leetcode.com/problems/permutations/)
 
 > Given a collection of distinct integers, return all possible permutations.
 
@@ -239,7 +239,25 @@ class Solution(object):
         self.res = set()
         perm(arr)
         return self.res
+```
 
+Or...
+
+```python
+class Solution(object):
+    def permute(self, nums):        
+        def perm(a,k=0):
+            if len(a)==k:
+                self.path.append(list(a))                
+            else:
+                for i in range(k,len(a)):
+                    a[i],a[k] = a[k],a[i]
+                    perm(a,k+1)
+                    a[k],a[i] = a[i],a[k]
+        
+        self.path = []
+        perm(nums)                
+        return self.path        
 ```
 
 </details>
