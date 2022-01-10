@@ -4,6 +4,7 @@
 * [Sliding Window](problems/Arrays/SlidingWindow.md)
 * [Binary Search](problems/Arrays/BinarySearch.md)
 * [Stacks](problems/Arrays/Stacks.md)
+* [Greedy](problems/Arrays/Greedy.md)
 * [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
 * [Linked Lists](problems/Arrays/LinkedLists.md)
 * [Dynamic Programming](problems/Arrays/DynamicProgramming.md)

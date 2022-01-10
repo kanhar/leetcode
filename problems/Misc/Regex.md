@@ -19,7 +19,7 @@ class Solution:
         MIN_INT = -2**31
 
         #^ --> Starting of String, followed by 0 or 1 (+-), followed by 0* zeroes followed by atleast one digit
-        regex = re.search('^[-+]?0*\d+', str.strip())
+        regex = re.search('^[-+]?\d+', str.strip())
         if regex:
             num = int(regex[0])
             if MIN_INT <= num <= MAX_INT:
@@ -45,13 +45,22 @@ import re
 class Solution:
     def decodeString(self,s):
         pattern = "(\d+)\[([a-zA-Z]+)\]"
-
+        
+        # Start with innermost parentheses
+        # Ex: "3[a2[c]]"
+        # (num, alpha) = (2,c)
+        # s = 3[a + c*2 + ]
+        # s = 3[acc]
+        # s = accaccacc
+        
         while True:
             match = re.search(pattern, s)
             if not match:
                 break
-
+            
             num, alpha = match.groups()
+
+            print(num, alpha)
             start = match.start()
             end   = match.end()
 
