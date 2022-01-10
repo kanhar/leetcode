@@ -105,8 +105,39 @@ class Solution:
 </details>
 <BR>
 
-### [Catastrophic Backtrack](https://en.wikipedia.org/wiki/ReDoS)
+### [Catastrophic Backtracking](https://en.wikipedia.org/wiki/ReDoS)
 
 > Let's see [what happens](https://www.rexegg.com/regex-explosive-quantifiers.html#example) when we try to match the string AAAC with that pattern ^(A+)*B.
 
-> See also example on DotNetFiddle: https://dotnetfiddle.net/0PSP3l
+> See also, a real world example on my DotNetFiddle: https://dotnetfiddle.net/0PSP3l
+
+> Also instructive to understand how Regex works. Unrealistic to implement in an interview, it is
+> nice to be able to see how a combinatorial explosion can result in this algorithm
+> Ref: [Leetcode: regular-expression-matching](https://leetcode.com/problems/regular-expression-matching/)
+
+<details><summary markdown="span">My regex Implementation in Python</summary>
+
+```python
+import functools
+
+class Solution(object):
+    @functools.lru_cache(maxsize=1024)
+    def isMatch(self, t, p):
+        if not p and not t:
+            return True
+        elif t and not p:
+            return False
+        elif p and not t and p[-1] != '*':
+            return False
+        else:
+            firstCharMatches  = len(t)> 0 and p[0] in [t[0],'.']
+            if len(p) > 1 and p[1] == '*':
+                zeroOrMore = self.isMatch(t, p[2:])
+                oneOrMore  = firstCharMatches and self.isMatch(t[1:], p) 
+                return oneOrMore or zeroOrMore
+            else:
+                return firstCharMatches and self.isMatch(t[1:], p[1:])
+```
+
+</details>
+<BR>
