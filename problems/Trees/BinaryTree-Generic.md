@@ -7,7 +7,10 @@ Practise here: [Leetcode]()
 
 ### [Pre-Order](https://leetcode.com/problems/binary-tree-preorder-traversal/)
 
-> Pre-Order Traversal - Iterative and Recursive
+> &nbsp;1 <BR>
+> 2    3 <BR>
+
+> Pre-Order: [1,2,3]
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -27,52 +30,30 @@ class Solution:
             return res
 ```
 
-</details>
-<BR>
-
-### [In-Order](https://leetcode.com/problems/binary-tree-inorder-traversal/)
-
-> Pre-Order Traversal - Iterative and Recursive
-
-<details><summary markdown="span">Let's see some code!</summary>
-
 ```python
 class Solution:
-    def inorderTraversal(self, root: TreeNode):
-        def inOrder(a):
-            if a is not None:
-                inOrder(a.left)
-                self.res.append(a.val)
-                inOrder(a.right)
-
-        def inOrderIterative(a):
-            res   = []
-
-            stack = []
-            curr  = a
-            while stack or curr:
-                if curr:
-                    stack.append(curr)
-                    curr = curr.left
-                else:
-                    curr = stack.pop()
-                    res.append(curr.val)
-                    curr = curr.right
-            return res
-
-        self.res = []
-        inOrder(root)
-        return self.res
-
-        return inOrderIterative(root)
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:        
+        def solve(node):
+            if node:
+                res.append(node.val)
+                solve(node.left)
+                solve(node.right)
+        
+        res = []
+        solve(root)
+        return res
 ```
 
 </details>
 <BR>
 
+
 ### [Post-Order](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 
-> Post-Order Traversal - Iterative and Recursive
+> &nbsp;1 <BR>
+> 2    3 <BR>
+
+> PostOrder: [2,3,1]
 
 <details><summary markdown="span">Let's see some code!</summary>
 
@@ -95,5 +76,59 @@ class Solution(object):
         return res
 ```
 
+```python
+class Solution:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        def solve(node):
+            if node:                
+                solve(node.left)                
+                solve(node.right)   
+                res.append(node.val)
+        res = []
+        solve(root)
+        return res
+```
+</details>
+<BR>
+
+
+### [In-Order](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+
+> &nbsp;1 <BR>
+> 2    3 <BR>
+
+> InOrder: [2,1,3]
+
+<details><summary markdown="span">Let's see some code!</summary>
+
+```python
+class Solution:
+    def inorderTraversal(self, root: TreeNode):
+        res   = []
+        stack = []
+        curr  = root
+        while stack or curr:
+            if curr:
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                res.append(curr.val)
+                curr = curr.right
+        return res
+```
+
+```python
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        def solve(node):
+            if node:                
+                solve(node.left)
+                res.append(node.val)
+                solve(node.right)        
+        res = []
+        solve(root)
+        return res
+```
 </details>
 <BR>
