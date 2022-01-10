@@ -61,6 +61,38 @@ class Solution:
 </details>
 <BR>
 
+### [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+
+> Given two strings s and t of lengths m and n respectively, return the minimum window substring of 
+> s such that every character in t (including duplicates) is included in the window.
+
+```python
+import collections
+class Solution(object):  
+    def minWindow(self, s, t):
+        need = collections.Counter(t)
+        l =r = i = j = 0
+        missing = len(t)
+
+        for r in range(len(s)):                        
+            if need[s[r]] > 0:
+                missing -=1
+            need[s[r]] -=1
+            
+            while missing==0:                
+                if j ==0 or r-l+1 < j-i:
+                    i,j=l,r+1
+                
+                need[s[l]]+=1
+                if need[s[l]]>0:
+                    missing +=1           
+                    
+                l+=1        
+                
+        return s[i:j]
+```
+
+
 ### [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones-ii/)
 
 > Given a binary array, find the maximum number of consecutive 1s in this sort if you can flip at most one 0.
