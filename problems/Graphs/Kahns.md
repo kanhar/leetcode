@@ -12,6 +12,8 @@ you should take to finish all courses.
 > Time: O(V+E) <BR>
 > Space: O(V+E) <BR>
 
+> See also https://leetcode.com/problems/course-schedule/
+
 <details><summary markdown="span">Let's see some code!</summary>
 
 ```python
