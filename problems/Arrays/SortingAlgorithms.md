@@ -199,3 +199,46 @@ class Solution:
 
 </details>
 <BR>
+
+
+### [Kanhar Sort! :)](https://leetcode.com/problems/maximum-gap/)
+
+I like to jokingly call this Kanhar Sort, faster than Merge, Heap and Quick sort.
+
+<details><summary markdown="span">Let's see some code!</summary>
+
+```python
+class Solution:
+    def maximumGap(self, num):
+        if len(num) < 2:
+            return 0
+
+        num = self.KanharSort(num)
+        print(num)
+        res = 0
+        for i in range(1, len(num)):
+            res = max(num[i] - num[i - 1], res)
+        return res
+    
+    def KanharSort(self, nums: List[int]) -> int:
+        edges = collections.defaultdict(list)
+        indeg = {x: 0 for x in nums}
+        
+        for a,b, in zip(nums, nums[1:]):
+            (a,b) = (a,b) if a <= b else (b,a)
+            edges[a].append(b)
+            indeg[b]+=1
+    
+        res = []
+        h = [x for x in indeg if indeg[x] == 0] 
+        heapq.heapify(h)
+        while h:
+            curr = heapq.heappop(h)
+            res.append(curr)
+            for e in edges[curr]:
+                indeg[e]-=1
+                if indeg[e]==0:
+                    heapq.heappush(h, e)
+        print(res)
+        return res 
+```
