@@ -108,23 +108,22 @@ class Solution(object):
                 return dfs(s.left, t) or dfs(s.right, t)
 
         return checkAll(s, t)
+```
 
-
+```python
 class Solution(object):
     def isSubtree(self, s, t):
-        def tuplify(root):
+        def tuplify(root, updateCache):
             if root:
-                return (root.val, tuplify(root.left), tuplify(root.right))
-
-        def tuplifyAll(root):
-            if root:
-                tuple = root.val, tuplifyAll(root.left), tuplifyAll(root.right)
-                self.res[tuple].append(root)
+                tuple = (root.val, tuplify(root.left, updateCache), tuplify(root.right, updateCache))
+                if updateCache:
+                    self.res[tuple].append(root)
                 return tuple
 
         self.res = collections.defaultdict(list)
-        tuplifyAll(s)
-        return tuplify(t) in self.res
+        tuplify(s, updateCache = True)
+        return tuplify(t, updateCache = False) in self.res
+
 ```
 
 </details>
