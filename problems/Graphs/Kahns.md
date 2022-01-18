@@ -182,7 +182,7 @@ class Solution:
 </details>
 <BR>
 
-### [Sort Array using Kahns?](https://leetcode.com/problems/maximum-gap/)
+### [Kanhar Sort? :)](https://leetcode.com/problems/maximum-gap/)
 
 I like to jokingly call this Kanhar Sort, faster than Merge, Heap and Quick sort.
 
