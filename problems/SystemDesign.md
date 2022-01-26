@@ -3,6 +3,9 @@
 
 - TOC
 {:toc}
+
+The ultimate primer: https://github.com/donnemartin/system-design-primer  
+
 ### [CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 
 > Distributed systems can Consistency or Availability given Partition Tolerance
@@ -10,6 +13,16 @@
 * **Consistency**: Every read receives the most recent write or error. 
 * **Availability**: Every read receives a *mostly* recent write or error
 * **Partition tolerance**: The system should operate despite network IO issues.
+
+### Consensus:
+[Impossibility of Distributed Consensus with One Faulty Process](https://www.the-paper-trail.org/post/2008-08-13-a-brief-tour-of-flp-impossibility)
+
+
+### Distributed Locking
+
+Define: Optimistic vs Pessimistic Locking <BR>
+See also [Why RedLock won't work](https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html) vs
+[the rebuttal](http://antirez.com/news/101)
 
 ### [ACID](https://en.wikipedia.org/wiki/ACID)
 
@@ -44,7 +57,7 @@
 
 ### Encryption
 
-#### Assymetric Key
+#### Assymmetric Key
 
 * Client Hello - Asking for SSL/TLS Version, Cryptographic Algorithms Supported, Data Compression Supported
 * Server Hello - Responds with Cryptographic Algorithm from list above, session id, server's digital certificate and server Public Key
@@ -53,4 +66,4 @@
 * Client sends a finished message encrypted with `Shared Secret Key`
 * Server responds a finished message encrypted with `Shared Secret Key`
    
-Note: 4,5,6 can in some sense be considered symmetric key exchange. 
+Note: A subset of the steps above, ex: 4,5,6 can in some sense be considered symmetric key exchange. 
