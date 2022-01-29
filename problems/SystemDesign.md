@@ -14,15 +14,16 @@ The ultimate primer: https://github.com/donnemartin/system-design-primer
 * **Availability**: Every read receives a *mostly* recent write or error
 * **Partition tolerance**: The system should operate despite network IO issues.
 
-### Consensus:
-[Impossibility of Distributed Consensus with One Faulty Process](https://www.the-paper-trail.org/post/2008-08-13-a-brief-tour-of-flp-impossibility)
-
-
 ### Distributed Locking
 
-Define: Optimistic vs Pessimistic Locking <BR>
-See also [Why RedLock won't work](https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html) vs
-[the rebuttal](http://antirez.com/news/101)
+* **Optimistic Locking** - read a record, take note of a version indicator( version number / timestamps / 
+  checksums/hashes), confirm it hasn't changed before you write the record back
+* **Pessimistic Locking** - assume the record has changed or will change. Lock resource before engaging in a read.
+
+See also:
+* [Impossibility of Distributed Consensus with One Faulty Process](https://www.the-paper-trail.org/post/2008-08-13-a-brief-tour-of-flp-impossibility)
+* [Why RedLock won't work](https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html) vs
+[its rebuttal](http://antirez.com/news/101)
 
 ### [ACID](https://en.wikipedia.org/wiki/ACID)
 
@@ -53,7 +54,8 @@ See also [Why RedLock won't work](https://martin.kleppmann.com/2016/02/08/how-to
 > HTTP
 > HTTPS
 > DNS
-> Network interfaces, physical, ARP, DNS, VPN, firewalls, cookies, forward/reverse proxy, ISP/IX
+> Network interfaces, physical, ARP, DNS, VPN, firewalls, cookies, forward/reverse proxy, 
+> [ISP/IX](https://en.wikipedia.org/wiki/Internet_exchange_point)
 
 ### Encryption
 
@@ -67,3 +69,32 @@ See also [Why RedLock won't work](https://martin.kleppmann.com/2016/02/08/how-to
 * Server responds a finished message encrypted with `Shared Secret Key`
    
 Note: A subset of the steps above, ex: 4,5,6 can in some sense be considered symmetric key exchange. 
+
+### [Caching Patterns](https://codeahoy.com/2017/08/11/caching-strategies-and-how-to-choose-the-right-one/)
+
+* Cache-Aside - check cache first - if miss then check db return to application - application updates cache
+* Read-Through - check cache first - if miss then check db and update cache, then return result to application
+* Write-Through - data is always first written to the cache and then to the database
+* Write-Around - always write to db, only  data that is read makes it way into the cache.  
+* Write-Back - write to cache which acknowledges immediately and after some delay writes to db.
+
+### Estimation
+
+* Signed b-bit Integer: 2^b
+* Unsigned b-bit Integer: -2^b -- 2^b-1
+* ASCII char - 8 bits ( really only 7 used) = 1 byte 
+* Unicode char - 16 bits or 2^16 = 65536 = 2 bytes
+* Long/Double number = 64 bits = 8 bytes
+* UUID/GUID: 16 bytes  
+* Sample Db Row:
+** id (long) + username(10ch) + email ( 50ch) = 8+20+100  ~ 150 bytes
+** 1 billion users: 150b * 10e9 = 145 gb
+  
+* Read sequentially from HDD: 30 MB/s
+* Read sequentially from SSD: 1 GB/s
+* Read sequentially from memory: 4 GB/s
+* Read sequentially from 1Gbps Ethernet: 100MB/s
+
+* SQL Db: 100-250GB. 25K conns per second
+* Redis Cache: 300GB. 100k conns. per second
+* Queues: 3000 messages per second ( seems low)
