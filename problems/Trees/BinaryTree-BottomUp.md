@@ -9,7 +9,7 @@ Practise here: [Leetcode]()
 
 > Given a non-empty binary tree, find the maximum path sum
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -41,7 +41,7 @@ class Solution:
 
 > Calculate Tree Diameter
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -87,7 +87,7 @@ class Solution:
 > Given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value.
 > [See also](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -138,7 +138,7 @@ class Solution:
 
 > Smallest String from Leaf
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -164,7 +164,7 @@ class Solution:
 
 > Given a binary tree, determine if it is height-balanced - left and right subtrees of every node differ in height by no more than 1.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -211,7 +211,7 @@ class Solution:
 
 > Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):

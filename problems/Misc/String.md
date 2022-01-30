@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xfipte)
 
 > Given an array of strings, group anagrams together
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -41,7 +41,7 @@ class Solution:
 
 > Valid Palindrome
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 
@@ -54,7 +54,7 @@ class Solution:
 
 > Suppose "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

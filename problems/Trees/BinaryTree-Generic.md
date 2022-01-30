@@ -12,7 +12,7 @@ Practise here: [Leetcode]()
 
 > Pre-Order: [1,2,3]
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -55,7 +55,7 @@ class Solution:
 
 > PostOrder: [2,3,1]
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):
@@ -99,7 +99,7 @@ class Solution:
 
 > InOrder: [2,1,3]
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

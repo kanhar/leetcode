@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9db7rant)
 
 > Given an integer array nums where the elements are sorted in ascending order,
 convert it to a height-balanced binary search tree.
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -33,7 +33,7 @@ class Solution:
 The successor of a node p is the node with the smallest key greater than p.val.
 >  <BR>
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -52,7 +52,7 @@ class Solution:
 ### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 
 > Given a binary Search tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -73,7 +73,7 @@ class Solution:
 
 > Given a binary tree, determine if it is a valid binary search tree (BST).
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

@@ -9,7 +9,7 @@ Practise here: [Leetcode]()
 
 > Given a binary tree, return the level order traversal of its nodes' values (i.e, from left to right, level by level).
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -51,7 +51,7 @@ class Solution:
 > Evaluate if a binary tree X is flip equivalent to a binary tree Y - i.e. if we can make X equal
 to Y after some number of flip operations. 
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):
@@ -73,7 +73,7 @@ class Solution(object):
 
 > Invert a binary tree.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 def invertTree(root):
@@ -93,7 +93,7 @@ def invertTree(root):
 some nodes of the two trees are overlapped while the others are not. The merge rule is that if two nodes overlap, 
 then sum node values up as the new value of the merged node.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -114,7 +114,7 @@ class Solution:
 ### [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
 
 > Populate each next pointer to point to its next right node. 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -148,7 +148,7 @@ class Solution:
 
 > Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

@@ -10,7 +10,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xf0762)
 > Given two integers dividend and divisor, divide two integers without using multiplication,
 division and mod operator.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -47,7 +47,7 @@ class Solution:
 
 > Given a non-empty sort of digits representing a non-negative integer, plus one to the integer.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -81,7 +81,7 @@ class Solution:
 
 > Given a 32-bit signed integer, reverse digits of an integer.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -109,7 +109,7 @@ class Solution:
 
 > Implement pow(x, n), which calculates x raised to the power n./ 
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -131,7 +131,7 @@ class Solution:
 
 > Implement int sqrt(int x).
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -159,7 +159,7 @@ class Solution:
 
 > Integer to Roman numerals. 14 --> XIV
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -193,7 +193,7 @@ class Solution:
 
 > Integer to Roman numerals. XIV --> 14
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

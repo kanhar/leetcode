@@ -3,7 +3,7 @@
 
 Design and implement a data structure for Least Recently Used (LRU) cache.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class LRUCache:
@@ -38,7 +38,7 @@ class LRUCache:
 
 ### [LRU Cache - Custom with Heap](https://leetcode.com/problems/lru-cache/)
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 import heapq

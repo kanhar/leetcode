@@ -9,7 +9,7 @@ Practise here: [Leetcode]()
 
 > Given a binary tree, return the roots of all duplicate subtrees. 
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -35,7 +35,7 @@ class Solution:
 
 > Serialize and de-transform any generic Binary Tree
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Codec:
@@ -85,7 +85,7 @@ class Codec:
 ### [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) 
 
 > Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s.
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):

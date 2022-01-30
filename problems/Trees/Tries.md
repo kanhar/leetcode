@@ -10,7 +10,7 @@ These are different from Ternary Search Tries.
 ### [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) 
 
 > Find the longest common prefix in a set of words 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -45,7 +45,7 @@ class Solution:
 
 > Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -85,7 +85,7 @@ class Solution:
 ### [Word Search](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
 
 > Given a 2D board and a list of words from the dictionary, find all words in the board. 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

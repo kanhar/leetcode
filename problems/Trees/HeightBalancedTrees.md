@@ -264,7 +264,7 @@ class MedianFinder(object):
 > Find the kth largest element in an unsorted array. 
 > [Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 Note: This just uses the MedianFinder class introduced above
 
@@ -285,7 +285,7 @@ class Solution:
 > You are given an integer sort nums and you have to return a new counts sort. 
 > The counts sort has the property where counts[i] is the number of smaller elements to the right of nums[i]. 
  
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class TreeNode(object):
@@ -339,7 +339,7 @@ And voila it now works
 
 > Given an integer sort nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 

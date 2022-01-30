@@ -3,7 +3,7 @@
 
 > Implement strStr(). Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

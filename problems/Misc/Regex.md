@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xftxlv)
 
 > Implement atoi: Key idea is keep processing number until valid.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 import re
@@ -38,7 +38,7 @@ class Solution:
 
 > Given an encoded string, return its decoded string.
 > [See also](https://kanhar.github.io/leetcode/problems/Arrays/Stacks.html#decode-string)
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 import re
@@ -76,7 +76,7 @@ class Solution:
 
 > Parse valid IP, Ipv4 and IPv6.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 import re

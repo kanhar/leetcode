@@ -14,7 +14,7 @@ you should take to finish all courses.
 
 > See also https://leetcode.com/problems/course-schedule/
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -53,7 +53,7 @@ are sorted lexicographically by the rules of this new language.
 order by the new language's rules. If there is no solution, return "". If there are multiple solutions,
 return any of them.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```text
     Loop like so:
@@ -115,7 +115,7 @@ class Solution:
 
 > Given an integer matrix, find the length of the longest increasing path.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 import collections

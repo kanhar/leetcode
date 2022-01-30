@@ -10,7 +10,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9db7pr2r)
 > Given an integer array nums where the elements are sorted in ascending order,
 convert it to a height-balanced binary search tree.
 > (Can it also work for a graph?)
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Codec:
@@ -70,7 +70,7 @@ class Codec:
 ### [Tree Traversal n-Ary](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) <BR>
 
 > Given an n-ary tree, return the level order traversal of its nodes' values..
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

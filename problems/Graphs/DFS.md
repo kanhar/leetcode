@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90ojkbn2)
 
 > Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -76,7 +76,7 @@ class Solution:
 
 > Given a reference of a node in a connected undirected graph. Return a deep copy (clone) of the graph.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -99,7 +99,7 @@ class Solution:
 
 > Subsequences of numbers that sum to target
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):
@@ -149,7 +149,7 @@ class Solution(object):
 > Return true if and only if it is possible to assign integers to variable names so as to satisfy all the given equations
 > ["a==b","b!=a"], Output: False
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -189,7 +189,7 @@ class Solution:
 
 > Given a 2d grid map of '1's (land) and '0's (water), count the number of 1s adajcent to each other (islands).
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -223,7 +223,7 @@ class Solution:
 
 > Given a collection of distinct integers, return all possible permutations.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):
@@ -267,7 +267,7 @@ class Solution(object):
 
 > Convert Connected Graph to (Minimum) Undirected Graph with no cycles.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):
@@ -304,7 +304,7 @@ class Solution(object):
 
 > See also Trie solution. Reference Needed
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -338,7 +338,7 @@ class Solution:
 determine whether or not all paths starting from source eventually end at destination,
 that is: At least one path exists from the source node to the destination node
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

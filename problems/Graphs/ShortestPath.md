@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=90obk211)
 
 >There are N network nodes, labelled 1 to N. Find shortest distance from node K to all nodes.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 
@@ -145,7 +145,7 @@ class Solution:
 ### [Tree Diameter](https://leetcode.com/problems/tree-diameter/)
 > Given an undirected tree, return its bottomUp: the number of edges in a longest path in that tree.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

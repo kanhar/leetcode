@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9lu7fe4c)
 
 > Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -54,7 +54,7 @@ class Solution:
 > Given a string containing digits from 2-9 inclusive, return all possible letter
 combinations that the number could represent.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -94,7 +94,7 @@ class Solution:
 >> Inp: [1,2,3]
 >> Out: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
