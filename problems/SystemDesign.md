@@ -36,6 +36,7 @@ See also:
 ### [BASE](https://en.wikipedia.org/wiki/Eventual_consistency)
 > Basically available, Soft-state, Eventually consistent. Ex: NoSQL databases. 
 > Requires a reconciliation strategy when conflicts happen
+> Best practical example: DNS
 
 ### [Message-delivery guarantees](https://blog.bulloak.io/post/20200917-the-impossibility-of-exactly-once/)
 
@@ -85,6 +86,7 @@ Note: A subset of the steps above, ex: 4,5,6 can in some sense be considered sym
 * ASCII char - 8 bits ( really only 7 used) = 1 byte 
 * Unicode char - 16 bits or 2^16 = 65536 = 2 bytes
 * Long/Double number = 64 bits = 8 bytes
+* Timestamp in nanoseconds = 8 bytes  
 * UUID/GUID: 16 bytes  
 * Sample Db Row:
 ** id (long) + username(10ch) + email ( 50ch) = 8+20+100  ~ 150 bytes
@@ -98,3 +100,11 @@ Note: A subset of the steps above, ex: 4,5,6 can in some sense be considered sym
 * SQL Db: 100-250GB. 25K conns per second
 * Redis Cache: 300GB. 100k conns. per second
 * Queues: 3000 messages per second ( seems low)
+
+* LAN RTT: 5-50ms
+* Continental RTT: 70-100ms
+* International RTT: 100-200ms
+
+* Base 62 Encoding of a Md5 Hash of a Long string.
+* 7 digit base 62 - 62^7 = 3.5 Trillion combinations ( which takes < 2^43 bits to store)
+*

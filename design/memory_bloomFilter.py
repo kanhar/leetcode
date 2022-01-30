@@ -4,6 +4,8 @@ Using this problem to test out the following:
 - Pre-defined Hashing algorithms (ex: md5 )
 - Pre-allocated Memory
 
+See also https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch
+
 Ref: https://leetcode.com/problems/missing-number/
 """
 

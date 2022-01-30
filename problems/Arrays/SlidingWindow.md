@@ -44,7 +44,7 @@ class Solution:
         
         hsh  = collections.defaultdict(int)
         left = 0
-        maxL =0
+        maxL = 0
         
         for i,c in enumerate(s):
             hsh[s[i]] +=1
