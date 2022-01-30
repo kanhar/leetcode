@@ -11,7 +11,7 @@ Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
 
 > Find the kth largest element in an unsorted array. 
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 ```python
     import heapq
     class Solution:
@@ -35,7 +35,7 @@ And voila it now works
 > Design a data structure that allows ingestion of numbers, and can in O(1) time
 > return the median. 
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 import heapq

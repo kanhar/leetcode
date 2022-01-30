@@ -10,7 +10,7 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9dbla3q1)
 > A linked list is given such that each node contains an additional random pointer which could point to
 any node in the list or null. Return a deep copy of the list.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -38,7 +38,7 @@ class Solution:
 
 > Given a linked list, determine if it has a cycle in it.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -63,7 +63,7 @@ class Solution:
 
 > Write a program to find the node at which the intersection of two singly linked lists begins. Else return null
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -88,7 +88,7 @@ class Solution:
 
 > Merge k sorted linked lists and return it as one sorted list.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 import heapq
@@ -119,7 +119,7 @@ class Solution:
 
 > Given a singly linked list, determine if it is a palindrome.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -148,7 +148,7 @@ class Solution:
 
 > Given a linked list, remove the n-th node from the end of list and return its head.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -177,7 +177,7 @@ class Solution:
 
 > Given a sorted linked list, delete all duplicates such that each element appear only once.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -200,7 +200,7 @@ class Solution:
 
 > Reverse a singly linked list. [See also](https://medium.com/outco/reversing-a-linked-list-easy-as-1-2-3-560fbffe2088)
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

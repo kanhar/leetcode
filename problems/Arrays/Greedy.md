@@ -8,7 +8,7 @@
 
 > Integer to Roman numerals. 14 --> XIV
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -42,7 +42,7 @@ class Solution:
 
 > Integer to Roman numerals. XIV --> 14
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -76,7 +76,7 @@ class Solution:
 > Not really a greedy algorithm, but placing here until I can figure out where to place this
 > category of algorithms.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class RandomizedSet:

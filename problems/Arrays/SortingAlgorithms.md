@@ -8,7 +8,7 @@
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -71,7 +71,7 @@ class Solution:
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -110,7 +110,7 @@ class Solution:
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -143,7 +143,7 @@ class Solution:
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 ```
@@ -161,7 +161,7 @@ the sorted order, not the kth distinct element.
 
 > The same strategy is also very effective in calculating a Median or a Percentile.
  
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -205,7 +205,7 @@ class Solution:
 
 I like to jokingly call this Kanhar Sort, faster than Merge, Heap and Quick sort.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

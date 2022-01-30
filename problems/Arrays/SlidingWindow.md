@@ -11,7 +11,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9di1s4a1)
 and an integer n, return if n new flowers can be planted in the flowerbed without violating the
 no-adjacent-flowers rule.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -36,7 +36,7 @@ class Solution:
 
 > Given a string, find the length of the longest substring without repeating characters.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -97,7 +97,7 @@ class Solution(object):
 
 > Given a binary array, find the maximum number of consecutive 1s in this sort if you can flip at most one 0.
 > Key Intuition: Look for a sliding window with 1 zero, if 2 zeroes found, remove first zero found
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -128,7 +128,7 @@ class Solution:
 > Given an array of n positive integers and a positive integer s, find the minimal length of a
 contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
  
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -158,7 +158,7 @@ class Solution:
 
 > Remove duplicates in-place in a sorted array.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -186,7 +186,7 @@ class Solution:
 
 > Arr = [1, 4, 5, 2, 3, 7, 8, 6, 10, 9], k = 2
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 Solution using Heaps
 ```python

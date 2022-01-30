@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9dunhxke)
 
 > Rotate Matrix 90 degrees, in place.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 > Solution using Reverse and Transpose. 
 ```python
@@ -55,7 +55,7 @@ class Solution:
 > Remember, multiplying an m×n matrix by an n×p matrix, result is an mxp matrix
 > Haven't found an optimization (yet) for sparse matrices
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -82,7 +82,7 @@ class Solution:
 ### [Traverse Matrix in a Spiral](https://leetcode.com/problems/spiral-matrix/)
 > Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
  
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -135,7 +135,7 @@ class Solution:
 
 > Traverse Matrix diagonally.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

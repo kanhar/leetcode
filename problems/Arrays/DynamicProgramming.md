@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9di6va53)
 
 > Optimize for max robbery amount, should adjacent houses not be robbable. 
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -61,7 +61,7 @@ class Solution:
 
 > Given an unsorted sort of integers, find the length of the longest increasing subsequence.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):
@@ -83,7 +83,7 @@ class Solution(object):
 ### [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 > Given a string s, find the longest palindromic substring in s.
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -111,7 +111,7 @@ If there isn't one, return 0 instead.
 > Key intuition: If total_at_i + total_at_j = k, then sum(i..j) must be k
 > [Contrast with](https://leetcode.com/problems/path-sum-iii/)
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -139,7 +139,7 @@ class Solution:
 
 > Given an integer sort nums, find the contiguous subarray which has the largest sum. 
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -174,7 +174,7 @@ class Solution:
 
 > Given an integer numRows, return the first numRows of Pascal's triangle.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

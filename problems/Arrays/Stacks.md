@@ -10,7 +10,7 @@ Practise here: [Leetcode](https://leetcode.com/list/?selectedList=9duv7mlj)
 > Input: "(1+(4+5+2)-3)+(6+8)". BR
 > Output: 23
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -46,7 +46,7 @@ class Solution:
 > Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
 determine if the input string is valid.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution(object):
@@ -72,7 +72,7 @@ class Solution(object):
 > Given an encoded string, return its decoded string.
 > [See also](https://kanhar.github.io/leetcode/problems/Misc/Regex.html#decode-string)
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:

@@ -9,7 +9,7 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xf0762)
 
 > Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
@@ -45,7 +45,7 @@ class Solution:
 > Find a value in a matrix where integers in each row are sorted from left to right.
 The first integer of each row is greater than the last integer of the previous row.
 
-<details><summary markdown="span">Let's see some code!</summary>
+<details><summary markdown="span">Execute!</summary>
 
 ```python
 class Solution:
