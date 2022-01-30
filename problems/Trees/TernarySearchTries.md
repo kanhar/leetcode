@@ -1,14 +1,11 @@
 {: .no_toc}
 # Ternary Search Tries
-Practise here: [Leetcode]()
-
 [Ternary Search Tries](https://en.wikipedia.org/wiki/Ternary_search_tree) or Prefix Tries are cool. My impl. below generally works, 
 but has a few bugs, (4/15 test cases fail) that I will shortly fix. 
 
-Ref: https://kanhar.github.io/pdf/SuffixTriePresentation.pdf
+Ref: [Masters SuffixTriePresentation](https://kanhar.github.io/pdf/SuffixTriePresentation.pdf)
 
-They are lightning fast (and low-memory footprint) at spell-checks and auto-complete. ( Which too
-I intend to shortly author). Below is a basic trie implementation
+They are lightning fast (and low-memory footprint) at spell-checks and auto-complete. Below is a basic trie implementation
 
 - TOC
 {:toc}
