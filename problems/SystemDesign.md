@@ -82,7 +82,7 @@ Note: A subset of the steps above, ex: 4,5,6 can in some sense be considered sym
 ### Estimation
 
 * Signed b-bit Integer: 2^b
-* Unsigned b-bit Integer: -2^b -- 2^b-1
+* Unsigned b-bit Integer: -2^(b-1) -- 2^(b-1)-1
 * ASCII char - 8 bits ( really only 7 used) = 1 byte 
 * Unicode char - 16 bits or 2^16 = 65536 = 2 bytes
 * Long/Double number = 64 bits = 8 bytes

@@ -109,7 +109,7 @@ class Solution:
 
 > Let's see [what happens](https://www.rexegg.com/regex-explosive-quantifiers.html#example) when we try to match the string AAAC with that pattern ^(A+)*B.
 
-> See also, a real world example on my DotNetFiddle: https://dotnetfiddle.net/0PSP3l
+> See also, a real world example via this [.NET Fiddle](https://dotnetfiddle.net/0PSP3l)
 
 > Also instructive to understand how Regex works. Unrealistic to implement in an interview, it is
 > nice to be able to see how a combinatorial explosion can result in this algorithm
