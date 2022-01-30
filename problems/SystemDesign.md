@@ -58,9 +58,7 @@ See also:
 > Network interfaces, physical, ARP, DNS, VPN, firewalls, cookies, forward/reverse proxy, 
 > [ISP/IX](https://en.wikipedia.org/wiki/Internet_exchange_point)
 
-### Encryption
-
-#### Assymmetric Key
+### Encryption: TLS
 
 * Client Hello - Asking for SSL/TLS Version, Cryptographic Algorithms Supported, Data Compression Supported
 * Server Hello - Responds with Cryptographic Algorithm from list above, session id, server's digital certificate and server Public Key
