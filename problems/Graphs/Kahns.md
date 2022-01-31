@@ -181,3 +181,12 @@ class Solution:
 
 </details>
 <BR>
+
+
+### [Kanhar Sort - Sort Integers](https://leetcode.com/problems/maximum-gap/)
+
+I like to jokingly call this Kanhar Sort, faster than Merge, Heap and Quick sort.
+
+A modified version of Kahn's algorithm for sorting integer arrays, without duplicates.
+
+See [Arrays->SortingAlgorithms.html#kanhar-sort-](https://kanhar.github.io/leetcode/problems/Arrays/SortingAlgorithms.html#kanhar-sort-)
