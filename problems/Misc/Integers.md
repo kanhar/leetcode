@@ -10,6 +10,9 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90xf0762)
 > Given two integers dividend and divisor, divide two integers without using multiplication,
 division and mod operator.
 
+> This algorithm is known as exponential search and is commonly used for searching sorted 
+> spaces of unknown size for the first value that past a particular condition. It is a lot like binary search
+
 <details><summary markdown="span">Execute!</summary>
 
 ```python
@@ -107,7 +110,8 @@ class Solution:
 
 ### [Implement Power(x,n)](https://leetcode.com/problems/powx-n/)
 
-> Implement pow(x, n), which calculates x raised to the power n./ 
+> Implement pow(x, n), which calculates x raised to the power n. 
+> Todo: re-write this. 
 
 <details><summary markdown="span">Execute!</summary>
 
