@@ -1,23 +1,36 @@
 {: .no_toc}
 # Dijkstra, Bellman Ford, Floyd-Warshall - Shortest Path
-Practise here: [Leetcode](https://leetcode.com/list/?selectedList=90obk211)
+Directed Acylic Graphs (DAGs)
 
 - TOC
 {:toc}
 
 ### [Network Delay Time](https://leetcode.com/problems/network-delay-time/)
 
->There are N network nodes, labelled 1 to N. Find shortest distance from node K to all nodes.
+> Effectively, there are N network nodes, labelled 1 to N. 
+> Starting from K, find maximum time a signal reaches all N nodes. 
+> Even though the ask is to find the max time, this distills down to find the
+> shortest distance from node K to all nodes.
 
-<details><summary markdown="span">Execute!</summary>
+>   `[1]`< --- 1 --- `[2]` ---1 ---> `[3]` ---1 ---> `[4]` <BR>
+> - Starting k = 2 --> max(Shortest distance to all nodes) <BR>
+> - Starting k = 2 --> max(1,1,2) = 2 <BR>
+
+<details><summary markdown="span">Using DFS. (N-1)!</summary>
 
 ```python
 
 """
-Blind DFS: O(N^N +ElogE)
+DFS: O((N−1)!+ElogE)
 """
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        def solve(curr, currDist):
+            if currDist < g[curr]:
+                g[curr] = currDist
+                for weight, neighbor in sorted(edges[curr]):
+                    solve(neighbor, currDist + weight)
+                    
         # Setup
         nodes = set([x[0] for x in times] + [x[1] for x in times])
         if len(nodes) < n:
@@ -29,12 +42,6 @@ class Solution:
 
         # Core Algorithm
         g = {x: float('inf') for x in nodes}
-        def solve(curr, currDist):
-            if currDist < g[curr]:
-                g[curr] = currDist
-                for weight, neighbor in sorted(edges[curr]):
-                    solve(neighbor, currDist + weight)
-
         solve(k, 0)
 
         # Result
@@ -42,11 +49,16 @@ class Solution:
             return max(g.values())
         else:
             return -1
+```
+</details>
+<BR>
+
+<details><summary markdown="span">Using Dijkstra!</summary>
+
+```python
 
 """
-Dijkstra's: O(N^2 +E)
-Time: O(V + ElogV)
-Space: O(V+E)
+Dijkstra's: O(N+ElogN)
 """
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
@@ -78,10 +90,16 @@ class Solution:
             return -1   # could indicate a negative weight Cycle
         else:
             return max(g.values())
+```
+</details>
+<BR>
 
+<details><summary markdown="span">Using Bellman Ford</summary>
+
+```python
 """
 Bellman Ford Algorithm
-Time: O(V.E)
+Time: O(N.E)
 """
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
@@ -106,10 +124,17 @@ class Solution:
             return max(g.values())
         else:
             return -1
+```
+</details>
+<BR>
 
+<details><summary markdown="span">Using Floyd Warshall</summary>
+
+```python
 """
 Floyd Warshall. Can also be used to get graph-diameter
-Time: O(V^3)
+
+Time: O(N.N.N)
 """
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:

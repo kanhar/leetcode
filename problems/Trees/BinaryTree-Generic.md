@@ -132,3 +132,36 @@ class Solution:
 ```
 </details>
 <BR>
+
+
+### [Count Nodes Complete BT](https://leetcode.com/problems/count-complete-tree-nodes/)
+
+> Given a complete binary tree, count the number of nodes.
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def getHeight(self, root):
+        height = 0
+        while root:
+            height += 1
+            root = root.left
+        return height
+
+    def countNodes(self, root):
+        count = 0
+        while root:
+            l, r = map(self.getHeight, (root.left, root.right))
+            if l == r:
+                count += 2 ** l
+                root = root.right
+            else:
+                count += 2 ** r
+                root = root.left
+        return count
+```
+</details>
+<BR>
+
+
