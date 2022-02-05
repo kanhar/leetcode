@@ -16,13 +16,9 @@ Directed Acylic Graphs (DAGs)
 > - Starting k = 2 --> max(Shortest distance to all nodes) <BR>
 > - Starting k = 2 --> max(1,1,2) = 2 <BR>
 
-<details><summary markdown="span">Using DFS. (N-1)!</summary>
+<details><summary markdown="span">Using DFS - O((N−1)!+ElogE)</summary>
 
 ```python
-
-"""
-DFS: O((N−1)!+ElogE)
-"""
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         def solve(curr, currDist):
@@ -53,13 +49,9 @@ class Solution:
 </details>
 <BR>
 
-<details><summary markdown="span">Using Dijkstra!</summary>
+<details><summary markdown="span">Using Dijkstra! - O(N+ElogN)</summary>
 
 ```python
-
-"""
-Dijkstra's: O(N+ElogN)
-"""
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         nodes = set([x[0] for x in times] + [x[1] for x in times])
@@ -94,13 +86,9 @@ class Solution:
 </details>
 <BR>
 
-<details><summary markdown="span">Using Bellman Ford</summary>
+<details><summary markdown="span">Using Bellman Ford. O(N.E)</summary>
 
 ```python
-"""
-Bellman Ford Algorithm
-Time: O(N.E)
-"""
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         # Setup
@@ -128,14 +116,9 @@ class Solution:
 </details>
 <BR>
 
-<details><summary markdown="span">Using Floyd Warshall</summary>
+<details><summary markdown="span">Using Floyd Warshall. O(N.N.N) Can also be used to get graph-diameter</summary>
 
 ```python
-"""
-Floyd Warshall. Can also be used to get graph-diameter
-
-Time: O(N.N.N)
-"""
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         # Setup
@@ -171,8 +154,10 @@ class Solution:
 
 ### [Tree Diameter](https://leetcode.com/problems/tree-diameter/)
 > Given an undirected tree, return its bottomUp: the number of edges in a longest path in that tree.
+> Note: This is unlike [shortest-(repeatable)-path-visiting-all-nodes](https://leetcode.com/problems/shortest-path-visiting-all-nodes/)
+> in that, the path cannot have repeated edges 
 
-<details><summary markdown="span">Execute!</summary>
+<details><summary markdown="span">Using Floyd Warshall!</summary>
 
 ```python
 class Solution:
@@ -193,6 +178,13 @@ class Solution:
 
         return maxVal
 
+```
+</details>
+<BR>
+
+<details><summary markdown="span">Using Dijkstra?</summary>
+
+```python
 import collections
 
 class Solution:
