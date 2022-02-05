@@ -222,6 +222,8 @@ class Solution:
 ### [Permutations](https://leetcode.com/problems/permutations/)
 
 > Given a collection of distinct integers, return all possible permutations.
+> Perm(n,r) = n! / ( n-r )!
+> Comb(n,r) = n! / ( k! / (n-k)! )
 
 <details><summary markdown="span">Execute!</summary>
 

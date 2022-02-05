@@ -85,3 +85,53 @@ class Solution:
 
 </details>
 <BR>
+
+
+### [Min.Weight for k contiguous split](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
+
+> Divide Array into k contiguous slices, minimize max weight per slice. 
+> Identical to [split-array-largest-sum](https://leetcode.com/problems/split-array-largest-sum/)
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        def feasible(arr, w, k):
+            currSum = 0
+            pivot = 0
+            for i in range(len(arr)):
+                currSum +=arr[i]               
+                if currSum == w:
+                    pivot +=1
+                    currSum = 0
+                elif currSum > w:
+                    pivot +=1
+                    currSum = arr[i] # Backtrack if goes over capacity
+            
+            # Edge case. We assume 1 Pivot points equals to exactly 2 splits of an array
+            # However in the specific case [5,5] with capacity = 5, pivotCount = 2, but it translates to 2 splits. 
+            if currSum == 0:
+                pivot -= 1
+                
+            return pivot < k
+        
+        left  = max(weights)
+        right = sum(weights)        
+        lastValid = sum(weights)
+        
+        while left < right:
+            midw = (left+right)//2
+            
+            if feasible(weights,midw,days):
+                right = midw
+                lastValid = midw
+            else:
+                left = midw + 1
+        
+        return lastValid
+                
+```
+
+</details>
+<BR>

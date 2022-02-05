@@ -45,7 +45,7 @@ class Solution:
 
 """
 Dijkstra's: O(N^2 +E)
-Time: O(ElogV)
+Time: O(V + ElogV)
 Space: O(V+E)
 """
 class Solution:
@@ -81,6 +81,7 @@ class Solution:
 
 """
 Bellman Ford Algorithm
+Time: O(V.E)
 """
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
@@ -108,6 +109,7 @@ class Solution:
 
 """
 Floyd Warshall. Can also be used to get graph-diameter
+Time: O(V^3)
 """
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
