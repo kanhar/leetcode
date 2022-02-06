@@ -219,85 +219,6 @@ class Solution(object):
 </details>
 <BR>
 
-### [Find Islands](https://leetcode.com/problems/number-of-islands/)
-
-> Given a 2d grid map of '1's (land) and '0's (water), count the number of 1s adajcent to each other (islands).
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-
-        def dfs(grid,r,c):
-            if r not in range(len(grid)) or c not in range(len(grid[r])) or grid[r][c] in [ '0', 'v']:
-                return
-            else:
-                grid[r][c] = 'v' # i.e. visited
-                dfs(grid, r+1, c)
-                dfs(grid, r-1, c)
-                dfs(grid, r, c+1)
-                dfs(grid, r, c-1)
-        count = 0
-
-        for i in range(0, len(grid)):
-            for j in range(0,len(grid[i])):
-                if grid[i][j] == '1':
-                    count +=1
-                    dfs(grid, i, j)
-
-        return count
-
-```
-
-</details>
-<BR>
-
-### [Permutations](https://leetcode.com/problems/permutations/)
-
-> Given a collection of distinct integers, return all possible permutations.
-> Perm(n,r) = n! / ( n-r )!
-> Comb(n,r) = n! / ( k! / (n-k)! )
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution(object):
-    def permute(self, arr: List[int]) -> List[List[int]]:
-        def perm(arr, accum = [], visited = set()):
-            if len(accum) == len(arr):
-                self.res.add(tuple(accum))
-            else:
-                for i in range(len(arr)):
-                    if i not in visited:
-                        perm(arr, accum + [arr[i]], visited | set([i]))
-
-        self.res = set()
-        perm(arr)
-        return self.res
-```
-
-Or...
-
-```python
-class Solution(object):
-    def permute(self, nums):        
-        def perm(a,k=0):
-            if len(a)==k:
-                self.path.append(list(a))                
-            else:
-                for i in range(k,len(a)):
-                    a[i],a[k] = a[k],a[i]
-                    perm(a,k+1)
-                    a[k],a[i] = a[i],a[k]
-        
-        self.path = []
-        perm(nums)                
-        return self.path        
-```
-
-</details>
-<BR>
 
 ### [Redundant Connection](https://leetcode.com/problems/redundant-connection/)
 
@@ -399,6 +320,41 @@ class Solution:
             graph[a].add(b)
 
         return dfs(source, dest)
+```
+
+</details>
+<BR>
+
+
+### [Find Islands](https://leetcode.com/problems/number-of-islands/)
+
+> Given a 2d grid map of '1's (land) and '0's (water), count the number of 1s adajcent to each other (islands).
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+
+        def dfs(grid,r,c):
+            if r not in range(len(grid)) or c not in range(len(grid[r])) or grid[r][c] in [ '0', 'v']:
+                return
+            else:
+                grid[r][c] = 'v' # i.e. visited
+                dfs(grid, r+1, c)
+                dfs(grid, r-1, c)
+                dfs(grid, r, c+1)
+                dfs(grid, r, c-1)
+        count = 0
+
+        for i in range(0, len(grid)):
+            for j in range(0,len(grid[i])):
+                if grid[i][j] == '1':
+                    count +=1
+                    dfs(grid, i, j)
+
+        return count
+
 ```
 
 </details>
