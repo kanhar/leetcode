@@ -60,37 +60,37 @@ class Solution(object):
 ```python
 class Solution(object):       
     def cleanRoom(self, robot):
+        # Take a U-Turn, move back. U-turn, face where you were originally facing.
         def rewind():
             robot.turnRight()
             robot.turnRight()
             robot.move()
             robot.turnRight()
             robot.turnRight()
-        
-        # going clockwise : 0: 'up', 1: 'right', 2: 'down', 3: 'left'
-        def move(cell, d):
-            return (cell[0] + directions[d][0], cell[1] + directions[d][1])
-            
-        def solve(cell = (0, 0), d = 0):
+           
+        def solve(cell, d ):
             visited.add(cell)
             robot.clean()
             
             for i in range(4):
-                curr_d = (d + i) % 4
-                curr_cell = move(cell, curr_d)
+                c_d = (d + i) % 4
+                curr_cell = (cell[0] + directions[c_d][0], cell[1] + directions[c_d][1])
                 
                 if not curr_cell in visited:
                     if robot.move():
-                        solve(curr_cell, curr_d)
+                        solve(curr_cell, c_d)
                         rewind()
                         
-                # turn the robot following chosen direction : clockwise
+                # Important to maintain spiral order
                 robot.turnLeft()
     
         # going clockwise : 0: 'up', 1: 'right', 2: 'down', 3: 'left'
         directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
         visited = set()
-        solve()# so back to that cell and then turn right from your last explored direction.
+        start = (0,0)
+        d = 0
+        
+        solve(start, 0 )
 ```
 
 </details>
