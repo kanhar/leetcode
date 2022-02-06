@@ -97,40 +97,30 @@ class Solution:
 ```python
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
+        # Eval if an arr can be broken up into k partitions, with no partition's sum > k. 
         def feasible(arr, w, k):
             currSum = 0
             pivot = 0
-            for i in range(len(arr)):
-                currSum +=arr[i]               
-                if currSum == w:
+            for a in arr:
+                currSum +=a            
+                if currSum > w:
                     pivot +=1
-                    currSum = 0
-                elif currSum > w:
-                    pivot +=1
-                    currSum = arr[i] # Backtrack if goes over capacity
-            
-            # Edge case. We assume 1 Pivot points equals to exactly 2 splits of an array
-            # However in the specific case [5,5] with capacity = 5, pivotCount = 2, but it translates to 2 splits. 
-            if currSum == 0:
-                pivot -= 1
-                
-            return pivot < k
+                    currSum = a
+                    
+            return pivot < k        
         
         left  = max(weights)
-        right = sum(weights)        
-        lastValid = sum(weights)
+        right = sum(weights)
         
         while left < right:
-            midw = (left+right)//2
+            mid = (left+right)//2
             
-            if feasible(weights,midw,days):
-                right = midw
-                lastValid = midw
+            if feasible(weights,mid,days):
+                right = mid
             else:
-                left = midw + 1
+                left = mid + 1
         
-        return lastValid
-                
+        return left
 ```
 
 </details>
