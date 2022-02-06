@@ -116,7 +116,7 @@ class Solution:
 </details>
 <BR>
 
-<details><summary markdown="span">Using Floyd Warshall. O(N.N.N) Can also be used to get tree-diameter below(</summary>
+<details><summary markdown="span">Using Floyd Warshall. O(N.N.N) Can also be used to get tree-diameter, see below </summary>
 
 ```python
 class Solution:
