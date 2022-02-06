@@ -142,22 +142,48 @@ class Solution:
 
 ```python
 class Solution(object):
-    def getHeight(self, root):
-        height = 0
-        while root:
-            height += 1
-            root = root.left
-        return height
-
-    def countNodes(self, root):
+    def countNodes(self, root):        
+        # Note: Depth != Height
+        # Perfect Complete Binary Tree - Node Count = 2^(d+1)-1. 
+        # Ex: D=1, Height = 2, NodeCount = 2^2-1 = 3
+        #   1
+        # 2   3
+        def depth(root):
+            d = 0
+            while root:
+                d += 1
+                root = root.left
+            return d
+        
+        def height(root):
+            return 1 + depth(root)
+        
+        # Assumes a perfect Complete Binary Tree of Height H.
+        def sumNodes(h):
+            return 2**(h-1) - 1
+        
+        # Examples:
+        # 
+        #     1
+        #   2   3
+        # 4
+        
+        #       1
+        #    2      3
+        #  4   5  6
+          
+        # Core Algorithm.
+        # When heights are  equal, go right
+        # When heights are !equal, go left
         count = 0
         while root:
-            l, r = map(self.getHeight, (root.left, root.right))
-            if l == r:
-                count += 2 ** l
+            lh = height(root.left)
+            rh = height(root.right)
+            if lh == rh:
+                count += 1 + sumNodes(lh)
                 root = root.right
             else:
-                count += 2 ** r
+                count += 1 + sumNodes(rh)
                 root = root.left
         return count
 ```
