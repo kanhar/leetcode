@@ -116,7 +116,7 @@ class Solution:
 </details>
 <BR>
 
-<details><summary markdown="span">Using Floyd Warshall. O(N.N.N) Can also be used to get graph-diameter</summary>
+<details><summary markdown="span">Using Floyd Warshall. O(N.N.N) Can also be used to get tree-diameter below(</summary>
 
 ```python
 class Solution:
@@ -182,11 +182,9 @@ class Solution:
 </details>
 <BR>
 
-<details><summary markdown="span">Using Dijkstra?</summary>
+<details><summary markdown="span">Using Dijkstra</summary>
 
 ```python
-import collections
-
 class Solution:
     def treeDiameter(self, edges: List[List[int]]) -> int:
         graph = collections.defaultdict(set)

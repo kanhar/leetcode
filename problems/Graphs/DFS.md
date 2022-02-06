@@ -141,8 +141,6 @@ class Solution(object):
 </details>
 <BR>
 
-
-
 ### [Equation Satisfiabiliy](https://leetcode.com/problems/satisfiability-of-equality-equations/)
 
 
@@ -179,7 +177,43 @@ class Solution:
             if canMeet(a, b):
                 return False
         return True
+```
 
+</details>
+<BR>
+
+
+
+### [Evaluate Equation Division](https://leetcode.com/problems/evaluate-division)
+
+> Summary: If a/b = 2 and b/c = 3, what is a/c? 
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def calcEquation(self, equations, values, queries):
+        def dfs(a, b, visited, currVal):
+            if a not in graph or b not in graph or a in visited:
+                return -1.0
+            if a == b:
+                return currVal
+
+            visited.add(a)
+            for i,j in graph[a]-visited:
+                tmp = dfs(i, b, visited, j * currVal)
+                if tmp != -1.0:
+                    return tmp
+            
+            return -1.0
+
+        graph = collections.defaultdict(set)
+
+        for (a, b), val in zip(equations, values):
+            graph[a].add((b, 1 * val))
+            graph[b].add((a, 1 / val))
+
+        return [dfs(a, b, set(), 1.0) for a, b in queries]
 ```
 
 </details>
