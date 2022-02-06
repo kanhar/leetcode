@@ -308,7 +308,7 @@ class Solution:
                 return False
             else:
                 for curr in graph[source]:
-                    #It is interesting to note here, that you cannot reverse the direction of this condition as is normal for Graph DFS coz:
+                    # It is interesting to note here, that you cannot reverse the direction of this condition as is normal for Graph DFS coz:
                     # - You are not just looking for a valid path, i.e. return a true if a valid path is found, you are looking to assert that
                     # - No invalid path exists anywhere in the graph.
                     if curr == source or curr in seen or not dfs(curr, dest, seen | set([source])):
