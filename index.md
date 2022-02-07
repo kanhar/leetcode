@@ -1,7 +1,7 @@
 ## Arrays, Stacks, Lists and Heaps
 * [Heaps](problems/Arrays/Heap.md)
 * [Matrices](problems/Arrays/Matrices.md)
-* [Sliding Window](problems/Arrays/SlidingWindow.md)
+* [Sliding Window](problems/Arrays/SlidingWindow.md), [Two Pointers](problems/Arrays/TwoPointers.md)
 * [Binary Search](problems/Arrays/BinarySearch.md)
 * [Stacks](problems/Arrays/Stacks.md)
 * [Greedy](problems/Arrays/Greedy.md)
