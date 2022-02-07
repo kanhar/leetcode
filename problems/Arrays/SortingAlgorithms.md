@@ -200,6 +200,8 @@ class Solution:
 </details>
 <BR>
 
+### Insertion Sort
+To be implemented, also see k-messed sort.
 
 ### [Kanhar Sort! :)](https://leetcode.com/problems/maximum-gap/)
 

@@ -66,6 +66,8 @@ class Solution:
 > Given two strings s and t of lengths m and n respectively, return the minimum window substring of 
 > s such that every character in t (including duplicates) is included in the window.
 
+<details><summary markdown="span">Execute!</summary>
+
 ```python
 import collections
 class Solution(object):  
@@ -91,7 +93,8 @@ class Solution(object):
                 
         return s[i:j]
 ```
-
+</details>
+<BR>
 
 ### [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones-ii/)
 
@@ -214,23 +217,14 @@ def sort_k_messed_array(arr, k):
   # 1, 4, 5   H = [1]
   # 4, 5, 2   H = [2]  
 ```
+</details>
+<BR>
 
-Solution Using Insertion Sort. To be reviewed.
+<details><summary markdown="span">Execute!</summary>
+Solution Using Insertion Sort. To be coded. <BR>
+Intuition: Take a slice, find minimum element in O(k), place it. Make n steps -> O(n*k)
 ```python
-def insertionSort(A, size):
-    i, key, j = 0, 0, 0
-    for i in range(size):
-        key = A[i]
-        j = i-1
-
-        # Move elements of A[0..i-1], that are
-        # greater than key, to one position
-        # ahead of their current position.
-        # This loop will run at most k times
-        while j >= 0 and A[j] > key:
-            A[j + 1] = A[j]
-            j = j - 1
-        A[j + 1] = key
+TBD
 ```
 </details>
 <BR>
