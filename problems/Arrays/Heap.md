@@ -66,6 +66,8 @@ class MedianFinder:
 
 > See also: [Merge-k-sorted-linked-lists](https://kanhar.github.io/leetcode/problems/Arrays/LinkedLists.html#merge-k-sorted-lists)
 
+<details><summary markdown="span">Execute!</summary>
+
 ```python
 def merge_k_way(lists):
     import heapq
@@ -87,3 +89,6 @@ def merge_k_way(lists):
 ```python
 merge_k_way([1,2,3], [4,5,6]) # Returns [1,2,3,4,5,6]
 ```
+
+</details>
+<BR>

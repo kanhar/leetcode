@@ -7,7 +7,7 @@
 
 ### [4sum](https://leetcode.com/problems/4sum/)
 
-> See also recursive way to solve this [here](https://kanhar.github.io/leetcode/problems/Graphs/DFS.html#4sum)
+> See also recursive way to solve this [here](https://kanhar.github.io/leetcode/problems/Arrays/TwoPointers.html#4sum)
 
 <details><summary markdown="span">Execute!</summary>
 
