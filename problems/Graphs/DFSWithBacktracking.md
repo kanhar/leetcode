@@ -95,3 +95,8 @@ class Solution(object):
 
 </details>
 <BR>
+
+
+### [Word Search](https://kanhar.github.io/leetcode/problems/Trees/Tries.html#word-search)
+
+See use of Backtracking here: [Tries.html#word-search](https://kanhar.github.io/leetcode/problems/Trees/Tries.html#word-search)

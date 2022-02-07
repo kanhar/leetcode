@@ -190,3 +190,42 @@ class Solution:
 
 </details>
 <BR>
+
+### [Max Points in Matrix with Cost](https://leetcode.com/problems/maximum-number-of-points-with-cost/)
+
+> Standard Dynamic programming problem. Google Onsite. 
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def maxPoints(self, A: List[List[int]]) -> int:
+
+        if len(A)==0:
+            return 0
+
+        if len(A) == 1:
+            return max(A)
+
+        n = len(A)    # number of Rows
+        m = len(A[0]) # number of Columns
+
+        dp = [[0 for x in range(m)] for x in range(n) ] 
+
+        # First row ready
+        for j in range(m):
+            dp[0][j] = A[0][j]
+
+        # Second Rows on. 
+        for i in range(1,n):
+            for j in range(m):
+                tmp = []
+
+                for k in range(m):
+                    tmp.append(dp[i-1][j] + A[i][k] - abs(k-j) )
+
+                dp[i][j] = max(tmp)
+        return max(dp[n-1])
+```
+
+</details><BR>

@@ -38,6 +38,9 @@ class Solution:
 
 > Given an encoded string, return its decoded string.
 > [See also](https://kanhar.github.io/leetcode/problems/Arrays/Stacks.html#decode-string)
+
+>> Alternatively, could we use this [technique](https://stackoverflow.com/questions/35329934/python-3-4-regular-expressions-for-matching-innermost-curly-brackets)?  
+>> You could but interesting to note why not explicitly required in `(\d+)\[([a-zA-Z]+)\]`
 <details><summary markdown="span">Execute!</summary>
 
 ```python

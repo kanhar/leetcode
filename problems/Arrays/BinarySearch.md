@@ -243,3 +243,6 @@ class Solution:
 </details>
 <BR>
 
+### [Construct a BST](https://kanhar.github.io/leetcode/problems/Trees/BinarySearchTree.html#convert-sorted-array-to-bst)
+
+See also [BinarySearchTree.html#convert-sorted-array-to-bst](https://kanhar.github.io/leetcode/problems/Trees/BinarySearchTree.html#convert-sorted-array-to-bst)
