@@ -130,7 +130,7 @@ class Solution:
 
 > Given a complete binary tree, count the number of nodes.
 
-<details><summary markdown="span">Execute!</summary>
+<details><summary markdown="span">Execute using Math</summary>
 
 ```python
 class Solution(object):
@@ -197,7 +197,7 @@ class Solution(object):
 </details>
 <BR>
 
-<details><summary markdown="span">Execute using Math!</summary>
+<details><summary markdown="span">Execute using Binary Search</summary>
 
 ```python
 class Solution:

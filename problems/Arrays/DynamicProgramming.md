@@ -137,7 +137,7 @@ class Solution:
 
 ### [Maximum Sub-array Sum](https://leetcode.com/problems/maximum-subarray/)
 
-> Given an integer sort nums, find the contiguous subarray which has the largest sum. 
+> Given an integer array, find the contiguous subarray which has the largest sum. 
 
 <details><summary markdown="span">Execute!</summary>
 
