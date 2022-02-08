@@ -8,7 +8,8 @@ The ultimate primer: https://github.com/donnemartin/system-design-primer
 
 ### [CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 
-> Distributed systems can Consistency or Availability given Partition Tolerance
+> Distributed systems can achieve either Consistency or Availability given Partition Tolerance.
+> However, see updated version of Eric Brewer's statement on this [here](https://research.google/pubs/pub45855/)
 
 * **Consistency**: Every read receives the most recent write or error. 
 * **Availability**: Every read receives a *mostly* recent write or error
