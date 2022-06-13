@@ -1,3 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kanhar Munshi">
+    <meta name="description" property="og:description" content="Kanhar Munshi - Leetcoding">
+    <meta property="og:title" content="kanhar.github.io" />
+    <meta property="og:type" content="website">
+
+    <title>Kanhar Munshi - Leetcoding</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5126749833700424" crossorigin="anonymous"></script>
+</head>
+
+<body markdown="1">
 ## Arrays, Stacks, Lists and Heaps
 * [Heaps](problems/Arrays/Heap.md)
 * [Matrices](problems/Arrays/Matrices.md)
@@ -30,3 +44,5 @@
 * [K-ary Trees](problems/Trees/K-AryTree.md)
 * [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
 * [Ternary Search Trees](problems/Trees/TernarySearchTries.md)  
+
+</body>
