@@ -2,7 +2,7 @@
 
 {: .no_toc}
 # Heaps
-[!MinHeap](https://iq.opengenus.org/content/images/2019/06/Min-Heap.png)
+![MinHeap](https://iq.opengenus.org/content/images/2019/06/Min-Heap.png)
 
 - TOC
 {:toc}
