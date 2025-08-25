@@ -2,7 +2,7 @@
 
 {: .no_toc}
 # Heaps
-Practise here: [Heaps](https://leetcode.com/list?selectedList=9duvlo7t)
+[!MinHeap](https://iq.opengenus.org/content/images/2019/06/Min-Heap.png)
 
 - TOC
 {:toc}
