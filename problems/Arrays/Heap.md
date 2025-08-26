@@ -1,11 +1,13 @@
 {::options parse_block_html="true" /}
 
-{: .no_toc}
-# Heaps
-![MinHeap](https://iq.opengenus.org/content/images/2019/06/Min-Heap.png)
-
 - TOC
 {:toc}
+
+### Heap Data Structure
+![MinHeap](https://media.geeksforgeeks.org/wp-content/uploads/20250324101433667420/Representation-of-a-Binary-Heap.webp)
+* A subtree of a heap is also a heap
+* A heap is always a complete binary tree (hence array indexing works)
+* A Min heap's root always has the smallest value. 
 
 ### [Kth Largest Element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 

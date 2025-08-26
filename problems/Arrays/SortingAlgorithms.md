@@ -8,59 +8,45 @@
 
 > Sort an array of integers, and find the maximum gap between any two in the sorted array.
 
-<details><summary markdown="span">Execute!</summary>
+<details><summary markdown="span">Execute! See better explanation [here](https://thelicato.medium.com/sorting-algorithms-in-python-heapsort-ad31323fce18)</summary>
 
 ```python
 class Solution:
+    def maximumGap(self, nums: List[int]) -> int:
+        def max_heapify(array, n, i):
+            l = (2*i)+1 # Left(i)
+            r = (2*i)+2 # Right(i)
+            largest=i
+            if l < n and array[l] > array[largest]:
+                largest = l
+            if r < n and array[r] > array[largest]:
+                largest = r
+            if largest != i:
+                array[i], array[largest] = array[largest], array[i]
+                max_heapify(array, n, largest)
 
-    def maximumGap(self, num):
-        if len(num) < 2:
+        def build_max_heap(array):
+            n = len(array)
+            for i in range((len(array)//2 + 1), -1, -1):
+                max_heapify(array, n, i)
+
+        def heapsort(array):
+            build_max_heap(array)
+            n = len(array)
+            for i in range(n-1, 0, -1):
+                array[0], array[i] = array[i], array[0]
+                max_heapify(array, i, 0)
+
+            return array    
+    
+        if len(nums) < 2:
             return 0
 
-        num = self.heap_sort(num)
+        nums = heapsort(nums)
         res = 0
-        for i in range(1, len(num)):
-            res = max(num[i] - num[i - 1], res)
+        for i in range(1, len(nums)):
+            res = max(nums[i] - nums[i - 1], res)
         return res
-
-    def heap_sort(self, arr):
-        def build_heap_at_i(arr, i, size):
-            left = i * 2 + 1
-            rigt = i * 2 + 2
-
-            biggerChildren = [x for x in [left, rigt] if x <= size and arr[x]> arr[i] ]
-            if len(biggerChildren) != 0:
-                max_i = max(biggerChildren, key=lambda x: arr[x])
-
-                arr[i], arr[max_i] = arr[max_i], arr[i]
-                build_heap_at_i(arr, max_i, size)
-
-        def build_heap(arr):
-            size = len(arr)-1
-            mid  = int(size/2)
-            for i in range(mid,-1,-1):
-                build_heap_at_i(arr, i, size)
-
-        def heap_sort(arr):
-            size = len(arr)-1
-            for i in range(size, -1, -1):
-                arr[0], arr[i] = arr[i], arr[0]
-                size = size - 1
-                build_heap_at_i(arr, 0, size)
-
-        def print_heap(arr,i=0,d=0):
-            if i not in range(0, len(arr)):
-                return
-            l = i*2+1
-            r = i*2+2
-            print_heap(arr,l,d+1)
-            print("   " * d,arr[i])
-            print_heap(arr,r,d+1)
-
-        build_heap(arr)
-        heap_sort(arr)
-        return arr
-
 ```
 
 </details>
