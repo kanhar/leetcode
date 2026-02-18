@@ -13,21 +13,6 @@ Practise here: [Leetcode]()
 
 ```python
 class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        q = [(root, 0)]
-
-        res = collections.defaultdict(list)
-        while q:
-            tmp, d = q.pop(0)
-            if tmp is None:
-                continue
-
-            res[d].append(tmp.val)
-            q.append((tmp.left, d + 1))
-            q.append((tmp.right, d + 1))
-
-        return res.values()
-
     #Using global state
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         def solve(node, d):
