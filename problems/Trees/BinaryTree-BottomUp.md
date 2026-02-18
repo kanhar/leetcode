@@ -58,25 +58,6 @@ class Solution:
         self.res = 0
         solve(root)
         return self.res
-
-class Solution:
-    def diameterOfBinaryTree(self, root: TreeNode, max_d=0) -> int:
-        def depth(root):
-            if root is None:
-                return 0
-
-            return max(depth(root.left), depth(root.right)) + 1
-
-        def diam_at(root):
-            if root is None:
-                return 0
-
-            return depth(root.left) + depth(root.right)
-
-        if root is None:
-            return 0
-
-        return max(max_d, diam_at(root), self.diameterOfBinaryTree(root.left), self.diameterOfBinaryTree(root.right))
 ```
 
 </details>
@@ -102,33 +83,6 @@ class Solution:
             return 0
 
         return find_paths(root, target) + self.pathSum(root.left, target) + self.pathSum(root.right, target)
-
-
-class Solution:
-    def pathSum(self, root: TreeNode, sum: int) -> int:
-        def preorder(node: TreeNode, curr_sum) -> None:
-            if not node:
-                return
-
-            curr_sum += node.val        # current prefix sum
-            if curr_sum == k:
-                self.totalCount += 1
-
-            # number of times the curr_sum − k has occurred already,
-            # determines the number of times a path with sum k has occurred up to the current node
-            self.totalCount += h[curr_sum - k]
-
-            # Add the current sum into hashmap to use it during the child nodes processing only
-            h[curr_sum] += 1
-            preorder(node.left, curr_sum)
-            preorder(node.right, curr_sum)
-            h[curr_sum] -= 1
-            # ^ remove current sum from hashmap - to not use it during the parallel subtree processing
-
-        totalCount, k = 0, sum
-        h = collections.defaultdict(int)
-        preorder(root, 0)
-        return self.totalCount
 ```
 
 </details>
@@ -144,12 +98,17 @@ class Solution:
 class Solution:
     def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
         def solve(node, accum=[]):
-            if node:
-                if node and node.left is None and node.right is None:  # i.e. if leaf
-                    res.append(''.join([chr(x + 97) for x in reversed(accum + [node.val])]))
-                else:
-                    solve(node.left, accum + [node.val])
-                    solve(node.right, accum + [node.val])
+            if not node:
+                return
+            
+            if node.left is None and node.right is None:  # i.e. if leaf
+                tmp = accum + [node.val]
+                tmp.reverse()              
+                tmps = ''.join([chr(x + 97) for x in tmp])
+                res.append(tmps)
+            else:
+                solve(node.left, accum + [node.val])
+                solve(node.right, accum + [node.val])
 
         res = []
         solve(root)
@@ -184,24 +143,6 @@ class Solution:
         self.isBalanced = True
         depth(root)
         return self.isBalanced
-
-class Solution:
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        def depth(node):
-            if not node:
-                return 0
-            else:
-                return max(depth(node.left), depth(node.right)) + 1
-
-        def isBalanced(node):
-            if not node:
-                return True
-            elif abs(depth(node.left) - depth(node.right)) > 1:
-                return False
-            else:
-                return isBalanced(node.left) and isBalanced(node.right)
-
-        return isBalanced(root)
 ```
 
 </details>
