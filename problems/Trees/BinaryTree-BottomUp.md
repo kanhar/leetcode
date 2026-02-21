@@ -179,32 +179,6 @@ class Solution(object):
 </details>
 <BR>
 
-### [Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
-
-> Given a binary tree, return the level order traversal of its nodes' values (i.e, from left to right, level by level).
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    #Using global state
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        def solve(node, d):
-            if not node:
-                return
-            else:
-                res[d].append(node.val)
-                solve(node.left, d + 1)
-                solve(node.right, d + 1)
-
-        res = collections.defaultdict(list)
-        solve(root, 0)
-        return res.values()
-```
-
-</details>
-<BR>
-
 ### [Flip Equivalent Binary Trees](https://leetcode.com/problems/flip-equivalent-binary-trees/)
 
 > Evaluate if a binary tree X is flip equivalent to a binary tree Y - i.e. if we can make X equal
@@ -270,38 +244,6 @@ class Solution:
 </details>
 <BR>
 
-### [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)
-
-> Populate each next pointer to point to its next right node. 
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def connect(self, root: 'Node') -> 'Node':
-        q = [root]
-        qChildren = []
-
-        while q:
-            curr = q.pop(0)
-            if not curr:
-                continue
-
-            if q:
-                curr.next = q[0]
-
-            if curr.left:
-                qChildren.append(curr.left)
-            if curr.right:
-                qChildren.append(curr.right)
-
-            if not q and qChildren:
-                q, qChildren = qChildren, q
-
-        return root
-```
-
-</details>
-<BR>
 
 ### [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/)
 
