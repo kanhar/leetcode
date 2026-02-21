@@ -191,3 +191,33 @@ class Solution:
 </details>
 <BR>
 
+### [DFS Traversal: Smallest string from Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/)
+
+> Smallest String from Leaf
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
+        def solve(node, accum=[]):
+            if not node:
+                return
+            
+            if node.left is None and node.right is None:  # i.e. if leaf
+                tmp = accum + [node.val]
+                tmp.reverse()              
+                tmps = ''.join([chr(x + 97) for x in tmp])
+                res.append(tmps)
+            else:
+                solve(node.left, accum + [node.val])
+                solve(node.right, accum + [node.val])
+
+        res = []
+        solve(root)
+        res = sorted(res)
+        return res[0]
+```
+
+</details>
+<BR>
