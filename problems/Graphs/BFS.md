@@ -1,5 +1,7 @@
 {: .no_toc}
-# Breadh First Search
+# Inductive Construction
+These solutions all follow a Breadth-First Search (BFS) strategy on a state-space tree, where Level 0 is the empty starting point, Level 1 contains all possibilities using one element, and Level 2 expands to all possibilities using two elements.
+
 Practise here: [Leetcode](https://leetcode.com/list?selectedList=9lu7fe4c)
 
 - TOC
@@ -14,36 +16,16 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=9lu7fe4c)
 ```python
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        one = "()"
-        if n == 1:
-            return [one]
-        else:
-            tmp = []
-            for r in self.generateParenthesis(n - 1):
-                for i in range(len(r)):
-                    tmp.append(r[:i] + one + r[i:])
-
-            return set(tmp)
-
-
-class Solution:
-    def generateParenthesis(self, n: int) -> List[str]:
-        def solve(n):
-            one='()'
-            if n==1:
-                return {one}
-            else:
-                return {res[:i]+one+res[i:] for res in solve(n-1) for i in range(len(res))}
-                # For n = 2:
-                #   Res = "()"
-                #   For i in range(0,2)
-                #       Ans = Res[:0] + () + Res[0:]
-                #       Ans = None    + () + ()
-                #       Ans = Res[:1] + () + Res[1:]
-                #       Ans =    (    + () +    )
-        return list(solve(n))
-
-
+        res = {"()"} 
+        
+        for _ in range(n - 1):
+            tmp = set()
+            for s in res:
+                for i in range(len(s)):
+                    tmp.add(s[:i] + "()" + s[i:])
+            res = tmp
+            
+        return list(res)
 ```
 
 </details>
@@ -59,7 +41,7 @@ combinations that the number could represent.
 ```python
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        if len(digits) == 0:
+        if not len(digits):
             return []
 
         mapping = {'1': '', '2': "abc", '3': "def", '4': "ghi", '5': "jkl", '6': "mno", '7': "pqrs", '8': "tuv", '9': 'wxyz' }
@@ -73,17 +55,6 @@ class Solution:
             res = tmp
 
         return res
-
-class Solution:
-    def letterCombinations(self, digits):
-        if not len(digits):
-            return []
-        else:
-            mapping = {'1': '',     '2': "abc",     '3': "def", '4': "ghi", '5': "jkl", '6': "mno",  '7': "pqrs",    '8': "tuv", '9': 'wxyz'  }
-            res = ['']
-            for d in digits:
-                res = [r + t for t in mapping[d] for r in res]
-            return res
 ```
 </details>
 <BR>
@@ -106,15 +77,6 @@ class Solution:
             for r in res:
                 tmp.append(r+[n])
             res += tmp
-
-        return res
-
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = [[]]
-
-        for n in nums:
-            res += [ r + [n] for r in res]
 
         return res
 ```
