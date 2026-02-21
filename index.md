@@ -37,9 +37,12 @@
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
 * [Shortest Path Algorithm](problems/Graphs/ShortestPath.md)
 
-## Trees
-* [Bottom Up](problems/Trees/BinaryTree-BottomUp.md), [Top Down](problems/Trees/BinaryTree-TopDown.md), [Generic](problems/Trees/BinaryTree-Generic.md)
+## Binary Trees
+* [General](problems/Trees/BinaryTree-BottomUp.md)
+* [Traversals](problems/Trees/BinaryTree-Generic.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
+
+## BST  
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
 * [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
 * [K-ary Trees](problems/Trees/K-AryTree.md)
