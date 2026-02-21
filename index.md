@@ -39,6 +39,7 @@
 
 ## Binary Trees
 * [General](problems/Trees/BinaryTree-BottomUp.md)
+* [Depth](problems/Trees/BinaryTree-Paths.md)
 * [Traversals](problems/Trees/BinaryTree-Generic.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 
