@@ -1,7 +1,7 @@
 {: .no_toc}
 # Binary Trees
 
-![Alt text](https://github.com/kanhar/leetcode/blob/main/IMG_20260221_060619.png)
+![Alt text](../../IMG_20260221_060619.png)
 
 Practise here: [Leetcode]()
 
