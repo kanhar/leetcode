@@ -3,7 +3,7 @@
 
 ![Alt text](../../IMG_20260221_060619.png)
 
-Practise here: [Leetcode]()
+Key intuition here: Solving for root node only is simpler - before thinking through how to extend for if path may not be through root node
 
 - TOC
 {:toc}
