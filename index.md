@@ -30,8 +30,8 @@
 * [System Design](problems/SystemDesign.md)
 
 ## Recursion
-* [Inductive Construction(BFS)](problems/Graphs/BFS.md) 
-* [Recursive Depth-First Search (DFS) with a "Visited" State](problems/Graphs/DFS.md)
+* [Inductive Construction BFS](problems/Graphs/BFS.md) 
+* [Recursive DFS with a "Visited" State](problems/Graphs/DFS.md)
 
 ## Graphs 
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
