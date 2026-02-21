@@ -8,7 +8,6 @@
     <meta property="og:type" content="website">
 
     <title>Kanhar Munshi - Leetcoding</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5126749833700424" crossorigin="anonymous"></script>
 </head>
 
 <body markdown="1">
@@ -30,9 +29,11 @@
 * [Regex](problems/Misc/Regex.md)
 * [System Design](problems/SystemDesign.md)
 
+## Recursion
+* [Inductive Construction(BFS)](problems/Graphs/BFS.md) 
+* [Recursive Depth-First Search (DFS) with a "Visited" State](problems/Graphs/DFS.md)
+
 ## Graphs 
-* [Inductive Construction](problems/Graphs/BFS.md) 
-* [DFS](problems/Graphs/DFS.md), [DFS w Backtracking](problems/Graphs/DFSWithBacktracking.md)
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
 * [Shortest Path Algorithm](problems/Graphs/ShortestPath.md)
 
