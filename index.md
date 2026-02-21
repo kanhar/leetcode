@@ -31,7 +31,7 @@
 * [System Design](problems/SystemDesign.md)
 
 ## Graphs 
-* [BFS](problems/Graphs/BFS.md) 
+* [Inductive Construction](problems/Graphs/BFS.md) 
 * [DFS](problems/Graphs/DFS.md), [DFS w Backtracking](problems/Graphs/DFSWithBacktracking.md)
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
 * [Shortest Path Algorithm](problems/Graphs/ShortestPath.md)
