@@ -1,6 +1,5 @@
 {: .no_toc}
-# Binary Tree - Generic Traversals
-Practise here: [Leetcode]()
+# Binary Tree - Traversals
 
 - TOC
 {:toc}
