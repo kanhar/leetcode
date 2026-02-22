@@ -6,6 +6,47 @@
 - TOC
 {:toc}
 
+### [Invert Binary Trees](https://leetcode.com/problems/invert-binary-tree/)
+
+![Diagram: Inverted Tree](https://assets.leetcode.com/uploads/2021/03/14/invert2-tree.jpg)
+> Invert a binary tree. <BR>
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+def invertTree(root):
+    if root is not None:
+        return TreeNode(root.val, 
+                        invertTree(root.right), 
+                        invertTree(root.left))
+
+```
+
+</details>
+<BR>
+
+### [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/)
+
+> Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        def check(a,b):
+            if a is None and b is None:
+                return True
+            if a is None or b is None:
+                return False
+            if a.val == b.val and check(a.left,b.right) and check(a.right, b.left):
+                return True
+            else:
+                return False
+
+        return check(root,root)
+```
+
 ### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
 > Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
@@ -57,24 +98,6 @@ class Solution(object):
 </details>
 <BR>
 
-### [Invert Binary Trees](https://leetcode.com/problems/invert-binary-tree/)
-
-> Invert a binary tree.
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-def invertTree(root):
-    if root is not None:
-        return TreeNode(root.val, 
-                        invertTree(root.right), 
-                        invertTree(root.left))
-
-```
-
-</details>
-<BR>
-
 ### [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
 
 > Given two binary trees and imagine that when you put one of them to cover the other, 
@@ -99,28 +122,6 @@ class Solution:
 </details>
 <BR>
 
-
-### [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/)
-
-> Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def isSymmetric(self, root: TreeNode) -> bool:
-        def check(a,b):
-            if a is None and b is None:
-                return True
-            if a is None or b is None:
-                return False
-            if a.val == b.val and check(a.left,b.right) and check(a.right, b.left):
-                return True
-            else:
-                return False
-
-        return check(root,root)
-```
 
 </details>
 <BR>
