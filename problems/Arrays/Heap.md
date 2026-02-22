@@ -7,7 +7,14 @@
 ![MinHeap](https://media.geeksforgeeks.org/wp-content/uploads/20250324101433667420/Representation-of-a-Binary-Heap.webp)
 * A subtree of a heap is also a heap
 * A heap is always a complete binary tree (hence array indexing works)
-* A Min heap's root always has the smallest value. 
+* A Min heap's root always has the smallest value.
+
+<div class="mermaid" markdown="0">
+graph TD;
+    A[Start] --> B{Is it parsed?};
+    B -- No --> C[Diagram Renders];
+    B -- Yes --> D[Error!];
+</div>
 
 ### [Kth Largest Element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
