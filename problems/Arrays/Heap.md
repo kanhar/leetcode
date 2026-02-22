@@ -15,18 +15,18 @@
 
 <details><summary markdown="span">Execute!</summary>
 ```python
-    import heapq
-    class Solution:
-        def findKthLargest(self, nums, k):
-            h = []
-            for n in nums:
-                heapq.heappush(h, -n)
-            i = 1
-            tmp = None
-            while i <= k:
-                tmp = -heapq.heappop(h)
-                i += 1    
-            return tmp
+import heapq
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        h = []
+        for n in nums:
+            heapq.heappush(h, -n)
+        
+        i=0
+        for i in range(k-1):
+            heapq.heappop(h)
+
+        return -heapq.heappop(h)
 ```
 And voila it now works
 </details>
@@ -35,7 +35,28 @@ And voila it now works
 ### [Median Sliding](https://leetcode.com/problems/find-median-from-data-stream/)
 
 > Design a data structure that allows ingestion of numbers, and can in O(1) time
-> return the median. 
+> return the median.
+
+```mermaid
+  info
+```
+
+```mermaid
+graph TD
+    %% Left Heap
+    L[Smaller half: Max Heap] --- 8((8))
+    8 --- 6((6))
+    8 --- 7((7))
+
+    %% Right Heap
+    R[Bigger half: Min Heap] --- 9((9))
+    9 --- 11((11))
+    9 --- 13((13))
+
+    %% Invisible styling for labels
+    style L fill:none,stroke:none
+    style R fill:none,stroke:none
+    linkStyle 0,3 stroke-width:0px
 
 <details><summary markdown="span">Execute!</summary>
 
