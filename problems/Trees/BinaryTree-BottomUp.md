@@ -10,6 +10,9 @@
 
 ![Diagram: Inverted Tree](https://assets.leetcode.com/uploads/2021/03/14/invert2-tree.jpg)
 > Invert a binary tree. <BR>
+> Note: This is an interesting use of reversing sorted order of a BST in place <BR> 
+> * In order traversal of a BST (L,N,R) results in a ascending sorted list
+> * In order traversal of an inverted BST (R,N,L) results in a descending sorted list.  
 
 <details><summary markdown="span">Execute!</summary>
 
