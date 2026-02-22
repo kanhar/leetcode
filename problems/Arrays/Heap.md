@@ -9,18 +9,6 @@
 * A heap is always a complete binary tree (hence array indexing works)
 * A Min heap's root always has the smallest value.
 
-<div class="mermaid" markdown="0">
-graph TD
-    8((8)) --- 6((6))
-    8 --- 7((7))
-    9((9)) --- 11((11))
-    9 --- 13((13))
-    L[Max Heap] --- 8
-    R[Min Heap] --- 9
-    style L fill:none,stroke:none
-    style R fill:none,stroke:none
-</div>
-
 ### [Kth Largest Element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
 > Find the kth largest element in an unsorted array. 
