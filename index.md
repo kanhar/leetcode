@@ -19,10 +19,6 @@
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Heaps](problems/Arrays/Heap.md) 
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
-* [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
-* [K-ary Trees](problems/Trees/K-AryTree.md)
-* [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
-* [Ternary Search Trees](problems/Trees/TernarySearchTries.md)
   
 ## Graphs 
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
@@ -49,5 +45,9 @@
 * [Regex](problems/Misc/Regex.md)
 * [System Design](problems/SystemDesign.md)
 * [Matrices](problems/Arrays/Matrices.md)
+* [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
+* [K-ary Trees](problems/Trees/K-AryTree.md)
+* [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
+* [Ternary Search Trees](problems/Trees/TernarySearchTries.md)
 
 </body>
