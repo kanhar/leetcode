@@ -43,20 +43,23 @@ And voila it now works
 
 ```mermaid
 graph TD
-    %% Left Heap
-    L[Smaller half: Max Heap] --- 8((8))
-    8 --- 6((6))
+    %% Left Heap (Max Heap)
+    8((8)) --- 6((6))
     8 --- 7((7))
 
-    %% Right Heap
-    R[Bigger half: Min Heap] --- 9((9))
-    9 --- 11((11))
+    %% Right Heap (Min Heap)
+    9((9)) --- 11((11))
     9 --- 13((13))
 
-    %% Invisible styling for labels
+    %% Labels (Optional, using a simple node style)
+    L[Smaller half - Max Heap] --- 8
+    R[Bigger half - Min Heap] --- 9
+
+    %% Styling to make it look clean
     style L fill:none,stroke:none
     style R fill:none,stroke:none
-    linkStyle 0,3 stroke-width:0px
+    linkStyle 4,5 stroke-width:0px
+```
 
 <details><summary markdown="span">Execute!</summary>
 
