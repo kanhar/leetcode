@@ -10,10 +10,15 @@
 * A Min heap's root always has the smallest value.
 
 <div class="mermaid" markdown="0">
-graph TD;
-    A[Start] --> B{Is it parsed?};
-    B -- No --> C[Diagram Renders];
-    B -- Yes --> D[Error!];
+graph TD
+    8((8)) --- 6((6))
+    8 --- 7((7))
+    9((9)) --- 11((11))
+    9 --- 13((13))
+    L[Max Heap] --- 8
+    R[Min Heap] --- 9
+    style L fill:none,stroke:none
+    style R fill:none,stroke:none
 </div>
 
 ### [Kth Largest Element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
@@ -43,30 +48,6 @@ And voila it now works
 
 > Design a data structure that allows ingestion of numbers, and can in O(1) time
 > return the median.
-
-```mermaid
-  info
-```
-
-```mermaid
-graph TD
-    %% Left Heap (Max Heap)
-    8((8)) --- 6((6))
-    8 --- 7((7))
-
-    %% Right Heap (Min Heap)
-    9((9)) --- 11((11))
-    9 --- 13((13))
-
-    %% Labels (Optional, using a simple node style)
-    L[Smaller half - Max Heap] --- 8
-    R[Bigger half - Min Heap] --- 9
-
-    %% Styling to make it look clean
-    style L fill:none,stroke:none
-    style R fill:none,stroke:none
-    linkStyle 4,5 stroke-width:0px
-```
 
 <details><summary markdown="span">Execute!</summary>
 
