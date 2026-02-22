@@ -2,7 +2,8 @@ title: Practical Leetcoding
 description: A curated field guide for experienced Software Developers looking to expediently ramp up on their algorithms. It is intentionally sparse, and geared towards <a href="https://en.wikipedia.org/wiki/Kinesthetic_learning">kinesthetic learners</a>. Each Problem header links to its full description on LC.
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
+theme: just-the-docs
 mermaid:
   version: "10.0.0" # or latest
 kramdown:
