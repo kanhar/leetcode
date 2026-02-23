@@ -19,26 +19,26 @@
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Heaps](problems/Arrays/Heap.md) 
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
-  
-## Graphs 
-* [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
-* [Shortest Path Algorithm](problems/Graphs/ShortestPath.md)
-
-## Lists
-* [Sliding Window](problems/Arrays/SlidingWindow.md)
-* [Two Pointers](problems/Arrays/TwoPointers.md)
-* [Binary Search](problems/Arrays/BinarySearch.md)
-* [Stacks](problems/Arrays/Stacks.md)
-* [Greedy](problems/Arrays/Greedy.md)
-* [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
-* [Linked Lists](problems/Arrays/LinkedLists.md)
-* [Dynamic Programming](problems/Arrays/DynamicProgramming.md)
 
 ## Recursion
 * [Inductive Construction BFS](problems/Graphs/BFS.md) 
 * [Recursive DFS with a "Visited" State](problems/Graphs/DFS.md)
+ 
+## Graphs 
+* [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
+* [Shortest Path Algorithms](problems/Graphs/ShortestPath.md)
+
+## Lists
+* [Binary Search](problems/Arrays/BinarySearch.md)
+* [Sliding Windows](problems/Arrays/SlidingWindow.md)
+* [Stacks](problems/Arrays/Stacks.md)
+* [Linked Lists](problems/Arrays/LinkedLists.md)
+* [Dynamic Programming](problems/Arrays/DynamicProgramming.md)
 
 ## Misc
+* [Two Pointers](problems/Arrays/TwoPointers.md)
+* [Greedy](problems/Arrays/Greedy.md)
+* [Sorting Algorithms](problems/Arrays/SortingAlgorithms.md)
 * [Binary](problems/Misc/BinaryBits.md), [Integers](problems/Misc/Integers.md) and [Strings](problems/Misc/String.md)
 * [KMP](problems/Misc/KMP.md), [LRU Cache](problems/Misc/LRUCache.md)
 * [Bloom Filters](problems/Misc/BloomFilters.md)
