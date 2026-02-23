@@ -102,19 +102,21 @@ class Solution:
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Solution:
-    def inorderTraversal(self, root: TreeNode):
-        res   = []
-        stack = []
-        curr  = root
-        while stack or curr:
-            if curr:
-                stack.append(curr)
-                curr = curr.left
+class Solution(object):
+    def inorderTraversal(self, root):
+        res = []
+        stack = [(root, False)]
+        while stack:
+            (node, visited) = stack.pop()
+            if not node:
+                continue
+
+            if visited:
+                res.append(node.val)
             else:
-                curr = stack.pop()
-                res.append(curr.val)
-                curr = curr.right
+                stack.append((node.right, False))
+                stack.append((node, True))
+                stack.append((node.left, False))
         return res
 ```
 
