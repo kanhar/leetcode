@@ -36,18 +36,18 @@ def invertTree(root):
 
 ```python
 class Solution:
-    def isSymmetric(self, root: TreeNode) -> bool:
-        def check(a,b):
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        def solve(a,b):
             if a is None and b is None:
                 return True
-            if a is None or b is None:
+            elif a is None or b is None:
                 return False
-            if a.val == b.val and check(a.left,b.right) and check(a.right, b.left):
-                return True
+            elif a.val != b.val:
+                return False
             else:
-                return False
+                return solve(a.left, b.right) and solve(a.right, b.left)
 
-        return check(root,root)
+        return solve(root, root)
 ```
 
 ### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
