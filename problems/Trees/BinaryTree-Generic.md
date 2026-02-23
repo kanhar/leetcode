@@ -15,22 +15,6 @@
 
 ```python
 class Solution:
-    def preorderTraversal(self, root: TreeNode) -> List[int]:
-        if root is None:
-            return []
-        else:
-            res = []
-            stk = [root]
-            while stk:
-                root = stk.pop()
-                res.append(root.val)
-                if root.left:  stk.append(root.left)
-                if root.right: stk.append(root.right)
-            return res
-```
-
-```python
-class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:        
         def solve(node):
             if node:
@@ -41,6 +25,23 @@ class Solution:
         res = []
         solve(root)
         return res
+```
+
+```python
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        if root is None:
+            return []
+        else:
+            res = []
+            stk = [root]
+            while stk:
+                root = stk.pop()
+                if root:        res.append(root.val)
+                
+                if root.right:  stk.append(root.right)
+                if root.left:   stk.append(root.left)
+            return res
 ```
 
 </details>
