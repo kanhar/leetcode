@@ -44,6 +44,30 @@ class Solution:
             return res
 ```
 
+```
+class Solution(object):
+    def preorderTraversal(self, root):
+        res = []
+        stack = [(root, False)]
+        
+        while stack:
+            node, visited = stack.pop()
+            
+            if not node:
+                continue
+
+            if visited:
+                # Node is marked as visited, add to result
+                res.append(node.val)
+            else:
+                # REVERSE ORDER of Preorder: Right, Left, Root
+                stack.append((node.right, False)) # Processed third
+                stack.append((node.left, False))  # Processed second
+                stack.append((node, True))        # Processed first
+                
+        return res
+```
+
 </details>
 <BR>
 
