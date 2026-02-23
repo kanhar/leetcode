@@ -157,7 +157,7 @@ class Solution:
             if curr.right:
                 qChildren.append(curr.right)
 
-            if not q and qChildren:
+            if not q:
                 q, qChildren = qChildren, q
 
         return root
