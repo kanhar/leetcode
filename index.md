@@ -25,6 +25,7 @@
 * [Recursive DFS with a "Visited" State](problems/Graphs/DFS.md)
  
 ## Graphs 
+* [Graphs](problems/Graphs/Graph.md) 
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
 * [Shortest Path Algorithms](problems/Graphs/ShortestPath.md)
 
