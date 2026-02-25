@@ -34,27 +34,30 @@ class Solution:
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Solution(object):
+class Solution:
     def findRedundantConnection(self, edges):
-        graph = collections.defaultdict(set)
+        graph = collections.defaultdict(list)
 
-        def dfs(source, target):
-            if source == target:
+        def is_connected(start, target, visited):
+            if start == target:
                 return True
-            else:
-                for node in graph[source] - visited:
-                    visited.add(node)
-                    if dfs(node, target):
+            
+            visited.add(start)
+            
+            for neighbor in graph[start]:
+                if neighbor not in visited:
+                    if is_connected(neighbor, target, visited):
                         return True
-
-                return False
+            return False
 
         for u, v in edges:
-            visited = set()
-            if u in graph and v in graph and dfs(u, v):
-                return u, v
-            graph[u].add(v)
-            graph[v].add(u)
+            # Check if u and v are already reachable through the existing graph
+            if is_connected(u, v, set()):
+                return [u, v]
+            
+            # If not connected, add the edge to the graph
+            graph[u].append(v)
+            graph[v].append(u)
 
 ```
 
