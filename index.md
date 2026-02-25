@@ -50,5 +50,6 @@
 * [K-ary Trees](problems/Trees/K-AryTree.md)
 * [K-Ary Search Trees(Tries)](problems/Trees/Tries.md)  
 * [Ternary Search Trees](problems/Trees/TernarySearchTries.md)
+* [Advanced](problems/Misc/Advanced.md)
 
 </body>
