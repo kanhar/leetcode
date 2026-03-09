@@ -8,6 +8,59 @@ Key intuition here: Solving for root node only is simpler - before thinking thro
 - TOC
 {:toc}
 
+### [Max Depth of a Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
+
+> Max depth of a binary Tree
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        def depth(node):
+            if not node:
+                return 0
+            else:
+                ls = depth(node.left)
+                rs = depth(node.right)
+
+                return max(ls,rs) + 1
+        return depth(root)
+```
+
+</details>
+<BR>
+
+### [Tree Diameter](https://leetcode.com/problems/diameter-of-binary-tree/)
+
+> Calculate Tree Diameter
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def diameterOfBinaryTree(self, root: TreeNode, max_d=0) -> int:
+        def solve(root):
+            if root is None:
+                return 0
+            else:
+                ls = solve(root.left)
+                rs = solve(root.right)
+
+                # If this node was the highest point of a path, how long would that path be (diameter)
+                self.res = max(self.res, ls + rs)
+
+                # Calculates Depth
+                return max(ls, rs) + 1                 
+        self.res = 0
+        solve(root)
+        return self.res
+```
+
+</details>
+<BR>
+
+
 ### [Path with Maximum sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
 > Given a non-empty binary tree, find the maximum path sum
@@ -33,32 +86,6 @@ class Solution:
         self.maxSum = float('-inf')
         solve(root)
         return self.maxSum
-```
-
-</details>
-<BR>
-
-### [Tree Diameter](https://leetcode.com/problems/diameter-of-binary-tree/)
-
-> Calculate Tree Diameter
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def diameterOfBinaryTree(self, root: TreeNode, max_d=0) -> int:
-        def solve(root):
-            if root is None:
-                return 0
-            else:
-                ls = solve(root.left)
-                rs = solve(root.right)
-                
-                self.res = max(self.res, ls + rs)      # Calculates Diameter
-                return max(ls, rs) + 1                 # Calculates Depth
-        self.res = 0
-        solve(root)
-        return self.res
 ```
 
 </details>
