@@ -13,15 +13,23 @@ Practise here: [Leetcode](https://leetcode.com/list?selectedList=90ojkbn2)
 
 ```python
 class Solution:
-    def cloneGraph(self, node: 'Node', cloned = {}) -> 'Node':
-        if node is None:
-            return None
-        elif node in cloned:
-            return cloned[node]
-        else:
-            cloned[node] = Node(node.val,[])
-            cloned[node].neighbors = [self.cloneGraph(x, cloned) for x in node.neighbors]
-            return cloned[node]
+    def cloneGraph(self, node: Optional['Node'], visited = {}) -> Optional['Node']:        
+        # Works but infinite loop if graph has cycle
+        if node:
+            tmp = Node(node.val, [])
+            tmp.neighbors = [ self.cloneGraph(x) for x in node.neighbors ]
+            return tmp
+        
+class Solution:
+    def cloneGraph(self, node: Optional['Node'], visited = {}) -> Optional['Node']:        
+        # Does not prevent Cycle but works
+        if node:
+            if node in visited:
+                return visited[node]
+            else:
+                visited[node] = Node(node.val, [])
+                visited[node].neighbors = [ self.cloneGraph(x) for x in node.neighbors ]
+                return visited[node]
 ```
 
 </details>
