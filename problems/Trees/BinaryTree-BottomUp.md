@@ -49,6 +49,9 @@ class Solution:
 
         return solve(root, root)
 ```
+</details>
+<BR>
+
 
 ### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
