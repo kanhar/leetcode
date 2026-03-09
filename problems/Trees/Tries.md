@@ -48,35 +48,51 @@ class Solution:
 <details><summary markdown="span">Execute!</summary>
 
 ```python
+import collections
+from functools import lru_cache
+from typing import List
+
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        def createTrie(wordDict):
-            def _createTrie():
-                return collections.defaultdict(_createTrie)
+        # 1. Build the Trie using a nested defaultdict
+        def trie_node():
+            return collections.defaultdict(trie_node)
+        
+        root = trie_node()
+        for word in wordDict:
+            curr = root
+            for char in word:
+                curr = curr[char]
+            curr['#'] = True # Mark the end of a word
 
-            t = _createTrie()
-            for word in wordDict:
-                curr = t
-                for w in word:
-                    curr = curr[w]
-                curr['#']
-            return t
+        # 2. Define the recursive solver with lru_cache
+        @lru_cache(None)
+        def solve(index: int) -> bool:
+            # Base case: we've matched the entire string
+            if index == len(s):
+                return True
+            
+            curr = root
+            # Traverse the Trie starting from the current character in 's'
+            for i in range(index, len(s)):
+                char = s[i]
+                
+                # If the character isn't in the current Trie node, 
+                # no more words can be formed from this prefix.
+                if char not in curr:
+                    break
+                
+                curr = curr[char]
+                
+                # If we hit a word boundary ('#'), try to solve the rest of the string
+                if '#' in curr:
+                    if solve(i + 1):
+                        return True
+            
+            # If no combination of words starting at this index works
+            return False
 
-        def solve(curr, s):
-            if len(s) == 0:
-                return '#' in curr
-            else:
-                for i in range(0, len(s)):
-                    if '#' in curr:
-                        return solve(curr[s[i]], s[i + 1:]) or solve(t[s[i]], s[i + 1:])
-                    else:
-                        if s[i] in curr:
-                            return solve(curr[s[i]], s[i + 1:])
-                        else:
-                            return False
-
-        t = createTrie(wordDict)
-        return solve(t, s)
+        return solve(0)
 ```
 
 </details>
