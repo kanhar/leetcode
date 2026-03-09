@@ -21,20 +21,18 @@ class Solution:
             if not node:
                 return 0
             else:
-                ls = solve(node.left)
-                rs = solve(node.right)
+                l = max(solve(node.left), 0)
+                r = max(solve(node.right), 0)
+                
+                # What is the best path that passes through me, connecting my left and right subtrees?"
+                self.maxSum = max(self.maxSum, node.val + l + r)
 
-                ls = max(ls, 0)
-                rs = max(rs, 0)
-
-                self.maxSum = max(self.maxSum, node.val + ls + rs)
-
-                return max(ls, rs) + node.val
+                # If my parent wants to include me in a path, what is the best single branch I can offer them?
+                return max(l, r) + node.val
 
         self.maxSum = float('-inf')
         solve(root)
         return self.maxSum
-
 ```
 
 </details>
