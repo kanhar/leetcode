@@ -48,17 +48,17 @@ class Solution:
             if u == v:
                 return True
             visited.add(u)
-            for x in set(graph[u]) - set(visited):                
+            for x in graph[u] - visited:                
                 if isconnected(x, v, visited):
                     return True
             return False
                     
-        graph = collections.defaultdict(list)
+        graph = collections.defaultdict(set)
         for u, v in edges:
-            if isconnected(u, v, set()):
+            if isconnected(u, v, visited= set()):
                 return [u, v]
-            graph[u].append(v)
-            graph[v].append(u)
+            graph[u].add(v)
+            graph[v].add(u)
 
 ```
 
