@@ -69,29 +69,22 @@ class Solution:
 ```python
 class Solution:
     def longestUnivaluePath(self, root: Optional[TreeNode]) -> int:
-        self.max_path = 0
-
-        def get_matching_leg(node):
+        def solve(node):
             if not node:
                 return 0
-            
-            # 1. Standard Procedure: Ask children for their best matching legs
-            left_leg = get_matching_leg(node.left)
-            right_leg = get_matching_leg(node.right)
 
-            # 2. The "Membership" Check:
-            # If the child's value matches mine, I extend their leg by 1.
-            # If it doesn't match, their path is useless to me (reset to 0).
-            left_contribution = left_leg + 1 if node.left and node.left.val == node.val else 0
-            right_contribution = right_leg + 1 if node.right and node.right.val == node.val else 0
+            ls = solve(node.left)
+            rs = solve(node.right)
 
-            # This is the longest univalue path where THIS node is the peak.
-            self.max_path = max(self.max_path, left_contribution + right_contribution)
+            ls = ls + 1 if node.left and node.left.val == node.val else 0
+            rs = rs + 1 if node.right and node.right.val == node.val else 0
 
-            return max(left_contribution, right_contribution)
+            self.maxpath = max(self.maxpath, ls + rs)
 
-        get_matching_leg(root)
-        return self.max_path
+            return max(ls, rs)
+        self.maxpath = 0      
+        solve(root)
+        return self.maxpath
 ```
 
 </details>
