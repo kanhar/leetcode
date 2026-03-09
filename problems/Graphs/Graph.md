@@ -43,27 +43,20 @@ class Solution:
 
 ```python
 class Solution:
-    def findRedundantConnection(self, edges):
-        graph = collections.defaultdict(list)
-
-        def is_connected(start, target, visited):
-            if start == target:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:        
+        def isconnected(u, v, visited):
+            if u == v:
                 return True
-            
-            visited.add(start)
-            
-            for neighbor in graph[start]:
-                if neighbor not in visited:
-                    if is_connected(neighbor, target, visited):
-                        return True
+            visited.add(u)
+            for x in set(graph[u]) - set(visited):                
+                if isconnected(x, v, visited):
+                    return True
             return False
-
+                    
+        graph = collections.defaultdict(list)
         for u, v in edges:
-            # Check if u and v are already reachable through the existing graph
-            if is_connected(u, v, set()):
+            if isconnected(u, v, set()):
                 return [u, v]
-            
-            # If not connected, add the edge to the graph
             graph[u].append(v)
             graph[v].append(u)
 
