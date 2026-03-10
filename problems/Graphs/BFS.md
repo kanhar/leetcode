@@ -29,19 +29,6 @@ class Solution:
         res = []
         solve("", 0, 0)
         return res
-
-class Solution:
-    def generateParenthesis(self, n: int) -> List[str]:
-        res = {"()"} 
-        
-        for _ in range(n - 1):
-            tmp = set()
-            for s in res:
-                for i in range(len(s)):
-                    tmp.add(s[:i] + "()" + s[i:])
-            res = tmp
-            
-        return list(res)
 ```
 
 </details>
@@ -63,64 +50,16 @@ class Solution:
                 res.append(tmp)
                 return
             
-            # Decision 1: Include nums[i]
-            # (tmp + [nums[i]] creates a NEW list, so no pop needed)
+            # Key Intuition: [1] subsets [] (don't include) and [1] (include). Solution Mirrors this structure
+            
+            # Include nums[i]            
             solve(tmp + [nums[i]], i + 1)
             
-            # Decision 2: Exclude nums[i]
-            # (We pass the existing tmp as-is)
+            # Exclude nums[i]            
             solve(tmp, i + 1)
             
-            # N.B: No pop needed because tmp + [...] is a new object
-            # and the "pop" is implicit when the function returns.
-
         res = []
         solve([], 0)
-        return res
-
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = [[]]
-
-        for n in nums:
-            tmp = []
-            for r in res:
-                tmp.append(r+[n])
-            res += tmp
-
-        return res
-```
-
-</details>
-<BR>
-
-### [Permutations](https://leetcode.com/problems/permutations/description/)
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
-        res = []
-
-        def solve(tmp, remaining):
-            # Base Case: No numbers left to pick
-            if not remaining:
-                res.append(tmp)
-                return
-            
-            # Decision: Try every available number in 'remaining'
-            for i in range(len(remaining)):
-                # Pick the number at index i
-                pick = remaining[i]
-                
-                # Create a new 'remaining' list without the number we just picked
-                others = remaining[:i] + remaining[i+1:]
-                
-                # RECURSE: tmp + [pick] creates a NEW list, so no pop needed
-                solve(tmp + [pick], others)
-
-        solve([], nums)
         return res
 ```
 
@@ -131,28 +70,61 @@ class Solution:
 
 <details><summary markdown="span">Execute!</summary>
 
+To transition from Subsets to Combinations (specifically "Combinations of size $k$"), the logic remains almost identical to your "Include/Exclude" pattern.The main difference is the stopping condition: instead of waiting until you've looked at every number, you stop as soon as your tmp list reaches the required size $k$.
+
 ```python
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
         res = []
-
-        def solve(tmp, start):
-            # Base Case: If the current combination reaches length k
+        
+        def solve(tmp, i):
+            # Base Case 1: If we found a combination of size k, save it
             if len(tmp) == k:
-                res.append(tmp)
+                res.append(tmp[:]) # Use a copy to avoid reference issues
                 return
             
-            # Decision: Try every number from 'start' up to 'n'
-            # (We use n + 1 because range is exclusive)
-            for i in range(start, n + 1):
-                # RECURSE: tmp + [i] creates a NEW list.
-                # We pass i + 1 so the next call only picks larger numbers.
-                solve(tmp + [i], i + 1)
+            # Base Case 2: If we ran out of numbers to pick from
+            if i > n:
+                return
             
-            # N.B: No pop needed because tmp + [i] is a new object.
-
-        # Start with an empty list and begin picking from number 1
+            # Include i
+            solve(tmp + [i], i + 1)
+            
+            # Exclude i
+            solve(tmp, i + 1)
+            
         solve([], 1)
+        return res
+```
+
+</details>
+<BR>
+
+
+### [Permutations](https://leetcode.com/problems/permutations/description/)
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(start):
+            # Base Case: If the start index reaches the end, we've formed a permutation
+            if start == len(nums):
+                res.append(nums[:]) # Append a copy of the current state
+                return
+
+            for i in range(start, len(nums)):
+                # 1. "Include" nums[i] at the current 'start' position by swapping
+                nums[start], nums[i] = nums[i], nums[start]
+                
+                # 2. Recurse for the next position
+                backtrack(start + 1)
+                
+                # 3. "Exclude" (Backtrack): Swap back to restore the original order
+                nums[start], nums[i] = nums[i], nums[start]
+        res = []
+        backtrack(0)
         return res
 ```
 
@@ -193,22 +165,6 @@ class Solution:
         solve("", 0)
         return res
 
-class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
-        if not len(digits):
-            return []
-
-        mapping = {'1': '', '2': "abc", '3': "def", '4': "ghi", '5': "jkl", '6': "mno", '7': "pqrs", '8': "tuv", '9': 'wxyz' }
-        res = ['']
-
-        for d in digits:
-            tmp = []
-            for c in mapping[d]:
-                for r in res:
-                    tmp.append(r + c)
-            res = tmp
-
-        return res
 ```
 </details>
 <BR>
