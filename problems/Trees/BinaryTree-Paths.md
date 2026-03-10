@@ -60,7 +60,7 @@ class Solution:
 </details>
 <BR>
 
-### [](https://leetcode.com/problems/longest-univalue-path/)
+### [Longest Univalue path](https://leetcode.com/problems/longest-univalue-path/)
 
 > Longest Univalue path
 
