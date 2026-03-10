@@ -60,9 +60,83 @@ fun streamFileToSocket(file: File, host: String, port: Int) = runBlocking {
 
 This is a classic "High-Throughput Resiliency" problem.
 
-You have a list of 1,000 Product IDs. You need to fetch details for each from a REST API, but the API allows a maximum of 10 concurrent requests and a global rate limit of 50 requests per second. We must balance three competing constraints: Concurrency (active connections), Rate Limiting (requests per window), and Error Handling (resiliency).
+You have a list of 1,000 Product IDs. You need to fetch details for each from a REST API, but the API allows a maximum of 10 concurrent requests. 
 
 ```
+val semaphore = Semaphore(10) // Concurrency limit
+val client = HttpClient(CIO)
 
+suspend fun fetchProduct(productId: String): String? {
+    return retryWithBackoff {
+        semaphore.withPermit {
+            val response = client.get("https://api.example.com/products/$productId")
+            if (response.status == HttpStatusCode.TooManyRequests) throw Exception("Rate limited")
+            
+            response.body<String>()
+        }
+    }
+}
+
+// Resiliency: Exponential Backoff implementation
+suspend fun <T> retryWithBackoff(
+    retries: Int = 5,
+    initialDelay: Long = 1000,
+    block: suspend () -> T
+): T? {
+    repeat(retries - 1) { attempt ->
+        try { return block() } 
+        catch (e: Exception) {
+            val delayTime = initialDelay * 2.0.pow(attempt).toLong()
+            delay(delayTime)
+        }
+    }
+    return block() // Final attempt
+}
+
+suspend fun main() = coroutineScope {
+    val productIds = (1..1000).map { it.toString() }
+    
+    // Coroutine collection to process all
+    val results = productIds.map { id ->
+        async(Dispatchers.IO) { fetchProduct(id) }
+    }.awaitAll()
+}
+```
+
+Add to this a global rate limit of 50qps
+
+
+```
+suspend fun main() = coroutineScope {
+    val productIds = (1..1000).map { it.toString() }
+
+    // 1. Define the Pipeline (The Producer)
+    val productFlow = productIds.asFlow()
+        .onEach { delay(20L) } // Rate limit: 50 QPS (1000ms / 50 = 20ms)
+        .flatMapMerge(concurrency = 10) { id ->
+            flow {
+                val result = fetchProduct(id)
+                emit(id to result) // Emit a Pair so we know which ID the result belongs to
+            }
+        }
+
+    // 2. The Consumer (The bit that collects)
+    val successfulResults = mutableListOf<String>()
+    
+    println("Starting batch processing...")
+    val startTime = System.currentTimeMillis()
+
+    productFlow.collect { (id, detail) ->
+        if (detail != null) {
+            successfulResults.add(detail)
+            println("Processed Product: $id")
+        } else {
+            println("Failed to fetch Product: $id after retries")
+        }
+    }
+
+    val totalTime = System.currentTimeMillis() - startTime
+    println("Completed ${successfulResults.size} products in ${totalTime}ms")
+}
 ```
 
