@@ -128,7 +128,3 @@ class Solution:
 </details>
 <BR>
 
-
-</details>
-<BR>
-
