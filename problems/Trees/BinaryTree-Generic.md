@@ -218,7 +218,7 @@ class Solution:
 </details>
 <BR>
 
-### [DFS Traversal: Smallest string from Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/)
+### [DFS Preorder Traversal: Smallest string from Leaf](https://leetcode.com/problems/smallest-string-starting-from-leaf/)
 
 > Smallest String from Leaf
 
@@ -227,23 +227,20 @@ class Solution:
 ```python
 class Solution:
     def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
-        def solve(node, accum=[]):
+        def preorder(node, path):
             if not node:
                 return
-            
-            if node.left is None and node.right is None:  # i.e. if leaf
-                tmp = accum + [node.val]
-                tmp.reverse()              
-                tmps = ''.join([chr(x + 97) for x in tmp])
-                res.append(tmps)
-            else:
-                solve(node.left, accum + [node.val])
-                solve(node.right, accum + [node.val])
 
+            path = chr(ord('a') + node.val) + path
+
+            if not node.left and not node.right:
+                res.append(path)
+            
+            preorder(node.left, path)
+            preorder(node.right, path)
         res = []
-        solve(root)
-        res = sorted(res)
-        return res[0]
+        preorder(root, "")
+        return min(res)
 ```
 
 </details>
