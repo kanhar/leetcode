@@ -1,5 +1,5 @@
 {: .no_toc}
-# K-Ary Search Tries
+# Prefix Tree (Trie)
 Practise here: [Leetcode](https://leetcode.com/list?selectedList=9db74ov1)
 
 These are different from Ternary Search Tries.
