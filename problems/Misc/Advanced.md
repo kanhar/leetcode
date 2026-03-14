@@ -187,3 +187,54 @@ class Solution:
 
 </details>
 <BR>
+
+
+### [Permutations](https://leetcode.com/problems/permutations/)
+
+> Given a collection of distinct integers, return all possible permutations.
+> Perm(n,r) = n! / ( n-r )!
+> Comb(n,r) = n! / ( k! / (n-k)! )
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def permute(self, arr: List[int]) -> List[List[int]]:
+        def perm(arr, accum = [], visited = set()):
+            if len(accum) == len(arr):
+                self.res.add(tuple(accum))
+            else:
+                for i in range(len(arr)):
+                    if i not in visited:
+                        perm(arr, accum + [arr[i]], visited | set([i]))
+
+        self.res = set()
+        perm(arr)
+        return self.res
+```
+
+Or...
+
+```python
+class Solution(object):
+    def permute(self, nums):        
+        def perm(a,k=0):
+            if len(a)==k:
+                self.path.append(list(a))                
+            else:
+                for i in range(k,len(a)):
+                    a[i],a[k] = a[k],a[i]
+                    perm(a,k+1)
+                    a[k],a[i] = a[i],a[k]
+        
+        self.path = []
+        perm(nums)                
+        return self.path        
+```
+
+</details>
+<BR>
+
+### [Word Search](https://kanhar.github.io/leetcode/problems/Trees/Tries.html#word-search)
+
+See use of Backtracking here: [Tries.html#word-search](https://kanhar.github.io/leetcode/problems/Trees/Tries.html#word-search)2
