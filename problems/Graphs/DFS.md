@@ -31,27 +31,6 @@ class Solution:
 
 </details>
 <BR>
-### [Clone Graph](https://leetcode.com/problems/clone-graph/)
-
-> Given a reference of a node in a connected undirected graph. Return a deep copy (clone) of the graph.
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def cloneGraph(self, node: 'Node', cloned = {}) -> 'Node':
-        if node is None:
-            return None
-        elif node in cloned:
-            return cloned[node]
-        else:
-            cloned[node] = Node(node.val,[])
-            cloned[node].neighbors = [self.cloneGraph(x, cloned) for x in node.neighbors]
-            return cloned[node]
-```
-
-</details>
-<BR>
 
 
 ### [Subsequences that sum to Target](https://leetcode.com/problems/combination-sum/)
@@ -173,41 +152,6 @@ class Solution(object):
             graph[b].add((a, 1 / val))
 
         return [dfs(a, b, set(), 1.0) for a, b in queries]
-```
-
-</details>
-<BR>
-
-
-### [Redundant Connection](https://leetcode.com/problems/redundant-connection/)
-
-> Convert Connected Graph to (Minimum) Undirected Graph with no cycles.
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution(object):
-    def findRedundantConnection(self, edges):
-        graph = collections.defaultdict(set)
-
-        def dfs(source, target):
-            if source == target:
-                return True
-            else:
-                for node in graph[source] - visited:
-                    visited.add(node)
-                    if dfs(node, target):
-                        return True
-
-                return False
-
-        for u, v in edges:
-            visited = set()
-            if u in graph and v in graph and dfs(u, v):
-                return u, v
-            graph[u].add(v)
-            graph[v].add(u)
-
 ```
 
 </details>
