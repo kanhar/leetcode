@@ -13,8 +13,8 @@
 <body markdown="1">
 
 ## Trees
-* [Pre-Order](problems/Trees/BinaryTree-BottomUp.md)
-* [Post-Order](problems/Trees/BinaryTree-Paths.md)
+* [Pre-Order](problems/Trees/PreOrder.md)
+* [Post-Order](problems/Trees/PostOrder.md)
 * [Traversals](problems/Trees/BinaryTree-Generic.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Heaps](problems/Arrays/Heap.md) 
