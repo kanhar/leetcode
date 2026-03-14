@@ -101,6 +101,38 @@ class Solution:
 </details>
 <BR>
 
+### [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) 
+
+> Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s.
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def isSubtree(self, root, subRoot): # LeetCode uses root/subRoot names
+        if not root: 
+            return False
+        
+        # 1. Check if they match starting here
+        if self.isMatch(root, subRoot):
+            return True
+        
+        # 2. If not, recurse down the main tree
+        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+
+    def isMatch(self, a, b):
+        if not a and not b:
+            return True
+        if not a or not b: 
+            return False
+        if a.val != b.val:
+            return False
+        return self.isMatch(a.left, b.left) and self.isMatch(a.right, b.right)
+```
+
+</details>
+<BR>
+
+
 ### [Number of Paths having Sum](https://leetcode.com/problems/path-sum-iii/)
 
 > Given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value.
