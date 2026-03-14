@@ -60,21 +60,23 @@ class Solution:
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Solution(object):
-    def lowestCommonAncestor(self, root, p, q):
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         if not root:
             return None
-        elif p == root or q == root:
+        elif root in (p,q):
             return root
         else:
-            left  = self.lowestCommonAncestor(root.left,  p , q)
-            right = self.lowestCommonAncestor(root.right, p , q)
+            left = self.lowestCommonAncestor(root.left, p, q)
+            right = self.lowestCommonAncestor(root.right, p, q)
 
             if left and right:
                 return root
-            elif not left:
+            elif not left and not right:
+                return None
+            elif right:
                 return right
-            elif not right:
+            elif left:
                 return left
 ```
 
