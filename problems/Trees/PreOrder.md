@@ -1,7 +1,7 @@
 {: .no_toc}
 # Pre Order 
 
-![Alt text](../../IMG_20260221_060619.png)
+![Alt text](../../images/preorder.jpg)
 
 Every single snippet here follows a Pre-order Traversal pattern: the  "Root" logic (comparing values or creating the parent node) happens before the function fully dives into the children. It is a "top-down" approach: the current level decides the fate of the branches below it.
 
