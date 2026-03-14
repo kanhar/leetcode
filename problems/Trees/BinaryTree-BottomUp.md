@@ -52,37 +52,6 @@ class Solution:
 </details>
 <BR>
 
-
-### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-
-> Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        if not root:
-            return None
-        elif root in (p,q):
-            return root
-        else:
-            left = self.lowestCommonAncestor(root.left, p, q)
-            right = self.lowestCommonAncestor(root.right, p, q)
-
-            if left and right:
-                return root
-            elif not left and not right:
-                return None
-            elif right:
-                return right
-            elif left:
-                return left
-```
-
-</details>
-<BR>
-
 ### [Flip Equivalent Binary Trees](https://leetcode.com/problems/flip-equivalent-binary-trees/)
 
 > Evaluate if a binary tree X is flip equivalent to a binary tree Y - i.e. if we can make X equal
