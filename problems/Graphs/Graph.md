@@ -61,6 +61,8 @@ class Solution:
             graph[v].add(u)
 
 ```
+</details>
+<BR>
 
 
 ### [Is Graph Connected?](https://leetcode.com/problems/all-paths-from-source-lead-to-destination/)
