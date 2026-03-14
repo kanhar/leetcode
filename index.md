@@ -21,7 +21,7 @@
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
 
 ## Recursion
-* [Inductive Construction BFS](problems/Graphs/BFS.md) 
+* [Backtracking](problems/Graphs/BFS.md) 
 * [Recursive DFS with a "Visited" State](problems/Graphs/DFS.md)
  
 ## Graphs 
