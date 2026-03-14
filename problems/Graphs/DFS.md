@@ -175,5 +175,34 @@ class Solution:
 </details>
 <BR>
 
+### [Subsequences that sum to Target](https://leetcode.com/problems/combination-sum/)
+
+> Subsequences of numbers that sum to target
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def combinationSum(self, candidates, target):
+        res = []
+        # Sort to allow for potential pruning (optimization)
+        candidates.sort()
+
+        def solve(remain, idx, path):
+            if remain == 0:
+                res.append(list(path)) 
+                return
+            
+            if remain < 0:
+                return
+
+            for i in range(idx, len(candidates)):                            
+                solve(remain - candidates[i], i, path + [candidates[i]])
+                
+        solve(target, 0, [])
+        return res
+```
+
+</details>
 <BR>
 
