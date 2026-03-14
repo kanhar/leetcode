@@ -20,16 +20,13 @@
 * [Heaps](problems/Arrays/Heap.md) 
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
 
-## Recursion
-* [Backtracking](problems/Graphs/BFS.md) 
-* [Recursive DFS with a "Visited" State](problems/Graphs/DFS.md)
- 
 ## Graphs 
 * [Graphs](problems/Graphs/Graph.md) 
 * [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
 * [Shortest Path Algorithms](problems/Graphs/ShortestPath.md)
 
-## Lists
+## General
+* [Backtracking](problems/Graphs/DFS.md)
 * [Binary Search](problems/Arrays/BinarySearch.md)
 * [Sliding Windows](problems/Arrays/SlidingWindow.md)
 * [Stacks](problems/Arrays/Stacks.md)
