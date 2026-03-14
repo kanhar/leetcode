@@ -99,3 +99,28 @@ class Solution:
 </details>
 <BR>
 
+### [Number of Paths having Sum](https://leetcode.com/problems/path-sum-iii/)
+
+> Given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value.
+> [See also](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def pathSum(self, root: TreeNode, target: int) -> int:
+        def find_paths(root, target):
+            if not root:
+                return 0
+
+            return int(root.val == target) + find_paths(root.left, target-root.val) + find_paths(root.right, target-root.val)
+
+        if not root:
+            return 0
+
+        return find_paths(root, target) + self.pathSum(root.left, target) + self.pathSum(root.right, target)
+```
+
+</details>
+<BR>
+
