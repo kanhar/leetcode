@@ -19,7 +19,8 @@
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Heaps](problems/Arrays/Heap.md) 
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)
-* [Tries](problems/Trees/Tries.md)  
+* [Tries](problems/Trees/Tries.md)
+* [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
 
 ## Graphs 
 * [Graphs](problems/Graphs/Graph.md) 
@@ -44,7 +45,6 @@
 * [Regex](problems/Misc/Regex.md)
 * [System Design](problems/SystemDesign.md)
 * [Matrices](problems/Arrays/Matrices.md)
-* [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
 * [Dist.md](problems/DistributedConsensus.md)
 * [Advanced](problems/Misc/Advanced.md)
 * [Kotlin](problems/ConcurrencyInJava.md)
