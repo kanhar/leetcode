@@ -3,7 +3,23 @@
 
 ![Alt text](../../IMG_20260221_060619.png)
 
-Key intuition here: Solving for root node only is simpler - before thinking through how to extend for if path may not be through root node
+Key intuition here: In every one of these examples, the "Root" is a manager waiting for reports from the "Left Child" and "Right Child" before it can finish its own job.
+
+The "Tell": The Wait for Reports - Notice the pattern in every snippet:
+
+```
+ls = solve(node.left)
+rs = solve(node.right)
+```
+
+The Decision: Only after these two lines do you see the logic that updates a global variable (like self.res or self.maxSum) or calculates a return value.
+
+Why these MUST be Post-order: 
+
+* Max Depth / Balanced Tree: You can't possibly know your own height until you know the height of your tallest child. You have to wait for the numbers to "bubble up."
+* Diameter / Max Path Sum: These are "Bridge" problems. You need to know the longest "arms" coming from the left and right to see if their sum creates a new global record at the current node.
+* LCA: A node only knows it is the "Lowest Common Ancestor" if it receives a "Found Target" signal from both subtrees.
+
 
 - TOC
 {:toc}
