@@ -1,8 +1,14 @@
 {: .no_toc}
-# Inductive Construction
-These solutions all follow a Breadth-First Search (BFS) strategy on a state-space tree, where Level 0 is the empty starting point, Level 1 contains all possibilities using one element, and Level 2 expands to all possibilities using two elements.
+# Backtracking
 
-Practise here: [Leetcode](https://leetcode.com/list?selectedList=9lu7fe4c)
+Backtracking (a specific form of Depth-First Search), used to explore a Decision Tree where each level of the tree represents a choice.
+
+In every problem here we build a solution one piece at a time. At each step, we ask: "What are my valid options right now?"
+
+* Subsets: At each number, do I Include it or Exclude it?
+* Permutations: Which of the remaining numbers should I swap into the current position?
+* Generate Parentheses: Can I add an '('? Can I add a ')'?
+* Phone Digits: Which letter from the current digit's mapping should I pick?
 
 - TOC
 {:toc}
