@@ -28,23 +28,6 @@ class Solution:
 ```
 
 ```python
-class Solution:
-    def preorderTraversal(self, root: TreeNode) -> List[int]:
-        if root is None:
-            return []
-        else:
-            res = []
-            stk = [root]
-            while stk:
-                root = stk.pop()
-                if root:        res.append(root.val)
-                
-                if root.right:  stk.append(root.right)
-                if root.left:   stk.append(root.left)
-            return res
-```
-
-```
 class Solution(object):
     def preorderTraversal(self, root):
         res = []
@@ -82,6 +65,21 @@ class Solution(object):
 <details><summary markdown="span">Execute!</summary>
 
 ```python
+class Solution:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        def solve(node):
+            if node:                
+                solve(node.left)                
+                solve(node.right)   
+                res.append(node.val)
+        res = []
+        solve(root)
+        return res
+```
+</details>
+<BR>
+
+```python
 class Solution(object):
     def postorderTraversal(self, root):
         res = []
@@ -100,22 +98,6 @@ class Solution(object):
         return res
 ```
 
-```python
-class Solution:
-    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        def solve(node):
-            if node:                
-                solve(node.left)                
-                solve(node.right)   
-                res.append(node.val)
-        res = []
-        solve(root)
-        return res
-```
-</details>
-<BR>
-
-
 ### [In-Order](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 
 > &nbsp;1 <BR>
@@ -124,6 +106,19 @@ class Solution:
 > InOrder: [2,1,3]
 
 <details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        def solve(node):
+            if node:                
+                solve(node.left)
+                res.append(node.val)
+                solve(node.right)        
+        res = []
+        solve(root)
+        return res
+```
 
 ```python
 class Solution(object):
@@ -144,18 +139,6 @@ class Solution(object):
         return res
 ```
 
-```python
-class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        def solve(node):
-            if node:                
-                solve(node.left)
-                res.append(node.val)
-                solve(node.right)        
-        res = []
-        solve(root)
-        return res
-```
 </details>
 <BR>
 
