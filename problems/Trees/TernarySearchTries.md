@@ -10,6 +10,8 @@ They are lightning fast (and low-memory footprint) at spell-checks and auto-comp
 - TOC
 {:toc}
 
+### (Implement Trie)[https://leetcode.com/problems/implement-trie-prefix-tree/]
+
 ```python
 class TSTNode(object):
     def __init__(self, ch, val=0):
@@ -19,96 +21,58 @@ class TSTNode(object):
         self.mid = None
         self.right = None
 
-def printTree(node, depth = 0):
-    if node:
-        print("\t" * depth, node.key, node.val)
-        printTree(node.left,  depth+1)
-        printTree(node.mid,   depth+1)
-        printTree(node.right, depth+1)               
-        
 class Trie:
-   
     def __init__(self):
         self.root = None
         
-    def insert(self, key: str) -> None:       
-        
-        def create(node, word, val):
-            if len(word) == 0:
-                return None
+    def insert(self, key: str) -> None:
+        if not key:
+            return
 
+        def create(node, word, val):
             ch = word[0]
             if node is None:
                 node = TSTNode(ch)
 
             if ch < node.key:
-                node.left = create(node.left, word[1:], val)
+                # Still looking for the SAME ch, so don't slice word
+                node.left = create(node.left, word, val)
             elif ch > node.key:
-                node.right = create(node.right, word[1:], val)
+                # Still looking for the SAME ch
+                node.right = create(node.right, word, val)
             else:
-                # If last character
-                if len(word) == 1:
-                    node.key = ch
-                    node.val = val
-                else:
+                # Character matches! 
+                if len(word) > 1:
+                    # Move to next char and go down the middle
                     node.mid = create(node.mid, word[1:], val)
-            
+                else:
+                    # End of word
+                    node.val = val
             return node
                     
-        self.root = create(self.root, key, 1)           
-        printTree(self.root)
-                 
+        self.root = create(self.root, key, 1)
+
+    def _get_node(self, word: str):
+        """Helper to find the node corresponding to the last char of word."""
+        curr = self.root
+        i = 0
+        while curr and i < len(word):
+            ch = word[i]
+            if ch < curr.key:
+                curr = curr.left
+            elif ch > curr.key:
+                curr = curr.right
+            else:
+                if i == len(word) - 1:
+                    return curr
+                curr = curr.mid
+                i += 1
+        return None
 
     def search(self, word: str) -> bool:
-        curr = self.root        
-        
-        for i,w in enumerate(word):
-            if curr is None:
-                return False
-            
-            if w == curr.key:                
-                # last char check
-                if curr is not None and i == len(word)-1:
-                    return curr.val != 0
-                else:
-                    curr = curr.mid
-            elif w < curr.key:
-                curr = curr.left
-                if i == len(word)-1:
-                    return curr is not None and curr.val != 0                
-                elif curr is not None and curr.key != w:
-                    return False
-            else:
-                curr = curr.right
-                if i == len(word)-1:
-                    return curr is not None and curr.val != 0 
-                elif curr is not None and curr.key != w:
-                    return False
+        node = self._get_node(word)
+        return node is not None and node.val != 0
 
-        return True
-
-    def startsWith(self, word: str) -> bool:
-        curr = self.root        
-        
-        for i,w in enumerate(word):
-            if curr is None:
-                return False
-            
-            if w == curr.key:
-                curr = curr.mid
-                # last char check not necessary
-            elif w < curr.key:
-                curr = curr.left
-                if i == len(word)-1:
-                    return curr is not None             
-                elif curr is not None and curr.key != w:
-                    return False
-            else:
-                curr = curr.right
-                if i == len(word)-1:
-                    return curr is not None
-                elif curr is not None and curr.key != w:
-                    return False
-
-        return True
+    def startsWith(self, prefix: str) -> bool:
+        return self._get_node(prefix) is not None
 ```
