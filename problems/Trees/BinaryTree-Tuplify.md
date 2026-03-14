@@ -31,6 +31,31 @@ class Solution:
 </details>
 <BR>
 
+
+### [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) 
+
+> Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s.
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def isSubtree(self, s, t):
+        def tuplify(root, updateCache):
+            if root:
+                tuple = (root.val, tuplify(root.left, updateCache), tuplify(root.right, updateCache))
+                if updateCache:
+                    self.res[tuple].append(root)
+                return tuple
+
+        self.res = collections.defaultdict(list)
+        tuplify(s, updateCache = True)
+        return tuplify(t, updateCache = False) in self.res
+
+```
+
+</details>
+<BR>
+
 ### [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 
 > Serialize and de-transform any generic Binary Tree
@@ -82,49 +107,66 @@ class Codec:
 </details>
 <BR>
 
-### [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) 
 
-> Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s.
+### [Serialize and Deserialize N-ary Tree](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/) <BR>
+
+> Given an integer array nums where the elements are sorted in ascending order,
+convert it to a height-balanced binary search tree.
+> (Can it also work for a graph?)
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Solution(object):
-    def isSubtree(self, s, t):
-        def check(a, b):
-            if a == b == None:
-                return True
-            elif None in [a, b] or a.val != b.val:
-                return False
-            else:
-                return check(a.left, b.left) and check(a.right, b.right)
+class Codec:
+    def serialize(self, root):
+        def preorder(node):
+            if node:
+                res.append(str(node.val))
+                for child in node.children:
+                    preorder(child)
+                res.append("#")
 
-        #s >> t
-        def checkAll(s, t):
-            if not s:
-                return False
-            elif check(s, t):
-                return True
-            else:
-                return dfs(s.left, t) or dfs(s.right, t)
+        res = []
+        preorder(root)
+        return ",".join(res)
 
-        return checkAll(s, t)
-```
+    def deserialize(self, data):
+        def preorder():
+            if not arr:
+                return None
 
-```python
-class Solution(object):
-    def isSubtree(self, s, t):
-        def tuplify(root, updateCache):
+            parent = Node(int(arr.pop(0)), [])
+
+            while arr[0] != "#":
+                parent.children.append(preorder())
+
+            arr.pop(0)
+
+            return parent
+
+        if data:
+            arr = data.split(",")
+            return preorder()
+
+class Codec:
+    def serialize(self, root):
+        def tuplify(root):
             if root:
-                tuple = (root.val, tuplify(root.left, updateCache), tuplify(root.right, updateCache))
-                if updateCache:
-                    self.res[tuple].append(root)
+                tuple = (root.val, [tuplify(x) for x in root.children])
                 return tuple
 
-        self.res = collections.defaultdict(list)
-        tuplify(s, updateCache = True)
-        return tuplify(t, updateCache = False) in self.res
+        return json.dumps(tuplify(root))
 
+    def deserialize(self, data):
+        def detuplify(arr):
+            if arr:
+                root = Node(arr[0], [])
+                for c in arr[1]:
+                    root.children.append(detuplify(c))
+                return root
+            return None
+        return detuplify(json.loads(data))
 ```
 
 </details>
 <BR>
+
