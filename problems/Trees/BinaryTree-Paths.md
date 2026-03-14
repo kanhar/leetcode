@@ -120,31 +120,6 @@ class Solution:
 </details>
 <BR>
 
-### [Number of Paths having Sum](https://leetcode.com/problems/path-sum-iii/)
-
-> Given a binary tree in which each node contains an integer value. Find the number of paths that sum to a given value.
-> [See also](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def pathSum(self, root: TreeNode, target: int) -> int:
-        def find_paths(root, target):
-            if not root:
-                return 0
-
-            return int(root.val == target) + find_paths(root.left, target-root.val) + find_paths(root.right, target-root.val)
-
-        if not root:
-            return 0
-
-        return find_paths(root, target) + self.pathSum(root.left, target) + self.pathSum(root.right, target)
-```
-
-</details>
-<BR>
-
 ### [Check if tree is Height Balanced](https://leetcode.com/problems/balanced-binary-tree/) 
 
 > Given a binary tree, determine if it is height-balanced - left and right subtrees of every node differ in height by no more than 1.
@@ -169,6 +144,36 @@ class Solution:
         self.isBalanced = True
         depth(root)
         return self.isBalanced
+```
+
+</details>
+<BR>
+
+### [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
+> Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+        elif root in (p,q):
+            return root
+        else:
+            left = self.lowestCommonAncestor(root.left, p, q)
+            right = self.lowestCommonAncestor(root.right, p, q)
+
+            if left and right:
+                return root
+            elif not left and not right:
+                return None
+            elif right:
+                return right
+            elif left:
+                return left
 ```
 
 </details>
