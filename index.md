@@ -15,7 +15,7 @@
 ## Trees
 * [Pre-Order](problems/Trees/PreOrder.md)
 * [Post-Order](problems/Trees/PostOrder.md)
-* [Traversals](problems/Trees/BinaryTree-Generic.md)
+* [Traversals](problems/Trees/BinaryTree-Traversals.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Heaps](problems/Arrays/Heap.md) 
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)  
