@@ -1,5 +1,5 @@
 {: .no_toc}
-# Binary Trees
+# Post Order
 
 ![Alt text](../../IMG_20260221_060619.png)
 
