@@ -1,7 +1,7 @@
 {: .no_toc}
 # Post Order
 
-![Alt text](../.images/postorder.jpg)
+![Alt text](../../images/postorder.jpg)
 
 Key intuition here: In every one of these examples, the "Root" is a manager waiting for reports from the "Left Child" and "Right Child" before it can finish its own job.
 
