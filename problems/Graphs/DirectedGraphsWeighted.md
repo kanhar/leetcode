@@ -30,18 +30,16 @@ class Solution:
                 graph[u].append((w, v))
             return (nodes,graph)
 
-        nodes, graph = setup()
-  
-        visited = collections.defaultdict(lambda: float('inf'))
-
         def solve(curr, currDist):
             # Only proceed if we found a strictly better (shorter) path
             if currDist < visited[curr]:
                 visited[curr] = currDist
                 for weight, neighbor in graph[curr]:
                     solve(neighbor, currDist + weight)
-        solve(k, 0)
 
+        nodes, graph = setup()
+        visited = collections.defaultdict(lambda: float('inf'))        
+        solve(k, 0)
         if len(visited) == n:
             return max(visited.values())
         return -1
