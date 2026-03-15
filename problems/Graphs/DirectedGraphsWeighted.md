@@ -24,7 +24,6 @@ Directed Weighted Graphs
 class Solution:
     def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
         def setup():
-            # Use range(1, n+1) to ensure all nodes are represented
             nodes = set([x[0] for x in times] + [x[1] for x in times])
             graph = collections.defaultdict(list)
             for u, v, w in times:
@@ -33,22 +32,18 @@ class Solution:
 
         nodes, graph = setup()
   
-        # 2. Initialize g with all nodes 1 to n
-        visited = {i: float('inf') for i in range(1, n + 1)}
+        visited =  {}
 
         def solve(curr, currDist):
-            if currDist < visited[curr]:
+            if currDist < visited.get(curr, float('inf')):
                 visited[curr] = currDist
-                # Explore neighbors
                 for weight, neighbor in graph[curr]:
                     solve(neighbor, currDist + weight)
-
-        # Core Algorithm
         solve(k, 0)
 
-        # Result
-        res = max(visited.values())
-        return res if res < float('inf') else -1
+        if len(visited) == n:
+            return max(visited.values())
+        return -1
 ```
 </details>
 <BR>
