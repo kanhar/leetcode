@@ -39,6 +39,8 @@ class Solution:
 
 > Convert Connected Graph to (Minimum) Undirected Graph with no cycles.
 
+![Caption](https://assets.leetcode.com/uploads/2021/05/02/reduntant1-1-graph.jpg) 
+
 <details><summary markdown="span">Execute!</summary>
 
 ```python
