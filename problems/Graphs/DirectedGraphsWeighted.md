@@ -54,36 +54,7 @@ class Solution:
 <details><summary markdown="span">Using Dijkstra! - O(N+ElogN)</summary>
 
 ```python
-class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        nodes = set([x[0] for x in times] + [x[1] for x in times])
-        if len(nodes) < n:
-            return -1
 
-        edges = collections.defaultdict(list)
-        for u, v, w in times:
-            edges[u].append((w, v))
-
-        # Core Algorithm starts
-        g = collections.defaultdict(int)
-        heap = [(0, k)]
-
-        while heap:
-            dist, curr = heapq.heappop(heap)
-            g[curr] = dist
-
-            if len(g) == n:
-                break
-
-            for weight, neighbor in edges[curr]:
-                if neighbor not in g:
-                    heapq.heappush(heap, (dist + weight, neighbor))
-                    # Core Algorithm Ends
-
-        if len(g) != n:
-            return -1   # could indicate a negative weight Cycle
-        else:
-            return max(g.values())
 ```
 </details>
 <BR>
@@ -93,27 +64,31 @@ class Solution:
 ```python
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        # Setup
         nodes = set([x[0] for x in times] + [x[1] for x in times])
         if len(nodes) < n:
             return -1
 
-        # Core Algorithm
-        g = {x: float('inf') for x in nodes}
-        g[k] = 0
-        for _ in range(n):
-            for u, v, w in times:
-                g[v] = min(g[v], g[u] + w)
+        graph = collections.defaultdict(list)
+        for u, v, w in times:
+            graph[u].append((w, v))
 
-        # Negative Weight Cycle Detection
-        if g[v] < 0:
-            return -1
+        visited = collections.defaultdict(int)
+        heap = [(0, k)]
+        while heap:
+            dist, curr = heapq.heappop(heap)
+            visited[curr] = dist
 
-        # Result
-        if max(g.values()) < float('inf'):
-            return max(g.values())
+            if len(visited) == n:
+                break
+
+            for weight, neighbor in graph[curr]:
+                if neighbor not in visited:
+                    heapq.heappush(heap, (dist + weight, neighbor))
+
+        if len(visited) != n:
+            return -1   # could indicate a negative weight Cycle
         else:
-            return -1
+            return max(visited.values())
 ```
 </details>
 <BR>
