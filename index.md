@@ -23,9 +23,9 @@
 * [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
 
 ## Graphs 
-* [Graphs](problems/Graphs/Graph.md) 
-* [Topological Sort - Kahns Algorithm](problems/Graphs/Kahns.md) 
-* [Shortest Path Algorithms](problems/Graphs/ShortestPath.md)
+* [Undirected Graphs](problems/Graphs/Graph.md) 
+* [Directed Graphs](problems/Graphs/Kahns.md) 
+* [Weighted Directed Acylic Graphs](problems/Graphs/ShortestPath.md)
 
 ## General
 * [Backtracking](problems/Graphs/DFS.md)
