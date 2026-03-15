@@ -2,6 +2,8 @@
 
 ![Dijkstra example graph](../../images/djikstra.jpeg)
 
+![Prim](../../images/prims.jpeg)
+
 - TOC
 {:toc}
 
@@ -141,6 +143,10 @@ Return the minimum cost to connect all n nodes such that there is at least one p
 
 <details><summary markdown="span">Using Prim's algorithm</summary>
 
+The fundamental difference between Dijkstra’s Algorithm (for shortest paths) and Prim’s Algorithm (for Minimum Spanning Trees) is how they prioritize the "next" node to visit.
+
+In Dijkstra's, you care about the total distance from the start. In Prim's, you only care about the cost of the immediate bridge to an unvisited node.
+
 ```python
 class Solution:
     def minimumCost(self, n: int, connections: List[List[int]]) -> int:
@@ -172,7 +178,7 @@ class Solution:
 
             for weight, neighbor in graph[curr]:
                 if neighbor not in visited:
-                    heapq.heappush(heap, (weight, neighbor))
+                    heapq.heappush(heap, (weight, neighbor)) # Different from Djikstra
 
         # If the loop finishes and we haven't visited n nodes, it's disconnected
         return total_cost if len(visited) == n else -1
@@ -282,14 +288,15 @@ Step 4: Finalize D
 
 Summary of the Shortest Path
 Even though the path A → B looked better initially (weight 1 vs weight 3), Dijkstra eventually finds that the path A → C → D is the winner with a total weight of 5.
+   
+</details>
+<BR>
 
-Why this is different from Prim's
-
+<details><summary markdown="span">Sortest path from A->D (Djikstra) </summary> <BR>
 If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
 
 *   Prim's result (MST): A-B, A-C, C-D (Total weight: 6).
 *   Dijkstra's result (Shortest Path): A-C, C-D (Total weight: 5).
-*   
 </details>
 <BR>
 
