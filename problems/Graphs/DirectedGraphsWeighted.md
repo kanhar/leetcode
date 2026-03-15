@@ -2,7 +2,8 @@
 
 ![Dijkstra example graph](../../images/djikstra.jpeg)
 
-![Prim](../../images/prims.jpeg)
+Minimum Spanning Tree <BR>
+![Prim](../../images/prims.jpg)
 
 - TOC
 {:toc}
@@ -292,8 +293,11 @@ Even though the path A → B looked better initially (weight 1 vs weight 3), Dij
 </details>
 <BR>
 
-<details><summary markdown="span">Sortest path from A->D (Djikstra) </summary> <BR>
+<details><summary markdown="span">Sortest path from A->D (Prim) </summary> <BR>
 If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
+
+Minimum Spanning Tree <BR>
+![Prim](../../images/prims.jpg)
 
 *   Prim's result (MST): A-B, A-C, C-D (Total weight: 6).
 *   Dijkstra's result (Shortest Path): A-C, C-D (Total weight: 5).
