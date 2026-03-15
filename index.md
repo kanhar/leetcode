@@ -23,9 +23,10 @@
 * [Height Balanced Trees](problems/Trees/HeightBalancedTrees.md)
 
 ## Graphs 
-* [Undirected Graphs](problems/Graphs/Graph.md) 
-* [Directed Graphs](problems/Graphs/Kahns.md) 
-* [Weighted Directed Acylic Graphs](problems/Graphs/ShortestPath.md)
+* [Undirected Graphs](problems/Graphs/UndirectedGraphs.md) 
+* [Undirected Graphs (Weighted)](problems/Graphs/UndirectedGraphsWeighted.md)
+* [Directed Graphs](problems/Graphs/DirectedGraphs.md) 
+* [Directed Graphs (Weighted) ](problems/Graphs/DirectedGraphsWeighted.md)
 
 ## General
 * [Backtracking](problems/Graphs/DFS.md)
