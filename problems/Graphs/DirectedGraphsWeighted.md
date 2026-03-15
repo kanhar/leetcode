@@ -1,105 +1,6 @@
 # Directed Weighted Graphs
 
-![Dijkstra example graph](https://github.com/kanhar/leetcode/blob/main/images/djikstra.jpeg)
-
-## Key Intuitions
-
-Summary:
-* Dijkstra says: "I'm going this way, it looks cheap!"
-* Bellman-Ford says: "I'll check every road $N$ times just to be safe."
-* Floyd-Warshall says: "I'll try every single city as a layover for every other city."
-
-<details><summary markdown="span">Sortest path from A->D (Djikstra) </summary> <BR>
-
-Dijkstra uses a Priority Queue to always explore the "closest" node to the start (A) first. Here is the play-by-play:
-Step 1: Start at A
-
-*   Distance map: `{A: 0, B: ∞, C: ∞, D: ∞}`
-*   Dijkstra looks at A's neighbors: B (cost 1) and C (cost 3).
-*   Priority Queue (PQ): `[(1, B), (3, C)]`
-
-Step 2: Visit B (The Greedy Choice)
-
-*   Dijkstra pops B because it has the smallest distance (1).
-*   It looks at B's neighbors: D.
-*   The path to D through B is 1 + 9 = 10.
-*   Distance map: `{A: 0, B: 1, C: 3, D: 10}`
-*   PQ: `[(3, C), (10, D)]`
-*   Note: Even though we "found" D, we haven't "finalized" it yet because there are smaller values in the queue.
-
-Step 3: Visit C
-
-*   Dijkstra pops C because 3 is smaller than 10.
-*   It looks at C's neighbors: D.
-*   The path to D through C is 3 + 2 = 5.
-*   Check: Is 5 better than our current distance to D (10)? Yes.
-*   Distance map: `{A: 0, B: 1, C: 3, D: 5}`
-*   PQ: `[(5, D), (10, D)]` (The 10 is still there but will be ignored later).
-
-Step 4: Finalize D
-
-*   Dijkstra pops D with the value 5.
-*   Since D is the destination, we are done!
-
-Summary of the Shortest Path
-Even though the path A → B looked better initially (weight 1 vs weight 3), Dijkstra eventually finds that the path A → C → D is the winner with a total weight of 5.
-
-Why this is different from Prim's
-
-If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
-
-*   Prim's result (MST): A-B, A-C, C-D (Total weight: 6).
-*   Dijkstra's result (Shortest Path): A-C, C-D (Total weight: 5).
-*   
-</details>
-<BR>
-
-
-<details><summary markdown="span">Shortest path from A->D (Bellman Ford-DP) </summary> <BR>
-
-At the very start (Step 0), only the source is known. All others are "infinite."
-`[A: 0, B: inf, C: inf, D: inf]`
-
-## Iteration 1: Finding paths with 1 edge
-
-We look at every edge in our list.
-
-Process `(A, B)` weight 1: 0 + 1 is less than inf.
-State: `[A: 0, B: 1, C: inf, D: inf]`
-
-Process `(A, C)` weight 3: 0 + 3 is less than inf.
-State: `[A: 0, B: 1, C: 3, D: inf]`
-
-Process `(B, D)` weight 9: 1 + 9 is less than inf.
-State: `[A: 0, B: 1, C: 3, D: 10]`
-
-Process `(C, D)` weight 2: 3 + 2 is less than 10.
-State: `[A: 0, B: 1, C: 3, D: 5]`
-
-**End of Iteration 1 state:** `[A: 0, B: 1, C: 3, D: 5]`
-
-</details>
-<BR>
-
-
-<details><summary markdown="span">Shortest path from A->D (Floyd Warshall) </summary> <BR>
-
-While Dijkstra and Bellman-Ford look for the shortest path from one source, Floyd-Warshall finds the shortest path between every possible pair of nodes simultaneously.
-
-The intuition here isn't about "rippling" out from a start point; it's about systematically testing shortcuts.
-
-## The Intuition: "The Middle-Man"
-
-Imagine you have a map of cities. Initially, you only know the direct flights between them. Floyd-Warshall asks a simple question for every pair of cities $(i, j)$:
-
-"Is it faster to go directly from i to j, or is it faster to stop at city k in between?"
-
-</details>
-<BR>
-
-
-
-
+![Dijkstra example graph](../../images/djikstra.jpeg)
 
 - TOC
 {:toc}
@@ -291,5 +192,105 @@ class Solution:
 ```
 
 </details>
+
+
+### Key Intuitions
+
+![Dijkstra example graph](../../images/djikstra.jpeg)
+
+Summary:
+* Dijkstra says: "I'm going this way, it looks cheap!"
+* Bellman-Ford says: "I'll check every road $N$ times just to be safe."
+* Floyd-Warshall says: "I'll try every single city as a layover for every other city."
+
+<details><summary markdown="span">Sortest path from A->D (Djikstra) </summary> <BR>
+
+Dijkstra uses a Priority Queue to always explore the "closest" node to the start (A) first. Here is the play-by-play:
+Step 1: Start at A
+
+*   Distance map: `{A: 0, B: ∞, C: ∞, D: ∞}`
+*   Dijkstra looks at A's neighbors: B (cost 1) and C (cost 3).
+*   Priority Queue (PQ): `[(1, B), (3, C)]`
+
+Step 2: Visit B (The Greedy Choice)
+
+*   Dijkstra pops B because it has the smallest distance (1).
+*   It looks at B's neighbors: D.
+*   The path to D through B is 1 + 9 = 10.
+*   Distance map: `{A: 0, B: 1, C: 3, D: 10}`
+*   PQ: `[(3, C), (10, D)]`
+*   Note: Even though we "found" D, we haven't "finalized" it yet because there are smaller values in the queue.
+
+Step 3: Visit C
+
+*   Dijkstra pops C because 3 is smaller than 10.
+*   It looks at C's neighbors: D.
+*   The path to D through C is 3 + 2 = 5.
+*   Check: Is 5 better than our current distance to D (10)? Yes.
+*   Distance map: `{A: 0, B: 1, C: 3, D: 5}`
+*   PQ: `[(5, D), (10, D)]` (The 10 is still there but will be ignored later).
+
+Step 4: Finalize D
+
+*   Dijkstra pops D with the value 5.
+*   Since D is the destination, we are done!
+
+Summary of the Shortest Path
+Even though the path A → B looked better initially (weight 1 vs weight 3), Dijkstra eventually finds that the path A → C → D is the winner with a total weight of 5.
+
+Why this is different from Prim's
+
+If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
+
+*   Prim's result (MST): A-B, A-C, C-D (Total weight: 6).
+*   Dijkstra's result (Shortest Path): A-C, C-D (Total weight: 5).
+*   
+</details>
+<BR>
+
+
+<details><summary markdown="span">Shortest path from A->D (Bellman Ford-DP) </summary> <BR>
+
+At the very start (Step 0), only the source is known. All others are "infinite."
+`[A: 0, B: inf, C: inf, D: inf]`
+
+## Iteration 1: Finding paths with 1 edge
+
+We look at every edge in our list.
+
+Process `(A, B)` weight 1: 0 + 1 is less than inf.
+State: `[A: 0, B: 1, C: inf, D: inf]`
+
+Process `(A, C)` weight 3: 0 + 3 is less than inf.
+State: `[A: 0, B: 1, C: 3, D: inf]`
+
+Process `(B, D)` weight 9: 1 + 9 is less than inf.
+State: `[A: 0, B: 1, C: 3, D: 10]`
+
+Process `(C, D)` weight 2: 3 + 2 is less than 10.
+State: `[A: 0, B: 1, C: 3, D: 5]`
+
+**End of Iteration 1 state:** `[A: 0, B: 1, C: 3, D: 5]`
+
+</details>
+<BR>
+
+
+<details><summary markdown="span">Shortest path from A->D (Floyd Warshall) </summary> <BR>
+
+While Dijkstra and Bellman-Ford look for the shortest path from one source, Floyd-Warshall finds the shortest path between every possible pair of nodes simultaneously.
+
+The intuition here isn't about "rippling" out from a start point; it's about systematically testing shortcuts.
+
+## The Intuition: "The Middle-Man"
+
+Imagine you have a map of cities. Initially, you only know the direct flights between them. Floyd-Warshall asks a simple question for every pair of cities $(i, j)$:
+
+"Is it faster to go directly from i to j, or is it faster to stop at city k in between?"
+
+</details>
+<BR>
+
+
 <BR>
 
