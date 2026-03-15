@@ -19,20 +19,23 @@ class Solution:
         for (u, v), p in zip(edges, succProb):
             graph[u].add((p, v)); graph[v].add((p, u))
 
-        visited = set()
+        visited = {} 
         heap = [(-1.0, start_node)]
+        
         while heap:
-            dist, curr = heapq.heappop(heap); 
-            dist = -dist
+            p, curr = heapq.heappop(heap)
+            p = -p
 
-            if curr == end_node: 
-                return dist
-            if curr in visited: 
-                continue
-            visited.add(curr)
+            if curr == end_node:
+                return p
+
+            visited[curr] = p
+
             for weight, neighbor in graph[curr]:
                 if neighbor not in visited:
-                    heapq.heappush(heap, (-(dist * weight), neighbor))
+                    heapq.heappush(heap, (-(p * weight), neighbor))
+
+        return 0.0
 ```
 
 </details>
