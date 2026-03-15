@@ -255,7 +255,7 @@ Summary:
 * Bellman-Ford says: "I'll check every road $N$ times just to be safe."
 * Floyd-Warshall says: "I'll try every single city as a layover for every other city."
 
-<details><summary markdown="span">Sortest path from A->D (Djikstra) </summary> <BR>
+<details><summary markdown="span">Shortest path from A->D (Djikstra) </summary> <BR>
 
 Dijkstra uses a Priority Queue to always explore the "closest" node to the start (A) first. Here is the play-by-play:
 Step 1: Start at A
@@ -292,18 +292,6 @@ Even though the path A → B looked better initially (weight 1 vs weight 3), Dij
    
 </details>
 <BR>
-
-<details><summary markdown="span">Sortest path from A->D (Prim) </summary> <BR>
-If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
-
-Minimum Spanning Tree <BR>
-![Prim](../../images/prims.jpg)
-
-*   Prim's result (MST): A-B, A-C, C-D (Total weight: 6).
-*   Dijkstra's result (Shortest Path): A-C, C-D (Total weight: 5).
-</details>
-<BR>
-
 
 <details><summary markdown="span">Shortest path from A->D (Bellman Ford-DP) </summary> <BR>
 
@@ -342,6 +330,18 @@ The Intuition: "The Middle-Man": Imagine you have a map of cities. Initially, yo
 
 "Is it faster to go directly from i to j, or is it faster to stop at city k in between?"
 
+</details>
+<BR>
+
+
+<details><summary markdown="span">Shortest overall graph using Prim </summary> <BR>
+If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
+
+Minimum Spanning Tree <BR>
+![Prim](../../images/prims.jpg)
+
+*   Prim's result (MST): A-B, A-C, C-D (Total weight: 6).
+*   Dijkstra's result (Shortest Path): A-C, C-D (Total weight: 5).
 </details>
 <BR>
 
