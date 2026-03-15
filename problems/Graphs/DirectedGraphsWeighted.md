@@ -18,49 +18,16 @@ Directed Weighted Graphs
 > - Starting k = 2 --> max(Shortest distance to all nodes) <BR>
 > - Starting k = 2 --> max(1,1,2) = 2 <BR>
 
-<details><summary markdown="span">Using DFS - O(2^V)</summary>
-    
-This isn't technically backtracking:  visited[curr] = currDist. Instead, you use that value as a global state to prune branches. If you reach a node and your current travel time is already worse than the best time recorded, you stop. This is more accurately called Branch and Bound.
-```python
-class Solution:
-    def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
-        def setup():
-            nodes = set([x[0] for x in times] + [x[1] for x in times])
-            graph = collections.defaultdict(list)
-            for u, v, w in times:
-                graph[u].append((w, v))
-            return (nodes,graph)
-
-        def solve(curr, currDist):
-            # Only proceed if we found a strictly better (shorter) path
-            if currDist < visited[curr]:
-                visited[curr] = currDist
-                for weight, neighbor in graph[curr]:
-                    solve(neighbor, currDist + weight)
-
-        nodes, graph = setup()
-        visited = collections.defaultdict(lambda: float('inf'))        
-        solve(k, 0)
-        if len(visited) == n:
-            return max(visited.values())
-        return -1
-```
-</details>
-<BR>
 
 <details><summary markdown="span">Using Dijkstra! - O(N+ElogN)</summary>
 
 ```python
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        def setup():
-            nodes = set([x[0] for x in times] + [x[1] for x in times])
-            graph = collections.defaultdict(list)
-            for u, v, w in times:
-                graph[u].append((w, v))
-            return (nodes,graph)
-
-        nodes, graph = setup()
+        nodes = set([x[0] for x in times] + [x[1] for x in times])
+        graph = collections.defaultdict(list)
+        for u, v, w in times:
+            graph[u].append((w, v))
 
         visited = collections.defaultdict(int)
         heap = [(0, k)]
@@ -88,32 +55,27 @@ class Solution:
 ```python
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        def setup():
-            nodes = set([x[0] for x in times] + [x[1] for x in times])
-            graph = collections.defaultdict(list)
+        # Setup
+        nodes = set([x[0] for x in times] + [x[1] for x in times])
+        if len(nodes) < n:
+            return -1
+
+        # Core Algorithm
+        g = {x: float('inf') for x in nodes}
+        g[k] = 0
+        for _ in range(n):
             for u, v, w in times:
-                graph[u].append((w, v))
-            return (nodes,graph)
+                g[v] = min(g[v], g[u] + w)
 
-        nodes, graph = setup()
+        # Negative Weight Cycle Detection
+        if g[v] < 0:
+            return -1
 
-        visited = collections.defaultdict(int)
-        heap = [(0, k)]
-        while heap:
-            dist, curr = heapq.heappop(heap)
-            visited[curr] = dist
-
-            if len(visited) == n:
-                break
-
-            for weight, neighbor in graph[curr]:
-                if neighbor not in visited:
-                    heapq.heappush(heap, (dist + weight, neighbor))
-
-        if len(visited) != n:
-            return -1   # could indicate a negative weight Cycle
+        # Result
+        if max(g.values()) < float('inf'):
+            return max(g.values())
         else:
-            return max(visited.values())        
+            return -1           
 ```
 </details>
 <BR>
@@ -150,9 +112,36 @@ class Solution:
         else:
             return max(g[k].values())
 ```
-
 </details>
 <BR>
+
+<details><summary markdown="span">Using DFS - O(2^V)</summary>
+    
+This isn't technically backtracking. Instead, you use that value as a global state to prune branches. If you reach a node and your current travel time is already worse than the best time recorded, you stop. This is more accurately called Branch and Bound.
+```python
+class Solution:
+    def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
+        def solve(curr, currDist):
+            # Only proceed if we found a strictly better (shorter) path
+            if currDist < visited[curr]:
+                visited[curr] = currDist
+                for weight, neighbor in graph[curr]:
+                    solve(neighbor, currDist + weight)
+
+        nodes = set([x[0] for x in times] + [x[1] for x in times])
+        graph = collections.defaultdict(list)
+        for u, v, w in times:
+            graph[u].append((w, v))
+            
+        visited = collections.defaultdict(lambda: float('inf'))        
+        solve(k, 0)
+        if len(visited) == n:
+            return max(visited.values())
+        return -1
+```
+</details>
+<BR>
+
 
 ### [Tree Diameter](https://leetcode.com/problems/tree-diameter/)
 > Given an undirected tree, return its bottomUp: the number of edges in a longest path in that tree.
