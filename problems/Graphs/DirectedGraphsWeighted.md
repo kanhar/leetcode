@@ -32,10 +32,11 @@ class Solution:
 
         nodes, graph = setup()
   
-        visited =  {}
+        visited = collections.defaultdict(lambda: float('inf'))
 
         def solve(curr, currDist):
-            if currDist < visited.get(curr, float('inf')):
+            # Only proceed if we found a strictly better (shorter) path
+            if currDist < visited[curr]:
                 visited[curr] = currDist
                 for weight, neighbor in graph[curr]:
                     solve(neighbor, currDist + weight)
