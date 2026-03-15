@@ -14,11 +14,6 @@ Directed Weighted Graphs
 > Even though the ask is to find the max time, this distills down to find the
 > shortest distance from node K to all nodes.
 
->   `[1]`< --- 1 --- `[2]` ---1 ---> `[3]` ---1 ---> `[4]` <BR>
-> - Starting k = 2 --> max(Shortest distance to all nodes) <BR>
-> - Starting k = 2 --> max(1,1,2) = 2 <BR>
-
-
 <details><summary markdown="span">Using Dijkstra! - O(N+ElogN)</summary>
 
 ```python
