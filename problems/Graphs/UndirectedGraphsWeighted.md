@@ -25,17 +25,16 @@ class Solution:
         while heap:
             p, curr = heapq.heappop(heap)
             p = -p
-
+               
+            visited[curr] = p            
             if curr == end_node:
-                return p
-
-            visited[curr] = p
-
+                break
+                
             for weight, neighbor in graph[curr]:
                 if neighbor not in visited:
                     heapq.heappush(heap, (-(p * weight), neighbor))
-
-        return 0.0
+                    
+        return visited.get(end_node, 0.0)
 ```
 
 </details>
