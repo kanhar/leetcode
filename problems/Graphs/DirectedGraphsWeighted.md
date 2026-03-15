@@ -136,6 +136,51 @@ class Solution:
 <BR>
 
 
+### [Connecting Cities at Minimum cost](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)
+Return the minimum cost to connect all n nodes such that there is at least one path between each pair of cities. 
+
+<details><summary markdown="span">Using Prim's algorithm</summary>
+
+```python
+class Solution:
+    def minimumCost(self, n: int, connections: List[List[int]]) -> int:
+        # 1. Build the graph (undirected for cities)
+        graph = collections.defaultdict(list)
+        for u, v, w in connections:
+            graph[u].append((w, v))
+            graph[v].append((w, u))
+
+        visited = set()
+        # heap stores (edge_weight, current_node)
+        # We can start from any node, e.g., node 1
+        heap = [(0, 1)]
+        total_cost = 0
+        
+        while heap:
+            cost, curr = heapq.heappop(heap)
+            
+            if curr in visited:
+                continue
+                
+            # Add to MST
+            visited.add(curr)
+            total_cost += cost
+            
+            # If we've connected all cities, we're done
+            if len(visited) == n:
+                return total_cost
+
+            for weight, neighbor in graph[curr]:
+                if neighbor not in visited:
+                    heapq.heappush(heap, (weight, neighbor))
+
+        # If the loop finishes and we haven't visited n nodes, it's disconnected
+        return total_cost if len(visited) == n else -1
+```
+</details>
+<BR>
+
+
 ### [Tree Diameter](https://leetcode.com/problems/tree-diameter/)
 > Given an undirected tree, return its bottomUp: the number of edges in a longest path in that tree.
 > Note: This is unlike [shortest-(repeatable)-path-visiting-all-nodes](https://leetcode.com/problems/shortest-path-visiting-all-nodes/)
