@@ -1,6 +1,8 @@
 {: .no_toc}
 # Undirected Graphs  
 
+![Caption](https://assets.leetcode.com/uploads/2021/05/02/reduntant1-2-graph.jpg)
+
 - TOC
 {:toc}
 
