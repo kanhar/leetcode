@@ -194,7 +194,7 @@ class Solution:
 </details>
 
 
-### Key Intuitions
+## Key Intuitions
 
 ![Dijkstra example graph](../../images/djikstra.jpeg)
 
@@ -254,7 +254,7 @@ If this were Prim's Algorithm, the very first thing it would do is pick edge A-B
 At the very start (Step 0), only the source is known. All others are "infinite."
 `[A: 0, B: inf, C: inf, D: inf]`
 
-## Iteration 1: Finding paths with 1 edge
+  Iteration 1: Finding paths with 1 edge
 
 We look at every edge in our list.
 
@@ -282,9 +282,7 @@ While Dijkstra and Bellman-Ford look for the shortest path from one source, Floy
 
 The intuition here isn't about "rippling" out from a start point; it's about systematically testing shortcuts.
 
-## The Intuition: "The Middle-Man"
-
-Imagine you have a map of cities. Initially, you only know the direct flights between them. Floyd-Warshall asks a simple question for every pair of cities $(i, j)$:
+The Intuition: "The Middle-Man": Imagine you have a map of cities. Initially, you only know the direct flights between them. Floyd-Warshall asks a simple question for every pair of cities $(i, j)$:
 
 "Is it faster to go directly from i to j, or is it faster to stop at city k in between?"
 
@@ -292,5 +290,4 @@ Imagine you have a map of cities. Initially, you only know the direct flights be
 <BR>
 
 
-<BR>
 
