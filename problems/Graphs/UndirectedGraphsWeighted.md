@@ -1,6 +1,8 @@
 {: .no_toc}
 # Undirected Graphs  (Weighted)
 
+![Caption](https://assets.leetcode.com/uploads/2019/09/20/1558_ex1.png)
+
 - TOC
 {:toc}
 
