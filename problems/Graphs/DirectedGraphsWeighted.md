@@ -22,31 +22,33 @@ Directed Weighted Graphs
 
 ```python
 class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        def solve(curr, currDist):
-            if currDist < g[curr]:
-                g[curr] = currDist
-                for weight, neighbor in sorted(edges[curr]):
-                    solve(neighbor, currDist + weight)
-                    
-        # Setup
-        nodes = set([x[0] for x in times] + [x[1] for x in times])
-        if len(nodes) < n:
-            return -1
+    def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
+        def setup():
+            # Use range(1, n+1) to ensure all nodes are represented
+            nodes = set([x[0] for x in times] + [x[1] for x in times])
+            graph = collections.defaultdict(list)
+            for u, v, w in times:
+                graph[u].append((w, v))
+            return (nodes,graph)
 
-        edges = collections.defaultdict(list)
-        for u, v, w in times:
-            edges[u].append((w, v))
+        nodes, edges = setup()
+  
+        # 2. Initialize g with all nodes 1 to n
+        visited = {i: float('inf') for i in range(1, n + 1)}
+
+        def solve(curr, currDist):
+            if currDist < visited[curr]:
+                visited[curr] = currDist
+                # Explore neighbors
+                for weight, neighbor in edges[curr]:
+                    solve(neighbor, currDist + weight)
 
         # Core Algorithm
-        g = {x: float('inf') for x in nodes}
         solve(k, 0)
 
         # Result
-        if max(g.values()) < float('inf'):
-            return max(g.values())
-        else:
-            return -1
+        res = max(visited.values())
+        return res if res < float('inf') else -1
 ```
 </details>
 <BR>
@@ -54,23 +56,16 @@ class Solution:
 <details><summary markdown="span">Using Dijkstra! - O(N+ElogN)</summary>
 
 ```python
-
-```
-</details>
-<BR>
-
-<details><summary markdown="span">Using Bellman Ford. O(N.E)</summary>
-
-```python
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        nodes = set([x[0] for x in times] + [x[1] for x in times])
-        if len(nodes) < n:
-            return -1
+        def setup():
+            nodes = set([x[0] for x in times] + [x[1] for x in times])
+            graph = collections.defaultdict(list)
+            for u, v, w in times:
+                graph[u].append((w, v))
+            return (nodes,graph)
 
-        graph = collections.defaultdict(list)
-        for u, v, w in times:
-            graph[u].append((w, v))
+        nodes, graph = setup()
 
         visited = collections.defaultdict(int)
         heap = [(0, k)]
@@ -89,6 +84,41 @@ class Solution:
             return -1   # could indicate a negative weight Cycle
         else:
             return max(visited.values())
+```
+</details>
+<BR>
+
+<details><summary markdown="span">Using Bellman Ford. O(N.E)</summary>
+
+```python
+class Solution:
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        def setup():
+            nodes = set([x[0] for x in times] + [x[1] for x in times])
+            graph = collections.defaultdict(list)
+            for u, v, w in times:
+                graph[u].append((w, v))
+            return (nodes,graph)
+
+        nodes, graph = setup()
+
+        visited = collections.defaultdict(int)
+        heap = [(0, k)]
+        while heap:
+            dist, curr = heapq.heappop(heap)
+            visited[curr] = dist
+
+            if len(visited) == n:
+                break
+
+            for weight, neighbor in graph[curr]:
+                if neighbor not in visited:
+                    heapq.heappush(heap, (dist + weight, neighbor))
+
+        if len(visited) != n:
+            return -1   # could indicate a negative weight Cycle
+        else:
+            return max(visited.values())        
 ```
 </details>
 <BR>
