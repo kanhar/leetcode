@@ -45,12 +45,10 @@ class Solution:
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:        
         def canMeet(curr,target, visited):
-            if curr in visited:
-                return False
-            if target in graph[curr]:
+            if curr==target:
                 return True
             visited.add(curr)
-            for neighbor in graph[curr]:
+            for neighbor in graph[curr]-visited:
                 if canMeet(neighbor, target, visited):
                     return True
 
