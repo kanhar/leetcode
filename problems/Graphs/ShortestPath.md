@@ -1,6 +1,6 @@
 {: .no_toc}
-# Dijkstra, Bellman Ford, Floyd-Warshall - Shortest Path
-Directed Acylic Graphs (DAGs)
+# Weighted Directed Acyclic Graphs
+Weighted Directed Acyclic Graphs
 
 - TOC
 {:toc}
