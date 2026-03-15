@@ -48,9 +48,10 @@ class Solution:
             if curr==target:
                 return True
             visited.add(curr)
-            for neighbor in graph[curr]-visited:
-                if canMeet(neighbor, target, visited):
-                    return True
+            for neighbor in graph[curr] :
+                if neighbor not in visited:
+                    if canMeet(neighbor, target, visited):
+                        return True
 
             return False
 
