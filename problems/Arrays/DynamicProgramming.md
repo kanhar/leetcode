@@ -80,31 +80,6 @@ class Solution(object):
 </details>
 <BR>
 
-### [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
-
-> Given a string s, find the longest palindromic substring in s.
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution:
-    def longestPalindrome(self, s: str) -> str:
-        def palindromeAt(w,l,r):
-            while l>=0 and r < len(w) and w[l]==w[r]:
-                l -=1
-                r +=1
-            return w[l+1:r]
-
-        res = ""
-        for i in range(0, len(s)):
-            odd  = palindromeAt(s,i,i)
-            even = palindromeAt(s,i,i+1)
-            res = max([res,odd,even], key=len)
-        return res
-```
-
-</details>
-<BR>
-
 ### [Maximum Length of a sub-array that sums to k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 > Given an array nums and a target value k, find the maximum length of a subarray that sums to k.
 If there isn't one, return 0 instead.
