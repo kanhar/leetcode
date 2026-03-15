@@ -23,7 +23,6 @@ class Solution:
         
 class Solution:
     def cloneGraph(self, node: Optional['Node'], visited = {}) -> Optional['Node']:        
-        # Does not prevent Cycle but works
         if node:
             if node in visited:
                 return visited[node]
@@ -45,22 +44,24 @@ class Solution:
 ```python
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:        
-        def isconnected(u, v, visited):
-            if u == v:
+        def canMeet(curr,target, visited):
+            if curr in visited:
+                return False
+            if target in graph[curr]:
                 return True
-            visited.add(u)
-            for x in graph[u] - visited:                
-                if isconnected(x, v, visited):
+            visited.add(curr)
+            for neighbor in graph[curr]:
+                if canMeet(neighbor, target, visited):
                     return True
+
             return False
-                    
+
         graph = collections.defaultdict(set)
-        for u, v in edges:
-            if isconnected(u, v, visited= set()):
-                return [u, v]
+        for u,v in edges:
+            if canMeet(u,v, set()):
+                return [u,v]
             graph[u].add(v)
             graph[v].add(u)
-
 ```
 </details>
 <BR>
