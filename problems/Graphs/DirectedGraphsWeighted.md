@@ -2,6 +2,8 @@
 # Directed Weighted Graphs
 Directed Weighted Graphs
 
+![](https://assets.leetcode.com/uploads/2019/05/23/931_example_1.png)
+
 - TOC
 {:toc}
 
