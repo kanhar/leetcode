@@ -1,6 +1,7 @@
 {: .no_toc}
 # Directed Graphs
-Practise here: [Leetcode](https://leetcode.com/list?selectedList=9l6pf80h)
+
+![](https://assets.leetcode.com/uploads/2019/03/16/485_example_3.png)
 
 - TOC
 {:toc}
