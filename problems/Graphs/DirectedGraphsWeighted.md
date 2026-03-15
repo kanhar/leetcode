@@ -1,8 +1,60 @@
-{: .no_toc}
 # Directed Weighted Graphs
-Directed Weighted Graphs
 
-![](https://assets.leetcode.com/uploads/2019/05/23/931_example_1.png)
+![Dijkstra example graph](https://github.com/kanhar/leetcode/blob/main/images/djikstra.jpeg)
+
+## Key Intuition:
+
+This graph is a perfect "trap" that reveals exactly how Dijkstra's greed works. In your drawing, we have nodes A, B, C, and D with the following edges:
+
+*   A → B (weight 1)
+*   A → C (weight 3)
+*   B → D (weight 9)
+*   C → D (weight 2)
+
+Dijkstra uses a Priority Queue to always explore the "closest" node to the start (A) first. Here is the play-by-play:
+
+## The Play-by-Play
+
+### Step 1: Start at A
+
+*   Distance map: `{A: 0, B: ∞, C: ∞, D: ∞}`
+*   Dijkstra looks at A's neighbors: B (cost 1) and C (cost 3).
+*   Priority Queue (PQ): `[(1, B), (3, C)]`
+
+### Step 2: Visit B (The Greedy Choice)
+
+*   Dijkstra pops B because it has the smallest distance (1).
+*   It looks at B's neighbors: D.
+*   The path to D through B is 1 + 9 = 10.
+*   Distance map: `{A: 0, B: 1, C: 3, D: 10}`
+*   PQ: `[(3, C), (10, D)]`
+*   Note: Even though we "found" D, we haven't "finalized" it yet because there are smaller values in the queue.
+
+### Step 3: Visit C
+
+*   Dijkstra pops C because 3 is smaller than 10.
+*   It looks at C's neighbors: D.
+*   The path to D through C is 3 + 2 = 5.
+*   Check: Is 5 better than our current distance to D (10)? Yes.
+*   Distance map: `{A: 0, B: 1, C: 3, D: 5}`
+*   PQ: `[(5, D), (10, D)]` (The 10 is still there but will be ignored later).
+
+### Step 4: Finalize D
+
+*   Dijkstra pops D with the value 5.
+*   Since D is the destination, we are done!
+
+## Summary of the Shortest Path
+
+Even though the path A → B looked better initially (weight 1 vs weight 3), Dijkstra eventually finds that the path A → C → D is the winner with a total weight of 5.
+
+## Why this is different from Prim's
+
+If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
+
+*   Prim's result (MST): A-B, A-C, C-D (Total weight: 6).
+*   Dijkstra's result (Shortest Path): A-C, C-D (Total weight: 5).
+
 
 - TOC
 {:toc}
