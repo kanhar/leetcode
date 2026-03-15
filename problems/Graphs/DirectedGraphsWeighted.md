@@ -31,7 +31,7 @@ class Solution:
                 graph[u].append((w, v))
             return (nodes,graph)
 
-        nodes, edges = setup()
+        nodes, graph = setup()
   
         # 2. Initialize g with all nodes 1 to n
         visited = {i: float('inf') for i in range(1, n + 1)}
@@ -40,7 +40,7 @@ class Solution:
             if currDist < visited[curr]:
                 visited[curr] = currDist
                 # Explore neighbors
-                for weight, neighbor in edges[curr]:
+                for weight, neighbor in graph[curr]:
                     solve(neighbor, currDist + weight)
 
         # Core Algorithm
