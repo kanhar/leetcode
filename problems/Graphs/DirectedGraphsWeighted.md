@@ -18,8 +18,9 @@ Directed Weighted Graphs
 > - Starting k = 2 --> max(Shortest distance to all nodes) <BR>
 > - Starting k = 2 --> max(1,1,2) = 2 <BR>
 
-<details><summary markdown="span">Using DFS - O((N−1)!+ElogE)</summary>
-
+<details><summary markdown="span">Using DFS - O(2^V)</summary>
+    
+This isn't technically backtracking:  visited[curr] = currDist. Instead, you use that value as a global state to prune branches. If you reach a node and your current travel time is already worse than the best time recorded, you stop. This is more accurately called Branch and Bound.
 ```python
 class Solution:
     def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
