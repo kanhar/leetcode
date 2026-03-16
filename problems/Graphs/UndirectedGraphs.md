@@ -64,6 +64,36 @@ class Solution:
             graph[u].add(v)
             graph[v].add(u)
 ```
+
+Union find only works with undirected graphs. It asks the question if your highest order boss, is shared with another node, you must be in the same org. 
+
+
+```
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        # Initialize each node as its own parent (its own set)
+        parent = list(range(len(edges) + 1))
+
+        def find(i):
+            if parent[i] == i:
+                return i
+            # Path compression: makes future lookups nearly O(1)
+            parent[i] = find(parent[i])
+            return parent[i]
+
+        def union(i, j):
+            root_i = find(i)
+            root_j = find(j)
+            if root_i != root_j:
+                parent[root_i] = root_j
+                return True
+            return False # They are already in the same set!
+
+        for u, v in edges:
+            if not union(u, v):
+                return [u, v]
+
+```
 </details>
 <BR>
 
