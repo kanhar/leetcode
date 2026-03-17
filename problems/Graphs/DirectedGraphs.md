@@ -75,37 +75,41 @@ return any of them.
 ```python
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
+        # Create Graph and check ordering
         edges = collections.defaultdict(set)
-        indeg = {x: 0 for word in words for x in word}  # Or: { x:0 for x in ''.join(words)}
+        indeg = {x: 0 for word in words for x in word}
 
-        for w1, w2 in zip(words, words[1:]):
-            for a, b in zip(w1, w2):
-                orderingFound = False
+        for i in range(len(words) - 1):
+            w1 = words[i]
+            w2 = words[i + 1]
+     
+            orderingFound = False
+        
+            for j in range(min(len(w1), len(w2))):
+                a = w1[j]
+                b = w2[j]
                 if a != b:
                     if b not in edges[a]:
                         edges[a].add(b)
                         indeg[b] += 1
                     orderingFound = True
                     break
-            
-            # Cycle Detection - Invalid Dict Order, i.e. if w1 > w2 but still no valid ordering found. 
-            if orderingFound is False and len(w1) > len(w2):
+
+            if not orderingFound and len(w1) > len(w2):
                 return ""
 
+        # Topological Sort Graph (Kahn's Algorithm)
         q = [x for x in indeg if indeg[x] == 0]
         res = []
         while q:
             curr = q.pop()
             res.append(curr)
-            for d in edges[curr]:
-                indeg[d] -= 1
-                if indeg[d] == 0:
-                    q.append(d)
+            for neighbor in edges[curr]:
+                indeg[neighbor] -= 1
+                if indeg[neighbor] == 0:
+                    q.append(neighbor)
 
-        if len(res) < len(indeg):
-            return ""  # indicates cycle
-        else:
-            return ''.join(res)
+        return ''.join(res) if len(res) == len(indeg) else ""
 ```
 
 </details>
