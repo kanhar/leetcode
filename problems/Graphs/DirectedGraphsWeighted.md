@@ -281,7 +281,7 @@ The Intuition: "The Middle-Man": Imagine you have a map of cities. Initially, yo
 <BR>
 
 
-<details><summary markdown="span">Shortest overall graph using Prim </summary> <BR>
+<details><summary markdown="span">Shortest overall graph using Prim (although would no longer be a directed graph) </summary> <BR>
 If this were Prim's Algorithm, the very first thing it would do is pick edge A-B (1). Then, it would look at the available edges from {A, B} and pick C-A (3) because 3 is smaller than 9. Finally, it would pick D-C (2).
 
 Minimum Spanning Tree <BR>
