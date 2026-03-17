@@ -149,39 +149,28 @@ In Dijkstra's, you care about the total distance from the start. In Prim's, you 
 
 ```python
 class Solution:
-    def minimumCost(self, n: int, connections: List[List[int]]) -> int:
-        # 1. Build the graph (undirected for cities)
-        graph = collections.defaultdict(list)
+    def minimumCost(self, n: int, connections: List[List[int]]) -> int:        
+        graph = collections.defaultdict(list)        
         for u, v, w in connections:
             graph[u].append((w, v))
             graph[v].append((w, u))
 
-        visited = set()
-        # heap stores (edge_weight, current_node)
-        # We can start from any node, e.g., node 1
-        heap = [(0, 1)]
-        total_cost = 0
-        
+        # Visited will inevitably become a Minimum Spanning Tree
+        visited = collections.defaultdict(int)        
+        heap = [(0, 1)]        
         while heap:
-            cost, curr = heapq.heappop(heap)
-            
+            cost, curr = heapq.heappop(heap)            
             if curr in visited:
                 continue
-                
-            # Add to MST
-            visited.add(curr)
-            total_cost += cost
-            
-            # If we've connected all cities, we're done
-            if len(visited) == n:
-                return total_cost
 
+            visited[curr] += cost
+            if len(visited) == n:
+                break
             for weight, neighbor in graph[curr]:
                 if neighbor not in visited:
                     heapq.heappush(heap, (weight, neighbor)) # Different from Djikstra
 
-        # If the loop finishes and we haven't visited n nodes, it's disconnected
-        return total_cost if len(visited) == n else -1
+        return sum(visited.values()) if len(visited) == n else -1
 ```
 </details>
 <BR>
