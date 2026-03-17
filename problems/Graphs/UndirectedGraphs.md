@@ -71,23 +71,28 @@ Union find only works with undirected graphs. It asks the question if your highe
 ```
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        # Initialize each node as its own parent (its own set)
-        parent = list(range(len(edges) + 1))
+        parent = defaultdict(lambda: None)
 
         def find(i):
-            if parent[i] == i:
+            # If the node isn't in our dict, it's its own parent
+            if parent[i] is None:
                 return i
-            # Path compression: makes future lookups nearly O(1)
-            parent[i] = find(parent[i])
-            return parent[i]
-
+            # If the node is its own parent return it            
+            elif parent[i] == i:
+                return i
+            else:
+            # If node's parent is not itself, find the parent.
+                return find(parent[i])
+            
         def union(i, j):
             root_i = find(i)
             root_j = find(j)
+            
             if root_i != root_j:
+                # Union: point one root to the other
                 parent[root_i] = root_j
                 return True
-            return False # They are already in the same set!
+            return False
 
         for u, v in edges:
             if not union(u, v):
