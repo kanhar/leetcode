@@ -156,8 +156,9 @@ class Solution:
             graph[v].append((w, u))
 
         # Visited will inevitably become a Minimum Spanning Tree
-        visited = collections.defaultdict(int)        
-        heap = [(0, 1)]        
+        visited = collections.defaultdict(int)
+        k = 1 # Starting arbitrarily with node k, find the shortest path
+        heap = [(0, k)]        
         while heap:
             cost, curr = heapq.heappop(heap)            
             if curr in visited:
