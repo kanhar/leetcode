@@ -37,6 +37,9 @@ class Solution:
         return visited.get(end_node, 0.0)
 ```
 
+</details>
+<BR>
+
 
 ### [Connecting Cities at Minimum cost](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)
 Return the minimum cost to connect all n nodes such that there is at least one path between each pair of cities. 
@@ -77,7 +80,3 @@ class Solution:
 ```
 </details>
 <BR>
-
-</details>
-<BR>
-
