@@ -48,8 +48,10 @@ Return the minimum cost to connect all n nodes such that there is at least one p
 
 The fundamental difference between Dijkstra’s Algorithm (for shortest paths) and Prim’s Algorithm (for Minimum Spanning Trees) is how they prioritize the "next" node to visit. In Dijkstra's, you care about the total distance from the start. In Prim's, you only care about the cost of the immediate bridge to an unvisited node.
 
-Using the original example, Prims would render
+Using the original example:
+![Dijkstra example graph](../../images/djikstra.jpeg)
 
+Prims would render:
 ![Prim](../../images/prims.jpg)
 
 ```python
