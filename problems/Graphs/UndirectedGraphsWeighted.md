@@ -37,6 +37,47 @@ class Solution:
         return visited.get(end_node, 0.0)
 ```
 
+
+### [Connecting Cities at Minimum cost](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)
+Return the minimum cost to connect all n nodes such that there is at least one path between each pair of cities. 
+
+<details><summary markdown="span">Using Prim's algorithm</summary>
+
+The fundamental difference between Dijkstra’s Algorithm (for shortest paths) and Prim’s Algorithm (for Minimum Spanning Trees) is how they prioritize the "next" node to visit. In Dijkstra's, you care about the total distance from the start. In Prim's, you only care about the cost of the immediate bridge to an unvisited node.
+
+Using the original example, Prims would render
+
+![Prim](../../images/prims.jpg)
+
+```python
+class Solution:
+    def minimumCost(self, n: int, connections: List[List[int]]) -> int:        
+        graph = collections.defaultdict(list)        
+        for u, v, w in connections:
+            graph[u].append((w, v))
+            graph[v].append((w, u))
+
+        # Visited will inevitably become a Minimum Spanning Tree
+        visited = collections.defaultdict(int)
+        k = 1 # Starting arbitrarily with node k, find the shortest path
+        heap = [(0, k)]        
+        while heap:
+            cost, curr = heapq.heappop(heap)            
+            if curr in visited:
+                continue
+
+            visited[curr] += cost
+            if len(visited) == n:
+                break
+            for weight, neighbor in graph[curr]:
+                if neighbor not in visited:
+                    heapq.heappush(heap, (weight, neighbor)) # Different from Djikstra
+
+        return sum(visited.values()) if len(visited) == n else -1
+```
+</details>
+<BR>
+
 </details>
 <BR>
 
