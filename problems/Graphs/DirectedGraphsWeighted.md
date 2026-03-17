@@ -245,7 +245,7 @@ class Solution:
 </details>
 <BR>
 
-## [Key Intuitions](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+# [Key Intuitions](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
 ![Dijkstra example graph](../../images/djikstra.jpeg)
 
