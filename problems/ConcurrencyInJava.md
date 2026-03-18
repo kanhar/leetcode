@@ -19,41 +19,42 @@ Backpressure: The BufferOverflow.SUSPEND strategy ensures that if the network is
 3. The Pattern Name: Pipeline Decoupling
 By using flowOn(Dispatchers.IO), you have effectively created a Thread-Confinement Pipeline. The file reading happens on one thread pool, while the socket writing (the collection) happens on another (the caller's context). This prevents a slow disk from slowing down your network logic and vice versa.
 
-```
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.BufferOverflow
-import kotlinx.coroutines.flow.*
-import java.io.File
-import java.net.Socket
-
-fun streamFileToSocket(file: File, host: String, port: Int) = runBlocking {
-    // 1. Create the producer flow
+```kotlin
+fun streamFileToSocket(file: File, host: String, port: Int) = runBlocking {    
     val fileFlow = flow {
         file.bufferedReader().use { reader ->
             reader.forEachLine { line ->
                 emit(line)
             }
         }
-    }.flowOn(Dispatchers.IO) // Keeps file I/O off the main/caller thread
+    }.flowOn(Dispatchers.IO) 
 
-    // 2. Consume the flow and send to TCP Socket
-    try {
-        Socket(host, port).use { socket ->
-            val writer = socket.getOutputStream().bufferedWriter()
-            
-            fileFlow
-                .buffer(100, onBufferOverflow = BufferOverflow.SUSPEND) // Backpressure: pause reader if socket is slow
-                .collect { line ->
-                    writer.write(line)
-                    writer.newLine()
-                    writer.flush() // Ensure data is sent over the wire
-                }
-        }
-    } catch (e: Exception) {
-        println("Streaming failed: ${e.message}")
+    Socket(host, port).use { socket ->
+        val writer = socket.getOutputStream().bufferedWriter()
+        
+        fileFlow
+            .buffer(100, onBufferOverflow = BufferOverflow.SUSPEND) // Backpressure: pause reader if socket is slow
+            .collect { line ->
+                writer.write(line)
+            }
     }
 }
+```
 
+Memory optimization if Line is >
+
+```kotlin
+    val fileFlow = flow {
+        file.bufferedReader().use { reader ->
+            val buffer = CharArray(8192)
+            var charsRead = reader.read(buffer)
+            
+            while (charsRead != -1) {                
+                emit(String(buffer, 0, charsRead))
+                charsRead = reader.read(buffer)
+            }
+        }
+    }
 ```
 
 #### Throttled Batch Processor
