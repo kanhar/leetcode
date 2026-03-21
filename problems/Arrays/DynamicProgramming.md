@@ -130,22 +130,22 @@ class Solution:
 ```python
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        h = collections.defaultdict(int)
-        # 1. Base case: a prefix sum of 0 has occurred once (before index 0)
-        h[0] = 1 
-        
+        h = collections.defaultdict(int)        
         total_at_i = 0
-        count = 0 # This will track the number of subarrays
+        count = 0 
         
-        for i in range(len(nums)):
-            total_at_i += nums[i]
+        for num in nums:
+            total_at_i += num
             
-            # 2. Check if (current_sum - k) exists in our history
-            target = total_at_i - k
-            if target in h:
-                count += h[target] # Add the number of times we've seen this target
+            # 1. Explicitly check if the prefix from index 0 equals k
+            if total_at_i == k:
+                count += 1
             
-            # 3. Always increment the frequency of the current prefix sum
+            # 2. Check if (current_sum - k) exists in history
+            if total_at_i - k in h:
+                count += h[total_at_i - k]
+            
+            # 3. Record the current prefix sum
             h[total_at_i] += 1
 
         return count
