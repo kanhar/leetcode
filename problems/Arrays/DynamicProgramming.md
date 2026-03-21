@@ -168,16 +168,17 @@ class Solution:
         h = collections.defaultdict(int)
         total_at_i = 0
         maxLen = 0
+
         for i in range(0, len(nums)):
             total_at_i += nums[i]
+
             if total_at_i not in h:
                 h[total_at_i] = i
 
-            total_at_j = total_at_i - k
             if total_at_i == k:
                 maxLen = max(maxLen, i - 0 + 1)
-            elif total_at_j in h:
-                maxLen = max(maxLen, i - h[total_at_j])
+            elif total_at_i - k in h:
+                maxLen = max(maxLen, i - h[total_at_i - k])
 
         return maxLen
 ```
