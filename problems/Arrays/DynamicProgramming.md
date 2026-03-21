@@ -64,21 +64,59 @@ class Solution:
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Solution(object):
-    def lengthOfLIS(self, nums):
-        h = collections.defaultdict(lambda: 1)
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        if not nums: return 0
 
-        h[0] = 1
-        for i in range(1, len(nums)):
-            for j in range(0, i):
-                if nums[i] > nums[j]:
-                    h[i] = max(h[i], h[j] + 1)
+        h = collections.defaultdict(int)
+        
+        # Every element is an increasing subsequence of at least length 1
+        for i in range(len(nums)):
+            h[i] = 1
 
+        for i in range(0, len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[j] > nums[i]:
+                    # Update h[j] only if going through i gives a longer sequence
+                    h[j] = max(h[j], h[i] + 1)
+            
         return max(h.values())
 ```
 
 </details>
 <BR>
+
+
+### [Total number of Subarrays with Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/description/)
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        h = collections.defaultdict(int)
+        # 1. Base case: a prefix sum of 0 has occurred once (before index 0)
+        h[0] = 1 
+        
+        total_at_i = 0
+        count = 0 # This will track the number of subarrays
+        
+        for i in range(len(nums)):
+            total_at_i += nums[i]
+            
+            # 2. Check if (current_sum - k) exists in our history
+            target = total_at_i - k
+            if target in h:
+                count += h[target] # Add the number of times we've seen this target
+            
+            # 3. Always increment the frequency of the current prefix sum
+            h[total_at_i] += 1
+
+        return count
+```
+</details>
+<br/>
+
 
 ### [Maximum Length of a sub-array that sums to k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 > Given an array nums and a target value k, find the maximum length of a subarray that sums to k.
