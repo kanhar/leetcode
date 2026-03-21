@@ -204,3 +204,66 @@ class Solution(object):
 </details>
 <BR>
 
+### [3Sum](https://leetcode.com/problems/3sum/)
+
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
+such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+Notice that the solution set must not contain duplicate triplets.
+
+<details><summary markdown="span">Execute!</summary>
+
+Standard backtracking
+```python
+class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        def solve(idx, accum):
+            if len(accum) == 3:
+                if sum(accum) == 0:
+                    res.add(tuple(accum))
+                return
+            
+            for i in range(idx, len(nums)):
+                solve(i + 1, accum + [nums[i]])
+
+        nums.sort() # Sorting helps handle duplicates and optimization
+        res = set()                        
+        solve(0, [])
+        return [list(t) for t in res]
+```
+
+Backtracking with 2sum optimization
+
+```python
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        def twoSum(arr, target):
+            left = 0
+            right = len(arr) - 1
+
+            res = []
+            while left < right:
+                total = arr[left] + arr[right]
+                if total > target:
+                    right -= 1
+                elif total < target:
+                    left += 1
+                else:
+                    res.append([arr[left], arr[right]])
+                    left += 1
+                    right -= 1
+            return res
+
+        nums.sort()
+        pairs = []
+        target = 0
+        for i, n in enumerate(nums):
+            for t in twoSum(nums[i + 1:], target - n):
+                pairs.append([n] + t)
+
+        return set([tuple(sorted(x)) for x in pairs])
+
+```
+
+</details>
+<BR>
