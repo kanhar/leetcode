@@ -9,30 +9,41 @@ Input: 100: Output: 0 (this is an important edge case, that it is not 1 )
 Ref: https://leetcode.com/problems/decode-ways/
 """
 
-def memoize(f):
-    memo = {}
-    def wrapper(*args):
-        if args not in memo:
-            memo[args] = f(*args)
-        return memo[args]
-    return wrapper
-
-class Solution(object):
+class Solution:
     def numDecodings(self, s: str) -> int:
-        return 0 if not s else self.solve(s)
+        if not s:
+            return 0
+        
+        memo = {}
 
-    @memoize
-    def solve(self, s) -> int:
-        if len(s)==0:
-            return 1
-        elif len(s)==1:
-            return 1 if s[0] != '0' else 0
-        else:
-            if s[0] == '0':
+        def solve(index):
+            # Base Case: If we've reached the end of the string, we found 1 valid path
+            if index == len(s):
+                return 1
+            
+            # If we've already calculated the ways from this index, return it
+            if index in memo:
+                return memo[index]
+
+            # A string starting with '0' cannot be decoded
+            if s[index] == '0':
                 return 0
-            else:
-                #two ways to break up a sequence of[abc]: (a,bc) + (ab,c)
-                return self.solve(s[1:]) + \
-                       (self.solve(s[2:]) if len(s)>1 and int(s[0:2]) in range( 1, 27 ) else 0)
+
+            # Option 1: Decode a single digit
+            # We move forward by 1 index
+            res = solve(index + 1)
+
+            # Option 2: Decode two digits
+            # Check if there's enough string left and if it's between 10 and 26
+            if index + 1 < len(s):
+                two_digit = int(s[index : index + 2])
+                if 10 <= two_digit <= 26:
+                    res += solve(index + 2)
+
+            # Store in memo and return
+            memo[index] = res
+            return res
+
+        return solve(0)
 
 
