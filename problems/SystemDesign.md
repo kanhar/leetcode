@@ -5,6 +5,12 @@
 {:toc}
 
 The ultimate primer: https://github.com/donnemartin/system-design-primer  
+### Unicode
+
+* Extended ASCII: Uses 8 bits (1 byte) for a max of 256 combinations. (Original ASCII used only 7 bits/128 combinations, reserving the 8th bit for error checking).
+* UTF-8: Starts at 8 bits but scales to 1M+ combinations by chaining up to 4 bytes. It uses "variable math overhead" (navigation bits in each byte) to coordinate width, making it a sequential stream immune to endianness issues.
+* UTF-16 & UTF-32: Hardcoded to 2 and 4 bytes respectively. They offer faster indexin but require more storage and are vulnerable to endianness issues. Note: The UTF-16 Caveat: For complex characters (like emojis), UTF-16 must use 4-byte surrogate pairs, causing it to lose its fixed-width indexing advantage. Its the worst of both worlds. 
+
 
 ### [CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 
