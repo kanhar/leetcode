@@ -237,32 +237,34 @@ Backtracking with 2sum optimization
 ```python
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        def twoSum(arr, target):
+        def twoSum(arr, target_val): 
             left = 0
             right = len(arr) - 1
-
-            res = []
+            curr = [] 
             while left < right:
                 total = arr[left] + arr[right]
-                if total > target:
+                if total > target_val:
                     right -= 1
-                elif total < target:
+                elif total < target_val:
                     left += 1
                 else:
-                    res.append([arr[left], arr[right]])
+                    curr.append([arr[left], arr[right]])
                     left += 1
                     right -= 1
-            return res
+            return curr
+
+        def solve():
+            for i, n in enumerate(nums):
+                for t in twoSum(nums[i + 1:], target - n):
+                    res.append([n] + t)
 
         nums.sort()
-        pairs = []
+        res = []
         target = 0
-        for i, n in enumerate(nums):
-            for t in twoSum(nums[i + 1:], target - n):
-                pairs.append([n] + t)
+        
+        solve() 
 
-        return set([tuple(sorted(x)) for x in pairs])
-
+        return [list(x) for x in set([tuple(sorted(x)) for x in res])]
 ```
 
 </details>
