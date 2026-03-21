@@ -184,10 +184,6 @@ class Solution:
 ```python
 class Solution(object):
     def combinationSum(self, candidates, target):
-        res = []
-        # Sort to allow for potential pruning (optimization)
-        candidates.sort()
-
         def solve(remain, idx, path):
             if remain == 0:
                 res.append(list(path)) 
@@ -198,7 +194,9 @@ class Solution(object):
 
             for i in range(idx, len(candidates)):                            
                 solve(remain - candidates[i], i, path + [candidates[i]])
-                
+
+        res = []        
+        candidates.sort() # Sort to allow for potential pruning (optimization)
         solve(target, 0, [])
         return res
 ```
