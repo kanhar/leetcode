@@ -414,3 +414,56 @@ class Solution:
 </details>
 <BR>
 
+
+### [Minimum Knight Moves](https://leetcode.com/problems/minimum-knight-moves/description)
+
+In an infinite chess board with coordinates from -infinity to +infinity, you have a knight at square [0, 0].
+
+Return the minimum number of steps needed to move the knight to the square [x, y]. It is guaranteed the answer exists.
+
+Note: You can use symmetry to stick to one quadrant
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def minKnightMoves(self, x: int, y: int) -> int:
+        x, y = abs(x), abs(y)
+        memo = {}
+
+        def solve(r, c):
+            # We use abs() to keep the knight in the first quadrant 
+            # and simplify the number of states we track.
+            r, c = abs(r), abs(c)
+            
+            if r == x and c == y:
+                return 0
+            
+            # If we've been here and found a shorter way, stop this branch.
+            if (r, c) in memo:
+                return memo[(r, c)]
+            
+            # If we wander too far away from the target, stop.
+            # (Adding a buffer of 2 for the "swing" moves)
+            if r > x + 2 or c > y + 2:
+                return float('inf')
+
+            # We mark this as 'inf' temporarily to prevent infinite loops 
+            # if the knight jumps back to a square currently in the recursion stack.
+            memo[(r, c)] = float('inf')
+
+            # Standard knight moves, but we prioritize moving toward the target
+            res = 1 + min(
+                solve(r + 2, c + 1), solve(r + 1, c + 2),
+                solve(r - 1, c + 2), solve(r - 2, c + 1),
+                solve(r + 2, c - 1), solve(r + 1, c - 2)
+            )
+            
+            memo[(r, c)] = res
+            return res
+
+        return solve(0, 0)
+```
+
+</details>
+<BR>
