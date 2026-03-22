@@ -67,29 +67,30 @@ class Solution:
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-import collections
 class Solution(object):  
     def minWindow(self, s, t):
         need = collections.Counter(t)
-        l =r = i = j = 0
         missing = len(t)
-
-        for r in range(len(s)):                        
-            if need[s[r]] > 0:
-                missing -=1
-            need[s[r]] -=1
+        
+        # Initialize with a string longer than s so the first window always fits
+        min_chr = s + " " 
+        left = 0
+        for i, c in enumerate(s):
+            if need[c] > 0:
+                missing -= 1
+            need[c] -= 1
             
-            while missing==0:                
-                if j ==0 or r-l+1 < j-i:
-                    i,j=l,r+1
+            while missing == 0:                
+                if i - left + 1 < len(min_chr):
+                    min_chr = s[left:i+1]
                 
-                need[s[l]]+=1
-                if need[s[l]]>0:
-                    missing +=1           
-                    
-                l+=1        
-                
-        return s[i:j]
+                need[s[left]] += 1
+                if need[s[left]] > 0:
+                    missing += 1           
+                left += 1        
+        
+        # If min_chr is still longer than s, no window was found
+        return min_chr if len(min_chr) <= len(s) else ""
 ```
 </details>
 <BR>
