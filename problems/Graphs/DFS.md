@@ -175,35 +175,6 @@ class Solution:
 </details>
 <BR>
 
-### [Subsequences that sum to Target](https://leetcode.com/problems/combination-sum/)
-
-> Subsequences of numbers that sum to target
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution(object):
-    def combinationSum(self, candidates, target):
-        def solve(remain, idx, path):
-            if remain == 0:
-                res.append(list(path)) 
-                return
-            
-            if remain < 0:
-                return
-
-            for i in range(idx, len(candidates)):                            
-                solve(remain - candidates[i], i, path + [candidates[i]])
-
-        res = []        
-        candidates.sort() # Sort to allow for potential pruning (optimization)
-        solve(target, 0, [])
-        return res
-```
-
-</details>
-<BR>
-
 ### [3Sum](https://leetcode.com/problems/3sum/)
 
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
@@ -265,6 +236,110 @@ class Solution:
         solve() 
 
         return [list(x) for x in set([tuple(sorted(x)) for x in res])]
+```
+
+</details>
+<BR>
+
+
+### [Subsequences that sum to Target](https://leetcode.com/problems/combination-sum/)
+
+> Subsequences of numbers that sum to target
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def combinationSum(self, candidates, target):
+        def solve(remain, idx, path):
+            if remain == 0:
+                res.append(list(path)) 
+                return
+            
+            if remain < 0:
+                return
+
+            for i in range(idx, len(candidates)):                            
+                solve(remain - candidates[i], i, path + [candidates[i]])
+
+        res = []        
+        candidates.sort() # Sort to allow for potential pruning (optimization)
+        solve(target, 0, [])
+        return res
+```
+
+</details>
+<BR>
+
+
+### [Subarray Product less than K](https://leetcode.com/problems/subarray-product-less-than-k)
+
+Given an array of integers nums and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.
+
+Note: Nuance between Subsequences (for loop in backtracking ) and Subarrays (recursion moving incrementally )
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        if k <= 1: return 0
+        
+        def multiply(arr):
+            if not arr: return float('inf') # Prevent empty arrays from being counted
+            total = 1
+            for a in arr:
+                total = total * a
+            return total
+
+        def solve(idx, accum):
+            current_prod = multiply(accum)
+            
+            if current_prod < k:
+                res.append(tuple(accum))
+            else:
+                return 
+
+            if idx >= len(nums):
+                return
+
+            solve(idx + 1, accum + [nums[idx]])
+        
+        res = list()
+        
+        for i in range(len(nums)):
+            solve(i + 1, [nums[i]])
+            
+        return len(res)
+```
+
+Almost identical to https://kanhar.github.io/leetcode/problems/Arrays/SlidingWindow.html#longest-substring-without-repeating-characters
+
+```python
+class Solution:
+    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        # If k is 0 or 1, no product of positive integers can be < k
+        if k <= 1:
+            return 0
+        
+        current_prod = 1
+        left = 0
+        count = 0
+        
+        for i, num in enumerate(nums):
+            # Equivalent to hsh[s[i]] += 1: Add the new number to the window
+            current_prod *= nums[i]
+            
+            # Equivalent to while hsh[s[i]] > 1: Shrink until product is valid
+            while current_prod >= k:
+                current_prod //= nums[left]
+                left += 1
+            
+            # Instead of maxL, we add the number of valid subarrays ending at 'i'
+            # Each element in the current window [left...i] is a new valid subarray
+            count += (i - left + 1)
+        
+        return count
 ```
 
 </details>
