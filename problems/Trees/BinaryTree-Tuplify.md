@@ -38,19 +38,19 @@ class Solution:
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Solution(object):
-    def isSubtree(self, s, t):
-        def tuplify(root, updateCache):
-            if root:
-                tuple = (root.val, tuplify(root.left, updateCache), tuplify(root.right, updateCache))
-                if updateCache:
-                    self.res[tuple].append(root)
-                return tuple
-
-        self.res = collections.defaultdict(list)
-        tuplify(s, updateCache = True)
-        return tuplify(t, updateCache = False) in self.res
-
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        def tuplify(node):
+            if node:
+                return (node.val, tuplify(node.left), tuplify(node.right))
+                
+        if not root:
+            return False
+        
+        if tuplify(root) == tuplify(subRoot):
+            return True
+        
+        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 ```
 
 </details>
@@ -67,10 +67,9 @@ import collections
 import json
 class Codec:
     def serialize(self, root):
-        def tuplify(root):
-            if root:
-                tuple = root.val, tuplify(root.left), tuplify(root.right)
-                return tuple
+        def tuplify(node):
+            if node:
+                return (node.val, tuplify(node.left), tuplify(node.right))
 
         res = tuplify(root)
         return json.dumps(res)
