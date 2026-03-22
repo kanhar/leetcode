@@ -317,3 +317,49 @@ Should ideally be solved using a  [Sliding Window](https://kanhar.github.io/leet
 
 </details>
 <BR>
+
+### [https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description)
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+def maxProfit(prices):
+    # Memoization table: (index, buying_state)
+    memo = {}
+
+    def backtrack(i, buying):
+        # Base case: reached the end of the price list
+        if i >= len(prices):
+            return 0
+        
+        # Check if we've already computed this state
+        if (i, buying) in memo:
+            return memo[(i, buying)]
+
+        if buying:
+            # Option 1: Buy today (spend money, move to next day to sell)
+            buy = backtrack(i + 1, False) - prices[i]
+            # Option 2: Cooldown (skip today, stay in buying state)
+            cooldown = backtrack(i + 1, True)
+            res = max(buy, cooldown)
+        else:
+            # Option 1: Sell today (gain money, skip 1 day for cooldown)
+            sell = backtrack(i + 2, True) + prices[i]
+            # Option 2: Cooldown (skip today, stay in selling state)
+            cooldown = backtrack(i + 1, False)
+            res = max(sell, cooldown)
+
+        memo[(i, buying)] = res
+        return res
+
+    return backtrack(0, True)
+
+# Example Usage:
+# prices = [1, 2, 3, 0, 2]
+# Output: 3 
+```
+
+</details>
+<BR>
+
+
