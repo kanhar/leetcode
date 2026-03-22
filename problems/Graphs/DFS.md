@@ -363,3 +363,54 @@ def maxProfit(prices):
 <BR>
 
 
+### [Word Search](Word Search)
+
+> Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+
+The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        def backtrack(r, c, index):
+            # Base Case: All characters matched
+            if index == len(word):
+                return True
+            
+            # Failure Cases: Out of bounds, wrong character, or already visited
+            if (r < 0 or c < 0 or 
+                r >= ROWS or c >= COLS or 
+                board[r][c] != word[index]):
+                return False
+            
+            # Step 1: Mark as visited (Backtracking Setup)
+            temp = board[r][c]
+            board[r][c] = "#"
+            
+            # Step 2: Explore neighbors
+            # result will be True if any direction finds the rest of the word
+            found = (backtrack(r + 1, c, index + 1) or
+                     backtrack(r - 1, c, index + 1) or
+                     backtrack(r, c + 1, index + 1) or
+                     backtrack(r, c - 1, index + 1))
+            
+            # Step 3: Backtrack (Restore the cell)
+            board[r][c] = temp
+            
+            return found
+
+        ROWS, COLS = len(board), len(board[0])
+        # Try starting the word from every single cell
+        for r in range(ROWS):
+            for c in range(COLS):
+                if backtrack(r, c, 0):
+                    return True
+        
+        return False
+```
+
+</details>
+<BR>
+
