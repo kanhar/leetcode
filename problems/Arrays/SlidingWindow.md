@@ -61,6 +61,44 @@ class Solution:
 </details>
 <BR>
 
+### [Subarray Product less than K](https://leetcode.com/problems/subarray-product-less-than-k)
+
+Given an array of integers nums and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.
+
+Can also be solved using backtracking but inefficent https://kanhar.github.io/leetcode/problems/Graphs/DFS.html#subarray-product-less-than-k
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        # If k is 0 or 1, no product of positive integers can be < k
+        if k <= 1:
+            return 0
+        
+        current_prod = 1
+        left = 0
+        count = 0
+        
+        for i, num in enumerate(nums):
+            # Equivalent to hsh[s[i]] += 1: Add the new number to the window
+            current_prod *= nums[i]
+            
+            # Equivalent to while hsh[s[i]] > 1: Shrink until product is valid
+            while current_prod >= k:
+                current_prod //= nums[left]
+                left += 1
+            
+            # Instead of maxL, we add the number of valid subarrays ending at 'i'
+            # Each element in the current window [left...i] is a new valid subarray
+            count += (i - left + 1)
+        
+        return count
+```
+
+</details>
+<BR>
+
 ### [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 
 > Given two strings s and t of lengths m and n respectively, return the minimum window substring of 
