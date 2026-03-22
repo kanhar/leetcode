@@ -41,20 +41,18 @@ class Solution:
 ```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        
-        hsh  = collections.defaultdict(int)
+        h = collections.defaultdict(int)
         left = 0
         maxL = 0
-        
-        for i,c in enumerate(s):
-            hsh[s[i]] +=1
-            
-            while hsh[s[i]]>1:
-                hsh[s[left]]-=1
+        for i, c in enumerate(s):
+            h[c]+=1
+
+            while h[c] > 1:
+                h[s[left]]-=1
                 left+=1
-            
-            maxL = max(maxL, i-left+1)
-        
+
+            maxL = max(maxL, i-left + 1)
+
         return maxL
 ```
 
