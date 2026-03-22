@@ -3,6 +3,125 @@
 
 - TOC
 {:toc}
+
+### [Hit Counter](https://leetcode.com/problems/design-hit-counter/description)
+Design a hit counter which counts the number of hits received in the past 5 minutes (i.e., the past 300 seconds).
+
+Your system should accept a timestamp parameter (in seconds granularity), and you may assume that calls are being made to the system in chronological order (i.e., timestamp is monotonically increasing). Several hits may arrive roughly at the same time.
+
+Implement the HitCounter class:
+
+```kotlin
+HitCounter() Initializes the object of the hit counter system.
+void hit(int timestamp) Records a hit that happened at timestamp (in seconds). Several hits may happen at the same timestamp.
+int getHits(int timestamp) Returns the number of hits in the past 5 minutes from timestamp (i.e., the past 300 seconds).
+```
+
+
+<details><summary markdown="span">Execute!</summary>
+
+We use an atomic integer for striped locking. GetHits is eventually consistent ( dirty reads )
+
+Atomic (Lock-Free): Uses CAS (Compare-And-Swap) instructions. These are handled at the CPU level and don't involve "parking" a thread. If there is low contention, it is almost as fast as a non-volatile write. Even under high contention, it uses a busy-spin (the while(true) loop), which is efficient if the collision window is tiny.
+
+Use this if you require a high-traffic telemetry system (e.g., tracking requests per second). The minor inconsistency in getHits usually doesn't matter for metrics, and the performance gain is massive.
+
+```kotlin
+import java.util.concurrent.atomic.AtomicIntegerArray
+import java.util.concurrent.atomic.AtomicLongArray
+
+class HitCounter() {
+    private val times = AtomicLongArray(300)
+    private val hits = AtomicIntegerArray(300)
+
+    fun hit(timestamp: Int) {
+        val idx = timestamp % 300
+        val t = timestamp.toLong()
+
+        while (true) {
+            val lastTime = times.get(idx)
+
+            if (lastTime != t) {
+                // PATH A: The bucket is stale (from a previous 5-min cycle).
+                if (times.compareAndSet(idx, lastTime, t)) {
+                    hits.set(idx, 1)
+                    return 
+                } else {
+                    // Failure! Another thread updated the timestamp while we were looking.
+                    // We call 'continue' to restart the loop and try again.
+                    continue 
+                }
+            } else {
+                // PATH B: The bucket is already set to the current timestamp.
+                // We just need to increment the existing count.
+                hits.incrementAndGet(idx)
+                return
+            }
+        }
+    }
+
+    fun getHits(timestamp: Int): Int {
+        var total = 0
+        for (i in 0 until 300) {
+            if (timestamp - times.get(i) < 300) {
+                total += hits.get(i)
+            }
+        }
+        return total
+    }
+}
+```
+
+We use mutexes and suspend functions to be more kotlin-esque
+
+Suspending (Mutex): Every hit must acquire and release a Mutex. While Kotlin’s Mutex is non-blocking (it suspends the coroutine instead of blocking the thread), there is still significant overhead in managing the coroutine queue, state transitions, and context switching.
+
+Use this if you absolutely cannot afford a "dirty read" where the timestamp and the count are out of sync, or if your hit logic becomes significantly more complex than a simple increment.
+
+```kotlin
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+
+class SuspendingHitCounter {
+    private val times = LongArray(300)
+    private val hits = IntArray(300)
+    
+    // An array of 300 Mutexes, one for each bucket
+    private val mutexes = Array(300) { Mutex() }
+
+    suspend fun hit(timestamp: Int) {
+        val idx = timestamp % 300
+        val t = timestamp.toLong()
+
+        mutexes[idx].withLock {
+            if (times[idx] != t) {
+                times[idx] = t
+                hits[idx] = 1
+            } else {
+                hits[idx]++
+            }
+        }
+    }
+
+    suspend fun getHits(timestamp: Int): Int {
+        var total = 0
+        for (i in 0 until 300) {
+            mutexes[i].withLock {
+                if (timestamp - times[i] < 300) {
+                    total += hits[i]
+                }
+            }
+        }
+        return total
+    }
+}
+```
+
+</details>
+<BR>
+
+
+
   
 ### [Number of nodes in a distributed network](https://leetcode.com/discuss/post/438213/print-the-number-of-nodes-in-a-distribut-3jxh/)
 
