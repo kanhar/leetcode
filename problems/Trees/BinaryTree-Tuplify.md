@@ -101,8 +101,7 @@ class Codec:
     def serialize(self, root):
         def tuplify(root):
             if root:
-                tuple = (root.val, [tuplify(x) for x in root.children])
-                return tuple
+                return (root.val, [tuplify(x) for x in root.children])
 
         return json.dumps(tuplify(root))
 
@@ -113,7 +112,7 @@ class Codec:
                 for c in arr[1]:
                     root.children.append(detuplify(c))
                 return root
-            return None
+                
         return detuplify(json.loads(data))
 ```
 
