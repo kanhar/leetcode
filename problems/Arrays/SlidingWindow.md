@@ -104,36 +104,28 @@ Given two strings s1 and s2, return true if s2 contains a permutation of s1, or 
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-import collections
-
 class Solution(object):
     def checkInclusion(self, s1, s2):
+        # s1 is like 't', s2 is like 's'
         need = collections.Counter(s1)
         missing = len(s1)
-        l = 0
         
-        for r in range(len(s2)):
-            if need[s2[r]] > 0:
+        left = 0
+
+        for i, c in enumerate(s2):
+            if need[c] > 0:
                 missing -= 1
+            need[c] -= 1
+
+            if i - left + 1 > len(s1):
+                char_left = s2[left]
+                if need[char_left] >= 0:
+                    missing += 1
+                need[char_left] += 1
+                left += 1
             
-            # (If it goes negative, it means we have extra of this char)
-            need[s2[r]] -= 1
-            
-            # If the window size matches s1, check if we found a permutation
             if missing == 0:
                 return True
-            
-            # If the window size reaches len(s1), we must slide the left pointer
-            # to keep the window at a fixed size of s1
-            if r - l + 1 == len(s1):
-                # If the character being removed was part of the original s1 requirement
-                # and our window currently doesn't have "extra" of it, increment missing
-                if need[s2[l]] >= 0:
-                    missing += 1
-                
-                # Add the character back to the requirement map
-                need[s2[l]] += 1
-                l += 1
                 
         return False
 ```
