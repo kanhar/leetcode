@@ -318,7 +318,7 @@ Should ideally be solved using a  [Sliding Window](https://kanhar.github.io/leet
 </details>
 <BR>
 
-### [https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description)
+### [Best time to buy and sell](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description)
 
 <details><summary markdown="span">Execute!</summary>
 
