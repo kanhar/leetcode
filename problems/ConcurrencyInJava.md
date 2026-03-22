@@ -93,14 +93,22 @@ suspend fun <T> retryWithBackoff(
     initialDelay: Long = 1000,
     block: suspend () -> T
 ): T? {
-    repeat(retries - 1) { attempt ->
-        try { return block() } 
-        catch (e: Exception) {
+    // We loop from 0 up to (but not including) retries - 1
+    for (attempt in 0 until retries - 1) {
+        try {
+            return block()
+        } catch (e: Exception) {
             val delayTime = initialDelay * 2.0.pow(attempt).toLong()
             delay(delayTime)
         }
     }
-    return block() 
+    
+    // Final attempt outside the loop (the "last stand")
+    return try {
+        block()
+    } catch (e: Exception) {
+        null 
+    }
 }
 ```
 
