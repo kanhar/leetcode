@@ -65,7 +65,7 @@ class Solution:
 
 Given an array of integers nums and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.
 
-Can also be solved using backtracking but inefficent https://kanhar.github.io/leetcode/problems/Graphs/DFS.html#subarray-product-less-than-k
+Can also be solved using [backtracking](https://kanhar.github.io/leetcode/problems/Graphs/DFS.html#subarray-product-less-than-k) but inefficent 
 
 <details><summary markdown="span">Execute!</summary>
 
