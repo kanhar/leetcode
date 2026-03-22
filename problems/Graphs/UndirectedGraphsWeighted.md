@@ -17,22 +17,23 @@ class Solution:
     def maxProbability(self, n: int, edges: list[list[int]], succProb: list[float], start_node: int, end_node: int) -> float:
         graph = defaultdict(set) 
         for (u, v), p in zip(edges, succProb):
-            graph[u].add((p, v)); graph[v].add((p, u))
+            graph[u].add((p, v)); 
+            graph[v].add((p, u))
 
-        visited = {} 
+        visited = collections.defaultdict(int)
         heap = [(-1.0, start_node)]
         
         while heap:
-            p, curr = heapq.heappop(heap)
-            p = -p
+            cost, curr = heapq.heappop(heap)
+            cost = -cost
                
-            visited[curr] = p            
+            visited[curr] = cost
             if curr == end_node:
                 break
                 
             for weight, neighbor in graph[curr]:
                 if neighbor not in visited:
-                    heapq.heappush(heap, (-(p * weight), neighbor))
+                    heapq.heappush(heap, (-(cost * weight), neighbor))
                     
         return visited.get(end_node, 0.0)
 ```
