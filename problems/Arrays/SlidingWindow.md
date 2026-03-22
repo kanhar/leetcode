@@ -118,12 +118,12 @@ class Solution(object):
             need[c] -= 1
 
             if i - left + 1 > len(s1):
-                char_left = s2[left]
-                if need[char_left] >= 0:
+                if need[s2[left]] >= 0:
                     missing += 1
-                need[char_left] += 1
+                need[s2[left]] += 1
                 left += 1
             
+            # 3. If missing is 0 and window is exactly len(s1) we found a permutation
             if missing == 0:
                 return True
                 
