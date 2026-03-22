@@ -244,3 +244,51 @@ class Solution:
 ```
 
 </details><BR>
+
+
+### [https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description)
+
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+Find the maximum profit you can achieve. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times) with the following restrictions:
+
+After you sell your stock, you cannot buy stock on the next day (i.e., cooldown one day).
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+def maxProfit(prices):
+    if not prices:
+        return 0
+
+    # Initial states for Day 0
+    # We use -infinity for 'sold' and 'holding' initially because 
+    # those states aren't possible before we start.
+    holding = -float('inf')
+    sold = -float('inf')
+    resting = 0
+
+    for price in prices:
+        prev_holding = holding
+        prev_sold = sold
+        prev_resting = resting
+
+        # 1. To be holding: either keep holding or buy from resting state
+        holding = max(prev_holding, prev_resting - price)
+        
+        # 2. To be sold: must have held stock and sold it at current price
+        sold = prev_holding + price
+        
+        # 3. To be resting: either stayed resting or just finished a cooldown (sold)
+        resting = max(prev_resting, prev_sold)
+
+    # The max profit will be either from the 'sold' state or 'resting' state
+    return max(sold, resting)
+
+# Example: prices = [1, 2, 3, 0, 2]
+# Output: 3
+```
+
+</details>
+<BR>
