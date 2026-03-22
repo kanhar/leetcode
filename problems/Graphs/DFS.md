@@ -175,7 +175,36 @@ class Solution:
 </details>
 <BR>
 
-### [3Sum](https://leetcode.com/problems/3sum/)
+### [Subsequences that sum to Target](https://leetcode.com/problems/combination-sum/)
+
+> Subsequences of numbers that sum to target
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def combinationSum(self, candidates, target):
+        def solve(remain, idx, path):
+            if remain == 0:
+                res.append(list(path)) 
+                return
+            
+            if remain < 0:
+                return
+
+            for i in range(idx, len(candidates)):                            
+                solve(remain - candidates[i], i, path + [candidates[i]])
+
+        res = []        
+        candidates.sort() # Sort to allow for potential pruning (optimization)
+        solve(target, 0, [])
+        return res
+```
+
+</details>
+<BR>
+
+### [Subsequences of size 3 that sum to target](https://leetcode.com/problems/3sum/)
 
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
 such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
@@ -240,37 +269,6 @@ class Solution:
 
 </details>
 <BR>
-
-
-### [Subsequences that sum to Target](https://leetcode.com/problems/combination-sum/)
-
-> Subsequences of numbers that sum to target
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-class Solution(object):
-    def combinationSum(self, candidates, target):
-        def solve(remain, idx, path):
-            if remain == 0:
-                res.append(list(path)) 
-                return
-            
-            if remain < 0:
-                return
-
-            for i in range(idx, len(candidates)):                            
-                solve(remain - candidates[i], i, path + [candidates[i]])
-
-        res = []        
-        candidates.sort() # Sort to allow for potential pruning (optimization)
-        solve(target, 0, [])
-        return res
-```
-
-</details>
-<BR>
-
 
 ### [Subarray Product less than K](https://leetcode.com/problems/subarray-product-less-than-k)
 
