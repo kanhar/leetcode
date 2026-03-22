@@ -61,6 +61,86 @@ class Solution:
 </details>
 <BR>
 
+### [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+
+> Given two strings s and t of lengths m and n respectively, return the minimum window substring of 
+> s such that every character in t (including duplicates) is included in the window.
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+import collections
+class Solution(object):  
+    def minWindow(self, s, t):
+        need = collections.Counter(t)
+        l =r = i = j = 0
+        missing = len(t)
+
+        for r in range(len(s)):                        
+            if need[s[r]] > 0:
+                missing -=1
+            need[s[r]] -=1
+            
+            while missing==0:                
+                if j ==0 or r-l+1 < j-i:
+                    i,j=l,r+1
+                
+                need[s[l]]+=1
+                if need[s[l]]>0:
+                    missing +=1           
+                    
+                l+=1        
+                
+        return s[i:j]
+```
+</details>
+<BR>
+
+
+
+### [Permutation in String](https://leetcode.com/problems/permutation-in-string/description)
+
+Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+import collections
+
+class Solution(object):
+    def checkInclusion(self, s1, s2):
+        need = collections.Counter(s1)
+        missing = len(s1)
+        l = 0
+        
+        for r in range(len(s2)):
+            if need[s2[r]] > 0:
+                missing -= 1
+            
+            # (If it goes negative, it means we have extra of this char)
+            need[s2[r]] -= 1
+            
+            # If the window size matches s1, check if we found a permutation
+            if missing == 0:
+                return True
+            
+            # If the window size reaches len(s1), we must slide the left pointer
+            # to keep the window at a fixed size of s1
+            if r - l + 1 == len(s1):
+                # If the character being removed was part of the original s1 requirement
+                # and our window currently doesn't have "extra" of it, increment missing
+                if need[s2[l]] >= 0:
+                    missing += 1
+                
+                # Add the character back to the requirement map
+                need[s2[l]] += 1
+                l += 1
+                
+        return False
+```
+</details>
+<BR>
+
 ### [Subarray Product less than K](https://leetcode.com/problems/subarray-product-less-than-k)
 
 Given an array of integers nums and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.
@@ -96,41 +176,6 @@ class Solution:
         return count
 ```
 
-</details>
-<BR>
-
-### [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
-
-> Given two strings s and t of lengths m and n respectively, return the minimum window substring of 
-> s such that every character in t (including duplicates) is included in the window.
-
-<details><summary markdown="span">Execute!</summary>
-
-```python
-import collections
-class Solution(object):  
-    def minWindow(self, s, t):
-        need = collections.Counter(t)
-        l =r = i = j = 0
-        missing = len(t)
-
-        for r in range(len(s)):                        
-            if need[s[r]] > 0:
-                missing -=1
-            need[s[r]] -=1
-            
-            while missing==0:                
-                if j ==0 or r-l+1 < j-i:
-                    i,j=l,r+1
-                
-                need[s[l]]+=1
-                if need[s[l]]>0:
-                    missing +=1           
-                    
-                l+=1        
-                
-        return s[i:j]
-```
 </details>
 <BR>
 
