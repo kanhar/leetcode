@@ -63,25 +63,6 @@ class Solution(object):
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Codec:
-    def serialize(self, root):
-        if root is None:
-            return 'None'
-        else:
-            return str(root.val) + "," + self.serialize(root.left) + "," + self.serialize(root.right)
-
-    def deserialize(self, data):
-        def solve(l):
-            if l:
-                tmp = l.pop(0)
-                if tmp == 'None':
-                    return None
-                else:
-                    return TreeNode(tmp, solve(l), solve(l))
-
-        arr = data.split(',')
-        return solve(arr)
-
 import collections
 import json
 class Codec:
@@ -116,37 +97,6 @@ convert it to a height-balanced binary search tree.
 <details><summary markdown="span">Execute!</summary>
 
 ```python
-class Codec:
-    def serialize(self, root):
-        def preorder(node):
-            if node:
-                res.append(str(node.val))
-                for child in node.children:
-                    preorder(child)
-                res.append("#")
-
-        res = []
-        preorder(root)
-        return ",".join(res)
-
-    def deserialize(self, data):
-        def preorder():
-            if not arr:
-                return None
-
-            parent = Node(int(arr.pop(0)), [])
-
-            while arr[0] != "#":
-                parent.children.append(preorder())
-
-            arr.pop(0)
-
-            return parent
-
-        if data:
-            arr = data.split(",")
-            return preorder()
-
 class Codec:
     def serialize(self, root):
         def tuplify(root):
