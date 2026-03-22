@@ -63,22 +63,24 @@ class Solution:
             graph[u].append((w, v))
             graph[v].append((w, u))
 
-        # Visited will inevitably become a Minimum Spanning Tree
-        visited = collections.defaultdict(int)
-        k = 1 # Starting arbitrarily with node k, find the shortest path
+        # We store the edge weight used to reach each node
+        visited = {} 
+        k = 1 
         heap = [(0, k)]        
+        
         while heap:
-            cost, curr = heapq.heappop(heap)            
+            cost, curr = heapq.heappop(heap)           
             if curr in visited:
                 continue
-
-            visited[curr] += cost
+            visited[curr] = cost
+            
             if len(visited) == n:
                 break
+                
             for weight, neighbor in graph[curr]:
                 if neighbor not in visited:
-                    heapq.heappush(heap, (weight, neighbor)) # Different from Djikstra
-
+                    heapq.heappush(heap, (weight, neighbor))
+                    
         return sum(visited.values()) if len(visited) == n else -1
 ```
 </details>
