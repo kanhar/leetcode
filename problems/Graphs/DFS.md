@@ -361,7 +361,7 @@ def maxProfit(prices):
 <BR>
 
 
-### [Word Search](Word Search)
+### [Word Search](https://leetcode.com/problems/word-search/description/)
 
 > Given an m x n grid of characters board and a string word, return true if word exists in the grid.
 
