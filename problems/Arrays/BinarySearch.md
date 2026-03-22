@@ -97,26 +97,24 @@ class Solution:
 ```python
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        # Eval if an arr can be broken up into k partitions, with no partition having sum > k. 
-        def feasible(arr, w, k):
-            currSum = 0
-            pivot = 0
-            for a in arr:
-                currSum +=a            
-                if currSum > w:
-                    pivot +=1
-                    currSum = a
-                    
-            return pivot < k        
-        
-        left  = max(weights)
+        def feasible(capacity):
+            d = 1
+            curr = 0
+            for w in weights:
+                if curr + w > capacity:
+                    d += 1
+                    curr = w
+                else:
+                    curr += w
+
+            return d <= days 
+
+        left = max(weights)
         right = sum(weights)
-        
-        while left <= right:
-            mid = (left+right)//2
-            
-            if feasible(weights,mid,days):
-                right = mid - 1
+        while left < right:
+            mid = (left + right ) // 2
+            if feasible(mid):
+                right = mid                
             else:
                 left = mid + 1
         
