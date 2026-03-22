@@ -79,7 +79,7 @@ class Solution:
                 
             for weight, neighbor in graph[curr]:
                 if neighbor not in visited:
-                    heapq.heappush(heap, (weight, neighbor))
+                    heapq.heappush(heap, (weight, neighbor))  # Key divergence from djikstra which would be `cost + weight`
                     
         return sum(visited.values()) if len(visited) == n else -1
 ```
