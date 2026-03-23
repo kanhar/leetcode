@@ -6,7 +6,7 @@
 #### Kotlin 101 Async    
 Kotlin Sequential Async 
 
-```Kotlin
+```kotlin
 import kotlinx.coroutines.*
 import kotlin.math.pow
 
