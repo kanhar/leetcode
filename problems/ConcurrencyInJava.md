@@ -3,6 +3,71 @@
 
 - TOC
 {:toc}
+#### Kotlin 101 Async    
+Kotlin Sequential Async 
+
+```Kotlin
+import kotlinx.coroutines.*
+import kotlin.math.pow
+
+suspend fun doWork(): String = withContext(Dispatchers.IO) {
+    val networkResult = retryWithBackoff { getNetworkResult() }
+    val dbResult = getDatabaseResult(networkResult)
+    "Final Result: $dbResult" 
+}
+
+suspend fun <T> retryWithBackoff(
+    retries: Int = 5,
+    initialDelay: Long = 1000,
+    block: suspend () -> T
+): T {
+    for (attempt in 0 until retries - 1) {
+        try {
+            return block()
+        } catch (e: Exception) {
+            // .pow() expects Double, so we cast 'attempt' and then the result to Long
+            val delayTime = (initialDelay * 2.0.pow(attempt.toDouble())).toLong()
+            delay(delayTime)
+        }
+    }
+
+    return block() // Final attempt outside the loop
+}   
+```
+
+Kotlin Parallel Async
+```kotlin
+suspend fun doWorkParallel(): String = withContext(Dispatchers.IO) {
+    coroutineScope {
+        val networkDeferred = async { retryWithBackoff { getNetworkResult() } }
+        val dbDeferred = async { getDatabaseResult() }
+
+        val networkResult = networkDeferred.await()
+        val dbResult = dbDeferred.await()
+
+        "Combined: $networkResult and $dbResult"
+    }
+}
+```
+
+Kotlin with flows
+```kotlin
+fun doWorkFlow(): Flow<String> = flow {    
+    val result = retryWithBackoff { getNetworkResult() }
+    emit(result) 
+}
+.flowOn(NetworkDispatcher) // <--- Changes the "Upstream" context
+
+withContext(DbDispatcher) {     
+    doWorkFlow().collect { networkResult ->
+        saveToDatabase(networkResult) 
+    }
+}
+```
+
+
+
+
 
 #### Reactive Backpressured File Streaming - Producer Consumer Streaming
 
