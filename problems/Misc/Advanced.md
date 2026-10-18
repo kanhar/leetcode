@@ -1,0 +1,165 @@
+{: .no_toc}
+# Advanced
+
+- TOC
+{:toc}
+  
+
+**Optional.** These problems combine two ideas (a graph on a grid, union-find on variables). Come back to them after the [Graph pages](../Graphs/GraphBasics.html); they are unlikely in a first-round interview.
+
+### [Matrix Longest Increasing Path](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
+
+> Given an integer matrix, find the length of the longest increasing path.
+
+**Key intuition 1:** Make a directed graph: draw an arrow from each cell to every neighbour that is bigger. There are no cycles (numbers strictly increase), so the longest path is the number of layers in a topological sort.
+
+**Key intuition 2:** A simpler route: DFS from every cell with a memo (the longest path starting at a cell never changes).
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+import collections
+
+class Solution:
+    def longestIncreasingPath(self, m):
+        edges = collections.defaultdict(list)
+        indeg = collections.defaultdict(int)
+
+        for i in range(len(m)):
+            for j in range(len(m[0])):
+                neighbors = [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]
+                for x, y in neighbors:
+                    if x in range(len(m)) and y in range(len(m[i])) and m[x][y] > m[i][j]:
+                        edges[(i, j)].append((x, y))
+                        indeg[(x, y)] += 1
+
+        # Step 2: Topological sorting with Kahn's algorithm. Notice that we move BFS Level by Level.
+        q = [(i, j) for i in range(len(m)) for j in range(len(m[0])) if (i, j) not in indeg]
+        max_path_len = 0
+        res = []
+        while q:
+            max_path_len += 1
+            q_tmp = []
+            while q:
+                node = q.pop(0)
+                for neighbor in edges[node]:
+                    indeg[neighbor] -= 1
+                    if indeg[neighbor] == 0:
+                        q_tmp.append(neighbor)
+
+            q = q_tmp
+
+        return max_path_len
+
+
+class Solution:
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+        def solve(r, c, accum):
+            if r not in range(len(matrix)) or c not in range(len(matrix[0])):
+                return
+
+            self.max = max(self.max, len(accum))
+            if len(accum) != 0 and matrix[r][c] <= accum[-1]:
+                return
+
+            tmp = matrix[r][c]
+            matrix[r][c] = float('-inf')
+            solve(r + 1, c, accum + [tmp])
+            solve(r - 1, c, accum + [tmp])
+            solve(r, c + 1, accum + [tmp])
+            solve(r, c - 1, accum + [tmp])
+            matrix[r][c] = tmp
+
+        self.max = 1
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                solve(i, j, [])
+
+        return self.max
+```
+
+</details>
+<BR>
+
+### [Evaluate Equation Division](https://leetcode.com/problems/evaluate-division)
+
+> Summary: If a/b = 2 and b/c = 3, what is a/c? 
+
+**Key intuition 1:** Each equation a / b = 2 is two edges: a to b with weight 2, and b to a with weight 1/2. A query a / c is the product of the weights along any path from a to c.
+
+**Key intuition 2:** So: build the graph, then DFS from a to c multiplying as you go. Unknown variable or no path: -1.
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution(object):
+    def calcEquation(self, equations, values, queries):
+        def dfs(a, b, visited, currVal):
+            if a not in graph or b not in graph or a in visited:
+                return -1.0
+            if a == b:
+                return currVal
+
+            visited.add(a)
+            for i,j in graph[a]-visited:
+                tmp = dfs(i, b, visited, j * currVal)
+                if tmp != -1.0:
+                    return tmp
+
+            return -1.0
+
+        graph = collections.defaultdict(set)
+
+        for (a, b), val in zip(equations, values):
+            graph[a].add((b, 1 * val))
+            graph[b].add((a, 1 / val))
+
+        return [dfs(a, b, set(), 1.0) for a, b in queries]
+```
+
+</details>
+<BR>
+
+### [Equation Satisfiabiliy](https://leetcode.com/problems/satisfiability-of-equality-equations/)
+
+> Return true if and only if it is possible to assign integers to variable names so as to satisfy all the given equations
+> ["a==b","b!=a"], Output: False
+
+**Key intuition 1:** Equal variables form groups (a == b joins a and b). Process every "==" first, then check that no "!=" has both sides in the same group.
+
+**Key intuition 2:** The groups are exactly what Union-Find (see [Undirected Graphs](../Graphs/UndirectedGraphs.html)) maintains; the version here searches the graph each time, which is slower but simpler.
+
+<details><summary markdown="span">Execute!</summary>
+
+```python
+class Solution:
+    def equationsPossible(self, equations: List[str]) -> bool:
+        def canMeet(a, b, visited = set()):
+            if a == b:
+                return True
+
+            for node in graph[a] - visited:
+                if canMeet(node, b, visited | set([a]) ):
+                    return True
+            return False
+
+        graph = collections.defaultdict(set)
+        notEquals = []
+
+        for eq in equations:
+            if eq[1:3] == '!=':
+                a, b = eq.split('!=')
+                notEquals.append((a, b))
+            else:
+                a, b = eq.split('==')
+                graph[a].add(b)
+                graph[b].add(a)
+
+        for a, b in notEquals:
+            if canMeet(a, b):
+                return False
+        return True
+```
+
+</details>
+<BR>

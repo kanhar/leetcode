@@ -1,0 +1,31 @@
+<!-- Mermaid diagrams. A fenced ```mermaid block in any page is drawn as a diagram.
+     Libraries are only downloaded on pages that contain at least one diagram.
+     Most diagrams use Mermaid 10. The triangle shape (used for subtrees) only exists in Mermaid 11, so a diagram that
+     contains "shape: tri" is drawn with 11 instead. Each version is loaded only when a diagram on the page needs it.
+     kramdown wraps a fenced block as <div class="language-mermaid highlighter-rouge"> (or <pre><code class="language-mermaid">),
+     so we read its text and swap in <pre class="mermaid">. -->
+<style>
+  pre.mermaid { background: none; border: 0; box-shadow: none; padding: 0; text-align: center; }
+</style>
+<script type="module">
+  const blocks = Array.from(document.querySelectorAll('div.language-mermaid, pre > code.language-mermaid'));
+  if (blocks.length) {
+    const versions = { classic: '10', triangle: '11.17.2' };
+    const config = { startOnLoad: false, theme: 'neutral', securityLevel: 'loose', flowchart: { htmlLabels: true, curve: 'basis' } };
+    const groups = { classic: [], triangle: [] };
+    blocks.forEach((el) => {
+      const text = el.textContent;
+      const pre = document.createElement('pre');
+      pre.className = 'mermaid';
+      pre.textContent = text;
+      (el.tagName === 'CODE' ? el.parentElement : el).replaceWith(pre);
+      groups[text.includes('shape: tri') ? 'triangle' : 'classic'].push(pre);
+    });
+    for (const [name, nodes] of Object.entries(groups)) {
+      if (!nodes.length) continue;
+      const mod = await import('https://cdn.jsdelivr.net/npm/mermaid@' + versions[name] + '/dist/mermaid.esm.min.mjs');
+      mod.default.initialize(config);
+      await mod.default.run({ nodes });
+    }
+  }
+</script>
