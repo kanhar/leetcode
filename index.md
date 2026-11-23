@@ -12,20 +12,23 @@
 
 <body markdown="1">
 
-
 ## 1. Trees and recursion
+* [Tree Templates](problems/Trees/TreeTemplates.md)
 * [Post-Order](problems/Trees/PostOrder.md)
 * [Pre-Order](problems/Trees/PreOrder.md)
 * [Traversals](problems/Trees/BinaryTree-Traversals.md)
 * [Tuplify](problems/Trees/BinaryTree-Tuplify.md)
 * [Binary Search Trees](problems/Trees/BinarySearchTree.md)
 
-## 2. Heaps and stacks
+## 2. Heaps, stacks and linked lists
 * [Heaps](problems/Arrays/Heap.md)
 * [Stacks](problems/Arrays/Stacks.md)
+* [Linked Lists](problems/Arrays/LinkedLists.md)
+* [Doubly Linked Lists](problems/Arrays/DoublyLinkedLists.md)
 
 ## 3. Putting it together
-* [LRU Cache](problems/Misc/LRUCache.md)
+* [LRU Cache](problems/Misc/LRUCache.md) (hash map + doubly linked list, then thread-safe)
+* [Threading](problems/Misc/Threading.md) (mutex, re-entrant lock, semaphore, deadlock)
 * [Tries](problems/Trees/Tries.md)
 
 ## 4. Arrays and strings
@@ -48,7 +51,18 @@
 * [Dynamic Programming](problems/Arrays/DynamicProgramming.md)
 
 ## 6. System design and distributed systems
-* [System Design](problems/SystemDesign.md)
+* [Log Aggregator](problems/SystemDesignLogAggregator.md)
+* [Audit Log System](problems/SystemDesignAuditLog.md)
+* [Push Notifications](problems/SystemDesignPushNotifications.md)
+* [Drone Delivery](problems/SystemDesignDroneDelivery.md)
+* [Webhook Delivery and Back Pressure](problems/SystemDesignWebhooks.md)
+* [The Binary SMS Tickle](problems/SystemDesignSmsTickle.md)
+* [Remote Scans API](problems/SystemDesignScanApi.md)
+* [Paged REST API Client (Kotlin)](problems/SystemDesignRestReport.md)
+* [Battleship Game API](problems/SystemDesignBattleship.md)
+* [Password Storage](problems/SystemDesignPasswordStorage.md)
+* [Git Storage (Spokes)](problems/SystemDesignSpokes.md)
+* [System Design Concepts](problems/SystemDesign.md)
 * [Distributed Consensus](problems/DistributedConsensus.md)
 * [Kotlin Coroutines](problems/ConcurrencyInJava.md)
 

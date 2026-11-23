@@ -16,6 +16,115 @@ Practise here: [Leetcode]()
 
 **Key intuition 2:** The rotations after each insert keep the tree shallow, which is what keeps every step O(log n).
 
+```mermaid
+%%{init: {"flowchart": {"padding": 12, "nodeSpacing": 36, "rankSpacing": 44, "subGraphTitleMargin": {"top": 6, "bottom": 22}}, "themeVariables": {"fontSize": "20px"}}}%%
+flowchart LR
+    subgraph A ["Left-left: 30 is too heavy on the left"]
+        direction TB
+        a30(("30"))
+        a20(("20"))
+        a10(("10"))
+        a20 --- a10
+        ag1(("."))
+        a20 --- ag1
+        a30 --- a20
+        ag2(("."))
+        a30 --- ag2
+    end
+    subgraph B ["Rotate right at 30: 20 moves up"]
+        direction TB
+        b20(("20"))
+        b10(("10"))
+        b20 --- b10
+        b30(("30"))
+        b20 --- b30
+    end
+        A ==>|rotate right| B
+    classDef n fill:#f5f5f5,stroke:#9e9e9e,color:#424242
+    classDef hi fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef a fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef g fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef p fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef r fill:#ffebee,stroke:#c62828,color:#b71c1c
+    classDef y fill:#fff8e1,stroke:#f9a825,color:#5d4037
+    classDef c fill:#e0f7fa,stroke:#00838f,color:#006064
+    classDef ghost fill:none,stroke:none,color:transparent
+    classDef empty fill:#ffffff,stroke:#bdbdbd,stroke-dasharray:4 3,color:#9e9e9e
+    class a30 r
+    class a20,a10,b10,b30 n
+    class ag1,ag2 ghost
+    class b20 g
+    style A fill:#fafafa,stroke:#bdbdbd,color:#37474f
+    style B fill:#f1f8e9,stroke:#689f38,color:#33691e
+    linkStyle 1 stroke:none
+    linkStyle 3 stroke:none
+```
+
+One rotation fixes a chain that leans the same way twice. The middle node (20) becomes the root of this piece, and heights are restored. The mirror image (right-right) uses a left rotation.
+
+```mermaid
+%%{init: {"flowchart": {"padding": 12, "nodeSpacing": 36, "rankSpacing": 44, "subGraphTitleMargin": {"top": 6, "bottom": 22}}, "themeVariables": {"fontSize": "20px"}}}%%
+flowchart TB
+    subgraph A ["Left-right: 30 is heavy on the left, but 10 leans right"]
+        direction TB
+        a30(("30"))
+        a10(("10"))
+        ag1(("."))
+        a10 --- ag1
+        a20(("20"))
+        a10 --- a20
+        a30 --- a10
+        ag2(("."))
+        a30 --- ag2
+    end
+    subgraph B ["Rotate left at 10 first. Now it is left-left"]
+        direction TB
+        b30(("30"))
+        b20(("20"))
+        b10(("10"))
+        b20 --- b10
+        bg3(("."))
+        b20 --- bg3
+        b30 --- b20
+        bg4(("."))
+        b30 --- bg4
+    end
+    subgraph C ["Rotate right at 30"]
+        direction TB
+        c20(("20"))
+        c10(("10"))
+        c20 --- c10
+        c30(("30"))
+        c20 --- c30
+    end
+        A ==>|1| B
+        B ==>|2| C
+    classDef n fill:#f5f5f5,stroke:#9e9e9e,color:#424242
+    classDef hi fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef a fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef g fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef p fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef r fill:#ffebee,stroke:#c62828,color:#b71c1c
+    classDef y fill:#fff8e1,stroke:#f9a825,color:#5d4037
+    classDef c fill:#e0f7fa,stroke:#00838f,color:#006064
+    classDef ghost fill:none,stroke:none,color:transparent
+    classDef empty fill:#ffffff,stroke:#bdbdbd,stroke-dasharray:4 3,color:#9e9e9e
+    class a30,b30 r
+    class a10,b20 y
+    class ag1,ag2,bg3,bg4 ghost
+    class a20,b10,c10,c30 n
+    class c20 g
+    style A fill:#fafafa,stroke:#bdbdbd,color:#37474f
+    style B fill:#fafafa,stroke:#bdbdbd,color:#37474f
+    style C fill:#f1f8e9,stroke:#689f38,color:#33691e
+    linkStyle 0 stroke:none
+    linkStyle 3 stroke:none
+    linkStyle 5 stroke:none
+    linkStyle 7 stroke:none
+```
+
+When the heavy child leans the other way, a single rotation just moves the imbalance. First rotate the child to make it lean the same way, then rotate at the top. The mirror image is right-left.
+
 <details><summary markdown="span">AVL Tree Implementation</summary>
 
 ```python
@@ -295,6 +404,46 @@ class Solution:
 > The counts sort has the property where counts[i] is the number of smaller elements to the right of nums[i]. 
  
 
+```mermaid
+%%{init: {"flowchart": {"padding": 12, "nodeSpacing": 36, "rankSpacing": 44, "subGraphTitleMargin": {"top": 6, "bottom": 22}}, "themeVariables": {"fontSize": "20px"}}}%%
+flowchart TB
+    subgraph K ["Find the 5th smallest"]
+        direction TB
+        k50["50<br/>size 7"]
+        k30["30<br/>size 3"]
+        k20["20<br/>size 1"]
+        k30 --- k20
+        k40["40<br/>size 1"]
+        k30 --- k40
+        k50 --- k30
+        k70["70<br/>size 3"]
+        k60["60<br/>size 1"]
+        k70 --- k60
+        k80["80<br/>size 1"]
+        k70 --- k80
+        k50 --- k70
+    end
+    classDef n fill:#f5f5f5,stroke:#9e9e9e,color:#424242
+    classDef hi fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef a fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef g fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef p fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef r fill:#ffebee,stroke:#c62828,color:#b71c1c
+    classDef y fill:#fff8e1,stroke:#f9a825,color:#5d4037
+    classDef c fill:#e0f7fa,stroke:#00838f,color:#006064
+    classDef ghost fill:none,stroke:none,color:transparent
+    classDef empty fill:#ffffff,stroke:#bdbdbd,stroke-dasharray:4 3,color:#9e9e9e
+    class k50 hi
+    class k30,k20,k40,k80 n
+    class k70 a
+    class k60 g
+    style K fill:#fafafa,stroke:#bdbdbd,color:#37474f
+    linkStyle 3 stroke:#e65100,stroke-width:4px
+    linkStyle 5 stroke:#e65100,stroke-width:4px
+```
+
+Each node stores the size of its subtree, so the k-th smallest is found by comparing k with the size on the left: go left if k fits there, take the node if k is one past it, otherwise go right and subtract. Here the 5th smallest of 20, 30, 40, 50, 60, 70, 80 is 60.
+
 **Key intuition 1:** Go through the array from right to left, inserting each number into a tree. Before inserting, ask the tree how many numbers already in it are smaller: those are the smaller numbers to the right.
 
 **Key intuition 2:** Each node keeps a count of how many nodes are in its left subtree (its rank), so that question is answered while walking down.
@@ -351,6 +500,46 @@ And voila it now works
 ### [Range Sum - Segment Tree](https://leetcode.com/problems/range-sum-query-immutable/)
 
 > Given an integer sort nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
+
+```mermaid
+%%{init: {"flowchart": {"padding": 12, "nodeSpacing": 36, "rankSpacing": 44, "subGraphTitleMargin": {"top": 6, "bottom": 22}}, "themeVariables": {"fontSize": "20px"}}}%%
+flowchart TB
+    subgraph S ["Segment tree over [2, 1, 5, 3]"]
+        direction TB
+        sr["11<br/>[0..3]"]
+        sl["3<br/>[0..1]"]
+        sa["2<br/>[0]"]
+        sl --- sa
+        sb["1<br/>[1]"]
+        sl --- sb
+        sr --- sl
+        srr["8<br/>[2..3]"]
+        sc["5<br/>[2]"]
+        srr --- sc
+        se["3<br/>[3]"]
+        srr --- se
+        sr --- srr
+    end
+    classDef n fill:#f5f5f5,stroke:#9e9e9e,color:#424242
+    classDef hi fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef a fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef g fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef p fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef r fill:#ffebee,stroke:#c62828,color:#b71c1c
+    classDef y fill:#fff8e1,stroke:#f9a825,color:#5d4037
+    classDef c fill:#e0f7fa,stroke:#00838f,color:#006064
+    classDef ghost fill:none,stroke:none,color:transparent
+    classDef empty fill:#ffffff,stroke:#bdbdbd,stroke-dasharray:4 3,color:#9e9e9e
+    class sr,sl,sa,srr,se n
+    class sb,sc g
+    style S fill:#fafafa,stroke:#bdbdbd,color:#37474f
+    linkStyle 1 stroke:#e65100,stroke-width:4px
+    linkStyle 2 stroke:#e65100,stroke-width:4px
+    linkStyle 3 stroke:#e65100,stroke-width:4px
+    linkStyle 5 stroke:#e65100,stroke-width:4px
+```
+
+Each node stores the sum of its range, and the leaves are the numbers. A query takes whole nodes where it can instead of adding leaf by leaf. Updating one number changes only the nodes on the path from its leaf to the root.
 
 **Key intuition 1:** A segment tree stores the sum of every range that is a power-of-two block, as a binary tree: the root holds the sum of everything, its children each hold half, and so on.
 

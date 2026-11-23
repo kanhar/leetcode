@@ -4,7 +4,7 @@ Practise here: [Leetcode](https://leetcode.com/tag/two-pointers/)
 
 Use two indexes instead of one nested loop. Put them at the two ends and move them inward, or have one run ahead of the other. It works when moving a pointer lets you safely rule something out, which is usually because the data is sorted or symmetric. It turns O(n²) into O(n).
 
-Related: sliding windows (a pair of pointers that expands and shrinks) and fast/slow pointers on Linked Lists.
+Related: sliding windows (a pair of pointers that expands and shrinks) and fast/slow pointers on [Linked Lists](LinkedLists.html).
 
 - TOC
 {:toc}

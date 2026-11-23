@@ -593,3 +593,7 @@ class SolutionBreak:
 
 </details>
 <BR>
+
+### Multi-threading it?
+
+A trie that is only read after it is built needs no lock at all. If words are added while others search, use a read-write lock, or build a new trie off to the side and swap the reference in one step (copy-on-write). A lock per node is possible but easy to get wrong. See [Threading](../Misc/Threading.md).

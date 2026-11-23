@@ -43,6 +43,104 @@ Every single snippet here follows a Pre-order Traversal pattern: the  "Root" log
 - TOC
 {:toc}
 
+### [Invert Binary Trees](https://leetcode.com/problems/invert-binary-tree/)
+
+> Invert a binary tree.
+
+This problem can be solved in either order. Here it is solved top-down; the same problem is solved children-first on the [Post-Order page](PostOrder.md#invert-binary-tree). Not to be confused with [Binary Tree Upside Down](PostOrder.md#binary-tree-upside-down), which rotates the left spine instead.
+
+```mermaid
+%%{init: {"flowchart": {"padding": 12, "nodeSpacing": 36, "rankSpacing": 44, "subGraphTitleMargin": {"top": 6, "bottom": 22}}, "themeVariables": {"fontSize": "20px"}}}%%
+flowchart LR
+    subgraph A ["Input"]
+        direction TB
+        ar(("4"))
+        aL(("2"))
+        aR(("7"))
+        aLL(("1"))
+        aLR(("3"))
+        ar --- aL
+        ar --- aR
+        aL --- aLL
+        aL --- aLR
+    end
+    subgraph B ["Output"]
+        direction TB
+        br(("4"))
+        bL(("7"))
+        bR(("2"))
+        bRL(("3"))
+        bRR(("1"))
+        br --- bL
+        br --- bR
+        bR --- bRL
+        bR --- bRR
+    end
+    A ==>|"invert"| B
+    classDef n fill:#f5f5f5,stroke:#9e9e9e,color:#424242
+    classDef hi fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef a fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef g fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef p fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef r fill:#ffebee,stroke:#c62828,color:#b71c1c
+    classDef y fill:#fff8e1,stroke:#f9a825,color:#5d4037
+    classDef c fill:#e0f7fa,stroke:#00838f,color:#006064
+    classDef ghost fill:none,stroke:none,color:transparent
+    classDef empty fill:#ffffff,stroke:#bdbdbd,stroke-dasharray:4 3,color:#9e9e9e
+    class ar,aL,aR,aLL,aLR,bL,bR,bRL,bRR n
+    class br hi
+    style A fill:#fafafa,stroke:#bdbdbd,color:#37474f
+    style B fill:#f1f8e9,stroke:#689f38,color:#33691e
+```
+
+> Note: This is an interesting use of reversing sorted order of a BST in place <BR>
+> * In order traversal of a BST (L,N,R) results in a ascending sorted list
+> * In order traversal of an inverted BST (R,N,L) results in a descending sorted list.
+
+**Key intuition 1:** Swap the two children at every node. The order in which you visit the nodes does not matter, as long as every node gets swapped.
+
+**Key intuition 2:** Pre-order: swap this node's two children first, then invert each subtree. The work happens on the way down, and nothing has to come back up.
+
+**Careful with in-order.** Left, then swap, then right looks natural but is wrong. After the swap, `root.right` is the subtree you have just inverted, so the second call inverts it back, and the original right subtree is never inverted. On random trees it gives the wrong answer most of the time.
+
+<details><summary markdown="span">Execute! (pre-order, swapping the nodes in place)</summary>
+
+```python
+class Solution:
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        if root is None:
+            return None
+
+        # Swap this node's children FIRST, on the way down.
+        left = root.left
+        right = root.right
+        root.left = right
+        root.right = left
+
+        # Then invert the two subtrees.
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+
+        return root
+```
+
+</details>
+<BR>
+<details><summary markdown="span">Another way: build a new tree</summary>
+
+Another way: build a new tree instead of changing the old one. Each node is built from the two subtrees that come back from the recursive calls, so it needs the children's results first. That makes this version post-order in spirit.
+
+```python
+def invertTree(root):
+    if root is not None:
+        return TreeNode(root.val,
+                        invertTree(root.right),
+                        invertTree(root.left))
+```
+
+</details>
+<BR>
+
 ### [Symmetric Trees](https://leetcode.com/problems/symmetric-tree/)
 
 > Check whether a binary tree is a mirror of itself (symmetric around its center).

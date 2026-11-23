@@ -535,7 +535,7 @@ class MedianFinder:
 
 ### Merge k Sorted Arrays
 
-> Merge k sorted arrays into one sorted array. See also: Merge-k-sorted-linked-lists
+> Merge k sorted arrays into one sorted array. See also: [Merge-k-sorted-linked-lists](LinkedLists.md#merge-k-sorted-lists)
 
 ```mermaid
 %%{init: {"flowchart": {"padding": 12, "nodeSpacing": 8, "rankSpacing": 22, "subGraphTitleMargin": {"top": 6, "bottom": 22}}, "themeVariables": {"fontSize": "22px"}}}%%
@@ -715,3 +715,7 @@ def sort_k_messed_array(arr, k):
 ```
 </details>
 <BR>
+
+### Multi-threading it?
+
+A shared heap needs one lock around `push` and `pop`, because both rewrite several list positions. For Top K over a huge stream, give each thread its own small heap and merge them at the end, so threads never wait on each other. See [Threading](../Misc/Threading.md).

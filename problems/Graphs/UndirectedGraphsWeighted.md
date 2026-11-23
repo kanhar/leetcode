@@ -12,6 +12,74 @@ Weighted edges have a cost. Two classics use a min-heap to always pick the cheap
 
 **Key intuition 2:** The only difference is what goes in the heap. Dijkstra pushes the **total cost from the start** (`cost + weight`). Prim pushes just the **cost of the one bridge** (`weight`).
 
+```mermaid
+%%{init: {"flowchart": {"padding": 12, "nodeSpacing": 36, "rankSpacing": 44, "subGraphTitleMargin": {"top": 6, "bottom": 22}}, "themeVariables": {"fontSize": "20px"}}}%%
+flowchart TB
+    subgraph G ["The graph"]
+        direction LR
+        gA(("A"))
+        gB(("B"))
+        gC(("C"))
+        gD(("D"))
+        gA ---|"2"| gB
+        gB ---|"2"| gC
+        gA ---|"3"| gC
+        gC ---|"1"| gD
+    end
+    subgraph J ["Dijkstra from A: pushes the total cost from the start"]
+        direction TB
+        jA["A<br/>0"]
+        jB["B<br/>2"]
+        jA --- jB
+        jC["C<br/>3"]
+        jD["D<br/>4"]
+        jC --- jD
+        jg1(("."))
+        jC --- jg1
+        jA --- jC
+    end
+    subgraph P ["Prim from A: pushes only the cost of the one bridge"]
+        direction TB
+        pA(("A"))
+        pB["B<br/>bridge 2"]
+        pg2(("."))
+        pB --- pg2
+        pC["C<br/>bridge 2"]
+        pD["D<br/>bridge 1"]
+        pC --- pD
+        pg3(("."))
+        pC --- pg3
+        pB --- pC
+        pA --- pB
+        pg4(("."))
+        pA --- pg4
+    end
+        G ==> J
+        G ==> P
+    classDef n fill:#f5f5f5,stroke:#9e9e9e,color:#424242
+    classDef hi fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef a fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef g fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    classDef p fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef r fill:#ffebee,stroke:#c62828,color:#b71c1c
+    classDef y fill:#fff8e1,stroke:#f9a825,color:#5d4037
+    classDef c fill:#e0f7fa,stroke:#00838f,color:#006064
+    classDef ghost fill:none,stroke:none,color:transparent
+    classDef empty fill:#ffffff,stroke:#bdbdbd,stroke-dasharray:4 3,color:#9e9e9e
+    class gA,gB,gC,gD,jB,jC,jD,pB,pC,pD n
+    class jA,pA hi
+    class jg1,pg2,pg3,pg4 ghost
+    style G fill:#fafafa,stroke:#bdbdbd,color:#37474f
+    style J fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style P fill:#f1f8e9,stroke:#689f38,color:#33691e
+    linkStyle 6 stroke:none
+    linkStyle 8 stroke:none
+    linkStyle 10 stroke:none
+    linkStyle 13 stroke:none
+```
+
+On the same graph the two build different trees. Dijkstra reaches C directly for 3, because going through B would cost 2 + 2 = 4, so it keeps A-C. Prim only compares bridges into the tree: once B is in, B-C costs 2, which beats A-C at 3, so it takes B-C. Prim's tree weighs 2 + 2 + 1 = 5, Dijkstra's weighs 2 + 3 + 1 = 6, and that difference is the whole distinction between them.
+
 ### [Path with maximal probability](https://leetcode.com/problems/path-with-maximum-probability/description/)
 
 > Given two nodes start and end, find the path with the maximum probability of success to go from start to end and return its success probability.
